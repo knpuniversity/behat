@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>{% block title %}KnpUniversity: The Raptor Store!{% endblock %}</title>
+
+    {% block stylesheets %}
+        <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="/css/main.css" />
+    {% endblock %}
+</head>
+<body>
+
+
+<div class="container">
+    <div class="row">
+
+        <div class="navbar">
+            <div class="navbar-inner">
+                <div class="container">
+                    <ul class="nav">
+                        <li class="active">
+                            <a href="{{ path('homepage') }}">Home</a>
+                        </li>
+                        <li><a href="{{ path('admin') }}">Admin</a></li>
+                        {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                            <li><a href="{{ path('admin_logout') }}">Logout</a></li>
+                        {% else %}
+                            <li><a href="{{ path('login') }}">Login</a></li>
+                        {% endif %}
+                    </ul>
+
+                    <ul class="nav pull-right">
+                        <li>
+                            <a href="http://knpuniversity.com">KnpUniversity.com</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row main-content">
+        <div class="span4">
+            {% block sidebar %}
+            <div class="well" style="padding: 8px 0;">
+                <ul class="nav nav-list">
+                    <li class="nav-header">
+                        Sections
+                    </li>
+                    <li>
+                        <a href="{{ path('product_list') }}">
+                            <i class="icon-tag"></i>
+                            Products
+                        </a>
+                    </li>
+                    <li><a href="#"><i class="icon-question-sign"></i>Page2</a></li>
+                    <li><a href="#"><i class="icon-question-sign"></i>Page3</a></li>
+                    <li><a href="#"><i class="icon-question-sign"></i>Page4</a></li>
+
+                    <li class="nav-header">
+                        Actions
+                    </li>
+                    {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                        <li><a href="{{ path('admin_logout') }}"></i>Logout</a></li>
+                    {% endif %}
+                    <li><a href="/_db/rebuild.json"></i>Reset DB</a></li>
+                </ul>
+            </div>
+            {% endblock %}
+        </div>
+        <div class="span8">
+            {% if app.session.flashBag.has('success') %}
+                <div class="alert alert-success">
+                    {% for msg in app.session.flashBag.get('success') %}
+                    {{ msg }}
+                    {% endfor %}
+                </div>
+            {% endif %}
+
+            {% block body %}{% endblock %}
+        </div>
+    </div>
+</div>
+
+<div id="modal-content-holder" class="modal hide">
+    <div class="modal-body"></div>
+</div>
+
+{% block javascripts %}
+    <script type="text/javascript" src="/js/jquery-1.8.1.min.js"></script>
+    <script type="text/javascript" src="/bootstrap/js/bootstrap.min.js"></script>
+{% endblock %}
+</body>
+</html>

@@ -1,0 +1,10 @@
+* :doc:`/screencast/behat/intro`
+* :doc:`/screencast/behat/bdd`
+* :doc:`/screencast/behat/gherkin`
+* :doc:`/screencast/behat/behat`
+* :doc:`/screencast/behat/mink`
+* :doc:`/screencast/behat/mink-behat`
+* :doc:`/screencast/behat/javascript`
+* :doc:`/screencast/behat/in-your-application`
+* :doc:`/screencast/behat/other-fun-stuff`
+* :doc:`/screencast/behat/final-words`

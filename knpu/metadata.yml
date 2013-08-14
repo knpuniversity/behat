@@ -1,0 +1,58 @@
+title:  BDD, Behat, Mink and other Wonderful Things
+price:  12
+length: 1:14:43
+summary: |
+    Ready to revolutionize how you develop? In this tutorial, you'll internalize Behavior-Driven Development and how thinking
+    about *behavior* will increase the quality and efficiency of your code. You'll become an expert in Behat - the BDD PHP
+    framework - and Mink - your key to testing web applications in sophisticated ways that include the ability to test your
+    JavaScript pages. We'll also explore the pitfalls of testing with Behat, such as data sanitization, bootstrapping your
+    code, and other challenges. By the end, you'll be well on your way to writing high-quality tests for your application
+    and - more importantly - approaching development in a totally new light.
+    
+    Behat works great with any PHP project, but if you're using Symfony2, we'll give you some special tips to get you rolling.
+illustration: behat.png
+priority: 95
+tags:
+    - { name: php }
+
+chapters:
+    intro:
+        title:      Introduction
+        is_free:    true
+        length:     8:31
+    bdd:
+        title:      Behavior-Driven Development
+        is_free:    false
+        length:     2:23
+    gherkin:
+        title:      Gherkin
+        is_free:    false
+        length:     6:46
+    behat:
+        title:      Behat
+        is_free:    false
+        length:     6:48
+    mink:
+        title:      Mink!
+        is_free:    false
+        length:     10:55
+    mink-behat:
+        title:      Behat and Mink
+        is_free:    false
+        length:     13:56
+    javascript:
+        title:      JavaScript
+        is_free:    false
+        length:     2:13
+    in-your-application:
+        title:      You bet your Sweet App
+        is_free:    false
+        length:     10:14
+    other-fun-stuff:
+        title:      The fun stuff Chapter
+        is_free:    false
+        length:     11:17
+    final-words:
+        title:      Get Testing!
+        is_free:    false
+        length:     1:34

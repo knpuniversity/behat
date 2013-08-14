@@ -1,0 +1,9 @@
+default:
+  # ...
+  extensions:
+    Behat\MinkExtension\Extension:
+      goutte:    ~
+      selenium2: ~
+
+imports:
+  - behat.local.yml
