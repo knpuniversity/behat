@@ -106,6 +106,8 @@ into a ``test/`` directory::
  
     public function __construct()
     {
+        // this actually creates 2 test directories inside of each other!
+        // the reason is subtle, and we'll fix this soon
         mkdir('test');
         chdir('test');
     }
