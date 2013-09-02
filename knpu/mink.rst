@@ -76,7 +76,6 @@ objects.
 Let's use the ``Session`` to go to jurassicpark.wikia.com and print out the status code
 and the URL::
 
-    $session = new Session($driver);
     $session->start();
 
     $session->visit('http://jurassicpark.wikia.com');
