@@ -40,7 +40,7 @@ we can just create a new file, require ``vendor/autoload.php``, and start
 playing with it::
 
     <?php
-    
+
     require __DIR__.'/vendor/autoload.php';
 
 The Driver
@@ -51,7 +51,7 @@ The first is the driver, which will make more sense later. For now, instantiate
 a new ``GoutteDriver``::
 
     use Behat\Mink\Driver\GoutteDriver;
- 
+
     $driver = new GoutteDriver();
 
 This says that we want our "browser" to actually use Goutte, a "headless"
@@ -78,9 +78,9 @@ and the URL::
 
     $session = new Session($driver);
     $session->start();
- 
-    $session->visit('http://behat.org');
- 
+
+    $session->visit('http://jurassicpark.wikia.com');
+
     echo "Status code: ". $session->getStatusCode() . "\n";
     echo "Current URL: ". $session->getCurrentUrl() . "\n";
 
@@ -92,8 +92,8 @@ The Page (DocumentElement)
 --------------------------
 
 Important object #3 is the Page, which you can get by calling ``$session->getPage()``.
-If the ``Session`` is your browser, then this object represents the HTML DOM 
-of the current page. You could also think of it as the jQuery object, because 
+If the ``Session`` is your browser, then this object represents the HTML DOM
+of the current page. You could also think of it as the jQuery object, because
 we'll use it to traverse down our page and find different elements.
 
 The tricky thing with the Page is that its an instance of ``DocumentElement``,
@@ -105,7 +105,7 @@ The easiest thing to do with the page is get its HTML or text. Let's use
 it to print out the beginning of the jurassicpark.wikia.com homepage::
 
     $page = $session->getPage();
- 
+
     echo "First 160 chars: ".substr($page->getText() , 0, 160) . "\n";
 
 Try the script again. Yea! We're killing it!
@@ -128,11 +128,11 @@ a ``NodeElement``, you can find more elements deeper inside of it::
 
     $spanEle = $anchorElement.find('css', 'span.emph');
 
-With all this new knowledge, let's find the sub-link beneath "On the Wiki" 
+With all this new knowledge, let's find the sub-link beneath "On the Wiki"
 and print its text::
 
     $element = $page->find('css', '.subnav-2 li a');
- 
+
     echo "The link text is: ". $element->getText() . "\n";
 
 When we run the file again, it prints out "Wiki Activity". And when we look at
@@ -180,11 +180,11 @@ it tries to find an anchor tag whose id matches ``Random page``, or which
 contains the text ``Random page``, or whose ``title`` attribute contains
 ``Random page``, or which contains an ``img`` tag whose ``alt`` attribute
 contains ``Random page`` and even more after that. Basically, this will
-find the anchor tag that matches the text in any possible way that we might imagine. 
-It's important because it's actually very "human" it allows us to find 
-elements using the same language as our users. For example, our user would never 
-say ``Click the anchor tag that is inside an element with class subnav-2``. 
-In reality, the user would say ``Click the "Random page" link``. The named 
+find the anchor tag that matches the text in any possible way that we might imagine.
+It's important because it's actually very "human" it allows us to find
+elements using the same language as our users. For example, our user would never
+say ``Click the anchor tag that is inside an element with class subnav-2``.
+In reality, the user would say ``Click the "Random page" link``. The named
 selector finds that element.
 
 Once you understand this, you'll love what's next. Both the ``DocumentElement``
@@ -216,7 +216,7 @@ Let's use this to click on the ``Random page`` link and print out the new
 URL on the next page::
 
     $element->click();
- 
+
     echo "Page URL after click: ". $session->getCurrentUrl() . "\n";
 
 Running Tests in JavaScript
@@ -230,7 +230,7 @@ To fix this, comment out the ``GoutteDriver``, and instead use the ``Selenium2Dr
 
     use Behat\Mink\Driver\GoutteDriver;
     use Behat\Mink\Driver\Selenium2Driver;
- 
+
     //$driver = new GoutteDriver();
     $driver = new Selenium2Driver;
 
@@ -240,9 +240,9 @@ the browser and ``stop`` closes it::
 
     $session = new Session($driver);
     $session->start();
-    
+
     // everything ...
-    
+
     $session->stop();
 
 Also, remove the status code line, as Selenium doesn't support getting the
