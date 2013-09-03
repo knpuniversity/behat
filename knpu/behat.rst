@@ -127,7 +127,7 @@ into a ``test/`` directory::
     /** @Then /^I should see "([^"]*)" in the output$/ */
     public function iShouldSeeInTheOutput($string)
     {
-        if (!array_search($string, $this->output)) {
+        if (array_search($string, $this->output) === false) {
             throw new \Exception(sprintf('Did not see "%s" in the output', $string));
         }
     }
