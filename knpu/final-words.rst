@@ -23,7 +23,7 @@ this, there are a number of things you'll need to think about.
 .. tip::
 
     We now have even more information on continuous integration, specifically
-    with Travis CI: :doc:`/screencast/question-answer-day/travis-ci`.
+    with Travis CI: `How to use Behat and Selenium on Travis CI`_
 
 First, you'll need a real database to be setup and configured for your application.
 
@@ -50,3 +50,4 @@ Until Next Time
 Ok, start testing! And we'll see you next time!
 
 .. _WebApiContext: https://github.com/Behat/CommonContexts/blob/master/Behat/CommonContexts/WebApiContext.php
+.. _`How to use Behat and Selenium on Travis CI`: http://knpuniversity.com/screencast/question-answer-day/travis-ci
