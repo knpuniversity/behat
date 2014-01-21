@@ -220,7 +220,7 @@ To see how this is possible, execute Behat, but pass a ``-dl`` option:
 
 .. code-block:: bash
 
-    $ php bin/behat --dl
+    $ php bin/behat -dl
 
 Behat's job is to read each line in the scenario and execute some function
 inside our ``FeatureContext`` class. Because we're using Mink, we inherit
