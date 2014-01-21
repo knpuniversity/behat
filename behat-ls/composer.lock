@@ -579,12 +579,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/BrowserKit",
-                "reference": "v2.2.0-BETA2"
+                "reference": "v2.2.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/BrowserKit/zipball/v2.2.0-BETA2",
-                "reference": "v2.2.0-BETA2",
+                "url": "https://api.github.com/repos/symfony/BrowserKit/zipball/v2.2.0",
+                "reference": "v2.2.0",
                 "shasum": ""
             },
             "require": {
@@ -676,17 +676,17 @@
         },
         {
             "name": "symfony/console",
-            "version": "v2.2.0-BETA2",
+            "version": "v2.2.0",
             "target-dir": "Symfony/Component/Console",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Console",
-                "reference": "v2.2.0-BETA2"
+                "reference": "v2.2.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/symfony/Console/archive/v2.2.0-BETA2.zip",
-                "reference": "v2.2.0-BETA2",
+                "url": "https://github.com/symfony/Console/archive/v2.2.0.zip",
+                "reference": "v2.2.0",
                 "shasum": ""
             },
             "require": {
@@ -765,17 +765,17 @@
         },
         {
             "name": "symfony/dependency-injection",
-            "version": "v2.2.0-BETA2",
+            "version": "v2.2.0",
             "target-dir": "Symfony/Component/DependencyInjection",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/DependencyInjection",
-                "reference": "v2.2.0-BETA2"
+                "reference": "v2.2.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/symfony/DependencyInjection/archive/v2.2.0-BETA2.zip",
-                "reference": "v2.2.0-BETA2",
+                "url": "https://github.com/symfony/DependencyInjection/archive/v2.2.0.zip",
+                "reference": "v2.2.0",
                 "shasum": ""
             },
             "require": {
@@ -825,12 +825,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/DomCrawler",
-                "reference": "v2.2.0-BETA2"
+                "reference": "v2.2.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/DomCrawler/zipball/v2.2.0-BETA2",
-                "reference": "v2.2.0-BETA2",
+                "url": "https://api.github.com/repos/symfony/DomCrawler/zipball/v2.2.0",
+                "reference": "v2.2.0",
                 "shasum": ""
             },
             "require": {
@@ -873,17 +873,17 @@
         },
         {
             "name": "symfony/event-dispatcher",
-            "version": "v2.2.0-BETA2",
+            "version": "v2.2.0",
             "target-dir": "Symfony/Component/EventDispatcher",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/EventDispatcher",
-                "reference": "v2.2.0-BETA2"
+                "reference": "v2.2.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/symfony/EventDispatcher/archive/v2.2.0-BETA2.zip",
-                "reference": "v2.2.0-BETA2",
+                "url": "https://github.com/symfony/EventDispatcher/archive/v2.2.0.zip",
+                "reference": "v2.2.0",
                 "shasum": ""
             },
             "require": {
@@ -927,17 +927,17 @@
         },
         {
             "name": "symfony/finder",
-            "version": "v2.2.0-BETA2",
+            "version": "v2.2.0",
             "target-dir": "Symfony/Component/Finder",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Finder",
-                "reference": "v2.2.0-BETA2"
+                "reference": "v2.2.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/symfony/Finder/archive/v2.2.0-BETA2.zip",
-                "reference": "v2.2.0-BETA2",
+                "url": "https://github.com/symfony/Finder/archive/v2.2.0.zip",
+                "reference": "v2.2.0",
                 "shasum": ""
             },
             "require": {
@@ -974,17 +974,17 @@
         },
         {
             "name": "symfony/process",
-            "version": "v2.2.0-BETA2",
+            "version": "v2.2.0",
             "target-dir": "Symfony/Component/Process",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Process",
-                "reference": "v2.2.0-BETA2"
+                "reference": "v2.2.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/symfony/Process/archive/v2.2.0-BETA2.zip",
-                "reference": "v2.2.0-BETA2",
+                "url": "https://github.com/symfony/Process/archive/v2.2.0.zip",
+                "reference": "v2.2.0",
                 "shasum": ""
             },
             "require": {
@@ -1021,17 +1021,17 @@
         },
         {
             "name": "symfony/translation",
-            "version": "v2.2.0-BETA2",
+            "version": "v2.2.0",
             "target-dir": "Symfony/Component/Translation",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Translation",
-                "reference": "v2.2.0-BETA2"
+                "reference": "v2.2.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/symfony/Translation/archive/v2.2.0-BETA2.zip",
-                "reference": "v2.2.0-BETA2",
+                "url": "https://github.com/symfony/Translation/archive/v2.2.0.zip",
+                "reference": "v2.2.0",
                 "shasum": ""
             },
             "require": {
@@ -1076,17 +1076,17 @@
         },
         {
             "name": "symfony/yaml",
-            "version": "v2.2.0-BETA2",
+            "version": "v2.2.0",
             "target-dir": "Symfony/Component/Yaml",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Yaml",
-                "reference": "v2.2.0-BETA2"
+                "reference": "v2.2.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/symfony/Yaml/archive/v2.2.0-BETA2.zip",
-                "reference": "v2.2.0-BETA2",
+                "url": "https://github.com/symfony/Yaml/archive/v2.2.0.zip",
+                "reference": "v2.2.0",
                 "shasum": ""
             },
             "require": {
