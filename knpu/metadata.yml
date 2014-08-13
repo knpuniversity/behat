@@ -1,5 +1,4 @@
 title:  BDD, Behat, Mink and other Wonderful Things
-price:  12
 length: 1:14:43
 summary: |
     Ready to revolutionize how you develop? In this tutorial, you'll internalize Behavior-Driven Development and how thinking
@@ -11,9 +10,6 @@ summary: |
     
     Behat works great with any PHP project, but if you're using Symfony2, we'll give you some special tips to get you rolling.
 illustration: behat.png
-priority: 95
-tags:
-    - { name: php }
 
 chapters:
     intro:
