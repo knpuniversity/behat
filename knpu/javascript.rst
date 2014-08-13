@@ -22,7 +22,16 @@ scenario. Remember to use as many of our built-in definitions as possible.
       Then I should see "Tyrannosaurus"
 
 Since we're about to use Selenium2, make sure you've started the Selenium2
-server, which is the JAR file we downloaded :ref:`earlier<behat-download-selenium>`.
+server, which is the JAR file we downloaded :ref:`earlier<behat-download-selenium>`:
+
+.. code-block:: bash
+
+    cd /path/to/downloads
+    java -jar selenium-server-standalone-2.XX.X.jar
+
+.. tip::
+
+    Replace XX.X with the real numbers in the file you downloaded.
 
 To run the scenario in JavaScript, just add a ``javascript`` tag above the
 scenario.
