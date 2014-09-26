@@ -24,41 +24,25 @@ chapters:
         video_key:  zbbwx334o7
     gherkin:
         title:      Gherkin
-        is_free:    false
-        length:     6:46
         video_key:  fndtcnvlso
     behat:
         title:      Behat
-        is_free:    false
-        length:     6:48
         video_key:  wiz7kul1m1
     mink:
         title:      Mink!
-        is_free:    false
-        length:     10:55
         video_key:  o8fn6ruulp
     mink-behat:
         title:      Behat and Mink
-        is_free:    false
-        length:     13:56
         video_key:  a82hifdfyu
     javascript:
         title:      JavaScript
-        is_free:    false
-        length:     2:13
         video_key:  t5e2wdsbei
     in-your-application:
         title:      You bet your Sweet App
-        is_free:    false
-        length:     10:14
         video_key:  tbb4r297cf
     other-fun-stuff:
         title:      The fun stuff Chapter
-        is_free:    false
-        length:     11:17
         video_key:  3gjn0a4h20
     final-words:
         title:      Get Testing!
-        is_free:    false
-        length:     1:34
         video_key:  2gtu7wcrnf
