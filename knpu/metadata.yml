@@ -10,6 +10,7 @@ summary: |
     
     Behat works great with any PHP project, but if you're using Symfony2, we'll give you some special tips to get you rolling.
 illustration: behat.png
+videoDownloadExtension: mov
 
 chapters:
     intro:
