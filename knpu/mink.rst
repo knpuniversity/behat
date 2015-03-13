@@ -269,5 +269,5 @@ you've found the element you need, do something with it - like calling the
 ``click`` method or getting its text via ``getText``.
 
 
-.. _`Mink API docs`: http://mink.behat.org/api/
+.. _`Mink API docs`: http://web.archive.org/web/20140701093815/http://mink.behat.org/api/
 .. _Goutte: https://github.com/fabpot/Goutte

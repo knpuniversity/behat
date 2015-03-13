@@ -408,6 +408,6 @@ And just like with the Gherkin scenarios, there is no difference between
 using ``Given``, ``When`` or ``Then``: use whichever one sounds most natural
 to you.
 
-.. _`MinkExtension Documentation Page`: http://extensions.behat.org/mink/
-.. _`its documentation`: http://extensions.behat.org/mink/#additional-parameters
-.. _`Extension`: https://github.com/Behat/MinkExtension/blob/master/src/Behat/MinkExtension/Extension.php#L132
+.. _`MinkExtension Documentation Page`: https://github.com/Behat/MinkExtension/blob/master/doc/index.rst
+.. _`its documentation`: https://github.com/Behat/MinkExtension/blob/master/doc/index.rst#additional-parameters
+.. _`Extension`: https://github.com/Behat/MinkExtension/blob/1.3/src/Behat/MinkExtension/Extension.php#L173

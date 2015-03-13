@@ -288,5 +288,5 @@ except those with a tag, or any other logical combination you can think of:
 
     ./bin/behat --tags=list
 
-.. _`Behatch Contexts`: http://extensions.behat.org/behatch-contexts/
-.. _source code: https://github.com/sanpii/behatch-contexts
+.. _`Behatch Contexts`: https://github.com/Behatch/contexts
+.. _source code: https://github.com/Behatch/contexts

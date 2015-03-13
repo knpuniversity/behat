@@ -274,9 +274,9 @@ to do really complex Browser tasks, and much more. So, keep going!
 .. _`free course`: http://bit.ly/KnpU-Composer
 .. _`gist`: http://bit.ly/behat-mink-composer
 .. _`download Composer`: http://getcomposer.org/download/
-.. _`Symfony2 Extension`: http://extensions.behat.org/symfony2/
+.. _`Symfony2 Extension`: https://github.com/Behat/Symfony2Extension
 .. _`Configuration - behat.yml`: http://docs.behat.org/guides/7.config.html
-.. _`MinkExtension`: http://extensions.behat.org/mink/
+.. _`MinkExtension`: https://github.com/Behat/MinkExtension
 .. _`Gherkin`: http://docs.behat.org/guides/1.gherkin.html
 .. _`Goutte`: https://github.com/fabpot/Goutte
 .. _`download Selenium Server`: http://seleniumhq.org/download/
