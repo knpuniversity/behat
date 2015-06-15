@@ -327,4 +327,5 @@ To make this easier, copy this file to ``behat.local.yml.dist``.
 This new file has no functional purpose, but you can use it to create the local
 file when you setup the project.
 
-.. _Symfony2Extension: http://extensions.behat.org/symfony2/
+.. _Symfony2Extension: https://github.com/Behat/Symfony2Extension
+
