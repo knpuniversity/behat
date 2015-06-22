@@ -213,7 +213,7 @@ possible, using "is published" and "yes" or "no" instead of "true" or "false"::
                 15.99
             );
 
-            if ($productData['is _published']) {
+            if ($productData['is published']) {
                 $product->isPublished = true;
             }
 
