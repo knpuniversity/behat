@@ -16,7 +16,7 @@ It fails of course, but it's not really obvious why.
 
 Whenever you have a failure that you need to debug, use a special built-in
 step called "print last response". If you forget the wording for this step,
-just re-un ``bin/behat -dl`` - you'll find it near the bottom. Place this
+just re-run ``bin/behat -dl`` - you'll find it near the bottom. Place this
 step just above the one that fails and re-run your test:
 
 .. code-block:: gherkin
