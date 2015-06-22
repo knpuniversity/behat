@@ -258,7 +258,7 @@ you want to run:
 .. tip::
 
     If you're using Symfony2 and the Symfony2Extension, use the syntax
-    ``./bin/beat @SomeBundle/product.feature``.
+    ``./bin/behat @SomeBundle/product.feature``.
 
 To execute only a single scenario, just find the line number where the scenario
 starts, and add that to the end of the command:
