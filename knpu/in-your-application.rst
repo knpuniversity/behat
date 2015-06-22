@@ -73,7 +73,7 @@ Preparing Data
 One of the most complex issues with testing is dealing with
 and controlling the data you test with. If you're testing against an external
 server, you may not be able to control your data at all. In this case, you'll
-have to be a bit more careful and clever about how your write your tests.
+have to be a bit more careful and clever about how you write your tests.
 Fortunately, since we're on the same server as our application, we'll have
 full control over our data.
 
