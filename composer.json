@@ -1,0 +1,10 @@
+{
+    "name": "knpuniversity/behat",
+    "authors": [
+        {
+            "name": "Ryan Weaver",
+            "email": "ryan@thatsquality.com"
+        }
+    ],
+    "require": {}
+}
