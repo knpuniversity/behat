@@ -1,59 +1,30 @@
 <?php
 
-namespace RaptorStore;
+namespace AppBundle;
 
-use Doctrine\DBAL\Connection;
-use Doctrine\DBAL\Schema\Table;
+use AppBundle\Entity\Product;
+use AppBundle\Entity\User;
+use Doctrine\ORM\EntityManager;
+use Doctrine\ORM\Tools\SchemaTool;
 
 /**
  * Handles rebuilding our database tables
  */
 class SchemaManager
 {
-    private $conn;
+    private $em;
 
-    private $productRepository;
-
-    private $userRepository;
-
-    public function __construct(Connection $conn, ProductRepository $productRepository, UserRepository $userRepository)
+    public function __construct(EntityManager $em)
     {
-        $this->conn = $conn;
-        $this->productRepository = $productRepository;
-        $this->userRepository = $userRepository;
+        $this->em = $em;
     }
 
-    /**
-     * Drops the tables and rebuilds them
-     */
     public function rebuildSchema()
     {
-        $schemaManager = $this->conn->getSchemaManager();
-
-        $productTable = new Table('product');
-        $productTable->addColumn("id", "integer", array("unsigned" => true, 'autoincrement' => true));
-        $productTable->addColumn("name", "string", array("length" => 255));
-        $productTable->addColumn('author_id', 'integer', array('notNull' => false));
-        $productTable->addColumn("description", "text", array('notNull' => false));
-        $productTable->addColumn("price", "decimal", array('scale' => 2, 'notNull' => false));
-        $productTable->addColumn("is_published", "boolean");
-        $productTable->addColumn('created_at', 'datetime');
-        $productTable->setPrimaryKey(array("id"));
-        $schemaManager->dropAndCreateTable($productTable);
-
-        $userTable = new Table('user');
-        $userTable->addColumn('id', 'integer', array('unsigned' => true, 'autoincrement' => true));
-        $userTable->setPrimaryKey(array('id'));
-        $userTable->addColumn('username', 'string', array('length' => 32));
-        $userTable->addUniqueIndex(array('username'));
-        $userTable->addColumn('password', 'string', array('length' => 255));
-        $userTable->addColumn('roles', 'string', array('length' => 255));
-        $userTable->addColumn('created_at', 'datetime');
-
-        // add an author_id to product
-        $productTable->addForeignKeyConstraint($userTable, array('author_id'), array('id'));
-
-        $schemaManager->dropAndCreateTable($userTable);
+        $metadatas = $this->em->getMetadataFactory()->getAllMetadata();
+        $tool = new SchemaTool($this->em);
+        $tool->dropSchema($metadatas);
+        $tool->updateSchema($metadatas, false);
     }
 
     public function loadFixtures()
@@ -64,7 +35,7 @@ class SchemaManager
 
     private function loadProducts(User $defaultAuthor)
     {
-        $this->productRepository->emptyTable();
+        $this->em->createQuery('DELETE FROM AppBundle:Product');
 
         $product1 = new Product();
         $product1->name = 'Kindle Fire HD 7';
@@ -87,9 +58,10 @@ class SchemaManager
         $product3->price = '2497.99';
         $product3->isPublished = false;
 
-        $this->productRepository->insert($product1);
-        $this->productRepository->insert($product2);
-        $this->productRepository->insert($product3);
+        $this->em->persist($product1);
+        $this->em->persist($product2);
+        $this->em->persist($product3);
+        $this->em->flush();
     }
 
     /**
@@ -97,14 +69,15 @@ class SchemaManager
      */
     private function loadUsers()
     {
-        $this->userRepository->emptyTable();
+        $this->em->createQuery('DELETE FROM AppBundle:Product');
 
         $user = new User();
         $user->username = 'admin';
         $user->plainPassword = 'admin';
         $user->roles = array('ROLE_ADMIN');
 
-        $this->userRepository->insert($user);
+        $this->em->persist($user);
+        $this->em->flush();
 
         return $user;
     }

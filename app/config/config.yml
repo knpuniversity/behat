@@ -1,0 +1,53 @@
+services:
+    schema_manager:
+        class: AppBundle\SchemaManager
+        arguments: ['@doctrine.orm.entity_manager']
+
+    user_repository:
+        class: AppBundle\Repository\UserRepository
+        factory: ['@doctrine.orm.entity_manager', getRepository]
+        arguments: [AppBundle:User]
+
+    doctrine.user_password_encoder_listener:
+        class: AppBundle\Doctrine\UserPasswordEncoderListener
+        arguments: ['@security.user_password_encoder.generic']
+        tags:
+            - { name: doctrine.event_listener, event: prePersist }
+            - { name: doctrine.event_listener, event: preUpdate }
+
+framework:
+    secret: Behat3ecretApp
+    router:
+        resource: '%kernel.root_dir%/config/routing.yml'
+    templating:
+        engines: [twig]
+    profiler:
+        enabled: %kernel.debug%
+    session: ~
+
+doctrine:
+    dbal:
+        driver:   pdo_sqlite
+        path:     %kernel.root_dir%/app.db
+    orm:
+        auto_mapping: true
+        auto_generate_proxy_classes: "%kernel.debug%"
+        naming_strategy: doctrine.orm.naming_strategy.underscore
+security:
+    encoders:
+        AppBundle\Entity\User: bcrypt
+
+    providers:
+        main:
+            id: user_repository
+
+    firewalls:
+        main:
+            anonymous: true
+            form_login:
+                login_path: /login
+                check_path: /admin/login_check
+            logout:
+                path: /admin/logout
+    access_control:
+        - { path: ^/admin, roles: ROLE_ADMIN }
