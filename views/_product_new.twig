@@ -1,0 +1,26 @@
+<form action="/products/new" method="POST" class="form-horizontal">
+
+    <fieldset>
+        <legend>New Product</legend>
+        <div class="control-group">
+            <label class="control-label" for="article-name">Name</label>
+            <div class="controls">
+                <input type="text" class="input-xlarge" id="article-name" name="name" />
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="article-price">Price</label>
+            <div class="controls">
+                <input type="text" class="input-xlarge" id="article-price" name="price" />
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="article-body">Body</label>
+            <div class="controls">
+                <textarea class="input-xlarge" id="article-body" name="body"></textarea>
+            </div>
+        </div>
+    </fieldset>
+
+    <button type="submit" class="btn btn-primary pull-right">Save</button>
+</form>

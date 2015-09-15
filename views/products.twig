@@ -1,0 +1,54 @@
+{% extends 'layout.twig' %}
+
+{% block body %}
+    <h1>Published Products</h1>
+
+    <a href="{{ path('product_new') }}" class="btn add-new-product pull-right" style="margin-right: 10px;">
+        <i class="icon-plus-sign"></i> New Product
+    </a>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Author</th>
+                <th>Is Published?</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for product in products %}
+            <tr>
+                <td>{{ product.name }}</td>
+                <td>${{ product.price|number_format(2) }}</td>
+                <td>
+                    {{ product.author|default('Anonymous') }}
+                </td>
+                <td><i class="icon-{{ product.isPublished ? 'ok' : 'remove' }}"></i></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('.add-new-product').on('click', function(e) {
+                e.preventDefault();
+
+                var $modalContentHolder = $('#modal-content-holder');
+
+                jQuery.ajax({
+                    'url': $(this).attr('href'),
+                    'success': function(content) {
+                        $modalContentHolder.find('.modal-body').html(content);
+                        $modalContentHolder.modal();
+                    }
+                });
+            });
+        });
+    </script>
+{% endblock %}
