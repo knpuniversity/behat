@@ -16,4 +16,17 @@ class ProductRepository extends EntityRepository
             'isPublished' => true
         ));
     }
+
+    /**
+     * @param string $term
+     * @return Product[]
+     */
+    public function search($term)
+    {
+        return $this->createQueryBuilder('p')
+            ->andWhere('p.name LIKE :term')
+            ->setParameter('term', '%'.$term.'%')
+            ->getQuery()
+            ->execute();
+    }
 }

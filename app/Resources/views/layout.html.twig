@@ -32,6 +32,12 @@
 
                     <ul class="nav pull-right">
                         <li>
+                            <form action="{{ path('product_search') }}">
+                                <input type="text" class="input-control" name="searchTerm" />
+                                <button id="search_submit"><i class="icon icon-search"></i></button>
+                            </form>
+                        </li>
+                        <li>
                             <a href="http://knpuniversity.com">KnpUniversity.com</a>
                         </li>
                     </ul>

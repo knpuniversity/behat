@@ -25,6 +25,23 @@ class ProductController extends Controller
     }
 
     /**
+     * @Route("/products", name="product_search")
+     */
+    public function searchAction(Request $request)
+    {
+        $term = $request->query->get('searchTerm');
+
+        $products = $this->getDoctrine()
+            ->getRepository('AppBundle:Product')
+            ->search($term);
+
+        return $this->render('product/list.html.twig', [
+            'products' => $products,
+            'term' => $term
+        ]);
+    }
+
+    /**
      * @Route("/admin/products/new", name="product_new")
      * @Method("GET")
      */
