@@ -1,0 +1,15 @@
+{
+    "steps": [
+        {
+            "id": "start",
+            "name": "start",
+            "description": null
+        },
+        {
+            "id": "bootstrap-install-and-bootstrap",
+            "name": "Bootstrap: Install and bootstrap",
+            "description": null
+        }
+    ],
+    "sha": "8e8cca8ead23d87ae39ede36f07558e429fcfa23"
+}
