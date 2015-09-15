@@ -1,6 +1,6 @@
 <?php
 
-namespace AppBundle;
+namespace AppBundle\Doctrine;
 
 use AppBundle\Entity\Product;
 use AppBundle\Entity\User;

@@ -1,6 +1,6 @@
 services:
     schema_manager:
-        class: AppBundle\SchemaManager
+        class: AppBundle\Doctrine\SchemaManager
         arguments: ['@doctrine.orm.entity_manager']
 
     user_repository:
