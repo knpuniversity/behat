@@ -1,0 +1,33 @@
+diff --git a/features/delicious_humans.feature b/features/delicious_humans.feature
+deleted file mode 100644
+index 1fb9877..0000000
+--- a/features/delicious_humans.feature
++++ /dev/null
+@@ -1,4 +0,0 @@
+-Feature: Delicious humans
+-  In order to be entertained
+-  As a dinosaur
+-  I need to be able to watch delicious humans pass by me all day
+diff --git a/features/product_admin.feature b/features/product_admin.feature
+index c26ad9f..1ce4516 100644
+--- a/features/product_admin.feature
++++ b/features/product_admin.feature
+@@ -2,3 +2,18 @@ Feature: Product admin panel
+   In order to maintain the products shown on the site
+   As an admin
+   I need to be able to add/edit/delete products
++
++  Scenario: List available products
++    Given there are 5 products
++    And I am on "/admin"
++    When I click "Products"
++    Then I should see 5 products
++
++  Scenario: Add a new product
++    Given I am on "/admin/products"
++    When I click "New Product"
++    And I fill in "Name" with "Veloci-chew toy"
++    And I fill in "Price" with "20"
++    And I fill in "Description" with "Have your velociraptor chew on this instead!"
++    And I press "Save"
++    Then I should see "Product created FTW!"

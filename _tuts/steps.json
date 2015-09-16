@@ -9,7 +9,37 @@
             "id": "bootstrap-install-and-bootstrap",
             "name": "Bootstrap: Install and bootstrap",
             "description": null
+        },
+        {
+            "id": "bootstrap-first-feature-scenario",
+            "name": "Bootstrap: First feature\/scenario",
+            "description": null
+        },
+        {
+            "id": "bootstrap-extending-minkcontext",
+            "name": "Bootstrap: Extending MinkContext",
+            "description": null
+        },
+        {
+            "id": "bootstrap-run-in-selenium2",
+            "name": "Bootstrap: Run in Selenium2",
+            "description": null
+        },
+        {
+            "id": "gherkin-initial-features",
+            "name": "Gherkin: Initial features",
+            "description": null
+        },
+        {
+            "id": "gherkin-adding-bad-feature",
+            "name": "Gherkin: Adding bad feature",
+            "description": null
+        },
+        {
+            "id": "gherkin-adding-product-scenarios",
+            "name": "Gherkin: Adding product scenarios",
+            "description": null
         }
     ],
-    "sha": "8e8cca8ead23d87ae39ede36f07558e429fcfa23"
+    "sha": "4ee79b43672619b68f0541a9394dbea518ee3052"
 }

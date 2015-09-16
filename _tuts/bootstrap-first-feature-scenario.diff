@@ -1,0 +1,16 @@
+diff --git a/features/search.feature b/features/search.feature
+new file mode 100644
+index 0000000..85fc3ff
+--- /dev/null
++++ b/features/search.feature
+@@ -0,0 +1,10 @@
++Feature: Search
++  In order to find products dinosaurs love
++  As a website user
++  I need to be able to search for products
++
++  Scenario: Search for a word that exists
++    Given I am on "/"
++    When I fill in "searchTerm" with "Samsung"
++    And I press "search_submit"
++    Then I should see "Samsung Galaxy S II"

@@ -1,0 +1,30 @@
+diff --git a/features/authentication.feature b/features/authentication.feature
+new file mode 100644
+index 0000000..5c834bc
+--- /dev/null
++++ b/features/authentication.feature
+@@ -0,0 +1,4 @@
++Feature: Authentication
++  In order to gain access to the site management area
++  As an admin
++  I need to be able to login and logout
+diff --git a/features/fence_api.feature b/features/fence_api.feature
+new file mode 100644
+index 0000000..47905a6
+--- /dev/null
++++ b/features/fence_api.feature
+@@ -0,0 +1,4 @@
++Feature: Remote control fence API
++  In order to control fence security from anywhere
++  As an API user
++  I need to be able to POST JSON instructions that turn fences on/off
+diff --git a/features/product_admin.feature b/features/product_admin.feature
+new file mode 100644
+index 0000000..c26ad9f
+--- /dev/null
++++ b/features/product_admin.feature
+@@ -0,0 +1,4 @@
++Feature: Product admin panel
++  In order to maintain the products shown on the site
++  As an admin
++  I need to be able to add/edit/delete products
