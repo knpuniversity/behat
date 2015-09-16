@@ -8,7 +8,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Request;
 
-class ProductController extends Controller
+class ProductAdminController extends Controller
 {
     /**
      * @Route("/admin/products", name="product_list")
