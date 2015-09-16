@@ -23,6 +23,10 @@ class ProductRepository extends EntityRepository
      */
     public function search($term)
     {
+        if (!$term) {
+            return $this->findAll();
+        }
+
         return $this->createQueryBuilder('p')
             ->andWhere('p.name LIKE :term')
             ->setParameter('term', '%'.$term.'%')

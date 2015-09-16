@@ -7,6 +7,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Doctrine\ORM\EntityManager;
+use Symfony\Component\HttpFoundation\Request;
 
 class MainController extends Controller
 {
@@ -15,8 +16,32 @@ class MainController extends Controller
      */
     public function homepageAction()
     {
-        return $this->render('main/homepage.html.twig');
+        $products = $this->getDoctrine()
+            ->getRepository('AppBundle:Product')
+            ->search('');
+
+        return $this->render('main/homepage.html.twig', [
+            'products' => $products
+        ]);
     }
+
+    /**
+     * @Route("/search", name="product_search")
+     */
+    public function searchAction(Request $request)
+    {
+        $search = $request->query->get('searchTerm');
+
+        $products = $this->getDoctrine()
+            ->getRepository('AppBundle:Product')
+            ->search($search);
+
+        return $this->render('main/homepage.html.twig', [
+            'products' => $products,
+            'search' => $search
+        ]);
+    }
+
 
     /**
      * @Route("/admin", name="admin")

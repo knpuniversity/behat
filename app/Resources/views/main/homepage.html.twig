@@ -3,5 +3,32 @@
 {% block sidebar %}{% endblock %}
 
 {% block body %}
-    <h1>Welcome!</h1>
+    <h1>
+        Welcome!
+    </h1>
+
+    <h2>
+        {% if search %}
+            Products matching "{{ search }}"
+        {% else %}
+            View all of our products
+        {% endif %}
+    </h2>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for product in products %}
+            <tr>
+                <td>{{ product.name }}</td>
+                <td>${{ product.price|number_format(2) }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
 {% endblock %}

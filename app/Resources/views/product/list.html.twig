@@ -2,12 +2,7 @@
 
 {% block body %}
     <h1>
-        {% if term is defined %}
-            Search for <strong>{{ term }}</strong>
-        {% else %}
-            All Products
-        {% endif %}
-
+        Product Admin Area
     </h1>
 
     <a href="{{ path('product_new') }}" class="btn add-new-product pull-right" style="margin-right: 10px;">
