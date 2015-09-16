@@ -1,0 +1,40 @@
+diff --git a/features/bootstrap/FeatureContext.php b/features/bootstrap/FeatureContext.php
+index eea5cd7..541c2ec 100644
+--- a/features/bootstrap/FeatureContext.php
++++ b/features/bootstrap/FeatureContext.php
+@@ -22,8 +22,6 @@ class FeatureContext extends MinkContext implements Context, SnippetAcceptingCon
+      */
+     public function __construct()
+     {
+-        mkdir('test');
+-        chdir('test');
+     }
+ 
+     /**
+@@ -51,4 +49,26 @@ class FeatureContext extends MinkContext implements Context, SnippetAcceptingCon
+             throw new \Exception(sprintf('Did not see "%s" in output "%s"', $string, $this->output));
+         }
+     }
++
++    /**
++     * @BeforeScenario
++     */
++    public function moveIntoTestDir()
++    {
++        if (!is_dir('test')) {
++            mkdir('test');
++        }
++        chdir('test');
++    }
++
++    /**
++     * @AfterScenario
++     */
++    public function moveOutOfTestDir()
++    {
++        chdir('..');
++        if (is_dir('test')) {
++            system('rm -r '.realpath('test'));
++        }
++    }
+ }

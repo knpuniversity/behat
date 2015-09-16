@@ -39,7 +39,47 @@
             "id": "gherkin-adding-product-scenarios",
             "name": "Gherkin: Adding product scenarios",
             "description": null
+        },
+        {
+            "id": "behat-ls-scenario-defns",
+            "name": "Behat: ls scenario+defns",
+            "description": null
+        },
+        {
+            "id": "behat-fill-in-easy-defns",
+            "name": "Behat: Fill in easy defns",
+            "description": null
+        },
+        {
+            "id": "behat-store-output-on-property",
+            "name": "Behat: Store output on property",
+            "description": null
+        },
+        {
+            "id": "hooks-use-construct",
+            "name": "Hooks: Use __construct",
+            "description": null
+        },
+        {
+            "id": "hooks-before-afterscenario",
+            "name": "Hooks: Before\/AfterScenario",
+            "description": null
+        },
+        {
+            "id": "phpunit-install-and-use-assert-functions",
+            "name": "PhpUnit: Install and use assert functions",
+            "description": null
+        },
+        {
+            "id": "behat-ls-dir-scenario",
+            "name": "Behat: ls dir scenario",
+            "description": null
+        },
+        {
+            "id": "behat-use-background",
+            "name": "Behat: Use background",
+            "description": null
         }
     ],
-    "sha": "4ee79b43672619b68f0541a9394dbea518ee3052"
+    "sha": "8151dbd4493645bebee1673f3d362c0901519f9d"
 }

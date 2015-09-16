@@ -1,0 +1,34 @@
+diff --git a/features/bootstrap/FeatureContext.php b/features/bootstrap/FeatureContext.php
+index a71e959..cba8fca 100644
+--- a/features/bootstrap/FeatureContext.php
++++ b/features/bootstrap/FeatureContext.php
+@@ -11,6 +11,8 @@ use Behat\MinkExtension\Context\MinkContext;
+  */
+ class FeatureContext extends MinkContext implements Context, SnippetAcceptingContext
+ {
++    private $output;
++
+     /**
+      * Initializes context.
+      *
+@@ -35,14 +37,16 @@ class FeatureContext extends MinkContext implements Context, SnippetAcceptingCon
+      */
+     public function iRun($command)
+     {
+-        shell_exec($command);
++        $this->output = shell_exec($command);
+     }
+ 
+     /**
+-     * @Then I should see :arg1 in the output
++     * @Then I should see :string in the output
+      */
+-    public function iShouldSeeInTheOutput($arg1)
++    public function iShouldSeeInTheOutput($string)
+     {
+-        throw new PendingException();
++        if (strpos($this->output, $string) === false) {
++            throw new \Exception(sprintf('Did not see "%s" in output "%s"', $string, $this->output));
++        }
+     }
+ }

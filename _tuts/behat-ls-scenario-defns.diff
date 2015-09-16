@@ -1,0 +1,50 @@
+diff --git a/features/bootstrap/FeatureContext.php b/features/bootstrap/FeatureContext.php
+index 40278e0..18066c5 100644
+--- a/features/bootstrap/FeatureContext.php
++++ b/features/bootstrap/FeatureContext.php
+@@ -21,4 +21,28 @@ class FeatureContext extends MinkContext implements Context, SnippetAcceptingCon
+     public function __construct()
+     {
+     }
++
++    /**
++     * @Given I have a file named :arg1
++     */
++    public function iHaveAFileNamed($arg1)
++    {
++        throw new PendingException();
++    }
++
++    /**
++     * @When I run :arg1
++     */
++    public function iRun($arg1)
++    {
++        throw new PendingException();
++    }
++
++    /**
++     * @Then I should see :arg1 in the output
++     */
++    public function iShouldSeeInTheOutput($arg1)
++    {
++        throw new PendingException();
++    }
+ }
+diff --git a/features/ls.feature b/features/ls.feature
+new file mode 100644
+index 0000000..729331b
+--- /dev/null
++++ b/features/ls.feature
+@@ -0,0 +1,11 @@
++Feature: ls
++  In order to see the directory structure
++  As a UNIX user
++  I need to be able to list the current directory's contents
++
++  Scenario: List 2 files in a directory
++    Given I have a file named "john"
++    And I have a file named "hammond"
++    When I run "ls"
++    Then I should see "john" in the output
++    And I should see "hammond" in the output

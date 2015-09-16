@@ -1,0 +1,32 @@
+diff --git a/features/bootstrap/FeatureContext.php b/features/bootstrap/FeatureContext.php
+index dc07a73..ab5995e 100644
+--- a/features/bootstrap/FeatureContext.php
++++ b/features/bootstrap/FeatureContext.php
+@@ -75,4 +75,12 @@ class FeatureContext extends MinkContext implements Context, SnippetAcceptingCon
+             system('rm -r '.realpath('test'));
+         }
+     }
++
++    /**
++     * @Given I have a dir named :dirName
++     */
++    public function iHaveADirNamed($dirName)
++    {
++        mkdir($dirName);
++    }
+ }
+diff --git a/features/ls.feature b/features/ls.feature
+index 729331b..652ae5f 100644
+--- a/features/ls.feature
++++ b/features/ls.feature
+@@ -9,3 +9,10 @@ Feature: ls
+     When I run "ls"
+     Then I should see "john" in the output
+     And I should see "hammond" in the output
++
++  Scenario: List 1 file and 1 directory
++    Given I have a file named "john"
++    And I have a dir named "ingen"
++    When I run "ls"
++    Then I should see "john" in the output
++    And I should see "ingen" in the output
