@@ -46,8 +46,8 @@ class UserPasswordEncoderListener
 
     private function encodePassword(User $user)
     {
-        if ($user->plainPassword) {
-            $user->password = $this->encoder->encodePassword($user, $user->plainPassword);
+        if ($user->getPlainPassword()) {
+            $user->setPassword($this->encoder->encodePassword($user, $user->getPlainPassword()));
         }
     }
 }
