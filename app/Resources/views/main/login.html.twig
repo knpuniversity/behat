@@ -4,7 +4,7 @@
     <form action="{{ path('admin_login_check') }}" method="POST" class="form-horizontal">
         {% if error %}
             <div class="alert alert-error">
-                {{ error }}
+                {{ error.messageKey }}
             </div>
         {% endif %}
 
