@@ -1,0 +1,46 @@
+diff --git a/behat.yml b/behat.yml
+index 8a61cbf..625f379 100644
+--- a/behat.yml
++++ b/behat.yml
+@@ -1,4 +1,9 @@
+ default:
++    suites:
++        default:
++            contexts:
++                - FeatureContext
++                - Behat\MinkExtension\Context\MinkContext
+     extensions:
+         Behat\MinkExtension:
+             base_url: http://localhost:8000
+diff --git a/features/bootstrap/FeatureContext.php b/features/bootstrap/FeatureContext.php
+index ab5995e..9671fbc 100644
+--- a/features/bootstrap/FeatureContext.php
++++ b/features/bootstrap/FeatureContext.php
+@@ -4,14 +4,13 @@ use Behat\Behat\Context\Context;
+ use Behat\Behat\Context\SnippetAcceptingContext;
+ use Behat\Gherkin\Node\PyStringNode;
+ use Behat\Gherkin\Node\TableNode;
+-use Behat\MinkExtension\Context\MinkContext;
+ 
+ require_once __DIR__.'/../../vendor/phpunit/phpunit/src/Framework/Assert/Functions.php';
+ 
+ /**
+  * Defines application features from the specific context.
+  */
+-class FeatureContext extends MinkContext implements Context, SnippetAcceptingContext
++class FeatureContext implements Context, SnippetAcceptingContext
+ {
+     private $output;
+ 
+diff --git a/features/search.feature b/features/search.feature
+index 41e00b2..85fc3ff 100644
+--- a/features/search.feature
++++ b/features/search.feature
+@@ -3,7 +3,6 @@ Feature: Search
+   As a website user
+   I need to be able to search for products
+ 
+-  @javascript
+   Scenario: Search for a word that exists
+     Given I am on "/"
+     When I fill in "searchTerm" with "Samsung"

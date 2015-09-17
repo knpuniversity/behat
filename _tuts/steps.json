@@ -134,7 +134,22 @@
             "id": "mink-using-selenium2driver",
             "name": "Mink: Using Selenium2Driver",
             "description": null
+        },
+        {
+            "id": "web-minkcontext-via-suite",
+            "name": "Web: MinkContext via suite",
+            "description": null
+        },
+        {
+            "id": "web-search-with-background",
+            "name": "Web: Search with background",
+            "description": null
+        },
+        {
+            "id": "web-scenario-outline",
+            "name": "Web: Scenario Outline",
+            "description": null
         }
     ],
-    "sha": "d5351edf2a5b3c625ad7f919d81322cd5907c172"
+    "sha": "e032703039a8f62534511b501a9ff9dacbbf88ee"
 }

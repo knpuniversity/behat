@@ -1,0 +1,21 @@
+diff --git a/features/search.feature b/features/search.feature
+index 85fc3ff..2ce5d19 100644
+--- a/features/search.feature
++++ b/features/search.feature
+@@ -3,8 +3,15 @@ Feature: Search
+   As a website user
+   I need to be able to search for products
+ 
+-  Scenario: Search for a word that exists
++  Background:
+     Given I am on "/"
++
++  Scenario: Search for a word that exists
+     When I fill in "searchTerm" with "Samsung"
+     And I press "search_submit"
+     Then I should see "Samsung Galaxy S II"
++
++  Scenario: Search for a word that does not exist
++    When I fill in "searchTerm" with "XBox"
++    And I press "search_submit"
++    Then I should see "No products found"
