@@ -149,7 +149,92 @@
             "id": "web-scenario-outline",
             "name": "Web: Scenario Outline",
             "description": null
+        },
+        {
+            "id": "web-rewrite-without-css",
+            "name": "Web: Rewrite without CSS",
+            "description": null
+        },
+        {
+            "id": "web-rawminkcontext-and-custom-definitions",
+            "name": "Web: RawMinkContext and custom definitions",
+            "description": null
+        },
+        {
+            "id": "web-add-getpage-shortcut",
+            "name": "Web: Add getPage Shortcut",
+            "description": null
+        },
+        {
+            "id": "suites-create-commandlineprocesscontext",
+            "name": "Suites: Create CommandLineProcessContext",
+            "description": null
+        },
+        {
+            "id": "suites-dividing-into-2-suites",
+            "name": "Suites: Dividing into 2 suites",
+            "description": null
+        },
+        {
+            "id": "login-create-login-scenario-failing",
+            "name": "Login: Create login scenario, failing",
+            "description": null
+        },
+        {
+            "id": "login-add-print-last-response",
+            "name": "Login: Add print last response",
+            "description": null
+        },
+        {
+            "id": "login-fixing-bad-password",
+            "name": "Login: Fixing bad password",
+            "description": null
+        },
+        {
+            "id": "bootstrap-add-step-to-create-user",
+            "name": "Bootstrap: Add step to create user",
+            "description": null
+        },
+        {
+            "id": "bootstrap-load-symfony",
+            "name": "Bootstrap: Load Symfony",
+            "description": null
+        },
+        {
+            "id": "bootstrap-clearing-data",
+            "name": "Bootstrap: Clearing data",
+            "description": null
+        },
+        {
+            "id": "bootstrap-symfony2extension",
+            "name": "Bootstrap: Symfony2Extension",
+            "description": null
+        },
+        {
+            "id": "bootstrap-use-ormpurger",
+            "name": "Bootstrap: Use ORMPurger",
+            "description": null
+        },
+        {
+            "id": "user-add-definitions-for-product-list",
+            "name": "User: Add definitions for product list",
+            "description": null
+        },
+        {
+            "id": "user-login-first",
+            "name": "User: Login first",
+            "description": null
+        },
+        {
+            "id": "user-new-scenario-for-owning-products",
+            "name": "User: New scenario for owning products",
+            "description": null
+        },
+        {
+            "id": "user-store-currentuser-property",
+            "name": "User: store currentUser property",
+            "description": null
         }
     ],
-    "sha": "e032703039a8f62534511b501a9ff9dacbbf88ee"
+    "sha": "ed91a6ee665f0902d658565a0c59b30ec1d081e3"
 }

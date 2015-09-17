@@ -1,0 +1,10 @@
+diff --git a/features/web/authentication.feature b/features/web/authentication.feature
+index 1e63803..5cdfd3d 100644
+--- a/features/web/authentication.feature
++++ b/features/web/authentication.feature
+@@ -9,4 +9,5 @@ Feature: Authentication
+     And I fill in "Username" with "admin"
+     And I fill in "Password" with "adminpass"
+     And I press "Login"
++    Then print last response
+     Then I should see "Logout"

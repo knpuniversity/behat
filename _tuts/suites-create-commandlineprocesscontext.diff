@@ -1,0 +1,168 @@
+diff --git a/behat.yml b/behat.yml
+index 625f379..ccef6ba 100644
+--- a/behat.yml
++++ b/behat.yml
+@@ -3,6 +3,7 @@ default:
+         default:
+             contexts:
+                 - FeatureContext
++                - CommandLineProcessContext
+                 - Behat\MinkExtension\Context\MinkContext
+     extensions:
+         Behat\MinkExtension:
+diff --git a/features/bootstrap/CommandLineProcessContext.php b/features/bootstrap/CommandLineProcessContext.php
+new file mode 100644
+index 0000000..245a521
+--- /dev/null
++++ b/features/bootstrap/CommandLineProcessContext.php
+@@ -0,0 +1,71 @@
++<?php
++
++use Behat\Behat\Context\Context;
++use Behat\Behat\Context\SnippetAcceptingContext;
++use Behat\Gherkin\Node\PyStringNode;
++use Behat\Gherkin\Node\TableNode;
++
++require_once __DIR__.'/../../vendor/phpunit/phpunit/src/Framework/Assert/Functions.php';
++
++class CommandLineProcessContext implements Context, SnippetAcceptingContext
++{
++    private $output;
++
++    /**
++     * @Given I have a file named :filename
++     */
++    public function iHaveAFileNamed($filename)
++    {
++        touch($filename);
++    }
++
++    /**
++     * @When I run :command
++     */
++    public function iRun($command)
++    {
++        $this->output = shell_exec($command);
++    }
++
++    /**
++     * @Then I should see :string in the output
++     */
++    public function iShouldSeeInTheOutput($string)
++    {
++        assertContains(
++            $string,
++            $this->output,
++            sprintf('Did not see "%s" in output "%s"', $string, $this->output)
++        );
++    }
++
++    /**
++     * @BeforeScenario
++     */
++    public function moveIntoTestDir()
++    {
++        if (!is_dir('test')) {
++            mkdir('test');
++        }
++        chdir('test');
++    }
++
++    /**
++     * @AfterScenario
++     */
++    public function moveOutOfTestDir()
++    {
++        chdir('..');
++        if (is_dir('test')) {
++            system('rm -r '.realpath('test'));
++        }
++    }
++
++    /**
++     * @Given I have a dir named :dirName
++     */
++    public function iHaveADirNamed($dirName)
++    {
++        mkdir($dirName);
++    }
++}
+\ No newline at end of file
+diff --git a/features/bootstrap/FeatureContext.php b/features/bootstrap/FeatureContext.php
+index 624055d..bf40aa5 100644
+--- a/features/bootstrap/FeatureContext.php
++++ b/features/bootstrap/FeatureContext.php
+@@ -13,8 +13,6 @@ require_once __DIR__.'/../../vendor/phpunit/phpunit/src/Framework/Assert/Functio
+  */
+ class FeatureContext extends RawMinkContext implements Context, SnippetAcceptingContext
+ {
+-    private $output;
+-
+     /**
+      * Initializes context.
+      *
+@@ -27,64 +25,6 @@ class FeatureContext extends RawMinkContext implements Context, SnippetAccepting
+     }
+ 
+     /**
+-     * @Given I have a file named :filename
+-     */
+-    public function iHaveAFileNamed($filename)
+-    {
+-        touch($filename);
+-    }
+-
+-    /**
+-     * @When I run :command
+-     */
+-    public function iRun($command)
+-    {
+-        $this->output = shell_exec($command);
+-    }
+-
+-    /**
+-     * @Then I should see :string in the output
+-     */
+-    public function iShouldSeeInTheOutput($string)
+-    {
+-        assertContains(
+-            $string,
+-            $this->output,
+-            sprintf('Did not see "%s" in output "%s"', $string, $this->output)
+-        );
+-    }
+-
+-    /**
+-     * @BeforeScenario
+-     */
+-    public function moveIntoTestDir()
+-    {
+-        if (!is_dir('test')) {
+-            mkdir('test');
+-        }
+-        chdir('test');
+-    }
+-
+-    /**
+-     * @AfterScenario
+-     */
+-    public function moveOutOfTestDir()
+-    {
+-        chdir('..');
+-        if (is_dir('test')) {
+-            system('rm -r '.realpath('test'));
+-        }
+-    }
+-
+-    /**
+-     * @Given I have a dir named :dirName
+-     */
+-    public function iHaveADirNamed($dirName)
+-    {
+-        mkdir($dirName);
+-    }
+-
+-    /**
+      * @When I fill in the search box with :term
+      */
+     public function iFillInTheSearchBoxWith($term)

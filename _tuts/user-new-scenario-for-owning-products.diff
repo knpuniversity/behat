@@ -1,0 +1,78 @@
+diff --git a/features/bootstrap/FeatureContext.php b/features/bootstrap/FeatureContext.php
+index dabe132..e59e356 100644
+--- a/features/bootstrap/FeatureContext.php
++++ b/features/bootstrap/FeatureContext.php
+@@ -1,6 +1,7 @@
+ <?php
+ 
+ use AppBundle\Entity\Product;
++use AppBundle\Entity\User;
+ use Behat\Behat\Context\Context;
+ use Behat\Behat\Context\SnippetAcceptingContext;
+ use Behat\Gherkin\Node\PyStringNode;
+@@ -83,16 +84,15 @@ class FeatureContext extends RawMinkContext implements Context, SnippetAccepting
+      */
+     public function thereAreProducts($count)
+     {
+-        for ($i = 0; $i < $count; $i++) {
+-            $product = new Product();
+-            $product->setName('Product '.$count);
+-            $product->setPrice(rand(10, 1000));
+-            $product->setDescription('lorem');
+-
+-            $this->getEntityManager()->persist($product);
+-        }
++        $this->createProducts($count);
++    }
+ 
+-        $this->getEntityManager()->flush();
++    /**
++     * @Given I author :count products
++     */
++    public function iAuthorProducts($count)
++    {
++        $this->createProducts($count);
+     }
+ 
+     /**
+@@ -142,4 +142,22 @@ class FeatureContext extends RawMinkContext implements Context, SnippetAccepting
+     {
+         return $this->getContainer()->get('doctrine.orm.entity_manager');
+     }
++
++    private function createProducts($count, User $author = null)
++    {
++        for ($i = 0; $i < $count; $i++) {
++            $product = new Product();
++            $product->setName('Product '.$count);
++            $product->setPrice(rand(10, 1000));
++            $product->setDescription('lorem');
++
++            if ($author) {
++                $product->setAuthor($author);
++            }
++
++            $this->getEntityManager()->persist($product);
++        }
++
++        $this->getEntityManager()->flush();
++    }
+ }
+diff --git a/features/web/product_admin.feature b/features/web/product_admin.feature
+index ebcb6f1..182b7a8 100644
+--- a/features/web/product_admin.feature
++++ b/features/web/product_admin.feature
+@@ -10,6 +10,13 @@ Feature: Product admin panel
+     When I click "Products"
+     Then I should see 5 products
+ 
++  Scenario: Products show owner
++    Given I am logged in as an admin
++    And I author 5 products
++    And I am on "/admin/products"
++    # no products will be anonymous
++    Then I should not see "Anonymous"
++
+   Scenario: Add a new product
+     Given I am on "/admin/products"
+     When I click "New Product"

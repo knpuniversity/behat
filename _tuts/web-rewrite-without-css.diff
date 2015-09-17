@@ -1,0 +1,40 @@
+diff --git a/features/bootstrap/FeatureContext.php b/features/bootstrap/FeatureContext.php
+index 9671fbc..a376c64 100644
+--- a/features/bootstrap/FeatureContext.php
++++ b/features/bootstrap/FeatureContext.php
+@@ -82,4 +82,20 @@ class FeatureContext implements Context, SnippetAcceptingContext
+     {
+         mkdir($dirName);
+     }
++
++    /**
++     * @When I fill in the search box with :arg1
++     */
++    public function iFillInTheSearchBoxWith($arg1)
++    {
++        throw new PendingException();
++    }
++
++    /**
++     * @When I press the search button
++     */
++    public function iPressTheSearchButton()
++    {
++        throw new PendingException();
++    }
+ }
+diff --git a/features/search.feature b/features/search.feature
+index d40f3a4..a1373d0 100644
+--- a/features/search.feature
++++ b/features/search.feature
+@@ -7,8 +7,8 @@ Feature: Search
+     Given I am on "/"
+ 
+   Scenario Outline: Search for a product
+-    When I fill in "searchTerm" with "<term>"
+-    And I press "search_submit"
++    When I fill in the search box with "<term>"
++    And I press the search button
+     Then I should see "<result>"
+ 
+     Examples:

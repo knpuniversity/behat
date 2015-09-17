@@ -1,0 +1,33 @@
+diff --git a/features/bootstrap/FeatureContext.php b/features/bootstrap/FeatureContext.php
+index bf40aa5..b096bb6 100644
+--- a/features/bootstrap/FeatureContext.php
++++ b/features/bootstrap/FeatureContext.php
+@@ -25,6 +25,14 @@ class FeatureContext extends RawMinkContext implements Context, SnippetAccepting
+     }
+ 
+     /**
++     * @Given there is an admin user :arg1 with password :arg2
++     */
++    public function thereIsAUserWithPassword($arg1, $arg2)
++    {
++        throw new PendingException();
++    }
++
++    /**
+      * @When I fill in the search box with :term
+      */
+     public function iFillInTheSearchBoxWith($term)
+diff --git a/features/web/authentication.feature b/features/web/authentication.feature
+index 7d2d854..f5634d5 100644
+--- a/features/web/authentication.feature
++++ b/features/web/authentication.feature
+@@ -4,7 +4,8 @@ Feature: Authentication
+   I need to be able to login and logout
+ 
+   Scenario: Logging in
+-    Given I am on "/"
++    Given there is an admin user "admin" with password "admin"
++    And I am on "/"
+     When I follow "Login"
+     And I fill in "Username" with "admin"
+     And I fill in "Password" with "admin"

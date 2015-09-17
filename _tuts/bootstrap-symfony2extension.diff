@@ -1,0 +1,518 @@
+diff --git a/behat.yml b/behat.yml
+index 48194d1..ddd5462 100644
+--- a/behat.yml
++++ b/behat.yml
+@@ -15,3 +15,4 @@ default:
+             base_url: http://localhost:8000
+             goutte: ~
+             selenium2: ~
++        Behat\Symfony2Extension: ~
+diff --git a/composer.json b/composer.json
+index 0f3ac31..c5e3e0a 100644
+--- a/composer.json
++++ b/composer.json
+@@ -11,7 +11,8 @@
+         "twig/twig": "^1.22",
+         "sensio/framework-extra-bundle": "^3.0",
+         "doctrine/doctrine-bundle": "^1.5",
+-        "doctrine/orm": "^2.5"
++        "doctrine/orm": "^2.5",
++        "behat/symfony2-extension": "^2.0"
+     },
+     "autoload": {
+         "psr-0": {
+diff --git a/composer.lock b/composer.lock
+index 4dc7826..99d1b1d 100644
+--- a/composer.lock
++++ b/composer.lock
+@@ -4,9 +4,248 @@
+         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+         "This file is @generated automatically"
+     ],
+-    "hash": "7f6556eade5bdb6685310effa24cd8bc",
++    "hash": "a4058de22bbbeb94e3c09ff57db2cc94",
+     "packages": [
+         {
++            "name": "behat/behat",
++            "version": "v3.0.15",
++            "source": {
++                "type": "git",
++                "url": "https://github.com/Behat/Behat.git",
++                "reference": "b35ae3d45332d80c532af69cc36f780a9397a996"
++            },
++            "dist": {
++                "type": "zip",
++                "url": "https://api.github.com/repos/Behat/Behat/zipball/b35ae3d45332d80c532af69cc36f780a9397a996",
++                "reference": "b35ae3d45332d80c532af69cc36f780a9397a996",
++                "shasum": ""
++            },
++            "require": {
++                "behat/gherkin": "~4.3",
++                "behat/transliterator": "~1.0",
++                "ext-mbstring": "*",
++                "php": ">=5.3.3",
++                "symfony/class-loader": "~2.1",
++                "symfony/config": "~2.3",
++                "symfony/console": "~2.1",
++                "symfony/dependency-injection": "~2.1",
++                "symfony/event-dispatcher": "~2.1",
++                "symfony/translation": "~2.3",
++                "symfony/yaml": "~2.1"
++            },
++            "require-dev": {
++                "phpspec/prophecy-phpunit": "~1.0",
++                "phpunit/phpunit": "~4.0",
++                "symfony/process": "~2.1"
++            },
++            "suggest": {
++                "behat/mink-extension": "for integration with Mink testing framework",
++                "behat/symfony2-extension": "for integration with Symfony2 web framework",
++                "behat/yii-extension": "for integration with Yii web framework"
++            },
++            "bin": [
++                "bin/behat"
++            ],
++            "type": "library",
++            "extra": {
++                "branch-alias": {
++                    "dev-master": "3.0.x-dev"
++                }
++            },
++            "autoload": {
++                "psr-0": {
++                    "Behat\\Behat": "src/",
++                    "Behat\\Testwork": "src/"
++                }
++            },
++            "notification-url": "https://packagist.org/downloads/",
++            "license": [
++                "MIT"
++            ],
++            "authors": [
++                {
++                    "name": "Konstantin Kudryashov",
++                    "email": "ever.zet@gmail.com",
++                    "homepage": "http://everzet.com"
++                }
++            ],
++            "description": "Scenario-oriented BDD framework for PHP 5.3",
++            "homepage": "http://behat.org/",
++            "keywords": [
++                "Agile",
++                "BDD",
++                "ScenarioBDD",
++                "Scrum",
++                "StoryBDD",
++                "User story",
++                "business",
++                "development",
++                "documentation",
++                "examples",
++                "symfony",
++                "testing"
++            ],
++            "time": "2015-02-22 14:10:33"
++        },
++        {
++            "name": "behat/gherkin",
++            "version": "v4.3.0",
++            "source": {
++                "type": "git",
++                "url": "https://github.com/Behat/Gherkin.git",
++                "reference": "43777c51058b77bcd84a8775b7a6ad05e986b5db"
++            },
++            "dist": {
++                "type": "zip",
++                "url": "https://api.github.com/repos/Behat/Gherkin/zipball/43777c51058b77bcd84a8775b7a6ad05e986b5db",
++                "reference": "43777c51058b77bcd84a8775b7a6ad05e986b5db",
++                "shasum": ""
++            },
++            "require": {
++                "php": ">=5.3.1"
++            },
++            "require-dev": {
++                "phpunit/phpunit": "~4.0",
++                "symfony/yaml": "~2.1"
++            },
++            "suggest": {
++                "symfony/yaml": "If you want to parse features, represented in YAML files"
++            },
++            "type": "library",
++            "extra": {
++                "branch-alias": {
++                    "dev-master": "4.2-dev"
++                }
++            },
++            "autoload": {
++                "psr-0": {
++                    "Behat\\Gherkin": "src/"
++                }
++            },
++            "notification-url": "https://packagist.org/downloads/",
++            "license": [
++                "MIT"
++            ],
++            "authors": [
++                {
++                    "name": "Konstantin Kudryashov",
++                    "email": "ever.zet@gmail.com",
++                    "homepage": "http://everzet.com"
++                }
++            ],
++            "description": "Gherkin DSL parser for PHP 5.3",
++            "homepage": "http://behat.org/",
++            "keywords": [
++                "BDD",
++                "Behat",
++                "Cucumber",
++                "DSL",
++                "gherkin",
++                "parser"
++            ],
++            "time": "2014-06-06 01:24:32"
++        },
++        {
++            "name": "behat/symfony2-extension",
++            "version": "v2.0.0",
++            "source": {
++                "type": "git",
++                "url": "https://github.com/Behat/Symfony2Extension.git",
++                "reference": "815ec1f6764fca0882cd744731c48edb82dea204"
++            },
++            "dist": {
++                "type": "zip",
++                "url": "https://api.github.com/repos/Behat/Symfony2Extension/zipball/815ec1f6764fca0882cd744731c48edb82dea204",
++                "reference": "815ec1f6764fca0882cd744731c48edb82dea204",
++                "shasum": ""
++            },
++            "require": {
++                "behat/behat": "~3.0,>=3.0.4",
++                "php": ">=5.3.3",
++                "symfony/framework-bundle": "~2.0"
++            },
++            "require-dev": {
++                "behat/mink-browserkit-driver": "~1.0",
++                "behat/mink-extension": "~2.0@dev",
++                "phpspec/phpspec": "~2.0",
++                "phpunit/phpunit": "~4.0",
++                "symfony/symfony": "~2.1"
++            },
++            "type": "behat-extension",
++            "extra": {
++                "branch-alias": {
++                    "dev-master": "2.0.x-dev"
++                }
++            },
++            "autoload": {
++                "psr-0": {
++                    "Behat\\Symfony2Extension": "src/"
++                }
++            },
++            "notification-url": "https://packagist.org/downloads/",
++            "license": [
++                "MIT"
++            ],
++            "authors": [
++                {
++                    "name": "Christophe Coevoet",
++                    "email": "stof@notk.org"
++                },
++                {
++                    "name": "Konstantin Kudryashov",
++                    "email": "ever.zet@gmail.com"
++                }
++            ],
++            "description": "Symfony2 framework extension for Behat",
++            "homepage": "http://behat.org",
++            "keywords": [
++                "BDD",
++                "framework",
++                "symfony"
++            ],
++            "time": "2014-09-04 22:10:45"
++        },
++        {
++            "name": "behat/transliterator",
++            "version": "v1.0.1",
++            "source": {
++                "type": "git",
++                "url": "https://github.com/Behat/Transliterator.git",
++                "reference": "c93521d3462a554332d1ef5bb0e9b5b8ca4106c4"
++            },
++            "dist": {
++                "type": "zip",
++                "url": "https://api.github.com/repos/Behat/Transliterator/zipball/c93521d3462a554332d1ef5bb0e9b5b8ca4106c4",
++                "reference": "c93521d3462a554332d1ef5bb0e9b5b8ca4106c4",
++                "shasum": ""
++            },
++            "require": {
++                "php": ">=5.3.3"
++            },
++            "type": "library",
++            "extra": {
++                "branch-alias": {
++                    "dev-master": "1.0-dev"
++                }
++            },
++            "autoload": {
++                "psr-0": {
++                    "Behat\\Transliterator": "src/"
++                }
++            },
++            "notification-url": "https://packagist.org/downloads/",
++            "license": [
++                "Artistic-1.0"
++            ],
++            "description": "String transliterator",
++            "keywords": [
++                "i18n",
++                "slug",
++                "transliterator"
++            ],
++            "time": "2014-05-15 22:08:22"
++        },
++        {
+             "name": "doctrine/annotations",
+             "version": "v1.2.7",
+             "source": {
+@@ -1097,145 +1336,6 @@
+     ],
+     "packages-dev": [
+         {
+-            "name": "behat/behat",
+-            "version": "v3.0.15",
+-            "source": {
+-                "type": "git",
+-                "url": "https://github.com/Behat/Behat.git",
+-                "reference": "b35ae3d45332d80c532af69cc36f780a9397a996"
+-            },
+-            "dist": {
+-                "type": "zip",
+-                "url": "https://api.github.com/repos/Behat/Behat/zipball/b35ae3d45332d80c532af69cc36f780a9397a996",
+-                "reference": "b35ae3d45332d80c532af69cc36f780a9397a996",
+-                "shasum": ""
+-            },
+-            "require": {
+-                "behat/gherkin": "~4.3",
+-                "behat/transliterator": "~1.0",
+-                "ext-mbstring": "*",
+-                "php": ">=5.3.3",
+-                "symfony/class-loader": "~2.1",
+-                "symfony/config": "~2.3",
+-                "symfony/console": "~2.1",
+-                "symfony/dependency-injection": "~2.1",
+-                "symfony/event-dispatcher": "~2.1",
+-                "symfony/translation": "~2.3",
+-                "symfony/yaml": "~2.1"
+-            },
+-            "require-dev": {
+-                "phpspec/prophecy-phpunit": "~1.0",
+-                "phpunit/phpunit": "~4.0",
+-                "symfony/process": "~2.1"
+-            },
+-            "suggest": {
+-                "behat/mink-extension": "for integration with Mink testing framework",
+-                "behat/symfony2-extension": "for integration with Symfony2 web framework",
+-                "behat/yii-extension": "for integration with Yii web framework"
+-            },
+-            "bin": [
+-                "bin/behat"
+-            ],
+-            "type": "library",
+-            "extra": {
+-                "branch-alias": {
+-                    "dev-master": "3.0.x-dev"
+-                }
+-            },
+-            "autoload": {
+-                "psr-0": {
+-                    "Behat\\Behat": "src/",
+-                    "Behat\\Testwork": "src/"
+-                }
+-            },
+-            "notification-url": "https://packagist.org/downloads/",
+-            "license": [
+-                "MIT"
+-            ],
+-            "authors": [
+-                {
+-                    "name": "Konstantin Kudryashov",
+-                    "email": "ever.zet@gmail.com",
+-                    "homepage": "http://everzet.com"
+-                }
+-            ],
+-            "description": "Scenario-oriented BDD framework for PHP 5.3",
+-            "homepage": "http://behat.org/",
+-            "keywords": [
+-                "Agile",
+-                "BDD",
+-                "ScenarioBDD",
+-                "Scrum",
+-                "StoryBDD",
+-                "User story",
+-                "business",
+-                "development",
+-                "documentation",
+-                "examples",
+-                "symfony",
+-                "testing"
+-            ],
+-            "time": "2015-02-22 14:10:33"
+-        },
+-        {
+-            "name": "behat/gherkin",
+-            "version": "v4.3.0",
+-            "source": {
+-                "type": "git",
+-                "url": "https://github.com/Behat/Gherkin.git",
+-                "reference": "43777c51058b77bcd84a8775b7a6ad05e986b5db"
+-            },
+-            "dist": {
+-                "type": "zip",
+-                "url": "https://api.github.com/repos/Behat/Gherkin/zipball/43777c51058b77bcd84a8775b7a6ad05e986b5db",
+-                "reference": "43777c51058b77bcd84a8775b7a6ad05e986b5db",
+-                "shasum": ""
+-            },
+-            "require": {
+-                "php": ">=5.3.1"
+-            },
+-            "require-dev": {
+-                "phpunit/phpunit": "~4.0",
+-                "symfony/yaml": "~2.1"
+-            },
+-            "suggest": {
+-                "symfony/yaml": "If you want to parse features, represented in YAML files"
+-            },
+-            "type": "library",
+-            "extra": {
+-                "branch-alias": {
+-                    "dev-master": "4.2-dev"
+-                }
+-            },
+-            "autoload": {
+-                "psr-0": {
+-                    "Behat\\Gherkin": "src/"
+-                }
+-            },
+-            "notification-url": "https://packagist.org/downloads/",
+-            "license": [
+-                "MIT"
+-            ],
+-            "authors": [
+-                {
+-                    "name": "Konstantin Kudryashov",
+-                    "email": "ever.zet@gmail.com",
+-                    "homepage": "http://everzet.com"
+-                }
+-            ],
+-            "description": "Gherkin DSL parser for PHP 5.3",
+-            "homepage": "http://behat.org/",
+-            "keywords": [
+-                "BDD",
+-                "Behat",
+-                "Cucumber",
+-                "DSL",
+-                "gherkin",
+-                "parser"
+-            ],
+-            "time": "2014-06-06 01:24:32"
+-        },
+-        {
+             "name": "behat/mink",
+             "version": "v1.6.1",
+             "source": {
+@@ -1515,46 +1615,6 @@
+             "time": "2014-09-29 13:12:12"
+         },
+         {
+-            "name": "behat/transliterator",
+-            "version": "v1.0.1",
+-            "source": {
+-                "type": "git",
+-                "url": "https://github.com/Behat/Transliterator.git",
+-                "reference": "c93521d3462a554332d1ef5bb0e9b5b8ca4106c4"
+-            },
+-            "dist": {
+-                "type": "zip",
+-                "url": "https://api.github.com/repos/Behat/Transliterator/zipball/c93521d3462a554332d1ef5bb0e9b5b8ca4106c4",
+-                "reference": "c93521d3462a554332d1ef5bb0e9b5b8ca4106c4",
+-                "shasum": ""
+-            },
+-            "require": {
+-                "php": ">=5.3.3"
+-            },
+-            "type": "library",
+-            "extra": {
+-                "branch-alias": {
+-                    "dev-master": "1.0-dev"
+-                }
+-            },
+-            "autoload": {
+-                "psr-0": {
+-                    "Behat\\Transliterator": "src/"
+-                }
+-            },
+-            "notification-url": "https://packagist.org/downloads/",
+-            "license": [
+-                "Artistic-1.0"
+-            ],
+-            "description": "String transliterator",
+-            "keywords": [
+-                "i18n",
+-                "slug",
+-                "transliterator"
+-            ],
+-            "time": "2014-05-15 22:08:22"
+-        },
+-        {
+             "name": "fabpot/goutte",
+             "version": "v2.0.4",
+             "source": {
+diff --git a/features/bootstrap/FeatureContext.php b/features/bootstrap/FeatureContext.php
+index 9fcf710..a1abe32 100644
+--- a/features/bootstrap/FeatureContext.php
++++ b/features/bootstrap/FeatureContext.php
+@@ -13,7 +13,7 @@ require_once __DIR__.'/../../vendor/phpunit/phpunit/src/Framework/Assert/Functio
+  */
+ class FeatureContext extends RawMinkContext implements Context, SnippetAcceptingContext
+ {
+-    private static $container;
++    use \Behat\Symfony2Extension\Context\KernelDictionary;
+ 
+     /**
+      * Initializes context.
+@@ -27,24 +27,11 @@ class FeatureContext extends RawMinkContext implements Context, SnippetAccepting
+     }
+ 
+     /**
+-     * @BeforeSuite
+-     */
+-    public static function bootstrapSymfony()
+-    {
+-        require_once __DIR__.'/../../app/autoload.php';
+-        require_once __DIR__.'/../../app/AppKernel.php';
+-
+-        $kernel = new AppKernel('test', true);
+-        $kernel->boot();
+-        self::$container = $kernel->getContainer();
+-    }
+-
+-    /**
+      * @BeforeScenario
+      */
+     public function clearData()
+     {
+-        $em = self::$container->get('doctrine')->getManager();
++        $em = $this->getContainer()->get('doctrine')->getManager();
+         $em->createQuery('DELETE FROM AppBundle:Product')->execute();
+         $em->createQuery('DELETE FROM AppBundle:User')->execute();
+     }
+@@ -59,7 +46,7 @@ class FeatureContext extends RawMinkContext implements Context, SnippetAccepting
+         $user->setPlainPassword($password);
+         $user->setRoles(array('ROLE_ADMIN'));
+ 
+-        $em = self::$container->get('doctrine')->getManager();
++        $em = $this->getContainer()->get('doctrine')->getManager();
+         $em->persist($user);
+         $em->flush();
+     }

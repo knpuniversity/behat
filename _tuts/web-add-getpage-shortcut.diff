@@ -1,0 +1,36 @@
+diff --git a/features/bootstrap/FeatureContext.php b/features/bootstrap/FeatureContext.php
+index 6d59818..624055d 100644
+--- a/features/bootstrap/FeatureContext.php
++++ b/features/bootstrap/FeatureContext.php
+@@ -89,8 +89,7 @@ class FeatureContext extends RawMinkContext implements Context, SnippetAccepting
+      */
+     public function iFillInTheSearchBoxWith($term)
+     {
+-        $searchBox = $this->getSession()
+-            ->getPage()
++        $searchBox = $this->getPage()
+             ->find('css', '.navbar-inner input[name="searchTerm"]');
+ 
+         assertNotNull($searchBox, 'Could not find the search box!');
+@@ -103,12 +102,19 @@ class FeatureContext extends RawMinkContext implements Context, SnippetAccepting
+      */
+     public function iPressTheSearchButton()
+     {
+-        $button = $this->getSession()
+-            ->getPage()
++        $button = $this->getPage()
+             ->find('css', '#search_submit');
+ 
+         assertNotNull($button, 'Could not find the search button!');
+ 
+         $button->press();
+     }
++
++    /**
++     * @return \Behat\Mink\Element\DocumentElement
++     */
++    private function getPage()
++    {
++        return $this->getSession()->getPage();
++    }
+ }
