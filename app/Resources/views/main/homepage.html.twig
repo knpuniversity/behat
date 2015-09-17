@@ -9,7 +9,11 @@
 
     <h2>
         {% if search %}
-            Products matching "{{ search }}"
+            {% if products is not empty %}
+                Products matching "{{ search }}"
+            {% else %}
+                No products found
+            {% endif %}
         {% else %}
             View all of our products
         {% endif %}
