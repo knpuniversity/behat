@@ -15,40 +15,100 @@ class Product
      * @ORM\GeneratedValue(strategy="AUTO")
      * @ORM\Column(type="integer")
      */
-    public $id;
+    private $id;
 
     /**
      * @ORM\Column(type="string")
      */
-    public $name;
+    private $name;
 
     /**
      * @ORM\ManyToOne(targetEntity="User")
      */
-    public $author;
+    private $author;
 
     /**
      * @ORM\Column(type="string")
      */
-    public $description;
+    private $description;
 
     /**
      * @ORM\Column(type="float")
      */
-    public $price;
+    private $price;
 
     /**
      * @ORM\Column(type="boolean")
      */
-    public $isPublished = false;
+    private $isPublished = false;
 
     /**
      * @ORM\Column(type="datetime")
      */
-    public $createdAt;
+    private $createdAt;
 
     public function __construct()
     {
         $this->createdAt = new \Datetime();
+    }
+
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    public function setName($name)
+    {
+        $this->name = $name;
+    }
+
+    public function getAuthor()
+    {
+        return $this->author;
+    }
+
+    public function setAuthor(User $author)
+    {
+        $this->author = $author;
+    }
+
+    public function getDescription()
+    {
+        return $this->description;
+    }
+
+    public function setDescription($description)
+    {
+        $this->description = $description;
+    }
+
+    public function getPrice()
+    {
+        return $this->price;
+    }
+
+    public function setPrice($price)
+    {
+        $this->price = $price;
+    }
+
+    public function getIsPublished()
+    {
+        return $this->isPublished;
+    }
+
+    public function setIsPublished($isPublished)
+    {
+        $this->isPublished = $isPublished;
+    }
+
+    public function setCreatedAt(\DateTime $createdAt)
+    {
+        $this->createdAt = $createdAt;
     }
 }

@@ -18,27 +18,27 @@ class User implements UserInterface
      * @ORM\GeneratedValue(strategy="AUTO")
      * @ORM\Column(type="integer")
      */
-    public $id;
+    private $id;
 
     /**
      * @ORM\Column(type="string")
      */
-    public $username;
+    private $username;
 
     /**
      * @ORM\Column(type="string")
      */
-    public $password;
+    private $password;
 
     /**
      * @ORM\Column(type="string")
      */
-    public $plainPassword;
+    private $plainPassword;
 
     /**
      * @ORM\Column(type="json_array")
      */
-    public $roles = array('ROLE_USER');
+    private $roles = array('ROLE_USER');
 
     /**
      * @ORM\Column(type="datetime")
@@ -78,5 +78,40 @@ class User implements UserInterface
     public function __toString()
     {
         return $this->getUsername();
+    }
+
+    public function getPlainPassword()
+    {
+        return $this->plainPassword;
+    }
+
+    public function setPlainPassword($plainPassword)
+    {
+        $this->plainPassword = $plainPassword;
+    }
+
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    public function getCreatedAt()
+    {
+        return $this->createdAt;
+    }
+
+    public function setUsername($username)
+    {
+        $this->username = $username;
+    }
+
+    public function setPassword($password)
+    {
+        $this->password = $password;
+    }
+
+    public function setRoles($roles)
+    {
+        $this->roles = $roles;
     }
 }

@@ -44,11 +44,11 @@ class ProductAdminController extends Controller
         // really quick (but dangerous) way to load my data into a Product
 
         $product = new Product();
-        $product->name = $request->get('name');
-        $product->description = $request->get('description');
-        $product->price = $request->get('price');
+        $product->setName($request->get('name'));
+        $product->setDescription($request->get('description'));
+        $product->setPrice($request->get('price'));
 
-        $product->author = $this->getUser();
+        $product->setAuthor($this->getUser());
         $this->getDoctrine()->getManager()->persist($product);
         $this->getDoctrine()->getManager()->flush();
 
