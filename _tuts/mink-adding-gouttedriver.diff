@@ -1,0 +1,12 @@
+diff --git a/mink.php b/mink.php
+index 52faebf..0688a35 100644
+--- a/mink.php
++++ b/mink.php
+@@ -2,3 +2,7 @@
+ 
+ require __DIR__.'/vendor/autoload.php';
+ 
++use Behat\Mink\Driver\GoutteDriver;
++
++// Important object #1
++$driver = new GoutteDriver();

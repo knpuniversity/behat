@@ -79,7 +79,62 @@
             "id": "behat-use-background",
             "name": "Behat: Use background",
             "description": null
+        },
+        {
+            "id": "mink-creating-mink-php",
+            "name": "Mink: Creating mink.php",
+            "description": null
+        },
+        {
+            "id": "mink-adding-gouttedriver",
+            "name": "Mink: Adding GoutteDriver",
+            "description": null
+        },
+        {
+            "id": "mink-create-use-session",
+            "name": "Mink: Create & Use Session",
+            "description": null
+        },
+        {
+            "id": "mink-playing-with-page",
+            "name": "Mink: Playing with page",
+            "description": null
+        },
+        {
+            "id": "mink-nodeelement",
+            "name": "Mink: NodeElement",
+            "description": null
+        },
+        {
+            "id": "mink-find-nav-area",
+            "name": "Mink: Find nav area",
+            "description": null
+        },
+        {
+            "id": "mink-find-inside-nodeelement",
+            "name": "Mink: Find inside NodeElement",
+            "description": null
+        },
+        {
+            "id": "mink-namedselector-ugly",
+            "name": "Mink: NamedSelector ugly",
+            "description": null
+        },
+        {
+            "id": "mink-namedselector-findlink",
+            "name": "Mink: NamedSelector findLink",
+            "description": null
+        },
+        {
+            "id": "mink-click-link",
+            "name": "Mink: Click link",
+            "description": null
+        },
+        {
+            "id": "mink-using-selenium2driver",
+            "name": "Mink: Using Selenium2Driver",
+            "description": null
         }
     ],
-    "sha": "8151dbd4493645bebee1673f3d362c0901519f9d"
+    "sha": "d5351edf2a5b3c625ad7f919d81322cd5907c172"
 }

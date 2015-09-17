@@ -1,0 +1,10 @@
+diff --git a/mink.php b/mink.php
+new file mode 100644
+index 0000000..52faebf
+--- /dev/null
++++ b/mink.php
+@@ -0,0 +1,4 @@
++<?php
++
++require __DIR__.'/vendor/autoload.php';
++

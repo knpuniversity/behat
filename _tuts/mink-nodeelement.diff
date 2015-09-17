@@ -1,0 +1,16 @@
+diff --git a/mink.php b/mink.php
+index 7454dda..27f550c 100644
+--- a/mink.php
++++ b/mink.php
+@@ -20,4 +20,9 @@ echo "Current URL: ". $session->getCurrentUrl() . "\n";
+ // Important object #3 DocumentElement
+ $page = $session->getPage();
+ 
+-echo "First 160 chars: ".substr($page->getText() , 0, 75) . "\n";
+\ No newline at end of file
++echo "First 160 chars: ".substr($page->getText() , 0, 75) . "\n";
++
++// Important object #4 NodeElement
++$header = $page->find('css', '.WikiHeader .WikiNav h1');
++
++echo "The wiki nav text is: ".$header->getText()."\n";

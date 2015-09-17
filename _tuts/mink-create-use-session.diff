@@ -1,0 +1,21 @@
+diff --git a/mink.php b/mink.php
+index 0688a35..7c77dd0 100644
+--- a/mink.php
++++ b/mink.php
+@@ -3,6 +3,16 @@
+ require __DIR__.'/vendor/autoload.php';
+ 
+ use Behat\Mink\Driver\GoutteDriver;
++use Behat\Mink\Session;
+ 
+ // Important object #1
+ $driver = new GoutteDriver();
++
++// Important object #2
++$session = new Session($driver);
++
++$session->start();
++$session->visit('http://jurassicpark.wikia.com');
++
++echo "Status code: ". $session->getStatusCode() . "\n";
++echo "Current URL: ". $session->getCurrentUrl() . "\n";
