@@ -29,17 +29,15 @@ class AppKernel extends Kernel
     {
         $loader->load(__DIR__.'/config/config.yml');
 
-        $isDevEnvironment = $this->getEnvironment() == 'dev';
+        $environment = $this->getEnvironment();
 
         // do some dynamic customizations
-        $loader->load(function (ContainerBuilder $container) use ($isDevEnvironment) {
-            if ($isDevEnvironment) {
+        $loader->load(function (ContainerBuilder $container) use ($environment) {
+            if ($environment == 'dev') {
                 $container->loadFromExtension('web_profiler', array(
                     'toolbar' => true,
                 ));
-            }
 
-            if ($isDevEnvironment) {
                 $container->loadFromExtension('framework', array(
                     'router' => array(
                         'resource' => '%kernel.root_dir%/config/routing_dev.yml',
