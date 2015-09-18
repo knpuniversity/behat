@@ -1,0 +1,4 @@
+/vendor
+/data/app.db
+/bin
+composer.phar

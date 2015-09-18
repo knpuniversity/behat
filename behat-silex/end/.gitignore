@@ -1,0 +1,5 @@
+/vendor
+/data/app.db
+/bin
+composer.phar
+behat.local.yml

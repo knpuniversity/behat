@@ -1,0 +1,9 @@
+body {
+    background: #333;
+}
+.main-content {
+    background: #fff;
+    min-height: 400px;
+    padding: 10px 0;
+    margin-bottom: 20px;
+}

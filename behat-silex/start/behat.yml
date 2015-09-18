@@ -1,0 +1,7 @@
+default:
+  # ...
+  extensions:
+    Behat\MinkExtension\Extension:
+      base_url:  http://store.l
+      goutte:    ~
+      selenium2: ~
