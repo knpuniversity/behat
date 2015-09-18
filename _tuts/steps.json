@@ -234,7 +234,72 @@
             "id": "user-store-currentuser-property",
             "name": "User: store currentUser property",
             "description": null
+        },
+        {
+            "id": "bdd-add-new-product-button",
+            "name": "BDD: Add New Product button",
+            "description": null
+        },
+        {
+            "id": "bdd-add-new-product-page",
+            "name": "BDD: Add new product page",
+            "description": null
+        },
+        {
+            "id": "bdd-passing-with-flash-message",
+            "name": "BDD: Passing with flash message",
+            "description": null
+        },
+        {
+            "id": "bdd-look-for-added-product",
+            "name": "BDD: Look for added product",
+            "description": null
+        },
+        {
+            "id": "bdd-verify-we-are-the-owner",
+            "name": "BDD: Verify we are the owner",
+            "description": null
+        },
+        {
+            "id": "javascript-change-to-modal",
+            "name": "JavaScript: Change to modal",
+            "description": null
+        },
+        {
+            "id": "javascript-add-javascript",
+            "name": "JavaScript: Add @javascript",
+            "description": null
+        },
+        {
+            "id": "javascript-add-long-wait",
+            "name": "JavaScript: Add long wait",
+            "description": null
+        },
+        {
+            "id": "javascript-add-proper-wait",
+            "name": "JavaScript: Add proper wait",
+            "description": null
+        },
+        {
+            "id": "javascript-add-failing-step",
+            "name": "JavaScript: Add failing step",
+            "description": null
+        },
+        {
+            "id": "javascript-breaking",
+            "name": "JavaScript: Breaking",
+            "description": null
+        },
+        {
+            "id": "javascript-screenshot",
+            "name": "JavaScript: Screenshot",
+            "description": null
+        },
+        {
+            "id": "javascript-remove-debugging",
+            "name": "JavaScript: Remove debugging",
+            "description": null
         }
     ],
-    "sha": "ed91a6ee665f0902d658565a0c59b30ec1d081e3"
+    "sha": "5abe60ffe14680e3d2b66a5690b8b707058720e0"
 }

@@ -1,0 +1,20 @@
+diff --git a/src/AppBundle/Controller/ProductAdminController.php b/src/AppBundle/Controller/ProductAdminController.php
+index f6ca13c..67269be 100644
+--- a/src/AppBundle/Controller/ProductAdminController.php
++++ b/src/AppBundle/Controller/ProductAdminController.php
+@@ -27,8 +27,14 @@ class ProductAdminController extends Controller
+     /**
+      * @Route("/admin/products/new", name="product_new")
+      */
+-    public function newAction()
++    public function newAction(Request $request)
+     {
++        if ($request->isMethod('POST')) {
++            $this->addFlash('success', 'Product created FTW!');
++
++            return $this->redirectToRoute('product_list');
++        }
++
+         return $this->render('product/new.html.twig');
+     }
+ }

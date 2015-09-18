@@ -1,0 +1,16 @@
+diff --git a/features/bootstrap/FeatureContext.php b/features/bootstrap/FeatureContext.php
+index cf92b1c..29a7966 100644
+--- a/features/bootstrap/FeatureContext.php
++++ b/features/bootstrap/FeatureContext.php
+@@ -136,7 +136,10 @@ class FeatureContext extends RawMinkContext implements Context, SnippetAccepting
+      */
+     public function iWaitForTheModalToLoad()
+     {
+-        $this->getSession()->wait(5000);
++        $this->getSession()->wait(
++            5000,
++            "$('.modal:visible').length > 0"
++        );
+     }
+ 
+     /**

@@ -1,0 +1,12 @@
+diff --git a/features/web/product_admin.feature b/features/web/product_admin.feature
+index 2811a8c..43c9df2 100644
+--- a/features/web/product_admin.feature
++++ b/features/web/product_admin.feature
+@@ -17,6 +17,7 @@ Feature: Product admin panel
+     # no products will be anonymous
+     Then I should not see "Anonymous"
+ 
++  @javascript
+   Scenario: Add a new product
+     Given I am logged in as an admin
+     And I am on "/admin/products"

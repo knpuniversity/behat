@@ -1,0 +1,31 @@
+diff --git a/features/bootstrap/FeatureContext.php b/features/bootstrap/FeatureContext.php
+index 942a6a1..cf92b1c 100644
+--- a/features/bootstrap/FeatureContext.php
++++ b/features/bootstrap/FeatureContext.php
+@@ -132,6 +132,14 @@ class FeatureContext extends RawMinkContext implements Context, SnippetAccepting
+     }
+ 
+     /**
++     * @When I wait for the modal to load
++     */
++    public function iWaitForTheModalToLoad()
++    {
++        $this->getSession()->wait(5000);
++    }
++
++    /**
+      * @return \Behat\Mink\Element\DocumentElement
+      */
+     private function getPage()
+diff --git a/features/web/product_admin.feature b/features/web/product_admin.feature
+index 43c9df2..ba773c5 100644
+--- a/features/web/product_admin.feature
++++ b/features/web/product_admin.feature
+@@ -22,6 +22,7 @@ Feature: Product admin panel
+     Given I am logged in as an admin
+     And I am on "/admin/products"
+     When I click "New Product"
++    And I wait for the modal to load
+     And I fill in "Name" with "Veloci-chew toy"
+     And I fill in "Price" with "20"
+     And I fill in "Description" with "Have your velociraptor chew on this instead!"

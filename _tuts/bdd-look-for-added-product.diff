@@ -1,0 +1,29 @@
+diff --git a/features/web/product_admin.feature b/features/web/product_admin.feature
+index 9f24f18..70d7270 100644
+--- a/features/web/product_admin.feature
++++ b/features/web/product_admin.feature
+@@ -26,3 +26,4 @@ Feature: Product admin panel
+     And I fill in "Description" with "Have your velociraptor chew on this instead!"
+     And I press "Save"
+     Then I should see "Product created FTW!"
++    And I should see "Veloci-chew toy"
+diff --git a/src/AppBundle/Controller/ProductAdminController.php b/src/AppBundle/Controller/ProductAdminController.php
+index 67269be..1abc017 100644
+--- a/src/AppBundle/Controller/ProductAdminController.php
++++ b/src/AppBundle/Controller/ProductAdminController.php
+@@ -32,6 +32,15 @@ class ProductAdminController extends Controller
+         if ($request->isMethod('POST')) {
+             $this->addFlash('success', 'Product created FTW!');
+ 
++            $product = new Product();
++            $product->setName($request->get('name'));
++            $product->setDescription($request->get('description'));
++            $product->setPrice($request->get('price'));
++
++            $em = $this->getDoctrine()->getManager();
++            $em->persist($product);
++            $em->flush();
++
+             return $this->redirectToRoute('product_list');
+         }
+ 

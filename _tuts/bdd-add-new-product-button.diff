@@ -1,0 +1,29 @@
+diff --git a/app/Resources/views/product/list.html.twig b/app/Resources/views/product/list.html.twig
+index 0ecbd37..66787bd 100644
+--- a/app/Resources/views/product/list.html.twig
++++ b/app/Resources/views/product/list.html.twig
+@@ -5,6 +5,10 @@
+         Product Admin Area
+     </h1>
+ 
++    <a href="" class="btn btn-primary pull-right">
++        <i class="icon-plus-sign"></i> New Product
++    </a>
++
+     <table class="table table-striped">
+         <thead>
+             <tr>
+diff --git a/features/web/product_admin.feature b/features/web/product_admin.feature
+index 182b7a8..9f24f18 100644
+--- a/features/web/product_admin.feature
++++ b/features/web/product_admin.feature
+@@ -18,7 +18,8 @@ Feature: Product admin panel
+     Then I should not see "Anonymous"
+ 
+   Scenario: Add a new product
+-    Given I am on "/admin/products"
++    Given I am logged in as an admin
++    And I am on "/admin/products"
+     When I click "New Product"
+     And I fill in "Name" with "Veloci-chew toy"
+     And I fill in "Price" with "20"

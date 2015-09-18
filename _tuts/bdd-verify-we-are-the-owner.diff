@@ -1,0 +1,22 @@
+diff --git a/features/web/product_admin.feature b/features/web/product_admin.feature
+index 70d7270..2811a8c 100644
+--- a/features/web/product_admin.feature
++++ b/features/web/product_admin.feature
+@@ -27,3 +27,5 @@ Feature: Product admin panel
+     And I press "Save"
+     Then I should see "Product created FTW!"
+     And I should see "Veloci-chew toy"
++    # verify that we are the owner of the toy
++    And I should not see "Anonymous"
+diff --git a/src/AppBundle/Controller/ProductAdminController.php b/src/AppBundle/Controller/ProductAdminController.php
+index 1abc017..1882e95 100644
+--- a/src/AppBundle/Controller/ProductAdminController.php
++++ b/src/AppBundle/Controller/ProductAdminController.php
+@@ -36,6 +36,7 @@ class ProductAdminController extends Controller
+             $product->setName($request->get('name'));
+             $product->setDescription($request->get('description'));
+             $product->setPrice($request->get('price'));
++            $product->setAuthor($this->getUser());
+ 
+             $em = $this->getDoctrine()->getManager();
+             $em->persist($product);
