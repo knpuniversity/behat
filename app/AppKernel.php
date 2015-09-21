@@ -20,6 +20,7 @@ class AppKernel extends Kernel
         if ($this->getEnvironment() == 'dev') {
             $bundles[] = new \Symfony\Bundle\WebProfilerBundle\WebProfilerBundle();
             $bundles[] = new \Symfony\Bundle\DebugBundle\DebugBundle();
+            $bundles[] = new \Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle();
         }
 
         return $bundles;

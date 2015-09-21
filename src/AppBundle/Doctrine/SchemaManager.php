@@ -2,10 +2,15 @@
 
 namespace AppBundle\Doctrine;
 
+use AppBundle\DataFixtures\ORM\LoadFixtures;
 use AppBundle\Entity\Product;
 use AppBundle\Entity\User;
+use Doctrine\Common\DataFixtures\Executor\ORMExecutor;
+use Doctrine\Common\DataFixtures\Purger\ORMPurger;
 use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\Tools\SchemaTool;
+use Symfony\Bridge\Doctrine\DataFixtures\ContainerAwareLoader;
+use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * Handles rebuilding our database tables
@@ -14,9 +19,12 @@ class SchemaManager
 {
     private $em;
 
-    public function __construct(EntityManager $em)
+    private $container;
+
+    public function __construct(EntityManager $em, ContainerInterface $container)
     {
         $this->em = $em;
+        $this->container = $container;
     }
 
     public function rebuildSchema()
@@ -29,56 +37,10 @@ class SchemaManager
 
     public function loadFixtures()
     {
-        $user = $this->loadUsers();
-        $this->loadProducts($user);
-    }
-
-    private function loadProducts(User $defaultAuthor)
-    {
-        $this->em->createQuery('DELETE FROM AppBundle:Product');
-
-        $product1 = new Product();
-        $product1->setName('Kindle Fire HD 7');
-        $product1->setAuthor($defaultAuthor);
-        $product1->setDescription('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed posuere, neque quis pharetra tincidunt, enim libero pretium elit, in vehicula dolor lacus eget erat. Praesent sed justo nisl. Integer vel libero elit. Sed nulla quam, ornare et euismod sit amet, pellentesque vitae erat. Nullam rutrum metus vel magna molestie eget vulputate ligula fermentum. Cras eros nunc, semper sed scelerisque ultricies, condimentum sit amet orci. Suspendisse posuere pulvinar facilisis. Suspendisse gravida libero et sapien scelerisque ac feugiat erat mattis. Aliquam vel magna dolor, eu imperdiet enim. Proin id erat sollicitudin eros vulputate euismod. Nulla sed sem at lectus fringilla malesuada at in mi. Aenean porta metus et nisl accumsan rutrum. Nulla tincidunt enim a lacus tincidunt vitae ornare nisl pellentesque. Praesent id tempor velit.');
-        $product1->setPrice('199.99');
-        $product1->setCreatedAt(new \DateTime('-1 day -4 hours -3 minutes'));
-        $product1->setIsPublished(true);
-
-        $product2 = new Product();
-        $product2->setName('Samsung Galaxy S II');
-        $product2->setDescription('Sed et velit suscipit nisi porttitor rutrum. Aliquam at ante justo, sed consectetur lorem. Integer scelerisque nulla neque. Donec et felis non sem viverra adipiscing. Proin condimentum, risus sed imperdiet rhoncus, augue sem consectetur odio, in eleifend libero quam nec lectus. Aenean eget ipsum in nulla sodales aliquet. Pellentesque blandit, tortor eu tristique sagittis, arcu metus condimentum sapien, vel rutrum lorem elit porta odio. Etiam erat tortor, pellentesque eget tempus in, gravida eu sapien. Sed eu erat vitae neque fringilla fermentum sit amet id lectus. Etiam ligula ipsum, lobortis non mattis eu, laoreet eget urna. Aenean tellus nulla, pretium quis sodales et, eleifend vel tellus. Vivamus et eros ante, et varius sapien.');
-        $product2->setPrice('434.99');
-        $product2->setIsPublished(true);
-        $product2->setCreatedAt(new \DateTime('-1 month'));
-
-        $product3 = new Product();
-        $product3->setName('Samsung 3D Slim LED');
-        $product3->setDescription('Sed feugiat sem ac urna hendrerit ac sollicitudin est vulputate. Duis eleifend lacinia lacinia. Ut in justo sit amet lacus varius vehicula ac quis arcu. Aliquam eu tellus nisl, vitae volutpat dolor. Vivamus vitae massa et tortor ultrices imperdiet. Aliquam erat volutpat. Aenean ut justo at tortor feugiat dictum. Maecenas est metus, iaculis id iaculis sit amet, semper id nulla. Nunc lobortis purus sit amet eros pulvinar id feugiat enim dictum. Aenean arcu nisi, eleifend non rutrum non, rhoncus non magna. Donec quis mi non lorem commodo fringilla. Sed varius iaculis risus, quis commodo felis aliquam non. Maecenas elementum diam quis dui venenatis et volutpat elit malesuada.');
-        $product3->setPrice('2497.99');
-        $product3->setIsPublished(false);
-
-        $this->em->persist($product1);
-        $this->em->persist($product2);
-        $this->em->persist($product3);
-        $this->em->flush();
-    }
-
-    /**
-     * Loads some dummy users
-     */
-    private function loadUsers()
-    {
-        $this->em->createQuery('DELETE FROM AppBundle:Product');
-
-        $user = new User();
-        $user->setUsername('admin');
-        $user->setPlainPassword('admin');
-        $user->setRoles(array('ROLE_ADMIN'));
-
-        $this->em->persist($user);
-        $this->em->flush();
-
-        return $user;
+        $loader = new ContainerAwareLoader($this->container);
+        $loader->loadFromDirectory(__DIR__.'/../DataFixtures');
+        $purger = new ORMPurger();
+        $executor = new ORMExecutor($this->em, $purger);
+        $executor->execute($loader->getFixtures());
     }
 }
