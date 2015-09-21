@@ -1,0 +1,29 @@
+diff --git a/features/bootstrap/FeatureContext.php b/features/bootstrap/FeatureContext.php
+index 9b95272..fe4a7e3 100644
+--- a/features/bootstrap/FeatureContext.php
++++ b/features/bootstrap/FeatureContext.php
+@@ -84,7 +84,7 @@ class FeatureContext extends RawMinkContext implements Context, SnippetAccepting
+     }
+ 
+     /**
+-     * @Given there are :count products
++     * @Given there is/are :count product(s)
+      */
+     public function thereAreProducts($count)
+     {
+diff --git a/features/web/product_admin.feature b/features/web/product_admin.feature
+index eba901a..e79781f 100644
+--- a/features/web/product_admin.feature
++++ b/features/web/product_admin.feature
+@@ -6,9 +6,10 @@ Feature: Product admin panel
+   Scenario: List available products
+     Given I am logged in as an admin
+     And there are 5 products
++    And there is 1 product
+     And I am on "/admin"
+     When I click "Products"
+-    Then I should see 5 products
++    Then I should see 6 products
+ 
+   Scenario: Products show owner
+     Given I am logged in as an admin

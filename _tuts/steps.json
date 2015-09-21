@@ -299,7 +299,67 @@
             "id": "javascript-remove-debugging",
             "name": "JavaScript: Remove debugging",
             "description": null
+        },
+        {
+            "id": "gherkin-optional-language",
+            "name": "Gherkin: Optional language",
+            "description": null
+        },
+        {
+            "id": "gherkin-add-background",
+            "name": "Gherkin: Add Background",
+            "description": null
+        },
+        {
+            "id": "tablenode-loop-and-dump",
+            "name": "TableNode: loop and dump",
+            "description": null
+        },
+        {
+            "id": "tablenode-create-products",
+            "name": "TableNode: Create products",
+            "description": null
+        },
+        {
+            "id": "tablenode-look-for-text-in-table",
+            "name": "TableNode: Look for text in table",
+            "description": null
+        },
+        {
+            "id": "deleting-add-delete-scenario",
+            "name": "Deleting: Add delete scenario",
+            "description": null
+        },
+        {
+            "id": "deleting-click-link-in-row-definition",
+            "name": "Deleting: Click link in row definition",
+            "description": null
+        },
+        {
+            "id": "deleting-making-tablenode-more-flexible",
+            "name": "Deleting: Making TableNode more flexible",
+            "description": null
+        },
+        {
+            "id": "deleting-adding-the-code",
+            "name": "Deleting: Adding the code",
+            "description": null
+        },
+        {
+            "id": "deleting-debugging-bad-link",
+            "name": "Deleting: Debugging bad link",
+            "description": null
+        },
+        {
+            "id": "deleting-changing-to-press",
+            "name": "Deleting: Changing to press",
+            "description": null
+        },
+        {
+            "id": "deleting-use-pressbutton",
+            "name": "Deleting: Use pressButton",
+            "description": null
         }
     ],
-    "sha": "5abe60ffe14680e3d2b66a5690b8b707058720e0"
+    "sha": "5ac9703f940262bea5d6c85aac80ad29c4c62637"
 }

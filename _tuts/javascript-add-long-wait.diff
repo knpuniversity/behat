@@ -18,7 +18,7 @@ index 942a6a1..cf92b1c 100644
       */
      private function getPage()
 diff --git a/features/web/product_admin.feature b/features/web/product_admin.feature
-index 43c9df2..ba773c5 100644
+index 7d8998f..eba901a 100644
 --- a/features/web/product_admin.feature
 +++ b/features/web/product_admin.feature
 @@ -22,6 +22,7 @@ Feature: Product admin panel

@@ -59,7 +59,7 @@ index dabe132..e59e356 100644
 +    }
  }
 diff --git a/features/web/product_admin.feature b/features/web/product_admin.feature
-index ebcb6f1..182b7a8 100644
+index ebcb6f1..dea4e30 100644
 --- a/features/web/product_admin.feature
 +++ b/features/web/product_admin.feature
 @@ -10,6 +10,13 @@ Feature: Product admin panel
@@ -69,7 +69,7 @@ index ebcb6f1..182b7a8 100644
 +  Scenario: Products show owner
 +    Given I am logged in as an admin
 +    And I author 5 products
-+    And I am on "/admin/products"
++    When I go to "/admin/products"
 +    # no products will be anonymous
 +    Then I should not see "Anonymous"
 +

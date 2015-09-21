@@ -1,5 +1,5 @@
 diff --git a/features/web/product_admin.feature b/features/web/product_admin.feature
-index 9f24f18..70d7270 100644
+index 22778a5..397108c 100644
 --- a/features/web/product_admin.feature
 +++ b/features/web/product_admin.feature
 @@ -26,3 +26,4 @@ Feature: Product admin panel

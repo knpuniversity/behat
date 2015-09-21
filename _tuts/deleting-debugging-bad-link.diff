@@ -1,0 +1,31 @@
+diff --git a/features/bootstrap/FeatureContext.php b/features/bootstrap/FeatureContext.php
+index 07cf381..fb70c17 100644
+--- a/features/bootstrap/FeatureContext.php
++++ b/features/bootstrap/FeatureContext.php
+@@ -137,6 +137,7 @@ class FeatureContext extends RawMinkContext implements Context, SnippetAccepting
+     {
+         $row = $this->findRowByText($rowText);
+ 
++        var_dump($row->getHtml());
+         $link = $row->findLink($linkText);
+         assertNotNull($link, 'Cannot find link in row with text '.$linkText);
+         $link->click();
+diff --git a/features/web/product_admin.feature b/features/web/product_admin.feature
+index 0c15777..b95e6f8 100644
+--- a/features/web/product_admin.feature
++++ b/features/web/product_admin.feature
+@@ -26,12 +26,13 @@ Feature: Product admin panel
+       | Foo2 | no           |
+     When I go to "/admin/products"
+     Then the "Foo1" row should have a check mark
+-
++  @javascript
+   Scenario: Deleting a product
+     Given the following product exist:
+       | name |
+       | Foo1 |
+     When I go to "/admin/products"
++    And break
+     And I click "Delete" in the "Foo1" row
+     Then I should see "The product was deleted"
+     And I should not see "Foo1"

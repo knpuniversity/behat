@@ -1,0 +1,48 @@
+diff --git a/app/Resources/views/product/list.html.twig b/app/Resources/views/product/list.html.twig
+index 5566b6f..acea1ec 100644
+--- a/app/Resources/views/product/list.html.twig
++++ b/app/Resources/views/product/list.html.twig
+@@ -16,6 +16,7 @@
+                 <th>Price</th>
+                 <th>Author</th>
+                 <th>Is Published?</th>
++                <th>Actions</th>
+             </tr>
+         </thead>
+         <tbody>
+@@ -27,6 +28,11 @@
+                     {{ product.author|default('Anonymous') }}
+                 </td>
+                 <td><i class="icon-{{ product.isPublished ? 'ok' : 'remove' }}"></i></td>
++                <td>
++                    <form action="{{ path('product_delete', {'id': product.id} ) }}" method="POST">
++                        <button type="submit" class="btn btn-small btn-link">Delete</button>
++                    </form>
++                </td>
+             </tr>
+             {% endfor %}
+         </tbody>
+diff --git a/src/AppBundle/Controller/ProductAdminController.php b/src/AppBundle/Controller/ProductAdminController.php
+index 1882e95..90072bc 100644
+--- a/src/AppBundle/Controller/ProductAdminController.php
++++ b/src/AppBundle/Controller/ProductAdminController.php
+@@ -47,4 +47,19 @@ class ProductAdminController extends Controller
+ 
+         return $this->render('product/new.html.twig');
+     }
++
++    /**
++     * @Route("/admin/products/delete/{id}", name="product_delete")
++     * @Method("POST")
++     */
++    public function deleteAction(Product $product)
++    {
++        $em = $this->getDoctrine()->getManager();
++        $em->remove($product);
++        $em->flush();
++
++        $this->addFlash('success', 'The product was deleted');
++
++        return $this->redirectToRoute('product_list');
++    }
+ }

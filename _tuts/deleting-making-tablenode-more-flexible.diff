@@ -1,0 +1,13 @@
+diff --git a/features/bootstrap/FeatureContext.php b/features/bootstrap/FeatureContext.php
+index 1144f21..07cf381 100644
+--- a/features/bootstrap/FeatureContext.php
++++ b/features/bootstrap/FeatureContext.php
+@@ -110,7 +110,7 @@ class FeatureContext extends RawMinkContext implements Context, SnippetAccepting
+             $product->setPrice(rand(10, 1000));
+             $product->setDescription('lorem');
+ 
+-            if ($row['is published'] == 'yes') {
++            if (isset($row['is published']) && $row['is published'] == 'yes') {
+                 $product->setIsPublished(true);
+             }
+ 

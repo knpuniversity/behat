@@ -1,0 +1,46 @@
+diff --git a/features/bootstrap/FeatureContext.php b/features/bootstrap/FeatureContext.php
+index fb70c17..ba4f60a 100644
+--- a/features/bootstrap/FeatureContext.php
++++ b/features/bootstrap/FeatureContext.php
+@@ -131,16 +131,15 @@ class FeatureContext extends RawMinkContext implements Context, SnippetAccepting
+     }
+ 
+     /**
+-     * @When I click :linkText in the :rowText row
++     * @When I press :linkText in the :rowText row
+      */
+     public function iClickInTheRow($linkText, $rowText)
+     {
+         $row = $this->findRowByText($rowText);
+ 
+-        var_dump($row->getHtml());
+-        $link = $row->findLink($linkText);
+-        assertNotNull($link, 'Cannot find link in row with text '.$linkText);
+-        $link->click();
++        $link = $row->findButton($linkText);
++        assertNotNull($link, 'Cannot find button in row with text '.$linkText);
++        $link->press();
+     }
+ 
+     /**
+diff --git a/features/web/product_admin.feature b/features/web/product_admin.feature
+index b95e6f8..c7ab1d6 100644
+--- a/features/web/product_admin.feature
++++ b/features/web/product_admin.feature
+@@ -26,14 +26,13 @@ Feature: Product admin panel
+       | Foo2 | no           |
+     When I go to "/admin/products"
+     Then the "Foo1" row should have a check mark
+-  @javascript
++
+   Scenario: Deleting a product
+     Given the following product exist:
+       | name |
+       | Foo1 |
+     When I go to "/admin/products"
+-    And break
+-    And I click "Delete" in the "Foo1" row
++    And I press "Delete" in the "Foo1" row
+     Then I should see "The product was deleted"
+     And I should not see "Foo1"
+ 

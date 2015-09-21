@@ -14,7 +14,7 @@ index 0ecbd37..66787bd 100644
          <thead>
              <tr>
 diff --git a/features/web/product_admin.feature b/features/web/product_admin.feature
-index 182b7a8..9f24f18 100644
+index dea4e30..22778a5 100644
 --- a/features/web/product_admin.feature
 +++ b/features/web/product_admin.feature
 @@ -18,7 +18,8 @@ Feature: Product admin panel

@@ -1,0 +1,40 @@
+diff --git a/features/bootstrap/FeatureContext.php b/features/bootstrap/FeatureContext.php
+index fe4a7e3..f89fbb7 100644
+--- a/features/bootstrap/FeatureContext.php
++++ b/features/bootstrap/FeatureContext.php
+@@ -100,6 +100,16 @@ class FeatureContext extends RawMinkContext implements Context, SnippetAccepting
+     }
+ 
+     /**
++     * @Given the following products exist:
++     */
++    public function theFollowingProductsExist(TableNode $table)
++    {
++        foreach ($table as $row) {
++            var_dump($row);
++        }
++    }
++
++    /**
+      * @When I click :linkName
+      */
+     public function iClick($linkName)
+diff --git a/features/web/product_admin.feature b/features/web/product_admin.feature
+index d2aa379..e65c330 100644
+--- a/features/web/product_admin.feature
++++ b/features/web/product_admin.feature
+@@ -19,6 +19,14 @@ Feature: Product admin panel
+     # no products will be anonymous
+     Then I should not see "Anonymous"
+ 
++  Scenario: Show published/unpublished
++    Given the following products exist:
++      | name | is published |
++      | Foo1 | yes          |
++      | Foo2 | no           |
++    When I go to "/admin/products"
++    # todo
++
+   @javascript
+   Scenario: Add a new product
+     Given I am on "/admin/products"

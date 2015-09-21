@@ -1,0 +1,36 @@
+diff --git a/features/web/product_admin.feature b/features/web/product_admin.feature
+index e79781f..d2aa379 100644
+--- a/features/web/product_admin.feature
++++ b/features/web/product_admin.feature
+@@ -3,25 +3,25 @@ Feature: Product admin panel
+   As an admin
+   I need to be able to add/edit/delete products
+ 
+-  Scenario: List available products
++  Background:
+     Given I am logged in as an admin
+-    And there are 5 products
++
++  Scenario: List available products
++    Given there are 5 products
+     And there is 1 product
+     And I am on "/admin"
+     When I click "Products"
+     Then I should see 6 products
+ 
+   Scenario: Products show owner
+-    Given I am logged in as an admin
+-    And I author 5 products
++    Given I author 5 products
+     When I go to "/admin/products"
+     # no products will be anonymous
+     Then I should not see "Anonymous"
+ 
+   @javascript
+   Scenario: Add a new product
+-    Given I am logged in as an admin
+-    And I am on "/admin/products"
++    Given I am on "/admin/products"
+     When I click "New Product"
+     And I wait for the modal to load
+     And I fill in "Name" with "Veloci-chew toy"
