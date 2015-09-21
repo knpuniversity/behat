@@ -10,10 +10,10 @@ index 0000000..69d44b4
 +            base_url: http://localhost:8000
 +            goutte: ~
 diff --git a/composer.json b/composer.json
-index a45e928..e5a6f2f 100644
+index c80a938..6b13efa 100644
 --- a/composer.json
 +++ b/composer.json
-@@ -17,5 +17,9 @@
+@@ -18,5 +18,9 @@
          "psr-0": {
              "": "src/"
          }
@@ -24,19 +24,19 @@ index a45e928..e5a6f2f 100644
      }
  }
 diff --git a/composer.lock b/composer.lock
-index 689a2fd..e51a7b9 100644
+index 6c52933..4f61ec1 100644
 --- a/composer.lock
 +++ b/composer.lock
 @@ -4,7 +4,7 @@
          "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
          "This file is @generated automatically"
      ],
--    "hash": "9860069333f32c9680fa6a99faedeaf7",
+-    "hash": "8ae104ee6cf785795a78fb2f785de527",
 +    "hash": "c781ec1b06ead16302bb8ce229af0ee5",
      "packages": [
          {
              "name": "doctrine/annotations",
-@@ -1095,7 +1095,660 @@
+@@ -1209,7 +1209,660 @@
              "time": "2015-09-15 06:50:16"
          }
      ],

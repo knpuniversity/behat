@@ -1,8 +1,8 @@
 diff --git a/composer.json b/composer.json
-index 9955e34..0f3ac31 100644
+index f99ff6e..05cd30a 100644
 --- a/composer.json
 +++ b/composer.json
-@@ -21,6 +21,7 @@
+@@ -22,6 +22,7 @@
      "require-dev": {
          "behat/mink-extension": "^2.0",
          "behat/mink-goutte-driver": "^1.1",
@@ -12,7 +12,7 @@ index 9955e34..0f3ac31 100644
      }
  }
 diff --git a/composer.lock b/composer.lock
-index 018c7ff..4dc7826 100644
+index 09a880e..8407181 100644
 --- a/composer.lock
 +++ b/composer.lock
 @@ -4,7 +4,7 @@
@@ -24,7 +24,7 @@ index 018c7ff..4dc7826 100644
      "packages": [
          {
              "name": "doctrine/annotations",
-@@ -1821,6 +1821,483 @@
+@@ -1935,6 +1935,483 @@
              "time": "2015-06-15 20:19:33"
          },
          {
@@ -508,7 +508,7 @@ index 018c7ff..4dc7826 100644
              "name": "react/promise",
              "version": "v2.2.1",
              "source": {
-@@ -1863,6 +2340,377 @@
+@@ -1977,6 +2454,377 @@
              ],
              "description": "A lightweight implementation of CommonJS Promises/A for PHP",
              "time": "2015-07-03 13:48:55"

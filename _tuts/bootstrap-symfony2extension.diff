@@ -8,21 +8,21 @@ index 48194d1..ddd5462 100644
              selenium2: ~
 +        Behat\Symfony2Extension: ~
 diff --git a/composer.json b/composer.json
-index 0f3ac31..c5e3e0a 100644
+index 05cd30a..9b17165 100644
 --- a/composer.json
 +++ b/composer.json
-@@ -11,7 +11,8 @@
-         "twig/twig": "^1.22",
+@@ -12,7 +12,8 @@
          "sensio/framework-extra-bundle": "^3.0",
          "doctrine/doctrine-bundle": "^1.5",
--        "doctrine/orm": "^2.5"
-+        "doctrine/orm": "^2.5",
+         "doctrine/orm": "^2.5",
+-        "doctrine/doctrine-fixtures-bundle": "^2.2"
++        "doctrine/doctrine-fixtures-bundle": "^2.2",
 +        "behat/symfony2-extension": "^2.0"
      },
      "autoload": {
          "psr-0": {
 diff --git a/composer.lock b/composer.lock
-index 4dc7826..99d1b1d 100644
+index 8407181..e6dd507 100644
 --- a/composer.lock
 +++ b/composer.lock
 @@ -4,9 +4,248 @@
@@ -275,7 +275,7 @@ index 4dc7826..99d1b1d 100644
              "name": "doctrine/annotations",
              "version": "v1.2.7",
              "source": {
-@@ -1097,145 +1336,6 @@
+@@ -1211,145 +1450,6 @@
      ],
      "packages-dev": [
          {
@@ -421,7 +421,7 @@ index 4dc7826..99d1b1d 100644
              "name": "behat/mink",
              "version": "v1.6.1",
              "source": {
-@@ -1515,46 +1615,6 @@
+@@ -1629,46 +1729,6 @@
              "time": "2014-09-29 13:12:12"
          },
          {
