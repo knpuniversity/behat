@@ -1,5 +1,5 @@
 diff --git a/features/bootstrap/FeatureContext.php b/features/bootstrap/FeatureContext.php
-index a376c64..6d59818 100644
+index a376c64..17b790b 100644
 --- a/features/bootstrap/FeatureContext.php
 +++ b/features/bootstrap/FeatureContext.php
 @@ -4,13 +4,14 @@ use Behat\Behat\Context\Context;
@@ -31,7 +31,7 @@ index a376c64..6d59818 100644
 -        throw new PendingException();
 +        $searchBox = $this->getSession()
 +            ->getPage()
-+            ->find('css', '.navbar-inner input[name="searchTerm"]');
++            ->find('css', 'input[name="searchTerm"]');
 +
 +        assertNotNull($searchBox, 'Could not find the search box!');
 +

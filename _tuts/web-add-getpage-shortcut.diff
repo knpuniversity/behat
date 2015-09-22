@@ -1,5 +1,5 @@
 diff --git a/features/bootstrap/FeatureContext.php b/features/bootstrap/FeatureContext.php
-index 6d59818..624055d 100644
+index 17b790b..0353a7c 100644
 --- a/features/bootstrap/FeatureContext.php
 +++ b/features/bootstrap/FeatureContext.php
 @@ -89,8 +89,7 @@ class FeatureContext extends RawMinkContext implements Context, SnippetAccepting
@@ -9,7 +9,7 @@ index 6d59818..624055d 100644
 -        $searchBox = $this->getSession()
 -            ->getPage()
 +        $searchBox = $this->getPage()
-             ->find('css', '.navbar-inner input[name="searchTerm"]');
+             ->find('css', 'input[name="searchTerm"]');
  
          assertNotNull($searchBox, 'Could not find the search box!');
 @@ -103,12 +102,19 @@ class FeatureContext extends RawMinkContext implements Context, SnippetAccepting
