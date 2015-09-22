@@ -18,6 +18,8 @@ class FeatureContext extends RawMinkContext implements Context, SnippetAccepting
 {
     use \Behat\Symfony2Extension\Context\KernelDictionary;
 
+    private $currentUser;
+
     /**
      * Initializes context.
      *
@@ -51,6 +53,8 @@ class FeatureContext extends RawMinkContext implements Context, SnippetAccepting
         $em = $this->getContainer()->get('doctrine')->getManager();
         $em->persist($user);
         $em->flush();
+
+        return $user;
     }
 
     /**
@@ -92,7 +96,7 @@ class FeatureContext extends RawMinkContext implements Context, SnippetAccepting
      */
     public function iAuthorProducts($count)
     {
-        $this->createProducts($count);
+        $this->createProducts($count, $this->currentUser);
     }
 
     /**
@@ -119,7 +123,7 @@ class FeatureContext extends RawMinkContext implements Context, SnippetAccepting
      */
     public function iAmLoggedInAsAnAdmin()
     {
-        $this->thereIsAUserWithPassword('admin', 'admin');
+        $this->currentUser = $this->thereIsAUserWithPassword('admin', 'admin');
 
         $this->getSession()->visit($this->locatePath('/login'));
         $this->getPage()->fillField('Username', 'admin');
