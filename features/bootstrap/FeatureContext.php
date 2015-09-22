@@ -41,6 +41,14 @@ class FeatureContext extends RawMinkContext implements Context, SnippetAccepting
     }
 
     /**
+     * @BeforeScenario @fixtures
+     */
+    public function loadFixtures()
+    {
+        var_dump('GO!');
+    }
+
+    /**
      * @Given there is an admin user :username with password :password
      */
     public function thereIsAUserWithPassword($username, $password)
