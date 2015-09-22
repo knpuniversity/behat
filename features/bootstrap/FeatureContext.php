@@ -58,7 +58,7 @@ class FeatureContext extends RawMinkContext implements Context, SnippetAccepting
     public function iFillInTheSearchBoxWith($term)
     {
         $searchBox = $this->getPage()
-            ->find('css', '.navbar-inner input[name="searchTerm"]');
+            ->find('css', 'input[name="searchTerm"]');
 
         assertNotNull($searchBox, 'Could not find the search box!');
 
@@ -108,7 +108,7 @@ class FeatureContext extends RawMinkContext implements Context, SnippetAccepting
      */
     public function iShouldSeeProducts($count)
     {
-        $table = $this->getPage()->find('css', '.main-content table');
+        $table = $this->getPage()->find('css', 'table.table');
         assertNotNull($table, 'Cannot find a table!');
 
         assertCount(intval($count), $table->findAll('css', 'tbody tr'));
