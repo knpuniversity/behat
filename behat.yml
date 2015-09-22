@@ -3,8 +3,13 @@ default:
         default:
             contexts:
                 - FeatureContext
-                - CommandLineProcessContext
                 - Behat\MinkExtension\Context\MinkContext
+            paths: [ %paths.base%/features/web ]
+        commands:
+            contexts:
+                - CommandLineProcessContext
+            paths: [ %paths.base%/features/commands ]
+
     extensions:
         Behat\MinkExtension:
             base_url: http://localhost:8000
