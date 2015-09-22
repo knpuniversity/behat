@@ -26,14 +26,13 @@ Feature: Product admin panel
       | Foo2 | no           |
     When I go to "/admin/products"
     Then the "Foo1" row should have a check mark
-  @javascript
+
   Scenario: Deleting a product
     Given the following product exist:
       | name |
       | Foo1 |
     When I go to "/admin/products"
-    And break
-    And I click "Delete" in the "Foo1" row
+    And I press "Delete" in the "Foo1" row
     Then I should see "The product was deleted"
     And I should not see "Foo1"
 
