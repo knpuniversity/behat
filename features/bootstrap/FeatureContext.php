@@ -132,6 +132,14 @@ class FeatureContext extends RawMinkContext implements Context, SnippetAccepting
     }
 
     /**
+     * @When I wait for the modal to load
+     */
+    public function iWaitForTheModalToLoad()
+    {
+        $this->getSession()->wait(5000);
+    }
+
+    /**
      * @return \Behat\Mink\Element\DocumentElement
      */
     private function getPage()
