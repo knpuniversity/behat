@@ -115,6 +115,19 @@ class FeatureContext extends RawMinkContext implements Context, SnippetAccepting
     }
 
     /**
+     * @Given I am logged in as an admin
+     */
+    public function iAmLoggedInAsAnAdmin()
+    {
+        $this->thereIsAUserWithPassword('admin', 'admin');
+
+        $this->getSession()->visit($this->locatePath('/login'));
+        $this->getPage()->fillField('Username', 'admin');
+        $this->getPage()->fillField('Password', 'admin');
+        $this->getPage()->pressButton('Login');
+    }
+
+    /**
      * @return \Behat\Mink\Element\DocumentElement
      */
     private function getPage()
