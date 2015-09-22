@@ -30,7 +30,7 @@
                         <td>
                             {{ product.author|default('Anonymous') }}
                         </td>
-                        <td><i class="fa fa-check"></i></td>
+                        <td><i class="fa fa-{{ product.isPublished ? 'check' : 'times' }}"></i></td>
                     </tr>
                     {% endfor %}
                 </tbody>
