@@ -1,5 +1,5 @@
 diff --git a/features/bootstrap/FeatureContext.php b/features/bootstrap/FeatureContext.php
-index dabe132..e59e356 100644
+index 361c58d..a6bd770 100644
 --- a/features/bootstrap/FeatureContext.php
 +++ b/features/bootstrap/FeatureContext.php
 @@ -1,6 +1,7 @@
@@ -16,7 +16,7 @@ index dabe132..e59e356 100644
      {
 -        for ($i = 0; $i < $count; $i++) {
 -            $product = new Product();
--            $product->setName('Product '.$count);
+-            $product->setName('Product '.$i);
 -            $product->setPrice(rand(10, 1000));
 -            $product->setDescription('lorem');
 -
@@ -44,7 +44,7 @@ index dabe132..e59e356 100644
 +    {
 +        for ($i = 0; $i < $count; $i++) {
 +            $product = new Product();
-+            $product->setName('Product '.$count);
++            $product->setName('Product '.$i);
 +            $product->setPrice(rand(10, 1000));
 +            $product->setDescription('lorem');
 +
