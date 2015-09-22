@@ -6,9 +6,10 @@ Feature: Product admin panel
   Scenario: List available products
     Given I am logged in as an admin
     And there are 5 products
+    And there is 1 product
     And I am on "/admin"
     When I click "Products"
-    Then I should see 5 products
+    Then I should see 6 products
 
   Scenario: Products show owner
     Given I am logged in as an admin
