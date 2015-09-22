@@ -359,7 +359,17 @@
             "id": "deleting-use-pressbutton",
             "name": "Deleting: Use pressButton",
             "description": null
+        },
+        {
+            "id": "tags-tagging-fixtures-with-hook",
+            "name": "Tags: Tagging @fixtures with hook",
+            "description": null
+        },
+        {
+            "id": "tags-adding-fixtures-code",
+            "name": "Tags: Adding fixtures code",
+            "description": null
         }
     ],
-    "sha": "0858589563d52e52063572a124e9185f9bf7faa6"
+    "sha": "b801ab3c1bfa813d9802f7200bdc10cab5534a4c"
 }
