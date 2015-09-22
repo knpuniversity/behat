@@ -147,7 +147,7 @@ class FeatureContext extends RawMinkContext implements Context, SnippetAccepting
     {
         for ($i = 0; $i < $count; $i++) {
             $product = new Product();
-            $product->setName('Product '.$count);
+            $product->setName('Product '.$i);
             $product->setPrice(rand(10, 1000));
             $product->setDescription('lorem');
 
