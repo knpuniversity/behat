@@ -30,13 +30,6 @@ echo "The wiki nav text is: ".$header->getText()."\n";
 $subNav = $page->find('css', '.subnav-2');
 $linkEl = $subNav->find('css', 'li a');
 
-$selectorsHandler = $session->getSelectorsHandler();
-$linkel = $page->find(
-    'named',
-    array(
-        'link',
-        $selectorsHandler->xpathLiteral('Wiki Activity')
-    )
-);
+$linkEl = $page->findLink('Wiki Activity');
 
 echo "The link href is: ". $linkEl->getAttribute('href') . "\n";
