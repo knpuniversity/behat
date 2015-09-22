@@ -1,36 +1,46 @@
 {% extends 'layout.html.twig' %}
 
 {% block body %}
-    <h1>
-        Product Admin Area
-    </h1>
+    <div class="row">
+        <div class="col-xs-12 col-sm-3 sidebar">
+            <h2 class="admin-nav-header">Admin Nav</h2>
+            <ul class="nav">
+                <li class="active"><a href="{{ path('admin') }}">Overview <span class="sr-only">(current)</span></a></li>
+                <li><a href="{{ path('product_list') }}">Products</a></li>
+            </ul>
+        </div>
+        <div class="col-sm-8">
+            <a href="" class="btn btn-primary pull-right">
+                <i class="icon-plus-sign"></i> New Product
+            </a>
 
-    <a href="" class="btn btn-primary pull-right">
-        <i class="icon-plus-sign"></i> New Product
-    </a>
-
-    <table class="table table-striped">
-        <thead>
-            <tr>
-                <th>Name</th>
-                <th>Price</th>
-                <th>Author</th>
-                <th>Is Published?</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for product in products %}
-            <tr>
-                <td>{{ product.name }}</td>
-                <td>${{ product.price|number_format(2) }}</td>
-                <td>
-                    {{ product.author|default('Anonymous') }}
-                </td>
-                <td><i class="icon-{{ product.isPublished ? 'ok' : 'remove' }}"></i></td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
+            <h1 class="text-center">
+                Product Admin Area
+            </h1>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Price</th>
+                        <th>Author</th>
+                        <th>Is Published?</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for product in products %}
+                    <tr>
+                        <td>{{ product.name }}</td>
+                        <td>${{ product.price|number_format(2) }}</td>
+                        <td>
+                            {{ product.author|default('Anonymous') }}
+                        </td>
+                        <td><i class="fa fa-check"></i></td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
 {% endblock %}
 
 {% block javascripts %}
