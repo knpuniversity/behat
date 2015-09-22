@@ -1,5 +1,6 @@
 <?php
 
+use AppBundle\Entity\Product;
 use Behat\Behat\Context\Context;
 use Behat\Behat\Context\SnippetAcceptingContext;
 use Behat\Gherkin\Node\PyStringNode;
@@ -78,10 +79,54 @@ class FeatureContext extends RawMinkContext implements Context, SnippetAccepting
     }
 
     /**
+     * @Given there are :count products
+     */
+    public function thereAreProducts($count)
+    {
+        for ($i = 0; $i < $count; $i++) {
+            $product = new Product();
+            $product->setName('Product '.$count);
+            $product->setPrice(rand(10, 1000));
+            $product->setDescription('lorem');
+
+            $this->getEntityManager()->persist($product);
+        }
+
+        $this->getEntityManager()->flush();
+    }
+
+    /**
+     * @When I click :linkName
+     */
+    public function iClick($linkName)
+    {
+        $this->getPage()->clickLink($linkName);
+    }
+
+    /**
+     * @Then I should see :count products
+     */
+    public function iShouldSeeProducts($count)
+    {
+        $table = $this->getPage()->find('css', '.main-content table');
+        assertNotNull($table, 'Cannot find a table!');
+
+        assertCount(intval($count), $table->findAll('css', 'tbody tr'));
+    }
+
+    /**
      * @return \Behat\Mink\Element\DocumentElement
      */
     private function getPage()
     {
         return $this->getSession()->getPage();
+    }
+
+    /**
+     * @return \Doctrine\ORM\EntityManager
+     */
+    private function getEntityManager()
+    {
+        return $this->getContainer()->get('doctrine.orm.entity_manager');
     }
 }

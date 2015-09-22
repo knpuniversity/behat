@@ -7,6 +7,7 @@ Feature: Product admin panel
     Given there are 5 products
     And I am on "/admin"
     When I click "Products"
+    And print last response
     Then I should see 5 products
 
   Scenario: Add a new product
