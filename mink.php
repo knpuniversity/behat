@@ -26,3 +26,6 @@ echo "First 160 chars: ".substr($page->getText() , 0, 75) . "\n";
 $header = $page->find('css', '.WikiHeader .WikiNav h1');
 
 echo "The wiki nav text is: ".$header->getText()."\n";
+
+$subNav = $page->find('css', '.subnav-2');
+var_dump($subNav->getHtml());
