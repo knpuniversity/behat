@@ -23,19 +23,19 @@ class FeatureContext extends MinkContext implements Context, SnippetAcceptingCon
     }
 
     /**
-     * @Given I have a file named :arg1
+     * @Given I have a file named :filename
      */
-    public function iHaveAFileNamed($arg1)
+    public function iHaveAFileNamed($filename)
     {
-        throw new PendingException();
+        touch($filename);
     }
 
     /**
-     * @When I run :arg1
+     * @When I run :command
      */
-    public function iRun($arg1)
+    public function iRun($command)
     {
-        throw new PendingException();
+        shell_exec($command);
     }
 
     /**
