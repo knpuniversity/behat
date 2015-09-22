@@ -23,7 +23,7 @@ Feature: Product admin panel
     And I am on "/admin/products"
     When I click "New Product"
     And I wait for the modal to load
-    And break
+    And I save a screenshot to "shot.png"
     And I fill in "Product Name" with "Veloci-chew toy"
     And I fill in "Price" with "20"
     And I fill in "Description" with "Have your velociraptor chew on this instead!"

@@ -156,6 +156,17 @@ class FeatureContext extends RawMinkContext implements Context, SnippetAccepting
     }
 
     /**
+     * Saving a screenshot
+     *
+     * @When I save a screenshot to :filename
+     */
+    public function iSaveAScreenshotIn($filename)
+    {
+        sleep(1);
+        $this->saveScreenshot($filename, __DIR__.'/../..');
+    }
+
+    /**
      * @return \Behat\Mink\Element\DocumentElement
      */
     private function getPage()
