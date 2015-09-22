@@ -4,14 +4,13 @@ use Behat\Behat\Context\Context;
 use Behat\Behat\Context\SnippetAcceptingContext;
 use Behat\Gherkin\Node\PyStringNode;
 use Behat\Gherkin\Node\TableNode;
-use Behat\MinkExtension\Context\MinkContext;
 
 require_once __DIR__.'/../../vendor/phpunit/phpunit/src/Framework/Assert/Functions.php';
 
 /**
  * Defines application features from the specific context.
  */
-class FeatureContext extends MinkContext implements Context, SnippetAcceptingContext
+class FeatureContext implements Context, SnippetAcceptingContext
 {
     private $output;
 
