@@ -12,7 +12,7 @@ index e6dd507..1c0e3b4 100644
          {
              "name": "behat/behat",
 diff --git a/features/bootstrap/FeatureContext.php b/features/bootstrap/FeatureContext.php
-index a1abe32..8361fce 100644
+index bb1f1fb..fcf81c9 100644
 --- a/features/bootstrap/FeatureContext.php
 +++ b/features/bootstrap/FeatureContext.php
 @@ -5,6 +5,7 @@ use Behat\Behat\Context\SnippetAcceptingContext;
