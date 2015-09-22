@@ -16,6 +16,7 @@
                 <th>Price</th>
                 <th>Author</th>
                 <th>Is Published?</th>
+                <th>Actions</th>
             </tr>
         </thead>
         <tbody>
@@ -27,6 +28,11 @@
                     {{ product.author|default('Anonymous') }}
                 </td>
                 <td><i class="icon-{{ product.isPublished ? 'ok' : 'remove' }}"></i></td>
+                <td>
+                    <form action="{{ path('product_delete', {'id': product.id} ) }}" method="POST">
+                        <button type="submit" class="btn btn-small btn-link">Delete</button>
+                    </form>
+                </td>
             </tr>
             {% endfor %}
         </tbody>
