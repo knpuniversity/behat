@@ -1,16 +1,16 @@
-    <form action="{{ path('product_new') }}" method="POST" class="form-horizontal">
+    <form action="{{ path('product_new') }}" method="POST">
         <fieldset>
             <legend>New Product</legend>
 
-            <div class="form-group form-padding">
+            <div class="form-group">
                 <label for="article-name">Name</label>
                 <input type="text" class="form-control" id="article-name" name="name" />
             </div>
-            <div class="form-group form-padding">
+            <div class="form-group">
                 <label for="article-price">Price</label>
                 <input type="text" class="form-control" id="article-price" name="price" />
             </div>
-            <div class="form-group form-padding">
+            <div class="form-group">
                 <label for="article-body">Description</label>
                 <textarea class="form-control" id="article-body" name="description"></textarea>
             </div>
