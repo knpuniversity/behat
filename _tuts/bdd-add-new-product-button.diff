@@ -1,18 +1,18 @@
 diff --git a/app/Resources/views/product/list.html.twig b/app/Resources/views/product/list.html.twig
-index 0ecbd37..66787bd 100644
+index 6523f18..eb00c76 100644
 --- a/app/Resources/views/product/list.html.twig
 +++ b/app/Resources/views/product/list.html.twig
-@@ -5,6 +5,10 @@
-         Product Admin Area
-     </h1>
- 
-+    <a href="" class="btn btn-primary pull-right">
-+        <i class="icon-plus-sign"></i> New Product
-+    </a>
+@@ -10,6 +10,10 @@
+             </ul>
+         </div>
+         <div class="col-sm-8">
++            <a href="" class="btn btn-primary pull-right">
++                <span class="fa fa-plus"></span> New Product
++            </a>
 +
-     <table class="table table-striped">
-         <thead>
-             <tr>
+             <h1 class="text-center">
+                 Product Admin Area
+             </h1>
 diff --git a/features/web/product_admin.feature b/features/web/product_admin.feature
 index dea4e30..22778a5 100644
 --- a/features/web/product_admin.feature
