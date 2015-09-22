@@ -5,6 +5,7 @@ use Behat\Behat\Context\SnippetAcceptingContext;
 use Behat\Gherkin\Node\PyStringNode;
 use Behat\Gherkin\Node\TableNode;
 use Behat\MinkExtension\Context\RawMinkContext;
+use Doctrine\Common\DataFixtures\Purger\ORMPurger;
 
 require_once __DIR__.'/../../vendor/phpunit/phpunit/src/Framework/Assert/Functions.php';
 
@@ -31,9 +32,8 @@ class FeatureContext extends RawMinkContext implements Context, SnippetAccepting
      */
     public function clearData()
     {
-        $em = $this->getContainer()->get('doctrine')->getManager();
-        $em->createQuery('DELETE FROM AppBundle:Product')->execute();
-        $em->createQuery('DELETE FROM AppBundle:User')->execute();
+        $purger = new ORMPurger($this->getContainer()->get('doctrine')->getManager());
+        $purger->purge();
     }
 
     /**
