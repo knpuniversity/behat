@@ -128,7 +128,7 @@ class FeatureContext extends RawMinkContext implements Context, SnippetAccepting
         $row = $this->getPage()->find('css', sprintf('table tr:contains("%s")', $rowText));
         assertNotNull($row, 'Cannot find a table row with this text!');
 
-        assertContains('icon-ok', $row->getHtml(), 'Could not find the icon-ok element in the row!');
+        assertContains('fa-check', $row->getHtml(), 'Could not find the fa-check element in the row!');
     }
 
     /**
