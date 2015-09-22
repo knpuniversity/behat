@@ -105,8 +105,19 @@ class FeatureContext extends RawMinkContext implements Context, SnippetAccepting
     public function theFollowingProductsExist(TableNode $table)
     {
         foreach ($table as $row) {
-            var_dump($row);
+            $product = new Product();
+            $product->setName($row['name']);
+            $product->setPrice(rand(10, 1000));
+            $product->setDescription('lorem');
+
+            if ($row['is published'] == 'yes') {
+                $product->setIsPublished(true);
+            }
+
+            $this->getEntityManager()->persist($product);
         }
+
+        $this->getEntityManager()->flush();
     }
 
     /**
