@@ -1,22 +1,22 @@
 diff --git a/app/Resources/views/product/list.html.twig b/app/Resources/views/product/list.html.twig
-index 66787bd..928fd31 100644
+index eb00c76..1df8247 100644
 --- a/app/Resources/views/product/list.html.twig
 +++ b/app/Resources/views/product/list.html.twig
-@@ -5,7 +5,7 @@
-         Product Admin Area
-     </h1>
- 
--    <a href="" class="btn btn-primary pull-right">
-+    <a href="{{ path('product_new') }}" class="btn btn-primary pull-right">
-         <i class="icon-plus-sign"></i> New Product
-     </a>
+@@ -10,7 +10,7 @@
+             </ul>
+         </div>
+         <div class="col-sm-8">
+-            <a href="" class="btn btn-primary pull-right">
++            <a href="{{ path('product_new') }}" class="btn btn-primary pull-right">
+                 <span class="fa fa-plus"></span> New Product
+             </a>
  
 diff --git a/app/Resources/views/product/new.html.twig b/app/Resources/views/product/new.html.twig
 new file mode 100644
-index 0000000..208f57c
+index 0000000..6cc54c0
 --- /dev/null
 +++ b/app/Resources/views/product/new.html.twig
-@@ -0,0 +1,30 @@
+@@ -0,0 +1,24 @@
 +{% extends 'layout.html.twig' %}
 +
 +{% block body %}
@@ -24,27 +24,21 @@ index 0000000..208f57c
 +        <fieldset>
 +            <legend>New Product</legend>
 +
-+            <div class="control-group">
-+                <label class="control-label" for="article-name">Name</label>
-+                <div class="controls">
-+                    <input type="text" class="input-xlarge" id="article-name" name="name" />
-+                </div>
++            <div class="form-group">
++                <label for="article-name">Name</label>
++                <input type="text" class="form-control" id="article-name" name="name" />
 +            </div>
-+            <div class="control-group">
-+                <label class="control-label" for="article-price">Price</label>
-+                <div class="controls">
-+                    <input type="text" class="input-xlarge" id="article-price" name="price" />
-+                </div>
++            <div class="form-group">
++                <label for="article-price">Price</label>
++                <input type="text" class="form-control" id="article-price" name="price" />
 +            </div>
-+            <div class="control-group">
-+                <label class="control-label" for="article-body">Description</label>
-+                <div class="controls">
-+                    <textarea class="input-xlarge" id="article-body" name="description"></textarea>
-+                </div>
++            <div class="form-group">
++                <label for="article-body">Description</label>
++                <textarea class="form-control" id="article-body" name="description"></textarea>
 +            </div>
 +        </fieldset>
 +
-+        <button type="submit" class="btn btn-primary pull-right">Save</button>
++        <button type="submit" class="btn btn-primary">Save</button>
 +    </form>
 +{% endblock %}
 diff --git a/src/AppBundle/Controller/ProductAdminController.php b/src/AppBundle/Controller/ProductAdminController.php
