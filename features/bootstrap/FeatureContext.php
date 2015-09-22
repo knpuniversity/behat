@@ -13,6 +13,8 @@ require_once __DIR__.'/../../vendor/phpunit/phpunit/src/Framework/Assert/Functio
  */
 class FeatureContext extends RawMinkContext implements Context, SnippetAcceptingContext
 {
+    private static $container;
+
     /**
      * Initializes context.
      *
@@ -25,11 +27,31 @@ class FeatureContext extends RawMinkContext implements Context, SnippetAccepting
     }
 
     /**
-     * @Given there is an admin user :arg1 with password :arg2
+     * @BeforeSuite
      */
-    public function thereIsAUserWithPassword($arg1, $arg2)
+    public static function bootstrapSymfony()
     {
-        throw new PendingException();
+        require_once __DIR__.'/../../app/autoload.php';
+        require_once __DIR__.'/../../app/AppKernel.php';
+
+        $kernel = new AppKernel('test', true);
+        $kernel->boot();
+        self::$container = $kernel->getContainer();
+    }
+
+    /**
+     * @Given there is an admin user :username with password :password
+     */
+    public function thereIsAUserWithPassword($username, $password)
+    {
+        $user = new \AppBundle\Entity\User();
+        $user->setUsername($username);
+        $user->setPlainPassword($password);
+        $user->setRoles(array('ROLE_ADMIN'));
+
+        $em = self::$container->get('doctrine')->getManager();
+        $em->persist($user);
+        $em->flush();
     }
 
     /**
