@@ -17,6 +17,7 @@ Feature: Product admin panel
     # no products will be anonymous
     Then I should not see "Anonymous"
 
+  @javascript
   Scenario: Add a new product
     Given I am logged in as an admin
     And I am on "/admin/products"
