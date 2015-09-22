@@ -51,9 +51,15 @@
     <h1 class="knpu"><a href="http://knpuniversity.com">KnpUniversity.com</a></h1>
     <ul class="nav pull-right">
         <li>
-            <form action="{{ path('product_search') }}">
-                <input type="text" class="input-control" name="searchTerm" />
-                <button id="search_submit"><i class="icon icon-search"></i></button>
+            <form class="navbar-form" role="search" method="GET" action="{{ path('product_search') }}">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Search" value="" name="q">
+                    <div class="input-group-btn">
+                        <button id="search_submit" class="btn btn-default" type="submit">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+                </div>
             </form>
         </li>
 
