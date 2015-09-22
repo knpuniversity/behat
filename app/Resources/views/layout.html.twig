@@ -13,38 +13,30 @@
 
 
 <div class="container">
-    <div class="row">
+    <div class="header clearfix">
+        <nav>
+            <ul class="nav nav-pills pull-right">
+                <li class="active">
+                    <a href="{{ path('homepage') }}">Home</a>
+                </li>
+                <li><a href="{{ path('admin') }}">Admin</a></li>
+                {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                    <li><a href="{{ path('admin_logout') }}">Logout</a></li>
+                {% else %}
+                    <li><a href="{{ path('login') }}">Login</a></li>
+                {% endif %}
+            </ul>
 
-        <div class="navbar">
-            <div class="navbar-inner">
-                <div class="container">
-                    <ul class="nav">
-                        <li class="active">
-                            <a href="{{ path('homepage') }}">Home</a>
-                        </li>
-                        <li><a href="{{ path('admin') }}">Admin</a></li>
-                        {% if is_granted('IS_AUTHENTICATED_FULLY') %}
-                            <li><a href="{{ path('admin_logout') }}">Logout</a></li>
-                        {% else %}
-                            <li><a href="{{ path('login') }}">Login</a></li>
-                        {% endif %}
-                        <li>Fence security <span class="label label-success">activated</span></li>
-                    </ul>
+            <ul class="nav pull-left">
+                <li>
+                    <form action="{{ path('product_search') }}">
+                        <input type="text" class="input-control" name="searchTerm" />
+                        <button id="search_submit"><i class="icon icon-search"></i></button>
+                    </form>
+                </li>
 
-                    <ul class="nav pull-right">
-                        <li>
-                            <form action="{{ path('product_search') }}">
-                                <input type="text" class="input-control" name="searchTerm" />
-                                <button id="search_submit"><i class="icon icon-search"></i></button>
-                            </form>
-                        </li>
-                        <li>
-                            <a href="http://knpuniversity.com">KnpUniversity.com</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
+            </ul>
+        </nav>
     </div>
 
     <div class="row main-content">
@@ -88,8 +80,10 @@
             {% block body %}{% endblock %}
         </div>
     </div>
+    <footer>
+        <a href="http://knpuniversity.com">KnpUniversity.com</a>
+    </footer>
 </div>
-
 <div id="modal-content-holder" class="modal hide">
     <div class="modal-body"></div>
 </div>
