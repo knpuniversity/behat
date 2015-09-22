@@ -91,7 +91,7 @@ class FeatureContext extends RawMinkContext implements Context, SnippetAccepting
     {
         $searchBox = $this->getSession()
             ->getPage()
-            ->find('css', '.navbar-inner input[name="searchTerm"]');
+            ->find('css', 'input[name="searchTerm"]');
 
         assertNotNull($searchBox, 'Could not find the search box!');
 
