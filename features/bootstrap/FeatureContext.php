@@ -136,7 +136,10 @@ class FeatureContext extends RawMinkContext implements Context, SnippetAccepting
      */
     public function iWaitForTheModalToLoad()
     {
-        $this->getSession()->wait(5000);
+        $this->getSession()->wait(
+            5000,
+            "$('.modal:visible').length > 0"
+        );
     }
 
     /**
