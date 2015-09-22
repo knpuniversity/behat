@@ -34,7 +34,7 @@
     <p class="text-center">Fence security <span class="label label-success">activated</span></p>
 
     <div class="row">
-        <div class="col-sm-8 col-sm-offset-2">
+        <div class="col-sm-12">
             {% if app.session.flashBag.has('success') %}
                 <div class="alert alert-success">
                     {% for msg in app.session.flashBag.get('success') %}
@@ -48,21 +48,29 @@
     </div>
 </div>
 <footer class="footer footer-styling">
-    <ul class="nav pull-right footer-nav">
-        <li>
-            <form class="navbar-form" role="search" method="GET" action="{{ path('product_search') }}">
-                <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Search" value="" name="q">
-                    <div class="input-group-btn">
-                        <button id="search_submit" class="btn btn-default" type="submit">
-                            <i class="fa fa-search"></i>
-                        </button>
-                    </div>
-                </div>
-            </form>
-        </li>
-    </ul>
-    <h1 class="knpu"><a href="http://knpuniversity.com">KnpUniversity.com</a></h1>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-6">
+                <h1 class="knpu"><a href="http://knpuniversity.com">KnpUniversity.com</a></h1>
+            </div>
+            <div class="col-xs-12 col-sm-6">
+                <ul class="nav pull-right footer-nav">
+                    <li>
+                        <form class="navbar-form" role="search" method="GET" action="{{ path('product_search') }}">
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="Search" value="" name="q">
+                                <div class="input-group-btn">
+                                    <button id="search_submit" class="btn btn-default" type="submit">
+                                        <i class="fa fa-search"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </container>
 </footer>
 
 <div id="modal-content-holder" class="modal hide">
