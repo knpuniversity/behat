@@ -7,76 +7,35 @@
     {% block stylesheets %}
         <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css" />
         <link rel="stylesheet" href="/css/main.css" />
+        <link rel="stylesheet" href="/css/font-awesome.min.css" />
     {% endblock %}
 </head>
 <body>
 
 
 <div class="container">
-    <div class="row">
-
-        <div class="navbar">
-            <div class="navbar-inner">
-                <div class="container">
-                    <ul class="nav">
-                        <li class="active">
-                            <a href="{{ path('homepage') }}">Home</a>
-                        </li>
-                        <li><a href="{{ path('admin') }}">Admin</a></li>
-                        {% if is_granted('IS_AUTHENTICATED_FULLY') %}
-                            <li><a href="{{ path('admin_logout') }}">Logout</a></li>
-                        {% else %}
-                            <li><a href="{{ path('login') }}">Login</a></li>
-                        {% endif %}
-                        <li>Fence security <span class="label label-success">activated</span></li>
-                    </ul>
-
-                    <ul class="nav pull-right">
-                        <li>
-                            <form action="{{ path('product_search') }}">
-                                <input type="text" class="input-control" name="searchTerm" />
-                                <button id="search_submit"><i class="icon icon-search"></i></button>
-                            </form>
-                        </li>
-                        <li>
-                            <a href="http://knpuniversity.com">KnpUniversity.com</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
+    <div class="header clearfix">
+        <nav class="navigation-margin">
+            <ul class="nav nav-pills pull-right">
+                <li>
+                    <a href="{{ path('homepage') }}">Home</a>
+                </li>
+                <li><a href="{{ path('admin') }}">Admin</a></li>
+                {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                    <li><a href="{{ path('admin_logout') }}">Logout</a></li>
+                {% else %}
+                    <li><a href="{{ path('login') }}">Login</a></li>
+                {% endif %}
+                <li><a href="{{ path('db_rebuild') }}">Reset DB</a></li>
+            </ul>
+        </nav>
+        <h1>The Raptor Store</h1>
     </div>
+    <hr>
+    <p class="text-center">Fence security <span class="label label-success">activated</span></p>
 
-    <div class="row main-content">
-        <div class="span4">
-            {% block sidebar %}
-            <div class="well" style="padding: 8px 0;">
-                <ul class="nav nav-list">
-                    <li class="nav-header">
-                        Sections
-                    </li>
-                    <li>
-                        <a href="{{ path('product_list') }}">
-                            <i class="icon-tag"></i>
-                            Products
-                        </a>
-                    </li>
-                    <li><a href="#"><i class="icon-question-sign"></i>Page2</a></li>
-                    <li><a href="#"><i class="icon-question-sign"></i>Page3</a></li>
-                    <li><a href="#"><i class="icon-question-sign"></i>Page4</a></li>
-
-                    <li class="nav-header">
-                        Actions
-                    </li>
-                    {% if is_granted('IS_AUTHENTICATED_FULLY') %}
-                        <li><a href="{{ path('admin_logout') }}"></i>Logout</a></li>
-                    {% endif %}
-                    <li><a href="{{ path('db_rebuild') }}"></i>Reset DB</a></li>
-                </ul>
-            </div>
-            {% endblock %}
-        </div>
-        <div class="span7">
+    <div class="row">
+        <div class="col-sm-12">
             {% if app.session.flashBag.has('success') %}
                 <div class="alert alert-success">
                     {% for msg in app.session.flashBag.get('success') %}
@@ -89,6 +48,31 @@
         </div>
     </div>
 </div>
+<footer class="footer footer-styling">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-6">
+                <h1 class="knpu"><a href="http://knpuniversity.com">KnpUniversity.com</a></h1>
+            </div>
+            <div class="col-xs-12 col-sm-6">
+                <ul class="nav pull-right footer-nav">
+                    <li>
+                        <form class="navbar-form" role="search" method="GET" action="{{ path('product_search') }}">
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="Search" value="" name="searchTerm">
+                                <div class="input-group-btn">
+                                    <button id="search_submit" class="btn btn-default" type="submit">
+                                        <i class="fa fa-search"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </container>
+</footer>
 
 <div id="modal-content-holder" class="modal hide">
     <div class="modal-body"></div>
