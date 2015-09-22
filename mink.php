@@ -33,3 +33,6 @@ $linkEl = $subNav->find('css', 'li a');
 $linkEl = $page->findLink('Wiki Activity');
 
 echo "The link href is: ". $linkEl->getAttribute('href') . "\n";
+
+$linkEl->click();
+echo "Page URL after click: ". $session->getCurrentUrl() . "\n";
