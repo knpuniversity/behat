@@ -89,7 +89,7 @@ index 0000000..245a521
 +}
 \ No newline at end of file
 diff --git a/features/bootstrap/FeatureContext.php b/features/bootstrap/FeatureContext.php
-index 624055d..bf40aa5 100644
+index 0353a7c..0a4a932 100644
 --- a/features/bootstrap/FeatureContext.php
 +++ b/features/bootstrap/FeatureContext.php
 @@ -13,8 +13,6 @@ require_once __DIR__.'/../../vendor/phpunit/phpunit/src/Framework/Assert/Functio
