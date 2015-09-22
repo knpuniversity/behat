@@ -3,19 +3,18 @@
 {% block sidebar %}{% endblock %}
 
 {% block body %}
-    <h1>
-        Welcome!
-    </h1>
+<section>
+    <h1 class="text-center">Welcome to the Raptor Store</h1>
 
     <h2>
         {% if search %}
             {% if products is not empty %}
                 Products matching "{{ search }}"
             {% else %}
-                No products found
+                We've run out, check back later!
             {% endif %}
         {% else %}
-            View all of our products
+            Today's sweet products:
         {% endif %}
     </h2>
 
@@ -35,4 +34,5 @@
             {% endfor %}
         </tbody>
     </table>
+</section>
 {% endblock %}

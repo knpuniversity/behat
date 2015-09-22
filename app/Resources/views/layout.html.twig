@@ -7,6 +7,7 @@
     {% block stylesheets %}
         <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css" />
         <link rel="stylesheet" href="/css/main.css" />
+        <link rel="stylesheet" href="/css/font-awesome.min.css" />
     {% endblock %}
 </head>
 <body>
@@ -14,9 +15,9 @@
 
 <div class="container">
     <div class="header clearfix">
-        <nav>
+        <nav class="navigation-margin">
             <ul class="nav nav-pills pull-right">
-                <li class="active">
+                <li>
                     <a href="{{ path('homepage') }}">Home</a>
                 </li>
                 <li><a href="{{ path('admin') }}">Admin</a></li>
@@ -26,49 +27,14 @@
                     <li><a href="{{ path('login') }}">Login</a></li>
                 {% endif %}
             </ul>
-
-            <ul class="nav pull-left">
-                <li>
-                    <form action="{{ path('product_search') }}">
-                        <input type="text" class="input-control" name="searchTerm" />
-                        <button id="search_submit"><i class="icon icon-search"></i></button>
-                    </form>
-                </li>
-
-            </ul>
         </nav>
+        <h1>The Raptor Store</h1>
     </div>
+    <hr>
+    <p class="text-center">Fence security <span class="label label-success">activated</span></p>
 
-    <div class="row main-content">
-        <div class="span4">
-            {% block sidebar %}
-            <div class="well" style="padding: 8px 0;">
-                <ul class="nav nav-list">
-                    <li class="nav-header">
-                        Sections
-                    </li>
-                    <li>
-                        <a href="{{ path('product_list') }}">
-                            <i class="icon-tag"></i>
-                            Products
-                        </a>
-                    </li>
-                    <li><a href="#"><i class="icon-question-sign"></i>Page2</a></li>
-                    <li><a href="#"><i class="icon-question-sign"></i>Page3</a></li>
-                    <li><a href="#"><i class="icon-question-sign"></i>Page4</a></li>
-
-                    <li class="nav-header">
-                        Actions
-                    </li>
-                    {% if is_granted('IS_AUTHENTICATED_FULLY') %}
-                        <li><a href="{{ path('admin_logout') }}"></i>Logout</a></li>
-                    {% endif %}
-                    <li><a href="{{ path('db_rebuild') }}"></i>Reset DB</a></li>
-                </ul>
-            </div>
-            {% endblock %}
-        </div>
-        <div class="span7">
+    <div class="row">
+        <div class="col-sm-8 col-sm-offset-2">
             {% if app.session.flashBag.has('success') %}
                 <div class="alert alert-success">
                     {% for msg in app.session.flashBag.get('success') %}
@@ -80,10 +46,20 @@
             {% block body %}{% endblock %}
         </div>
     </div>
-    <footer>
-        <a href="http://knpuniversity.com">KnpUniversity.com</a>
-    </footer>
 </div>
+<footer class="footer footer-styling">
+    <h1 class="knpu"><a href="http://knpuniversity.com">KnpUniversity.com</a></h1>
+    <ul class="nav pull-right">
+        <li>
+            <form action="{{ path('product_search') }}">
+                <input type="text" class="input-control" name="searchTerm" />
+                <button id="search_submit"><i class="icon icon-search"></i></button>
+            </form>
+        </li>
+
+    </ul>
+</footer>
+
 <div id="modal-content-holder" class="modal hide">
     <div class="modal-body"></div>
 </div>
