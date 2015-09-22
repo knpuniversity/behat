@@ -27,3 +27,5 @@ Feature: Product admin panel
     And I press "Save"
     Then I should see "Product created FTW!"
     And I should see "Veloci-chew toy"
+    # verify that we are the owner of the toy
+    And I should not see "Anonymous"

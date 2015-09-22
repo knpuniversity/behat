@@ -36,6 +36,7 @@ class ProductAdminController extends Controller
             $product->setName($request->get('name'));
             $product->setDescription($request->get('description'));
             $product->setPrice($request->get('price'));
+            $product->setAuthor($this->getUser());
 
             $em = $this->getDoctrine()->getManager();
             $em->persist($product);
