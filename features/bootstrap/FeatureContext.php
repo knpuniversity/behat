@@ -21,4 +21,28 @@ class FeatureContext extends MinkContext implements Context, SnippetAcceptingCon
     public function __construct()
     {
     }
+
+    /**
+     * @Given I have a file named :arg1
+     */
+    public function iHaveAFileNamed($arg1)
+    {
+        throw new PendingException();
+    }
+
+    /**
+     * @When I run :arg1
+     */
+    public function iRun($arg1)
+    {
+        throw new PendingException();
+    }
+
+    /**
+     * @Then I should see :arg1 in the output
+     */
+    public function iShouldSeeInTheOutput($arg1)
+    {
+        throw new PendingException();
+    }
 }
