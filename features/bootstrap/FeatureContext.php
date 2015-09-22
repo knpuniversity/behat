@@ -75,4 +75,12 @@ class FeatureContext extends MinkContext implements Context, SnippetAcceptingCon
             system('rm -r '.realpath('test'));
         }
     }
+
+    /**
+     * @Given I have a dir named :dirName
+     */
+    public function iHaveADirNamed($dirName)
+    {
+        mkdir($dirName);
+    }
 }
