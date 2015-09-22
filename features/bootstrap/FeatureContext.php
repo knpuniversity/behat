@@ -100,7 +100,7 @@ class FeatureContext extends RawMinkContext implements Context, SnippetAccepting
     }
 
     /**
-     * @Given the following products exist:
+     * @Given the following product(s) exist:
      */
     public function theFollowingProductsExist(TableNode $table)
     {
@@ -129,6 +129,14 @@ class FeatureContext extends RawMinkContext implements Context, SnippetAccepting
         assertNotNull($row, 'Cannot find a table row with this text!');
 
         assertContains('icon-ok', $row->getHtml(), 'Could not find the icon-ok element in the row!');
+    }
+
+    /**
+     * @When I click :arg1 in the :arg2 row
+     */
+    public function iClickInTheRow($arg1, $arg2)
+    {
+        throw new PendingException();
     }
 
     /**
