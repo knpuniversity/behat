@@ -1,5 +1,5 @@
 diff --git a/features/bootstrap/FeatureContext.php b/features/bootstrap/FeatureContext.php
-index 6f5b388..0027550 100644
+index 6fb8c2d..923301d 100644
 --- a/features/bootstrap/FeatureContext.php
 +++ b/features/bootstrap/FeatureContext.php
 @@ -121,6 +121,17 @@ class FeatureContext extends RawMinkContext implements Context, SnippetAccepting
@@ -13,7 +13,7 @@ index 6f5b388..0027550 100644
 +        $row = $this->getPage()->find('css', sprintf('table tr:contains("%s")', $rowText));
 +        assertNotNull($row, 'Cannot find a table row with this text!');
 +
-+        assertContains('icon-ok', $row->getHtml(), 'Could not find the icon-ok element in the row!');
++        assertContains('fa-check', $row->getHtml(), 'Could not find the fa-check element in the row!');
 +    }
 +
 +    /**
