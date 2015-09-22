@@ -1,18 +1,18 @@
 diff --git a/app/Resources/views/product/list.html.twig b/app/Resources/views/product/list.html.twig
-index 928fd31..5566b6f 100644
+index 1df8247..aef13c8 100644
 --- a/app/Resources/views/product/list.html.twig
 +++ b/app/Resources/views/product/list.html.twig
-@@ -5,7 +5,7 @@
-         Product Admin Area
-     </h1>
- 
--    <a href="{{ path('product_new') }}" class="btn btn-primary pull-right">
-+    <a href="{{ path('product_new') }}" class="btn btn-primary pull-right js-add-new-product">
-         <i class="icon-plus-sign"></i> New Product
-     </a>
+@@ -10,7 +10,7 @@
+             </ul>
+         </div>
+         <div class="col-sm-8">
+-            <a href="{{ path('product_new') }}" class="btn btn-primary pull-right">
++            <a href="{{ path('product_new') }}" class="btn btn-primary pull-right js-add-new-product">
+                 <span class="fa fa-plus"></span> New Product
+             </a>
  
 diff --git a/app/Resources/views/product/new.html.twig b/app/Resources/views/product/new.html.twig
-index 208f57c..be2af3e 100644
+index 6cc54c0..6521e38 100644
 --- a/app/Resources/views/product/new.html.twig
 +++ b/app/Resources/views/product/new.html.twig
 @@ -1,6 +1,3 @@
@@ -22,8 +22,8 @@ index 208f57c..be2af3e 100644
      <form action="{{ path('product_new') }}" method="POST">
          <fieldset>
              <legend>New Product</legend>
-@@ -27,4 +24,3 @@
+@@ -21,4 +18,3 @@
  
-         <button type="submit" class="btn btn-primary pull-right">Save</button>
+         <button type="submit" class="btn btn-primary">Save</button>
      </form>
 -{% endblock %}
