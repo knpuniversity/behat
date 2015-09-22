@@ -25,6 +25,14 @@ class FeatureContext extends RawMinkContext implements Context, SnippetAccepting
     }
 
     /**
+     * @Given there is an admin user :arg1 with password :arg2
+     */
+    public function thereIsAUserWithPassword($arg1, $arg2)
+    {
+        throw new PendingException();
+    }
+
+    /**
      * @When I fill in the search box with :term
      */
     public function iFillInTheSearchBoxWith($term)
