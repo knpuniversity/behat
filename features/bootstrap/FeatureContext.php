@@ -22,6 +22,8 @@ class FeatureContext extends MinkContext implements Context, SnippetAcceptingCon
      */
     public function __construct()
     {
+        mkdir('test');
+        chdir('test');
     }
 
     /**
