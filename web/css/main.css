@@ -23,6 +23,11 @@ body {
     padding: 10px;
 }
 
+.footer-nav{
+    margin-top: 20px;
+    padding-right: 20px;
+}
+
 .form-padding{
     padding-left: 15px;
 }
