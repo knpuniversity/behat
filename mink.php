@@ -28,4 +28,6 @@ $header = $page->find('css', '.WikiHeader .WikiNav h1');
 echo "The wiki nav text is: ".$header->getText()."\n";
 
 $subNav = $page->find('css', '.subnav-2');
-var_dump($subNav->getHtml());
+$linkEl = $subNav->find('css', 'li a');
+
+echo "The link text is: ". $linkEl->getText() . "\n";
