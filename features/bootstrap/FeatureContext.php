@@ -110,7 +110,7 @@ class FeatureContext extends RawMinkContext implements Context, SnippetAccepting
             $product->setPrice(rand(10, 1000));
             $product->setDescription('lorem');
 
-            if ($row['is published'] == 'yes') {
+            if (isset($row['is published']) && $row['is published'] == 'yes') {
                 $product->setIsPublished(true);
             }
 
