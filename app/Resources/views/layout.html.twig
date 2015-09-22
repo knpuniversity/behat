@@ -26,6 +26,7 @@
                 {% else %}
                     <li><a href="{{ path('login') }}">Login</a></li>
                 {% endif %}
+                <li><a href="{{ path('db_rebuild') }}">Reset DB</a></li>
             </ul>
         </nav>
         <h1>The Raptor Store</h1>
@@ -58,7 +59,7 @@
                     <li>
                         <form class="navbar-form" role="search" method="GET" action="{{ path('product_search') }}">
                             <div class="input-group">
-                                <input type="text" class="form-control" placeholder="Search" value="" name="q">
+                                <input type="text" class="form-control" placeholder="Search" value="" name="searchTerm">
                                 <div class="input-group-btn">
                                     <button id="search_submit" class="btn btn-default" type="submit">
                                         <i class="fa fa-search"></i>
