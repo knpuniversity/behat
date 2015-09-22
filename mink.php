@@ -16,3 +16,8 @@ $session->visit('http://jurassicpark.wikia.com');
 
 echo "Status code: ". $session->getStatusCode() . "\n";
 echo "Current URL: ". $session->getCurrentUrl() . "\n";
+
+// Important object #3 DocumentElement
+$page = $session->getPage();
+
+echo "First 160 chars: ".substr($page->getText() , 0, 75) . "\n";
