@@ -3,36 +3,39 @@
 {% block sidebar %}{% endblock %}
 
 {% block body %}
-    <h1>
-        Welcome!
-    </h1>
+<section>
+    <h1 class="text-center">Welcome to the Raptor Store</h1>
 
-    <h2>
-        {% if search %}
-            {% if products is not empty %}
-                Products matching "{{ search }}"
-            {% else %}
-                No products found
-            {% endif %}
-        {% else %}
-            View all of our products
-        {% endif %}
-    </h2>
-
-    <table class="table table-striped">
-        <thead>
-            <tr>
-                <th>Name</th>
-                <th>Price</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for product in products %}
-            <tr>
-                <td>{{ product.name }}</td>
-                <td>${{ product.price|number_format(2) }}</td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
+    <div class="row">
+        <div class="col-sm-8 col-sm-offset-2">
+            <h2>
+                {% if search %}
+                    {% if products is not empty %}
+                        Products matching "{{ search }}"
+                    {% else %}
+                        We've run out, check back later!
+                    {% endif %}
+                {% else %}
+                    Today's sweet products:
+                {% endif %}
+            </h2>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for product in products %}
+                    <tr>
+                        <td>{{ product.name }}</td>
+                        <td>${{ product.price|number_format(2) }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
 {% endblock %}
