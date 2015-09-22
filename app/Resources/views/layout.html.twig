@@ -71,15 +71,19 @@
                 </ul>
             </div>
         </div>
-    </container>
+    </div>
 </footer>
 
-<div id="modal-content-holder" class="modal hide">
-    <div class="modal-body"></div>
+<div id="modal-content-holder" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body clearfix"></div>
+        </div>
+    </div>
 </div>
 
 {% block javascripts %}
-    <script type="text/javascript" src="/js/jquery-1.8.1.min.js"></script>
+    <script type="text/javascript" src="/js/jquery-2.1.4.min.js"></script>
     <script type="text/javascript" src="/bootstrap/js/bootstrap.min.js"></script>
 {% endblock %}
 </body>
