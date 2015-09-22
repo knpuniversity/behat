@@ -4,13 +4,14 @@ use Behat\Behat\Context\Context;
 use Behat\Behat\Context\SnippetAcceptingContext;
 use Behat\Gherkin\Node\PyStringNode;
 use Behat\Gherkin\Node\TableNode;
+use Behat\MinkExtension\Context\RawMinkContext;
 
 require_once __DIR__.'/../../vendor/phpunit/phpunit/src/Framework/Assert/Functions.php';
 
 /**
  * Defines application features from the specific context.
  */
-class FeatureContext implements Context, SnippetAcceptingContext
+class FeatureContext extends RawMinkContext implements Context, SnippetAcceptingContext
 {
     private $output;
 
@@ -84,11 +85,17 @@ class FeatureContext implements Context, SnippetAcceptingContext
     }
 
     /**
-     * @When I fill in the search box with :arg1
+     * @When I fill in the search box with :term
      */
-    public function iFillInTheSearchBoxWith($arg1)
+    public function iFillInTheSearchBoxWith($term)
     {
-        throw new PendingException();
+        $searchBox = $this->getSession()
+            ->getPage()
+            ->find('css', '.navbar-inner input[name="searchTerm"]');
+
+        assertNotNull($searchBox, 'Could not find the search box!');
+
+        $searchBox->setValue($term);
     }
 
     /**
@@ -96,6 +103,12 @@ class FeatureContext implements Context, SnippetAcceptingContext
      */
     public function iPressTheSearchButton()
     {
-        throw new PendingException();
+        $button = $this->getSession()
+            ->getPage()
+            ->find('css', '#search_submit');
+
+        assertNotNull($button, 'Could not find the search button!');
+
+        $button->press();
     }
 }
