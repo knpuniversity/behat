@@ -82,4 +82,20 @@ class FeatureContext implements Context, SnippetAcceptingContext
     {
         mkdir($dirName);
     }
+
+    /**
+     * @When I fill in the search box with :arg1
+     */
+    public function iFillInTheSearchBoxWith($arg1)
+    {
+        throw new PendingException();
+    }
+
+    /**
+     * @When I press the search button
+     */
+    public function iPressTheSearchButton()
+    {
+        throw new PendingException();
+    }
 }

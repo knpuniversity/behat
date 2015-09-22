@@ -7,8 +7,8 @@ Feature: Search
     Given I am on "/"
 
   Scenario Outline: Search for a product
-    When I fill in "searchTerm" with "<term>"
-    And I press "search_submit"
+    When I fill in the search box with "<term>"
+    And I press the search button
     Then I should see "<result>"
 
     Examples:
