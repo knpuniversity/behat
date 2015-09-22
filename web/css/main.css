@@ -1,9 +1,65 @@
-body {
-    background: #333;
+html {
+    position: relative;
+    min-height: 100%;
 }
-.main-content {
+
+body {
     background: #fff;
+    color: #6D665C;
+    margin-bottom: 200px;
+}
+
+.main-content {
+    background: #EEE;
     min-height: 400px;
     padding: 10px 0;
     margin-bottom: 20px;
+}
+
+.navigation-margin{
+    margin-top: 10px;
+}
+
+.form-padding{
+    padding-left: 15px;
+}
+
+.form-box{
+    background-color: #EEE;
+    border-radius: 5px;
+    height: 100%;
+    width: auto;
+    padding: 20px;
+}
+
+.sidebar{
+    background-color: #eee;
+    margin-right: 10px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.admin-nav-header{
+    font-size: 20px;
+}
+
+.footer-styling{
+    position: absolute;
+    background-color: #8DB255;
+    bottom: 0;
+    width: 100%;
+    height: 180px;
+    padding: 10px;
+}
+
+.footer-nav{
+    margin-top: 20px;
+    padding-right: 20px;
+}
+
+.knpu a{
+    color: #fff;
+    text-decoration: none;
+    font-size: 20px;
+    padding-left: 20px;
 }
