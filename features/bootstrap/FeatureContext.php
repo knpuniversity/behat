@@ -125,18 +125,21 @@ class FeatureContext extends RawMinkContext implements Context, SnippetAccepting
      */
     public function theProductRowShouldShowAsPublished($rowText)
     {
-        $row = $this->getPage()->find('css', sprintf('table tr:contains("%s")', $rowText));
-        assertNotNull($row, 'Cannot find a table row with this text!');
+        $row = $this->findRowByText($rowText);
 
         assertContains('icon-ok', $row->getHtml(), 'Could not find the icon-ok element in the row!');
     }
 
     /**
-     * @When I click :arg1 in the :arg2 row
+     * @When I click :linkText in the :rowText row
      */
-    public function iClickInTheRow($arg1, $arg2)
+    public function iClickInTheRow($linkText, $rowText)
     {
-        throw new PendingException();
+        $row = $this->findRowByText($rowText);
+
+        $link = $row->findLink($linkText);
+        assertNotNull($link, 'Cannot find link in row with text '.$linkText);
+        $link->click();
     }
 
     /**
@@ -238,5 +241,17 @@ class FeatureContext extends RawMinkContext implements Context, SnippetAccepting
         }
 
         $this->getEntityManager()->flush();
+    }
+
+    /**
+     * @param $rowText
+     * @return \Behat\Mink\Element\NodeElement
+     */
+    private function findRowByText($rowText)
+    {
+        $row = $this->getPage()->find('css', sprintf('table tr:contains("%s")', $rowText));
+        assertNotNull($row, 'Cannot find a table row with this text!');
+
+        return $row;
     }
 }
