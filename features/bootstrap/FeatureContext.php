@@ -1,6 +1,7 @@
 <?php
 
 use AppBundle\Entity\Product;
+use AppBundle\Entity\User;
 use Behat\Behat\Context\Context;
 use Behat\Behat\Context\SnippetAcceptingContext;
 use Behat\Gherkin\Node\PyStringNode;
@@ -83,16 +84,15 @@ class FeatureContext extends RawMinkContext implements Context, SnippetAccepting
      */
     public function thereAreProducts($count)
     {
-        for ($i = 0; $i < $count; $i++) {
-            $product = new Product();
-            $product->setName('Product '.$count);
-            $product->setPrice(rand(10, 1000));
-            $product->setDescription('lorem');
+        $this->createProducts($count);
+    }
 
-            $this->getEntityManager()->persist($product);
-        }
-
-        $this->getEntityManager()->flush();
+    /**
+     * @Given I author :count products
+     */
+    public function iAuthorProducts($count)
+    {
+        $this->createProducts($count);
     }
 
     /**
@@ -141,5 +141,23 @@ class FeatureContext extends RawMinkContext implements Context, SnippetAccepting
     private function getEntityManager()
     {
         return $this->getContainer()->get('doctrine.orm.entity_manager');
+    }
+
+    private function createProducts($count, User $author = null)
+    {
+        for ($i = 0; $i < $count; $i++) {
+            $product = new Product();
+            $product->setName('Product '.$count);
+            $product->setPrice(rand(10, 1000));
+            $product->setDescription('lorem');
+
+            if ($author) {
+                $product->setAuthor($author);
+            }
+
+            $this->getEntityManager()->persist($product);
+        }
+
+        $this->getEntityManager()->flush();
     }
 }
