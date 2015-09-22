@@ -19,6 +19,14 @@ Feature: Product admin panel
     # no products will be anonymous
     Then I should not see "Anonymous"
 
+  Scenario: Show published/unpublished
+    Given the following products exist:
+      | name | is published |
+      | Foo1 | yes          |
+      | Foo2 | no           |
+    When I go to "/admin/products"
+    # todo
+
   @javascript
   Scenario: Add a new product
     Given I am on "/admin/products"
