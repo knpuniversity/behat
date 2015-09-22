@@ -12,7 +12,8 @@
         "sensio/framework-extra-bundle": "^3.0",
         "doctrine/doctrine-bundle": "^1.5",
         "doctrine/orm": "^2.5",
-        "doctrine/doctrine-fixtures-bundle": "^2.2"
+        "doctrine/doctrine-fixtures-bundle": "^2.2",
+        "behat/symfony2-extension": "^2.0"
     },
     "autoload": {
         "psr-0": {
