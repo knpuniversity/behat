@@ -3,6 +3,7 @@ default:
         default:
             contexts:
                 - FeatureContext
+                - CommandLineProcessContext
                 - Behat\MinkExtension\Context\MinkContext
     extensions:
         Behat\MinkExtension:
