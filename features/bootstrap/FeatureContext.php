@@ -22,8 +22,6 @@ class FeatureContext extends MinkContext implements Context, SnippetAcceptingCon
      */
     public function __construct()
     {
-        mkdir('test');
-        chdir('test');
     }
 
     /**
@@ -49,6 +47,28 @@ class FeatureContext extends MinkContext implements Context, SnippetAcceptingCon
     {
         if (strpos($this->output, $string) === false) {
             throw new \Exception(sprintf('Did not see "%s" in output "%s"', $string, $this->output));
+        }
+    }
+
+    /**
+     * @BeforeScenario
+     */
+    public function moveIntoTestDir()
+    {
+        if (!is_dir('test')) {
+            mkdir('test');
+        }
+        chdir('test');
+    }
+
+    /**
+     * @AfterScenario
+     */
+    public function moveOutOfTestDir()
+    {
+        chdir('..');
+        if (is_dir('test')) {
+            system('rm -r '.realpath('test'));
         }
     }
 }
