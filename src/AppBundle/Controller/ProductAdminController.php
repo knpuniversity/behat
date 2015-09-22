@@ -27,8 +27,14 @@ class ProductAdminController extends Controller
     /**
      * @Route("/admin/products/new", name="product_new")
      */
-    public function newAction()
+    public function newAction(Request $request)
     {
+        if ($request->isMethod('POST')) {
+            $this->addFlash('success', 'Product created FTW!');
+
+            return $this->redirectToRoute('product_list');
+        }
+
         return $this->render('product/new.html.twig');
     }
 }
