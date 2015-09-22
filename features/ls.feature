@@ -3,16 +3,17 @@ Feature: ls
   As a UNIX user
   I need to be able to list the current directory's contents
 
-  Scenario: List 2 files in a directory
+  Background:
     Given I have a file named "john"
-    And I have a file named "hammond"
+
+  Scenario: List 2 files in a directory
+    Given I have a file named "hammond"
     When I run "ls"
     Then I should see "john" in the output
     And I should see "hammond" in the output
 
   Scenario: List 1 file and 1 directory
-    Given I have a file named "john"
-    And I have a dir named "ingen"
+    Given I have a dir named "ingen"
     When I run "ls"
     Then I should see "john" in the output
     And I should see "ingen" in the output
