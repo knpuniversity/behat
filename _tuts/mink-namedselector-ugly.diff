@@ -1,12 +1,13 @@
 diff --git a/mink.php b/mink.php
-index ab3a4d5..85dce13 100644
+index f28209a..c6c61eb 100644
 --- a/mink.php
 +++ b/mink.php
-@@ -30,4 +30,13 @@ echo "The wiki nav text is: ".$header->getText()."\n";
+@@ -30,5 +30,13 @@ echo "The wiki nav text is: ".$header->getText()."\n";
  $subNav = $page->find('css', '.subnav-2');
  $linkEl = $subNav->find('css', 'li a');
  
 -echo "The link text is: ". $linkEl->getText() . "\n";
+-
 +$selectorsHandler = $session->getSelectorsHandler();
 +$linkel = $page->find(
 +    'named',
