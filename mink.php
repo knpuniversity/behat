@@ -20,7 +20,7 @@ echo "Current URL: ". $session->getCurrentUrl() . "\n";
 // Important object #3 DocumentElement
 $page = $session->getPage();
 
-echo "First 160 chars: ".substr($page->getText() , 0, 75) . "\n";
+echo "First 75 chars: ".substr($page->getText() , 0, 75) . "\n";
 
 // Important object #4 NodeElement
 $header = $page->find('css', '.WikiHeader .WikiNav h1');
@@ -31,3 +31,4 @@ $subNav = $page->find('css', '.subnav-2');
 $linkEl = $subNav->find('css', 'li a');
 
 echo "The link text is: ". $linkEl->getText() . "\n";
+
