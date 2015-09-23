@@ -1,5 +1,5 @@
 diff --git a/mink.php b/mink.php
-index 7c77dd0..7454dda 100644
+index 7c77dd0..6f928d1 100644
 --- a/mink.php
 +++ b/mink.php
 @@ -16,3 +16,8 @@ $session->visit('http://jurassicpark.wikia.com');
@@ -10,5 +10,4 @@ index 7c77dd0..7454dda 100644
 +// Important object #3 DocumentElement
 +$page = $session->getPage();
 +
-+echo "First 160 chars: ".substr($page->getText() , 0, 75) . "\n";
-\ No newline at end of file
++echo "First 75 chars: ".substr($page->getText() , 0, 75) . "\n";
