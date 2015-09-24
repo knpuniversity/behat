@@ -165,7 +165,7 @@ class FeatureContext extends RawMinkContext implements Context, SnippetAccepting
     {
         $this->currentUser = $this->thereIsAUserWithPassword('admin', 'admin');
 
-        $this->getSession()->visit($this->locatePath('/login'));
+        $this->visitPath('/login');
         $this->getPage()->fillField('Username', 'admin');
         $this->getPage()->fillField('Password', 'admin');
         $this->getPage()->pressButton('Login');
