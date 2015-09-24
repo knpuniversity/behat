@@ -1,5 +1,5 @@
 diff --git a/features/bootstrap/FeatureContext.php b/features/bootstrap/FeatureContext.php
-index 76fd753..8ff1d36 100644
+index 86ea914..572ee29 100644
 --- a/features/bootstrap/FeatureContext.php
 +++ b/features/bootstrap/FeatureContext.php
 @@ -7,7 +7,9 @@ use Behat\Behat\Context\SnippetAcceptingContext;
