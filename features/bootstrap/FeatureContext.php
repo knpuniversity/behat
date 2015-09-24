@@ -100,7 +100,7 @@ class FeatureContext extends RawMinkContext implements Context, SnippetAccepting
     }
 
     /**
-     * @Given the following product(s) exist:
+     * @Given the following product(s) exist(s):
      */
     public function theFollowingProductsExist(TableNode $table)
     {
