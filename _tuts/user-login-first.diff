@@ -1,5 +1,5 @@
 diff --git a/features/bootstrap/FeatureContext.php b/features/bootstrap/FeatureContext.php
-index 14711c6..361c58d 100644
+index 14711c6..d909c63 100644
 --- a/features/bootstrap/FeatureContext.php
 +++ b/features/bootstrap/FeatureContext.php
 @@ -115,6 +115,19 @@ class FeatureContext extends RawMinkContext implements Context, SnippetAccepting
@@ -12,7 +12,7 @@ index 14711c6..361c58d 100644
 +    {
 +        $this->thereIsAUserWithPassword('admin', 'admin');
 +
-+        $this->getSession()->visit($this->locatePath('/login'));
++        $this->visitPath('/login');
 +        $this->getPage()->fillField('Username', 'admin');
 +        $this->getPage()->fillField('Password', 'admin');
 +        $this->getPage()->pressButton('Login');
