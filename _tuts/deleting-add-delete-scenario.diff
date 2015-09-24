@@ -1,5 +1,5 @@
 diff --git a/features/bootstrap/FeatureContext.php b/features/bootstrap/FeatureContext.php
-index 6c43de8..7ddbc0b 100644
+index 6c43de8..d071a9d 100644
 --- a/features/bootstrap/FeatureContext.php
 +++ b/features/bootstrap/FeatureContext.php
 @@ -100,7 +100,7 @@ class FeatureContext extends RawMinkContext implements Context, SnippetAccepting
@@ -7,7 +7,7 @@ index 6c43de8..7ddbc0b 100644
  
      /**
 -     * @Given the following products exist:
-+     * @Given the following product(s) exist:
++     * @Given the following product(s) exist(s):
       */
      public function theFollowingProductsExist(TableNode $table)
      {
@@ -27,7 +27,7 @@ index 6c43de8..7ddbc0b 100644
       */
      public function iClick($linkName)
 diff --git a/features/web/product_admin.feature b/features/web/product_admin.feature
-index 651dfe3..0c15777 100644
+index 651dfe3..8fb08b0 100644
 --- a/features/web/product_admin.feature
 +++ b/features/web/product_admin.feature
 @@ -27,6 +27,15 @@ Feature: Product admin panel
@@ -35,7 +35,7 @@ index 651dfe3..0c15777 100644
      Then the "Foo1" row should have a check mark
  
 +  Scenario: Deleting a product
-+    Given the following product exist:
++    Given the following product exists:
 +      | name |
 +      | Foo1 |
 +    When I go to "/admin/products"
