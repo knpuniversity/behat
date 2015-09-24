@@ -1,5 +1,5 @@
 diff --git a/mink.php b/mink.php
-index 91ca1f5..bc9b618 100644
+index 289bf08..c0eb6b4 100644
 --- a/mink.php
 +++ b/mink.php
 @@ -3,10 +3,12 @@
