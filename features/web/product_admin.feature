@@ -30,12 +30,14 @@ Feature: Product admin panel
   Scenario: Deleting a product
     Given the following product exists:
       | name |
+      | Bar  |
       | Foo1 |
     When I go to "/admin/products"
     And break
     And I click "Delete" in the "Foo1" row
     Then I should see "The product was deleted"
     And I should not see "Foo1"
+    But I should see "Bar"
 
   @javascript
   Scenario: Add a new product
