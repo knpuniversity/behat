@@ -28,7 +28,7 @@ Feature: Product admin panel
     Then the "Foo1" row should have a check mark
   @javascript
   Scenario: Deleting a product
-    Given the following product exist:
+    Given the following product exists:
       | name |
       | Foo1 |
     When I go to "/admin/products"
