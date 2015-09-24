@@ -1,11 +1,11 @@
 diff --git a/mink.php b/mink.php
-index 27f550c..d72f221 100644
+index 8fddd42..19616e7 100644
 --- a/mink.php
 +++ b/mink.php
-@@ -26,3 +26,6 @@ echo "First 160 chars: ".substr($page->getText() , 0, 75) . "\n";
- $header = $page->find('css', '.WikiHeader .WikiNav h1');
+@@ -27,3 +27,6 @@ $header = $page->find('css', '.WikiHeader .WikiNav h1');
  
  echo "The wiki nav text is: ".$header->getText()."\n";
-+
+ 
 +$subNav = $page->find('css', '.subnav-2');
 +var_dump($subNav->getHtml());
++
