@@ -1,5 +1,5 @@
 diff --git a/features/bootstrap/FeatureContext.php b/features/bootstrap/FeatureContext.php
-index b62fb10..32f68a7 100644
+index cd7e3ff..01994fa 100644
 --- a/features/bootstrap/FeatureContext.php
 +++ b/features/bootstrap/FeatureContext.php
 @@ -137,6 +137,7 @@ class FeatureContext extends RawMinkContext implements Context, SnippetAccepting
@@ -11,7 +11,7 @@ index b62fb10..32f68a7 100644
          assertNotNull($link, 'Cannot find link in row with text '.$linkText);
          $link->click();
 diff --git a/features/web/product_admin.feature b/features/web/product_admin.feature
-index 0c15777..b95e6f8 100644
+index 8fb08b0..0bbe4c6 100644
 --- a/features/web/product_admin.feature
 +++ b/features/web/product_admin.feature
 @@ -26,12 +26,13 @@ Feature: Product admin panel
@@ -21,7 +21,7 @@ index 0c15777..b95e6f8 100644
 -
 +  @javascript
    Scenario: Deleting a product
-     Given the following product exist:
+     Given the following product exists:
        | name |
        | Foo1 |
      When I go to "/admin/products"
