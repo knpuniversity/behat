@@ -16,34 +16,32 @@ chapters:
     intro:
         title:      Introduction
         is_free:    true
-        length:     8:31
-        video_key:  ovmeeajtg2
+        video_key:  140685541
     bdd:
         title:      Behavior-Driven Development
         is_free:    false
-        length:     2:23
-        video_key:  zbbwx334o7
+        video_key:  140685542
     gherkin:
         title:      Gherkin
-        video_key:  fndtcnvlso
+        video_key:  140717239
     behat:
         title:      Behat
-        video_key:  wiz7kul1m1
+        video_key:  140685543
     mink:
         title:      Mink!
-        video_key:  o8fn6ruulp
+        video_key:  140717240
     mink-behat:
         title:      Behat and Mink
-        video_key:  a82hifdfyu
+        video_key:  140717241
     javascript:
         title:      JavaScript
-        video_key:  t5e2wdsbei
+        video_key:  140685548
     in-your-application:
         title:      You bet your Sweet App
-        video_key:  tbb4r297cf
+        video_key:  140685547
     other-fun-stuff:
         title:      The fun stuff Chapter
-        video_key:  3gjn0a4h20
+        video_key:  140685549
     final-words:
         title:      Get Testing!
-        video_key:  2gtu7wcrnf
+        video_key:  140685550
