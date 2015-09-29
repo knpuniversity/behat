@@ -1,5 +1,5 @@
 title:  BDD, Behat, Mink and other Wonderful Things
-length: 1:14:43
+
 summary: |
     Ready to revolutionize how you develop? In this tutorial, you'll internalize Behavior-Driven Development and how thinking
     about *behavior* will increase the quality and efficiency of your code. You'll become an expert in Behat - the BDD PHP
@@ -7,41 +7,46 @@ summary: |
     JavaScript pages. We'll also explore the pitfalls of testing with Behat, such as data sanitization, bootstrapping your
     code, and other challenges. By the end, you'll be well on your way to writing high-quality tests for your application
     and - more importantly - approaching development in a totally new light.
-    
+
     Behat works great with any PHP project, but if you're using Symfony2, we'll give you some special tips to get you rolling.
 illustration: behat.png
 videoDownloadExtension: mov
 
 chapters:
-    intro:
-        title:      Introduction
+    install:
         is_free:    true
-        video_key:  140685541
-    bdd:
-        title:      Behavior-Driven Development
-        is_free:    false
-        video_key:  140685542
-    gherkin:
-        title:      Gherkin
-        video_key:  140717239
+        video_key:
+    bdd-features:
+        video_key:
+    scenarios:
+        video_key:
     behat:
-        title:      Behat
-        video_key:  140685543
+        video_key:
+    behat-hooks-background:
+        video_key:
     mink:
-        title:      Mink!
-        video_key:  140717240
-    mink-behat:
-        title:      Behat and Mink
-        video_key:  140717241
+        video_key:
+    contexts:
+        video_key:
+    scenario-outline:
+        video_key:
+    mink-inside-feature-context:
+        video_key:
+    suites:
+        video_key:
+    control-the-database:
+        video_key:
+    clear-data-symfony-extension:
+        video_key:
+    get-authenticated-user:
+        video_key:
+    bdd:
+        video_key:
     javascript:
-        title:      JavaScript
-        video_key:  140685548
-    in-your-application:
-        title:      You bet your Sweet App
-        video_key:  140685547
-    other-fun-stuff:
-        title:      The fun stuff Chapter
-        video_key:  140685549
-    final-words:
-        title:      Get Testing!
-        video_key:  140685550
+        video_key:
+    tables:
+        video_key:
+    complex-delete:
+        video_key:
+    fixtures-tags:
+        video_key:
