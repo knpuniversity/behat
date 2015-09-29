@@ -50,7 +50,7 @@ or just `bin/behat` for Symfony2 users. Running it now gives us a nice strong er
 because we need to run it with `--init` at the end just one time in our application. This did
 an underwhelming amount of things for us. It created two directories and one file. 
 
-In PhpStorm we see our a `features` directory, a `bootstrap` directory and a little `FeatureContext.php`
+In PhpStorm we see a `features` directory, a `bootstrap` directory and a little `FeatureContext.php`
 file and that's all of it. While we're here I'll add a use statement for `MinkContext` and make
 it extend that. I'll explain that in a minute.
 
