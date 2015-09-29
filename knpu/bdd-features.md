@@ -37,4 +37,60 @@ followed by the business value. In the case of the Raptor Store, since you need 
 the product area, I would say that the business value is "to gain access to the management area".
 Next is "As a" and you say who is going to benefit from this feature, in our case it would be an
 admin user. And the third line is, "I need to be able to" followed by a short description of
-what the user would actually be able to do with this feature. 
+what the user would actually be able to do with this feature. In our store that is "login and logout".
+
+The most important parts are the first two lines, the business value and the user that's going to
+benefit from the business value. If either of these are difficult to define then maybe your feature
+isn't actually valuable or noone is benefiting from it, perhaps move onto a different task.
+
+Back in the Raptor store, login with admin/admin and check out the product admin area. Let's describe
+that! Back into into the `features` directory and create a new `product_admin.feature` file.  And we'll
+start the same as we always do:
+
+    Feature: Product Admin Area
+    In order to 
+
+So why do we care about having a product admin area? It's not just so we can click things around in there,
+the true reason to go in there is to control the products on the frontend. So let's say just that:
+
+   In order to maintain the products shown on the site
+   As an admin user
+   I need to be able to add/edit/delete products
+
+That looks good, what else do we have? This "Fence Security Activated" thing here, Let's imagine we need
+to create an API where someone can make an API request to turn the fence security on or off from anywhere. 
+For example, if you're running from dinosaurs somewhere, you might want to pull out your iphone and turn
+the fences back on. 
+
+We'll need another feature file called `fence_api.feature`. 
+
+    Feature: Remote Control Fence API
+    In order to
+
+What's the business value of having this feature?
+
+    In order to control fence security from anywhere
+    As a 
+
+Now this isn't an admin user, this is someone more advanced, some sort of an API user. 
+
+    As an API user
+    I need to be able to POST JSON instructions to turn the fence on/off
+
+I feel safer already.
+
+Let's get into a few examples of bad features. In product admin this would be a bad feature:
+
+    In order to add/edit/delete products
+    As an admin user
+    I need to be able to add/edit/delete products
+
+Notice the 'In order to' and the 'I need to be able to' lines are exactly the same. That is 
+going to be a problem. Being able to add/edit/delete products is not a business value. People
+don't go into the product admin area just for the delight of adding, editing and deleting products.
+They go into the admin area because that allows them to control the products on the front end. 
+
+This is really important because it will focus us when we build the admin area to know that we're
+building this just as a tool so that you can control things on the frontend. Which sadly for the
+developer means we don't need tons and tons of awesome features because our admin user who is benefiting
+doesn't care at all about those.
