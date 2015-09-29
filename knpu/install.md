@@ -1,3 +1,5 @@
+# Install
+
 Welcome to the magical world of Behat, my favorite library. No joke 
 this thing is the best. It's about two things:
 
