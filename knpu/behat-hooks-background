@@ -1,0 +1,57 @@
+# Behat Hooks Background
+
+Watch out Behat experts coming through here! Seriously, we've covered it, Behat
+reads the steps, finds a function using this nice little pattern, calls the 
+function, and then goes out to lunch. That's all that Behat does, any other
+features are just extras.
+
+Let's dive into some of those extras! This extra creates the "john" and "hammond"
+files inside this directory and it doesn't even clean them up. What a terrible roommate.
+
+Let's have this go into sandboxed directories, we'll use the construct function since
+that is called before the scenario. Type `mkdir('test');` and `chdir('test');`. 
+
+Over in the terminal I'll delete the "john" and "hammond" files so we can have a fresh
+start at this. Rerun Behat for our ls scenario, everything still passes and hey look
+there's a little test directory and "john" and "hammond" are inside of that. Cool, no 
+expenses spared here.
+
+Ready for the problem? Rerun that test one more time, and errors are starting to appear
+that say "mkdir(): file exists". This error didn't break our test but it does highlight
+the problem that we don't have any cleanup. After our tests run these files stick around.
+
+We need to run some code after every scenario. Behat has a system called "hooks" where 
+you can make a function inside of here called "hooks" which allows you to have a function
+that is called before or after your scenario, entire test suite or individual steps.
+
+Create a new public function inside of here called `public function moveOutOfTestDir()`.
+This will be our cleanup function. Inside there use `chdir();` to go up one directory,
+`if (is_dir('test'))` exists, which it should, then we'll run a nice little command to
+remove that. Now we need to get Behat to actually call this after every scenario, which 
+we can do by adding `@AfterScenario`, that's it! 
+
+Let's give this a try, first time we run this we should get the warning since our clean
+up function hasn't been called yet to clean up the files. When we run it again there
+are no warnings! And if we run ls we see that there is no test directory. 
+
+We can do this same thing with the `mkdir();` and `chdir();`. Create a new
+`public function moveIntoTestDir` and we can make it even a bit more resistant by checking
+to see if the test directory is even there and only create it if we need to. Above this
+add `@beforeScenario`. This is basically the same as `construct` but with some subtle differences.
+`@beforeScenario` is the proper place to put it. 
+
+When we run things now, everything looks really nice, this ls thing is going to be a success!
+
+Bonus feature #1, the hook system. Bonus feature #2 has nothing to do with Behat at all, it actually
+has to do with PHPUnit. Our first step will be to install PHPUnit with `composer require phpunit/phpunit --dev`
+that will add itself under a new require-dev section here. 
+
+Full disclosure, I should have done all the Behat and Mink stuff inside of the require-dev, it is
+a better place for it since we only need them while we're developing.
+
+I installed PHPUnit because it has really nice assert functions that we can get ahold of. To get access
+to them we just need to add a require statement in our `FeatureContext.php` file, `require_once` then
+count up a couple of directories and find `vendor/phpunit/phpunit/src/Framework/Assert/Functions.php`.
+
+
+
