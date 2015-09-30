@@ -83,6 +83,14 @@ to notice the duplication we have in here. There are two ways to clean this up. 
 to the `Background`. 
 
 Now, I'll change the first line of `And` in each of these scenarios to `Given`. I don't have to do this, but
-it reads much clearer. Now Behat will run that `Background` line before each individual scenario. 
+it reads much clearer. Now Behat will run that `Background` line before each individual scenario and you'll
+even see that. The `Background` is read up here, but it actually is running before this scenario and this
+scenario. We know this because if it didn't these tests wouldn't be passing. 
+
+Second, when you have duplication that's not on the first line of all of your scenarios, like the 
+"Then I should see...." you'll be using the scenario outline feature. It's a little less commonly used and
+we'll dive into that a bit later. Just note that it is possible.
+
+Not only do you know how Behat works but you even know all of its top extra features -- check you out!
 
 
