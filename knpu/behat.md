@@ -62,7 +62,7 @@ For `iRun` update the `arg1`'s to `command`. There are lots of ways to run comma
 
 ## Sharing Data inside your Scenario (between "Steps")
 
-Lastly, in `iShouldSeeInTheOutput`, update the args to `string`. And now we're stuck... we
+Lastly, in `iShouldSeeInTheOutput`, update the `arg1` to `string`. And now we're stuck... we
 don't have the return value from `shell_exec()` above. Good news, there is a really nice
 trick for this. Whenever you need to share data between functions in `FeatureContext`,
 you'll just create a new private property. At the top of the class let's create a
@@ -81,7 +81,7 @@ only just this scenario will have access to it.
 
 Now in `iShouldSeeInTheOutput` `if (strpos($this->output, $string) === false))` then
 we have a problem and we want this step to fail. How do you fail in Behat? By
-throwing an exception:  `throw new \Exception)` and print a really nice message here of
+throwing an exception:  `throw new \Exception` and print a really nice message here of
 "Did not see '%s' in the output '%s'. Finish that line up with `$string, $this->output`.
 Ok let's give this a try!
 
@@ -94,9 +94,13 @@ Back to our scenario. Get out some pen and paper: we need to review some termino
 Every line in here is called a "step". And the function that a step connects to is called
 a "step definition". This is important in helping you understand Behat's documentation.
 
+Oh, and the 4 feature lines above: those aren't parsed by Behat. We only write those
+to go through the exercise of thinking about our business value.
+
 Now, you see in our test it says "5 steps (5 passed)", which means that each step could
 fail. The rule is really simple, if the definition function for a step throws an exception,
 it's a failure. If there's no exception it passes.
 
-Head back to the step that looks for the "hammond" file and add the number 2 to the end of the file name.
-Running the scenario in our terminal now shows us 4 steps passed and 1 failed. 
+Head back to the step that looks for the "hammond" file and add the number 2 to the
+end of the file name so it fails. Running the scenario in our terminal now shows us 4
+steps passed and 1 failed. 
