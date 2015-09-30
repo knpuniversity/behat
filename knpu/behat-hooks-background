@@ -52,6 +52,37 @@ a better place for it since we only need them while we're developing.
 I installed PHPUnit because it has really nice assert functions that we can get ahold of. To get access
 to them we just need to add a require statement in our `FeatureContext.php` file, `require_once` then
 count up a couple of directories and find `vendor/phpunit/phpunit/src/Framework/Assert/Functions.php`.
+Requiring this file gives you access to all of PHPUnit's assert functions as a flat function. Down here
+we'll say `assertContains()` and give it the needle which is the `$string`, the haystack which is
+`$this->output` and finally our helpful message which I'll just cut and paste. And remove the rest of this
+if statement here. 
 
+Again, run the test! Beautiful, it looks just like it did before. 
+
+To show you the final important extra for Behat create another scenario for Linus' ls feature. This time
+we'll say:
+
+    Scenario: List 1 file and 1 directory
+
+Since ls should be able to do both. I'll copy all the steps from our first scenario and just edit the second
+line to:
+
+    And there is a dir named "ingen"
+
+And update the final line to:
+
+    And I should see "ingen" in the output
+
+Man what a great looking scenario, let's run it! As expected it now says there's one missing step definition. 
+Just like before copy the helpful PHP code that prints out into `FeatureContext`. Remove the throw exception line,
+and update the `arg1`'s to `dir`. Inside the function add `mkdir($dir)` to actually make that directory. Simple!
+
+Back to the terminal to rerun the tests. It works, isn't that nice?! Once you're done celebrating you may start
+to notice the duplication we have in here. There are two ways to clean this up. The most important way is with
+`Background:` If every single scenario in your feature starts with the same line then you should move that up
+to the `Background`. 
+
+Now, I'll change the first line of `And` in each of these scenarios to `Given`. I don't have to do this, but
+it reads much clearer. Now Behat will run that `Background` line before each individual scenario. 
 
 
