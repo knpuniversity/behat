@@ -57,4 +57,28 @@ For `iRun` update the `arg1`'s to `command`. There are lots of ways to run comma
 Lastly, `iShouldSeeInTheOutput`, update the args to `string`. And now we are stuck... we don't have
 the return value from `shell_exec()` above. Good news, there is a really nice trick for this, whenever
 you need to share data between functions in this file you'll just create a new private property. At
-the top of the file let's create a `private property $output;`
+the top of the file let's create a `private property $output;` and update the `iRun` function to
+`$this->output = shell_exec($command);`. Behat doesn't read that this is just us being good
+object oriented programmers and sharing things between commands.
+
+This works because every scenario gets its own feature context object. This feature context is just for
+this one scenario there. So we can set any private properties that we want on top there and only just
+this scenario will have access to it. 
+
+Now in `iShouldSeeInTheOutput` `if (strpos($this->output, $string === false))` then we have a problem
+and we want this step to fail. How do you fail in PHP? By throwing an exception, 
+`throw new \Exception(sprintf(''))` and print a really nice message here of "Did not see '%s' in the output
+'%s'. And finish that line up with `$string, $this->output`. Ok let's give this a try!
+
+Rerun our last Behat command in the terminal, and this time it's green! And if you run the ls command here
+you can see the "john" and "hammond" files listed. 
+
+Back to our scenario, get out pen and paper we're going to review some terminology! Every line in here is
+called a "step". And the function that a step connects to is called a "step definition". This is important
+in helping you understand Behat's documenation.
+
+Now, you see in our test it says "5 steps (5 passed)" which means that each step could fail. The rule is
+really simple, if the definition for a step it's a failure. If there's no exception it passes. 
+
+Head back to the step that looks for the "hammond" file and add the number 2 to the end of the file name.
+Running the scenario in our terminal shows us 4 steps passed and 1 failed. 
