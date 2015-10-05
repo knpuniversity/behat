@@ -31,6 +31,7 @@ test:
     - mkdir behat_screenshots
     - chmod 777 behat_screenshots
     - touch behat_screenshots/.keep
+    - ls behat_screenshots
   override:
     - php vendor/bin/behat
   post:
