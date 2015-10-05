@@ -5,6 +5,7 @@ Feature: Search
 
   Background:
     Given I am on "/"
+    And print last response
 
   @fixtures
   Scenario Outline: Search for a product
