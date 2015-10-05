@@ -31,7 +31,6 @@ test:
     - mkdir behat_screenshots
     - chmod 777 behat_screenshots
   override:
-    - phpunit -c app src/
     - php vendor/bin/behat
   post:
     - cp behat_screenshots/* $CIRCLE_ARTIFACTS/
