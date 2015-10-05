@@ -30,7 +30,9 @@ test:
   pre:
     - mkdir behat_screenshots
     - chmod 777 behat_screenshots
+    - touch behat_screenshots/.keep
   override:
     - php vendor/bin/behat
   post:
+    - ls behat_screenshots
     - cp behat_screenshots/* $CIRCLE_ARTIFACTS/
