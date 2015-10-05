@@ -7,9 +7,6 @@ dependencies:
     - vendor
 
   pre:
-    # Resolve host specific parameters
-    - cp app/config/parameters.yml.dist app/config/parameters.yml
-
     - sudo composer self-update
     - composer install --prefer-dist
 
