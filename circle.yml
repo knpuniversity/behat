@@ -35,5 +35,6 @@ test:
   override:
     - php vendor/bin/behat
   post:
-    - ls behat_screenshots
+    - ls -la behat_screenshots
+    - pwd
     - cp behat_screenshots/* $CIRCLE_ARTIFACTS/
