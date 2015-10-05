@@ -18,7 +18,7 @@ dependencies:
           background: true
 
     # start the web server
-    - 'php app/console server:run --env=test -vvv > server.log 2>&1':
+    - 'php app/console server:run --env=test -vvv localhost:8080 > server.log 2>&1':
           background: true
 
 database:
