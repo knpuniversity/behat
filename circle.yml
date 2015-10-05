@@ -1,0 +1,45 @@
+machine:
+  php:
+    version: 5.5.21
+
+general:
+  branches:
+    only:
+      - circle-ci
+
+dependencies:
+  cache_directories:
+    - vendor
+
+  pre:
+    # Resolve host specific parameters
+    - cp app/config/parameters.yml.dist app/config/parameters.yml
+
+    - sudo composer self-update
+    - composer install --prefer-dist
+
+#    - "sh -e /etc/init.d/x11-common start":
+#        environment:
+#          DISPLAY: ":99.0"
+    - wget http://selenium-release.storage.googleapis.com/2.47/selenium-server-standalone-2.47.1.jar
+    - 'java -jar selenium-server-standalone-2.47.1.jar > /dev/null 2>&1':
+          background: true
+
+    # start the web server
+    - 'php -S localhost:8080 -t web > server.log 2>&1':
+          background: true
+
+database:
+  override:
+    - app/console do:da:cr -e=test
+    - app/console do:sc:cr -e=test 
+
+test:
+  pre:
+    - mkdir behat_screenshots
+    - chmod 777 behat_screenshots
+  override:
+    - phpunit -c app src/
+    - php vendor/bin/behat
+  post:
+    - cp behat_screenshots/* $CIRCLE_ARTIFACTS/
