@@ -30,11 +30,10 @@ test:
   pre:
     - mkdir behat_screenshots
     - chmod 777 behat_screenshots
-    - touch behat_screenshots/.keep
-    - ls behat_screenshots
   override:
     - php vendor/bin/behat
   post:
-    - ls -la behat_screenshots
-    - pwd
+    # add a file so that the directory isn't empty (else copy will fail)
+    - touch behat_screenshots/keep
     - cp behat_screenshots/* $CIRCLE_ARTIFACTS/
+    - rm $CIRCLE_ARTIFACTS/keep
