@@ -2,11 +2,6 @@ machine:
   php:
     version: 5.5.21
 
-general:
-  branches:
-    only:
-      - circle-ci
-
 dependencies:
   cache_directories:
     - vendor
