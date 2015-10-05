@@ -1,0 +1,52 @@
+title:  BDD, Behat, Mink and other Wonderful Things
+
+summary: |
+    Ready to revolutionize how you develop? In this tutorial, you'll internalize Behavior-Driven Development and how thinking
+    about *behavior* will increase the quality and efficiency of your code. You'll become an expert in Behat - the BDD PHP
+    framework - and Mink - your key to testing web applications in sophisticated ways that include the ability to test your
+    JavaScript pages. We'll also explore the pitfalls of testing with Behat, such as data sanitization, bootstrapping your
+    code, and other challenges. By the end, you'll be well on your way to writing high-quality tests for your application
+    and - more importantly - approaching development in a totally new light.
+
+    Behat works great with any PHP project, but if you're using Symfony2, we'll give you some special tips to get you rolling.
+illustration: behat.png
+videoDownloadExtension: mov
+
+chapters:
+    install:
+        is_free:    true
+        video_key:
+    bdd-features:
+        video_key:
+    scenarios:
+        video_key:
+    behat:
+        video_key:
+    behat-hooks-background:
+        video_key:
+    mink:
+        video_key:
+    contexts:
+        video_key:
+    scenario-outline:
+        video_key:
+    mink-inside-feature-context:
+        video_key:
+    suites:
+        video_key:
+    control-the-database:
+        video_key:
+    clear-data-symfony-extension:
+        video_key:
+    get-authenticated-user:
+        video_key:
+    bdd:
+        video_key:
+    javascript:
+        video_key:
+    tables:
+        video_key:
+    complex-delete:
+        video_key:
+    fixtures-tags:
+        video_key:
