@@ -28,7 +28,7 @@ and paste it as the second result in my table.
 
 Now we can remove both of our scenarios -- crazy right? You'll see this table format again a bit later. 
 It doesn't need to line up but if you really need it to there's a shortcut to make that happen. On a mac
-it's control+command+L. 
+it's command+option+L. 
 
 Over in our terminal let's give this test another try. Perfect! It only prints out one Scenario Outline,
 but down here the key is that you see the Examples, both of which are listed in our table. It ran through
