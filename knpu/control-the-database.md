@@ -28,3 +28,13 @@ It doesn't make sense from an English grammar perspective, but it would still ru
 Alright! Given I am on "/", the next thing I should do is click 'login', the built in definition for
 that is "I follow", there's no built in definition for 'click' but we'll add one later since that's
 how most people actually talk in reference to links on websites.
+
+For now let's add,
+
+     When I follow "Login"
+
+Remember, these all use the named selector, so we use 'Login' because the name that renders on the frontend
+of our site for this link is 'Login', so that's how it's going to be found. 
+
+Our next step in logging in is to fill in these two fields on the login page. Again, we'll use the named
+selector to refer to the labels username and password and it will find the field associted with them
