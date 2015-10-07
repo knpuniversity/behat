@@ -25,4 +25,11 @@ Now back up in our `thereAreProducts` function type `$em = $this->getEntityManag
 the usual `$em->persist($product);` and an `$em->flush();` at the bottom. Easy stuff now that
 we've got Symfony booted. 
 
-Next thing, `iClick`
+Next thing, `iClick`, update the variable here to `LinkText` because we want this to work just like
+the built in "I follow" function. Except that using the phrase "I follow" is not how anyone would naturally
+speak in terms of clicking a link. So, we want to use "I click" instead. This uses the actual link text,
+not a CSS selector. To use the named selector we say `$this->getPage()->findLink()` because this is a link
+and pass it the `$LinkText` and then call `click();` on that. Or even shorter, instead of `findLink()` we
+can just say, `->clickLink();` and pass it `$LinkText`.
+
+
