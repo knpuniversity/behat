@@ -1,7 +1,5 @@
 # The SymfonyExtension and Clearing Data Between Scenarios
 
-# Clear Data Symfony Extension
-
 Let's change this back to "admin" "admin", rerun it and see what happens. Boom! This time
 it explodes! "Integrity constraint violation Unique constraint failed user.username". We
 already have a user called "admin" in the database and I made that a unique field, which
@@ -34,5 +32,26 @@ that same clean mostly empty set of data.
  
  The biggest thing the Symfony2 Extension gives you is, access to Symfony's container...but we already have that?
  Well, it does it in a slightly easier way. We can get rid of this `private static $container;` line 
- and the `bootstrapSymfony` function. Instead of these we'll use a PHP5.4 trait
+ and the `bootstrapSymfony` function. Instead of these we'll use a PHP5.4 trait called `KernelDictionary`.
+ This gives us two new functions, `getKernel` but more importantly `getContainer`. It takes care of all of
+ the booting of the kernel for us and it even reboots the kernel between scenarios so they don't run into 
+ each other. That's important becaue your scenarios should be completely independent of one another.
+ 
+ Let's search for the old `self::$container` code and change this to `$this->getContainer()` and the same
+ thing down here. You see that PhpStorm all of a sudden recongnizes these functions here because it
+ recognizes this as the container, so it knows that this returns the entity manager. 
+ 
+ Let's try things again! Awesome, everything still works and we have less code. If you have multiple context
+ classes you can just use the KernelDictionary on all of them to get access to the container. 
+ 
+ Last thing, what about clearing that data? Right now we're running two manual queries, you can imagine
+ that if we had a lot of tables this would become a huge problem and you'd have to start worrying about
+ getting them in the right order because of foreign key constraints. Fortunately Docrine gives us a better
+ way, a `purger`. Create a new variable called `$purger` and set it to a `new ORMPurger`. You need to
+ pass the entity manager, of course. After that type `$purger->purge();`, and there you go!
+ 
+ That's going to go through all of your entities and clear out all of your data. If it's working our tests
+ should pass. And they do! 
+ 
+ Cool! Same functionality and a lot less code, thank you Doctrine and Symfony2 extension!
  
