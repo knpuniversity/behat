@@ -10,43 +10,60 @@ summary: |
 
     Behat works great with any PHP project, but if you're using Symfony2, we'll give you some special tips to get you rolling.
 illustration: behat.png
-videoDownloadExtension: mov
 
 chapters:
     install:
         is_free:    true
+        is_finished: false
         video_key:
     bdd-features:
         video_key:
+        is_finished: false
     scenarios:
         video_key:
-    behat:
+        is_finished: false
+    using-behat:
         video_key:
+        is_finished: false
     behat-hooks-background:
         video_key:
-    mink:
+        is_finished: false
+    using-mink:
         video_key:
+        is_finished: false
     contexts:
         video_key:
+        is_finished: false
     scenario-outline:
         video_key:
+        is_finished: false
     mink-inside-feature-context:
         video_key:
+        is_finished: false
     suites:
         video_key:
+        is_finished: false
     control-the-database:
         video_key:
+        is_finished: false
     clear-data-symfony-extension:
         video_key:
+        is_finished: false
     get-authenticated-user:
         video_key:
-    bdd:
+        is_finished: false
+    practicing-bdd:
         video_key:
-    javascript:
+        is_finished: false
+    javascript-tricks:
         video_key:
+        is_finished: false
     tables:
         video_key:
+        is_finished: false
     complex-delete:
         video_key:
+        is_finished: false
     fixtures-tags:
         video_key:
+        is_finished: false
