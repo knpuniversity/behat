@@ -46,7 +46,7 @@ are gone! And if we run `ls`, we see that there is no test directory.
 
 We can do this same thing with the `mkdir();` and `chdir();` stuff. Create a new
 `public function moveIntoTestDir()` and we can make it even a bit more resistant by checking
-to see if the test directory is aleready there and only create it if we need to. Above this,
+to see if the test directory is already there and only create it if we need to. Above this,
 add `@BeforeScenario`. This is basically the same as putting the code in `__construct`,
 but with some subtle differences. `@BeforeScenario` is the proper way to do this.
 
