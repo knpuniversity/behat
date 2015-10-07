@@ -81,20 +81,56 @@ And we'll use this for our usual admin/admin. And we'll fill the password field.
 say `findButton` but instead we'll say `pressButton('Login')`. This basically matches what we have over here so
 that should be it! Run it, hey we're in good shape here!
 
-Time for a challenge! Notice that whenever you have products it shows the author as 'admin' which is the user
+Time for a challenge! Notice that whenever you have products it shows the author as "admin" which is the user
 that created it or 'anonymous' if it was created via another method. If we refresh right now the author
 is always listed as 'anonymous' because when we create the product we aren't setting the author. I now want to
 test that this table does show the correct author. Let's get a new scenario started for this. 
 
-    Scenario: Products show author
-    Given I am logged in as an admin
+     Scenario: Products show author
+     Given I am logged in as an admin
 
 Instead of just saying there are five products I'll say,
 
-    And I author 5 products 
+     And I author 5 products 
 
-This is a new bit of language here which will need a step definition.
+This is a new bit of language here which will need a step definition. To save some time, we'll go directly
+to the products page,
 
+     When I go to "/admin/products"
+     Then I should not see "Anonymous"
 
+Since I'll be authoring these products they should all be listed as "admin". Once again, scenarios are completely
+isolated from each other. Even if I ran the "List available Products" scenario and then "Products show author", 
+the database will be cleared between them so there will only be 5 products. Let's run just our new scenario
+from line 13.
 
+Grab the `iAuthor` code here and paste it into our handy `FeatureContext` class by the other product function.
+Of course these two functions `thereAreProducts` and `iAuthorProducts` are really similar so we should reuse
+the logic as much as we can. Go ahead and grab the internal sof `thereAreProducts`, make a new `private function create Products`. Pass it `$count` as an argument and also an optional user object which will be the author that we
+want to use for those products. Down here we can add an if statement that says, if author is passed then 
+`$product->setAuthor` because I already have that relationship setup with my doctrine entities. Great!
 
+In `thereAreProducts` we can change the body of this function to `$this->createProducts($count);` and
+we'll do the same thing down here in `iAuthorProducts` for now. Clearly, this is still not setting the author,
+I just want to see if it's actually going to run and then we'll worry about the actual setting of the author.
+
+Cool! It runs, and fails because anonymous is still being shown on the screen as an author. The question now is,
+how do we get the current user? If you look at the language it says "I author", who is "I" in this case?
+Heading over to our `product_admin.feature` we can see that "I" is whomever we logged in as here. We didn't 
+specify what the username should be but whomever it is will be who "I" represents.
+
+Earlier, when we worked with the ls scenarios, sometimes you want to share data between steps inside of a
+scenario. In this case we want to share the user object that we logged in as on this step with this step
+here so it can use that same author. Whenever you have this situation create a new private variable to
+store that in. I'll create `private $currentUser;` which will represent whomever we are logged in as at the
+current time.
+
+In `iAmLoggedInAsAdmin` we can say `$this->currentUser = $this->thereIsAnAdminUserWithPassword`. I'll click
+into this function to see that it does create a user object. You just need to make sure it returns that. 
+
+This first step will cause the `currentUser` property to be set and in `iAuthorProducts` we can just pass
+that into the `createProducts` function and it should set the author. It is a really common to want to
+figure out who the current logged in user is.
+
+Hey it even passes! Now we can continue to write scenarios in terms of actions that "I" can take and we
+will actually know who "I" is.
