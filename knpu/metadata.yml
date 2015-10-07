@@ -1,7 +1,7 @@
 title:  BDD, Behat, Mink and other Wonderful Things
 
 summary: |
-    **Looking for Behat v2.5 of the tutorial?** See knpuniversity.com/screencast/behat-v25.
+    **Looking for Behat v2.5 of the tutorial?** See https://knpuniversity.com/screencast/behat-v25.
 
     Behat is my absolute favorite library to use. First, it let's me think about the *behavior*
     of my features first, *before* I start developing. In this tutorial, we'll do that, and it'll
