@@ -1,6 +1,8 @@
-title:  BDD, Behat, Mink and other Wonderful Things
+title:  BDD, Behat (version 2.5), Mink and other Wonderful Things
 length: 1:14:43
 summary: |
+    A newer version of this tutorial for Behat 3 is available! See knpuniversity.com/screencast/behat.
+
     Ready to revolutionize how you develop? In this tutorial, you'll internalize Behavior-Driven Development and how thinking
     about *behavior* will increase the quality and efficiency of your code. You'll become an expert in Behat - the BDD PHP
     framework - and Mink - your key to testing web applications in sophisticated ways that include the ability to test your
