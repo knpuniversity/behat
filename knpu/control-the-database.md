@@ -111,4 +111,9 @@ a user an admin set the user's role to `ROLE_ADMIN`. Now we just need the entity
 with `$em = self::$container->get('doctrine')` and to get the Doctrine service out call `->getManager();` on it.
 From here it's `$em->persist($user);` `$em->flush();`. And that should do it!
 
-To prove it since we already have 
+To prove it, since we already have an admin user in the database let's change this to `admin2` and give it a go.
+This should not work, since this user isn't in the database yet... well unless it's created by the code we
+just wrote. Brilliant!
+
+This is huge, we're guaranteeing there's an admin user and to do that we bootstrapped our application which makes
+us dangerous since we have access to all of our useful services.
