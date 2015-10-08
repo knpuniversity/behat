@@ -62,3 +62,43 @@ never filled in the `href` to go to our `new.html.twig` page. My bad.
 Let's try this again. Awesome, we got further this time! We got all the way through pressing save but we aren't
 seeing the flash message "Product Created FTW!" because our form isn't processing yet. No problem, let's add that!
 
+To do that, add Symfony's request object, type hint that here. Inside of our `newAction` function add a simple 
+`if ($request->isMethod('POST'))` then we'll do our form processing. To be as lazy as possible what if we only
+show that flash message? My site already has some flash messaging functionality, so I'll drop in the message
+that our test is looking for, `$this->addFlash('Success', 'Product created FTW!')`. Wrap this up by redirecting
+the user to the product page. So, I'm not actually saving, but this will actually make the tests pass and our
+admin user really frustrated when their new products don't appear in the list. 
+
+Now, don't be a big jerk and make your tests pass without the actual feature functionality. In this case I
+would improve my scenario with,
+
+     And I should see "Veloci-chew toy"
+
+Once we have added that product this feature isn't working until it shows up in the product list. 
+
+Behavior Driven Development says, add a step to your scenario, watch it fail then code until that step passes.
+So let's code to fix our new failing step by adding `$product = new Product();` and some code to set
+the name of the product that I can copy and paste for Price and Description. This doesn't have form validation,
+so you would do more work than this in real life but it gets the job done. 
+
+To wrap this up we'll type `$em = $this->getDoctrine()->getManager();`, persist and flush. 
+
+If we did all that correctly, our tests should pass. Excellent, look at all that green! In fact, we should
+be able to go over to our site and see the Veloci-chew toy for $20. But we have a problem, it says that
+the author is 'anonymous', this should be 'admin' since I created it under that user. That's definitely 
+a bug we didn't think about. We didn't set the author in our `ProductAdminController`, but before we go
+and code this instead we should first add a step to our test to check for this. 
+
+     And I should not see "anonymous"
+
+This is safe to say since there should only ever be one product created by the admin when we run this scenario. 
+Back over to the terminal and run the test. Our new step fails, phew! I would have been confused otherwise. 
+
+In `ProductAdminController` let's now set the author when a product is created, `$product->setAuthor($this->getuser());`
+which looks for the current logged in user. When we run our test again it passes. 
+
+And that folks is behavior driven development, and how I would love to see you plan out and create your projects.
+It forces you to design the behavior of your code first and second, it helps you know when you're finished. Once
+the tests are green you don't need to keep coding and perfecting a feature because it passes the test. Now, you 
+might have another person who will handle design or maybe you will do that yourself. But from a behavioral 
+perspective, this feature does what it needs to do so you can move onto what's next. 
