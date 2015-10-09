@@ -47,6 +47,9 @@ chapters:
     using-mink:
         video_key:
         is_finished: false
+    finding-elements:
+        video_key:
+        is_finished: false
     contexts:
         video_key:
         is_finished: false
