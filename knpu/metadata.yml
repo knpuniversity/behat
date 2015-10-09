@@ -50,7 +50,7 @@ chapters:
     finding-elements:
         video_key:
         is_finished: false
-    contexts:
+    behat-loves-mink:
         video_key:
         is_finished: false
     scenario-outline:
