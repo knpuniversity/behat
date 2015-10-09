@@ -62,7 +62,10 @@ chapters:
     suites:
         video_key:
         is_finished: false
-    control-the-database:
+    login-scenario:
+        video_key:
+        is_finished: false
+    control-database:
         video_key:
         is_finished: false
     clear-data-symfony-extension:
