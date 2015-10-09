@@ -51,12 +51,23 @@ because we need to run it with `--init` at the end just one time in our applicat
 an underwhelming amount of things for us. It created two directories and one file. 
 
 In PhpStorm we see a `features` directory, a `bootstrap` directory and a little `FeatureContext.php`
-file and that's all of it. While we're here I'll add a use statement for `MinkContext` and make
-it extend that. I'll explain that in a minute.
+file and that's all of it:
+
+[[[ code('3bda2edfd5') ]]]
+
+While we're here I'll add a use statement for `MinkContext` and make it extend that.
+I'll explain that in a minute:
+
+[[[ code('6eb54475e1') ]]]
 
 One last bit of setup: at the root of your project create a `behat.yml` file. I'll paste in some
-content to get us started. When we run Behat it will looks for a `behat.yml` file and this tells
-it: "Hey our application lives at localhost:8000, so look for it there."
+content to get us started:
+
+[[[ code('2d211c6e36') ]]]
+
+When we run Behat it will looks for a `behat.yml` file and this tells it:
+
+> Yo! Our application lives at [localhost:8000](http://localhost:8000/ ), so look for it there.
 
 ## Your First Feature and Scenario
 
@@ -64,20 +75,14 @@ Behat is installed, let's get to writing features! In the `features` directory c
 called `search.feature` and we'll just start describing the search feature on the raptor store
 using a language called Gherkin which you're about to see here. 
 
-    Feature: Search
-      In order to find products dinosaurs love
-      as a web user
-      I need to be able to search for products
+[[[ code('c1178e9e4e') ]]]
 
 Here I'm just using human readable language to describe the search feature in general. Within
 each feature we'll have many different scenarios or user flows. So let's start with 
 `Scenario: Searching for a product that exists`. Now using very natural language I'll describe
 the flow. 
 
-    Given I'm on "/"
-    When I fill in "searchTerm" with "Samsung"
-    And I press "search_submit" 
-    Then I should see "Samsung Galaxy"
+[[[ code('918291181c') ]]]
 
 Don't stress out about the formatting of this, we'll cover that in detail. 
 
@@ -111,15 +116,19 @@ For me that's `java -jar ~/Downloads/selenium-server-standalone-2.45.0.jar`. Thi
 a daemon, so it should just hang there. 
 
 Our library is done downloading and we just need to activate it in our `behat.yml` with the line:
-`selenium2: ~`. 
+
+[[[ code('98773813b9') ]]]
 
 This gives me the option to use goutte to run the test using curl requests or Selenium to have things
 run in a browser. By default, this will just select goutte. So how do we make it use Selenium? I'm so
 glad you asked! 
 
-Above the scenario that you want to run in Selenium add `@javascript`, and that's it. Go back to the
-terminal and let's rerun this test. It actually opens the browser, it's quick but you can see it
-clicking around to complete the scenario. Cool!
+Above the scenario that you want to run in Selenium add `@javascript`:
+
+[[[ code('c3d8cb8532') ]]]
+
+And that's it. Go back to the terminal and let's rerun this test. It actually opens the browser,
+it's quick but you can see it clicking around to complete the scenario. Cool!
 
 We write human readable instructions and they turn into functional tests, and this just barely
 scratches the surface of how this will change your development. Let's keep going and figure out
