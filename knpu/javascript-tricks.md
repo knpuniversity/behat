@@ -66,4 +66,57 @@ the modal what it's actually doing is making something with the class `modal` vi
 like, `('.modal:visible').length` and of course that's one. Close the modal and rerun that, it's 0. So, this jquery
 code is an expression that we can use as our second argument. Now our line here says, "wait until this javascript
 expression is true or wait up to 5 seconds." Why am I allowed to use the jquery here? Becuase this is run on our page,
-so if you have Jquery on your page you can use it. Any other javascript 
+so if you have Jquery on your page you can use it. Any other javascript that you have on your page is available
+to you right here. 
+
+Let's run it again, and we should see it run only as slow as it needs to. This time it started filling out the
+fields a lot faster. You now have one of the biggest tools in testing javascript, getting proper waits. 
+
+What about debugging? Let's say we messed something up here in our scenario. Instead of calling this the
+"Name" field we called it "Product Name", we know that this is going to fail. The issue is that it is going
+to open up the browser and fail really quickly, too quickly to see exactly what went wrong. In the terminal
+we get an error telling us that there isn't a field called "Product Name" but with nothing else to look at to
+determine if that is because there was an error on the page, are we on the wrong page, is the field called 
+something else? Why won't someone tell us what's going on!?
+
+To clear things up for ourselves, first google for "behatch contexts". This is an opensource library that has
+a bunch of useful contexts, as in `FeatureContext` and `MinkContext`, we've got something here called
+`BrowserContext` that you could bring into your project that will add a lot of useful definitions to your project.
+
+I don't typically use this library but I do steal from it. Inside of `DebugContext` lives one of my absolute
+favorite step definitions, `iPutABreakPoint`, copy that and drop it into our `FeatureContext` file, or you 
+could even create your own `DebugContext` if you wanted to. I like to shorten this to "I break". The way to
+start using this is just like the `print last response` step. Our error is on "Product Name" so I'll drop it
+in just above that step. 
+
+     And break
+
+The "I" part of this step is optional. Ok, back to the terminal to rerun our test so we can start to debug
+what is wrong with our "Product Name" field. The modal pops open, and the browser freezes there. Over in
+the terminal there's a message "Press [RETURN] to continue..." It's just sitting there waiting for us to
+look at this page and debug what the issue is. Once we've checked out everything we wanted to in the browser
+we'll go and hit enter on our test to keep it moving along.
+
+That is the number one debugging tool for javascript. 
+
+But there are more cool things, like `iSaveAScreenshotIn`. Copy that definition and paste it into `FeatureContext`,
+change the phrasing to "I save a screenshot to" and remove this `screenshotDir` thing since we don't have that and
+replace it to save things to the root of our project with `__DIR__'/../../'`. Back over in our scenario say,
+
+     And I save a screenshot to "shot.png"
+
+Run it! Our modal pops open and it should still be failing at our "New Product" step, the browser closes, we
+check our terminal, which confirms for us that this test is still failing. But over in our IDE we can see
+at the bottom of our tree a `shot.png` file which shows exactly what things looked like when the test failed.
+Woah.
+
+When you have continuous integration setup on your project you can use this to help you figure out what
+causes builds to fail, which normally is really difficult to debug. By using this hook system, `BeforeScenario` 
+and `AfterScenario` we can actually have a function that is called everytime after one of your scenarios
+fail. In that you can automatically save a screenshot on every failure. In a project I worked on we had
+a setup where a screenshot was taken on every scenario failure and uploaded to an Amazon S3 instance, so
+later when we were looking at Travis wondering why a scenario failed we could just head over to the S3 bucket
+for that and download the screenshot. So helpful.
+
+Anyways, let's remove this and change "Product Name" back to "Name" and we again have a functional test for
+our javascript modal. 
