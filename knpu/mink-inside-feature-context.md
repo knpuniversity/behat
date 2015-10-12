@@ -58,7 +58,7 @@ we need to fill in.
 Filling these in shouldn't be hard: we're pretty good with Mink. But, how can we access
 the Mink Session? There's a couple ways to get it, but the easiest is to make
 `FeatureContext` extend `RawMinkContext`. This gives us access to a bunch of functions:
-the most important being `getSession()` and another callex `visitPath()` that we'll use
+the most important being `getSession()` and another called `visitPath()` that we'll use
 later.
 
 On the first method, change `arg1` to `term`. Once you're inside of `FeatureContext`
@@ -76,7 +76,7 @@ of the cool functions that come with being an individual element, like
 `attachFile`, `blur`, `check`, `click` and `doubleClick`. One of them is
 `setValue()` that works for field. Set the value to `$term`. 
 
-This is a perfect step definition: find an element and do something with it
+This is a perfect step definition: find an element and do something with it.
 
 To press the search button, we can do the exact same thing.
 `$button = $this->getSession()->getPage()->find('css', '#search_submit');`.
@@ -89,7 +89,7 @@ That was more work, but it's a better solution. With no CSS inside of our
 scenarios, they're less dependent on the markup on our site and this is a
 heck of a lot easier to understand than before with the cryptic name and ids.
 
-## Create a getPage Shortcut
+## Create a getPage() Shortcut
 
 To save time in the future, create a `private function getPage()` and
 `return $this->getSession()->getPage();`. I'll put a little PHPDoc above this
