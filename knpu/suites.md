@@ -9,7 +9,7 @@ ideas mixed together: some functions interact with the terminal and others help 
 with a web page.
 
 This is *begging* to be split into 2 classes. Let's copy `FeatureContext` and create
-a new file called `CommandLineProcessContext`. Update the classname and get rid of anything
+a new file called `CommandLineProcessContext`. Update the class name and get rid of anything
 in here that doesn't help do things with the command line.
 
 In `FeatureContext`, do the opposite: remove all the things that have nothing to
@@ -36,13 +36,13 @@ Remove that from the `default` suite.
 When you execute Behat, it uses the `default` suite unless you tell it which one
 to use with the `--suite` option. Try it with `--suite=commands` and then run `ls.feature`.
 Or you can use the `-dl` option to see only the definition lists associated with
-the contexts in that suite. Without `--suite`, we we see definitiosn for the default suite.
+the contexts in that suite. Without `--suite`, we see definitions for the default suite.
 
 And yes, we can go *even* further by telling each suites which features belong to them.
 Under the `features/` directory, create two new directories called `commands` and `web`
 Let's organize: move `ls.feature` into `commands/` and the other four features into `web/`.
 Now, add a `paths` key to the `default` suite and set it to `[%paths.base%/features/web]`.
-`%paths.base` is a shortcut to the root of the project. For the `commands` suite, do the same
+`%paths.base%` is a shortcut to the root of the project. For the `commands` suite, do the same
 thing to point to `commands/`.
 
 Now, if you run the `default` suite, Behat knows to only execute the features in the
