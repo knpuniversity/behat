@@ -1,6 +1,6 @@
 <?php
 
-namespace Challenges\Interfaces;
+namespace Challenges\BDDFeatures;
 
 use KnpU\ActivityRunner\Activity\CodingChallenge\CodingContext;
 use KnpU\ActivityRunner\Activity\CodingChallenge\CorrectAnswer;
@@ -53,7 +53,68 @@ EOF
 
     public function grade(CodingExecutionResult $result)
     {
-        throw new GradingException('Oops...');
+        $input = $result->getInputFileContents('registration.feature');
+
+        $lines = explode("\n", $input);
+
+        $this->assertLineStartsWith(
+            $lines,
+            'Feature:',
+            'a short feature description',
+            0,
+            false
+        );
+
+        $this->assertLineStartsWith(
+            $lines,
+            'In order to',
+            'your *business* value',
+            1,
+            true
+        );
+
+        $this->assertLineStartsWith(
+            $lines,
+            'As a',
+            '*who* will benefit from the feature',
+            2,
+            true
+        );
+
+        $this->assertLineStartsWith(
+            $lines,
+            'I need to be able to',
+            'a short description of what the user will do with the feature',
+            3,
+            true
+        );
+    }
+
+    private function assertLineStartsWith(array $lines, $expectedText, $descriptionOfLine, $lineNumber, $requiresSpaces)
+    {
+        if (!isset($lines[$lineNumber])) {
+            throw new GradingException(sprintf(
+                'I don\'t see line #%s - the one  with `%s`',
+                $lineNumber+1,
+                $expectedText
+            ));
+        }
+        $line = trim($lines[$lineNumber]);
+        // check that the line starts with this AND there is something after this text
+        if (strpos($line, $expectedText) !== 0 || $line == $expectedText) {
+            throw new GradingException(sprintf(
+                'Be sure your line #%s starts with `%s` followed by %s.',
+                $lineNumber+1,
+                $expectedText,
+                $descriptionOfLine
+            ));
+        }
+
+        if ($requiresSpaces) {
+            if (substr($lines[$lineNumber], 0, 2) !== '  ') {
+                throw new GradingException('Each line *under* `Feature` should be indented at least two spaces. This just for readability');
+            }
+        }
     }
 
     public function configureCorrectAnswer(CorrectAnswer $correctAnswer)

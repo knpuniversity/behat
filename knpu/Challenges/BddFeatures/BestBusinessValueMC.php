@@ -1,6 +1,6 @@
 <?php
 
-namespace Challenges\BddFeatures;
+namespace Challenges\BDDFeatures;
 
 use KnpU\ActivityRunner\Activity\MultipleChoice\AnswerBuilder;
 use KnpU\ActivityRunner\Activity\MultipleChoiceChallengeInterface;

@@ -39,6 +39,9 @@ chapters:
     bdd-features:
         video_key:
         is_finished: false
+        challenges:
+            - Challenges\BDDFeatures\RegistrationFeatureCoding
+            - Challenges\BDDFeatures\BestBusinessValueMC
     scenarios:
         video_key:
         is_finished: false
