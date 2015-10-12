@@ -7,8 +7,8 @@ a lot like what we have in `search.feature`.
     Given I am on "/"
 
 For the `Background` step, we *now* know we could create a matching
-defintion in `FeatureContext` and easily use Mink's session object
-to actually go to that URL. But earlier, we ran this scenario,
+definition in `FeatureContext` and easily use Mink's session object
+to actually go to that URL. But earlier when we ran this scenario,
 it worked... so there must already be something tie'ing Behat and
 Mink together.
 
@@ -16,7 +16,7 @@ Let's see what's happening.
 
 ## Free Behat Steps
 
-First, in `FeatureContext` I had you extend `MinkContext` class. Remove that now. 
+First, in `FeatureContext` I had you extend `MinkContext`. Remove that now. 
 
 When we run Behat, it needs to know *all* of the step definition language that's
 available. You can see that list by passing a `-dl` to the Behat command:
@@ -26,7 +26,7 @@ php vendor/bin/behat -dl
 ```
 
 This shows the four `ls` definitions we bulit. So, Behat opens the `FeatureContext` class,
-parses out all of thee `@Given`, `@When` and `@Then` annotations, and prints a final
+parses out all of the `@Given`, `@When` and `@Then` annotations, and prints a final
 list here for our enjoyment.
 
 When we add more step definitions, this list grows. And if we use something that
@@ -36,7 +36,7 @@ In `behat.yml` we added this `MinkExtension` configuration. This library ties
 Behat and Mink together and gives us two cool things. First, it lets us access
 the Mink Session object inside of `FeatureContext`. We'll see that soon.
 
-For the second thing, look add a new config called `suites:` and a key under that
+For the second thing, add a new config called `suites:` and a key under that
 called `default:` with a `contexts` key. We'll talk about `suites` later. Under
 `contexts`, pass `FeatureContext` *and*  `Behat\MinkExtension\Context\MinkContext`.
 Now, Behat will look inside `FeatureContext` *and* `MinkContext` for those definition
