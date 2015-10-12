@@ -6,6 +6,8 @@ really cool! But we're talking about "Behavior Driven Development" or
 BDD. This is the idea that you are going to write down the behavior of your
 application first and then develop it. 
 
+## Behavior-Driven Development
+
 This might sound pretty obvious to you: why would I code without thinking about
 what I'm going to code? But that actually happens pretty often. 
 
@@ -13,8 +15,9 @@ Behat and BDD are going to give us a very specific path to follow so that we thi
 first, and then we code. We do this to maximize business value. There are two types
 of BDD, story and spec. Without getting too far into the details of each, story BDD is
 done with Behat and usually ends up with functional tests. Spec BDD is handled by another
-wonderful tool called PHPSpec and this ends up focusing on unit testing, how you actually
-design your classes and functions. They're both cool and in a perfect world you'll use both.
+wonderful tool called [PHPSpec](http://www.phpspec.net/) and this ends up focusing
+on unit testing, how you actually design your classes and functions. They're both
+cool and in a perfect world you'll use both.
 
 One minute of theory:
 
@@ -63,6 +66,8 @@ frontend. So let's say just that:
 
 [[[ code('b35e47ba49') ]]]
 
+## Writing at the Tech Level of your User
+
 That looks good. What else do we have? Check out the "Fence Security Activated" message on the site.
 Let's imagine we need to create an API where someone can make an API request to turn the fence
 security on or off from anywhere. For example, if you're running from dinosaurs somewhere, you
@@ -89,7 +94,7 @@ There's a common pitfall, and it looks like this:
 
 [[[ code('e68cbc8e28') ]]]
 
-Notice the 'In order to' and the 'I need to be able to' lines are basically the same. This
+Notice the `In order to` and the `I need to be able to` lines are basically the same. This
 is a sign of a bad business value. Being able to add/edit/delete products is not a business
 value. People don't go into the product admin area just for the delight of adding, editing
 and deleting products. They go into the admin area because that allows them to control

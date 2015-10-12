@@ -14,12 +14,15 @@ So let's start with:
 [[[ code('725c8fa9a6') ]]]
 
 Do keep in mind that this line doesn't matter too much, no need to be Shakespeare.
+
+## Given, When and Then
+
 For these scenarios I need you to think as if you *are* the admin user. We'll talk in
 the first person point of view at the intended user's technical level. Meaning, clicking
 on buttons an admin user can actually recognize and viewing things that they will
 see. Put yourself in their shoes.
 
-## Given, When and Then
+## Given: Setup
 
 Scenarios always have three parts, the first is `Given` where you can create any type of
 setup before the user story starts. So in our case, if we want to list products, we need
@@ -36,12 +39,16 @@ Move on down to the next line:
 Using the word `And` here extends the `Given` line to include more setup details. With these
 two lines, we'll have 5 products in the database and start the test on the `/admin` page.
 
-The second part of every scenario is `When` which is the user action. Here, I the admin user
-actually take action. In our case, the only action is clicking products:
+## When: User Action
+
+The second part of every scenario is `When` which is the user action. Here,
+"I" - the admin user - actually take action. In our case, the only action is clicking products:
 
 [[[ code('af0e00b21f') ]]]
 
 This is good because that's the name of the link and it reads very clearly. 
+
+## User Expectations
 
 Finally, the last part of every scenario is `Then`, this is where we witness things
 as the user. In our scenario, we should see the 5 products that we set up in our `Given`:
@@ -51,11 +58,15 @@ as the user. In our scenario, we should see the 5 products that we set up in our
 Always use language that is clear to you after your `Given`, `When`, `Then` or `And` in
 your scenarios. 
 
+## Only play God in Given
+
 In `Given` you can add things to the database before hand, but once you are in `When` and
 `Then` you should only be taking actions that the admin user could take and viewing things
 they can view. This means we won't be using CSS selectors in our scenarios or phrasing such
 as "Then a product should be entered into the database" because a user can't see that happen.
 However, the user could see a helpful message, like "Celebrate, your product was saved!"
+
+## BDD with a New Scenario
 
 Let's create a new scenario for functionality that doesn't actually exist yet: adding a new product. 
 Time to plan out this scenario!
