@@ -39,8 +39,8 @@ chapters:
         video_key: 141808753
         is_free:   true
         challenges:
-            - Challenges\BDDFeatures\RegistrationFeatureCoding
-            - Challenges\BDDFeatures\BestBusinessValueMC
+            - Challenges\BddFeatures\RegistrationFeatureCoding
+            - Challenges\BddFeatures\BestBusinessValueMC
     scenarios:
         video_key: 141828388
         challenges:
