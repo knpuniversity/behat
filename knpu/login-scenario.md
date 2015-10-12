@@ -12,7 +12,7 @@ already. Let's save some effort and describe the login process using these.
 
 We want to start on the homepage. PhpStorm tries to help by autocompleting this
 step, but when I hit tab, it prints it with extra stuff. When you use the `-dl`
-option, the "Given I am on" ends up with a bunch of crazy regex. Anytime you see
+option, the "Given I am on" ends with a bunch of crazy regex. Anytime you see
 regex like this, it's just forming a wildcard: something where you can pass any
 value, surrounded by quotes.
 
@@ -37,7 +37,7 @@ text of the link.
 
 On the login page, we need to fill in these two fields. Again, because of the named
 selector, we'll target these by the labels "Username" and "Password". There are a few
-definitions for fields, byt the one I like is "When I fill in field with <value>". So,
+definitions for fields, byt the one I like is "When I fill in field with value". So,
 
      And I fill in "Username" with "admin"
      And I fill in "Password" with "adminpass"
