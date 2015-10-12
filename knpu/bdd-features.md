@@ -60,9 +60,9 @@ So why do we care about having a product admin area? It's not just so we can cli
 boxes. Nobody cares about that. The true reason to go in there is to control the products on the
 frontend. So let's say just that:
 
-   In order to maintain the products shown on the site
-   As an admin user
-   I need to be able to add/edit/delete products
+    In order to maintain the products shown on the site
+    As an admin user
+    I need to be able to add/edit/delete products
 
 That looks good. What else do we have? Check out the "Fence Security Activated" message on the site.
 Let's imagine we need to create an API where someone can make an API request to turn the fence
