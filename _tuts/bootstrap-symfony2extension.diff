@@ -8,29 +8,25 @@ index 48194d1..ddd5462 100644
              selenium2: ~
 +        Behat\Symfony2Extension: ~
 diff --git a/composer.json b/composer.json
-index 05cd30a..9b17165 100644
+index bc32ec0..cd374dd 100644
 --- a/composer.json
 +++ b/composer.json
-@@ -12,7 +12,8 @@
-         "sensio/framework-extra-bundle": "^3.0",
+@@ -13,7 +13,8 @@
          "doctrine/doctrine-bundle": "^1.5",
          "doctrine/orm": "^2.5",
--        "doctrine/doctrine-fixtures-bundle": "^2.2"
-+        "doctrine/doctrine-fixtures-bundle": "^2.2",
+         "doctrine/doctrine-fixtures-bundle": "^2.2",
+-        "knpuniversity/activity-runner": "^0.4.0"
++        "knpuniversity/activity-runner": "^0.4.0",
 +        "behat/symfony2-extension": "^2.0"
      },
      "autoload": {
          "psr-0": {
 diff --git a/composer.lock b/composer.lock
-index 8407181..e6dd507 100644
+index 45b4b39..032a645 100644
 --- a/composer.lock
 +++ b/composer.lock
-@@ -4,9 +4,248 @@
-         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
-         "This file is @generated automatically"
-     ],
--    "hash": "7f6556eade5bdb6685310effa24cd8bc",
-+    "hash": "a4058de22bbbeb94e3c09ff57db2cc94",
+@@ -8,6 +8,245 @@
+     "content-hash": "519a36ab4a9691b442ad1650d1a35f43",
      "packages": [
          {
 +            "name": "behat/behat",
@@ -275,7 +271,7 @@ index 8407181..e6dd507 100644
              "name": "doctrine/annotations",
              "version": "v1.2.7",
              "source": {
-@@ -1211,145 +1450,6 @@
+@@ -2364,145 +2603,6 @@
      ],
      "packages-dev": [
          {
@@ -421,7 +417,7 @@ index 8407181..e6dd507 100644
              "name": "behat/mink",
              "version": "v1.6.1",
              "source": {
-@@ -1629,46 +1729,6 @@
+@@ -2782,46 +2882,6 @@
              "time": "2014-09-29 13:12:12"
          },
          {
