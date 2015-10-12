@@ -90,7 +90,7 @@ is a simple method call. We've got `focus`,  `blur`, `dragTo`, `mouseOver`, `che
 
 ## GoutteDriver = Curl, Selenium2Driver = Real Browser
 
-Head back up to the `GoutteDriver` part - that was importnt object number 1. The driver
+Head back up to the `GoutteDriver` part - that was important object number 1. The driver
 is used to figure out *how* a request is made. The Goutte driver uses curl. If we wanted
 to use Selenium instead, we only need to change the driver to `$driver = new Selenium2Driver();`.
 That's it! Oh and make sure you have `$session->start()` at the top: I should have had
