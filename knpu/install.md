@@ -1,7 +1,9 @@
 # From Install to JS Testing
 
 Welcome to the magical world of Behat, my favorite library. No joke 
-this thing is the best. Behat about two things:
+this thing is the best. Behat is about two things:
+
+## BDD, Functional Testing and... Planning a Feature???
 
 First, functionally testing your application. Which means writing code that will
 open a browser, fill out a form, hit submit and verify text on the other side.
@@ -41,21 +43,38 @@ Hold onto your butts, let's going to get this thing running!
 ## Install and Configuration
 
 Over in the terminal run `composer require` and instead of using `behat/behat` we'll grab:
-`behat/mink-extension` and `behat/mink-goutte-driver`. These are plugins for Behat and another
-library called Mink and they require Behat and Mink. We see the Mink library downloaded here, 
-and the Behat library downloaded down there. So life is good! 
+`behat/mink-extension` and `behat/mink-goutte-driver`:
+
+```bash
+composer require behat/mink-extension behat/mink-goutte-driver
+```
+
+These are plugins for Behat and another library called Mink and they require Behat and
+Mink. We see the Mink library downloaded here,  and the Behat library downloaded
+down there. So life is good! 
 
 Once you've downloaded Behat you'll have access to an executable called `./vendor/bin/behat`
-or just `bin/behat` for Symfony2 users. Running it now gives us a nice strong error. That's ok
-because we need to run it with `--init` at the end just one time in our application. This did
-an underwhelming amount of things for us. It created two directories and one file. 
+or just `bin/behat` for Symfony2 users. Running it now gives us a nice strong error:
+
+```bash
+vendor/bin/behat
+```
+
+That's ok because we need to run it with `--init` at the end just one time in
+our application:
+
+```bash
+vendor/bin/behat --init
+```
+
+This did an underwhelming amount of things for us. It created two directories and one file. 
 
 In PhpStorm we see a `features` directory, a `bootstrap` directory and a little `FeatureContext.php`
 file and that's all of it:
 
 [[[ code('3bda2edfd5') ]]]
 
-While we're here I'll add a use statement for `MinkContext` and make it extend that.
+While we're here, I'll add a use statement for `MinkContext` and make it extend that.
 I'll explain that in a minute:
 
 [[[ code('6eb54475e1') ]]]
@@ -67,7 +86,7 @@ content to get us started:
 
 When we run Behat it will looks for a `behat.yml` file and this tells it:
 
-> Yo! Our application lives at [localhost:8000](http://localhost:8000/ ), so look for it there.
+> Yo! Our application lives at localhost:8000, so look for it there.
 
 ## Your First Feature and Scenario
 
@@ -112,8 +131,13 @@ to get the [Selenium Standalone Server](http://www.seleniumhq.org/download/). I 
 this, so I'm not actually going to download it.
 
 To run things in Selenium, open a new tab in your terminal, and run the jar file that you just downloaded.
-For me that's `java -jar ~/Downloads/selenium-server-standalone-2.45.0.jar`. This will load and run as
-a daemon, so it should just hang there. 
+For me that's
+
+```bash
+java -jar ~/Downloads/selenium-server-standalone-2.45.0.jar
+```
+
+This will load and run as a daemon, so it should just hang there. 
 
 Our library is done downloading and we just need to activate it in our `behat.yml` with the line:
 
