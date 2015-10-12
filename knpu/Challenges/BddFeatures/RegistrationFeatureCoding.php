@@ -1,6 +1,6 @@
 <?php
 
-namespace Challenges\BDDFeatures;
+namespace Challenges\BddFeatures;
 
 use KnpU\ActivityRunner\Activity\CodingChallenge\CodingContext;
 use KnpU\ActivityRunner\Activity\CodingChallenge\CorrectAnswer;
