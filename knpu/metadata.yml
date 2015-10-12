@@ -34,17 +34,18 @@ tuts_hero:
 chapters:
     install:
         is_free:    true
-        is_finished: false
-        video_key:
+        video_key:  141809968
     bdd-features:
-        video_key:
-        is_finished: false
+        video_key: 141808753
+        is_free:   true
         challenges:
             - Challenges\BDDFeatures\RegistrationFeatureCoding
             - Challenges\BDDFeatures\BestBusinessValueMC
     scenarios:
-        video_key:
-        is_finished: false
+        video_key: 141828388
+        challenges:
+            - Challenges\Scenarios\RegistrationScenarioCoding
+            - Challenges\Scenarios\BadScenarioMC
     using-behat:
         video_key:
         is_finished: false

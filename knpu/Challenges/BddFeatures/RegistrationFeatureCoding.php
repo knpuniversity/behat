@@ -44,7 +44,7 @@ EOF
 
     public function getExecutionMode()
     {
-        return self::EXECUTION_MODE_PHP_NORMAL;
+        return self::EXECUTION_MODE_GHERKIN;
     }
 
     public function setupContext(CodingContext $context)
@@ -122,9 +122,9 @@ EOF
         $correctAnswer
             ->setFileContents('registration.feature', <<<EOF
 Feature: Registration
-    In order to send and receive messages from scientists I know
-    As a scientist
-    I can register for a new account
+  In order to send and receive messages from scientists I know
+  As a scientist
+  I can register for a new account
 EOF
             )
         ;
