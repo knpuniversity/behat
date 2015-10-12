@@ -27,6 +27,10 @@ summary: |
 
 illustration: behatv3.png
 
+tuts_hero:
+    start_step: start
+    finish_step: tags-adding-fixtures-code
+
 chapters:
     install:
         is_free:    true
