@@ -25,11 +25,11 @@ After writing the feature for registration, the whole team
 first scenario for our feature where we register successfully.
 After some conversation, you basically want it to work like this:
 
-1) You start on the homepage
-2) You click a link called "Register"
-3) You fill out an "Email" field and a "Password" field
-4) You press a "Register" button
-5) You see some text on the page, like "Hi Dr. Paleontology Person! Welcome!"
+1. You start on the homepage
+2. You click a link called "Register"
+3. You fill out an "Email" field and a "Password" field
+4. You press a "Register" button
+5. You see some text on the page, like "Hi Dr. Paleontology Person! Welcome!"
 
 Add a scenario that represents this, and compare your answer
 to ours. The most important thing is that you're using natural
