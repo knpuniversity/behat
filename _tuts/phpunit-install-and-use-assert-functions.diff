@@ -1,8 +1,8 @@
 diff --git a/composer.json b/composer.json
-index f99ff6e..05cd30a 100644
+index 5822260..bc32ec0 100644
 --- a/composer.json
 +++ b/composer.json
-@@ -22,6 +22,7 @@
+@@ -23,6 +23,7 @@
      "require-dev": {
          "behat/mink-extension": "^2.0",
          "behat/mink-goutte-driver": "^1.1",
@@ -12,19 +12,10 @@ index f99ff6e..05cd30a 100644
      }
  }
 diff --git a/composer.lock b/composer.lock
-index 09a880e..8407181 100644
+index e29aa9e..45b4b39 100644
 --- a/composer.lock
 +++ b/composer.lock
-@@ -4,7 +4,7 @@
-         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
-         "This file is @generated automatically"
-     ],
--    "hash": "f666702d40befd1848dcace2bb5234f5",
-+    "hash": "7f6556eade5bdb6685310effa24cd8bc",
-     "packages": [
-         {
-             "name": "doctrine/annotations",
-@@ -1935,6 +1935,483 @@
+@@ -3088,48 +3088,896 @@
              "time": "2015-06-15 20:19:33"
          },
          {
@@ -508,10 +499,47 @@ index 09a880e..8407181 100644
              "name": "react/promise",
              "version": "v2.2.1",
              "source": {
-@@ -1977,6 +2454,377 @@
-             ],
-             "description": "A lightweight implementation of CommonJS Promises/A for PHP",
-             "time": "2015-07-03 13:48:55"
+                 "type": "git",
+-                "url": "https://github.com/reactphp/promise.git",
+-                "reference": "3b6fca09c7d56321057fa8867c8dbe1abf648627"
++                "url": "https://github.com/reactphp/promise.git",
++                "reference": "3b6fca09c7d56321057fa8867c8dbe1abf648627"
++            },
++            "dist": {
++                "type": "zip",
++                "url": "https://api.github.com/repos/reactphp/promise/zipball/3b6fca09c7d56321057fa8867c8dbe1abf648627",
++                "reference": "3b6fca09c7d56321057fa8867c8dbe1abf648627",
++                "shasum": ""
++            },
++            "require": {
++                "php": ">=5.4.0"
++            },
++            "type": "library",
++            "extra": {
++                "branch-alias": {
++                    "dev-master": "2.0-dev"
++                }
++            },
++            "autoload": {
++                "psr-4": {
++                    "React\\Promise\\": "src/"
++                },
++                "files": [
++                    "src/functions_include.php"
++                ]
++            },
++            "notification-url": "https://packagist.org/downloads/",
++            "license": [
++                "MIT"
++            ],
++            "authors": [
++                {
++                    "name": "Jan Sorgalla",
++                    "email": "jsorgalla@gmail.com"
++                }
++            ],
++            "description": "A lightweight implementation of CommonJS Promises/A for PHP",
++            "time": "2015-07-03 13:48:55"
 +        },
 +        {
 +            "name": "sebastian/comparator",
@@ -636,26 +664,32 @@ index 09a880e..8407181 100644
 +                "type": "git",
 +                "url": "https://github.com/sebastianbergmann/environment.git",
 +                "reference": "6324c907ce7a52478eeeaede764f48733ef5ae44"
-+            },
-+            "dist": {
-+                "type": "zip",
+             },
+             "dist": {
+                 "type": "zip",
+-                "url": "https://api.github.com/repos/reactphp/promise/zipball/3b6fca09c7d56321057fa8867c8dbe1abf648627",
+-                "reference": "3b6fca09c7d56321057fa8867c8dbe1abf648627",
 +                "url": "https://api.github.com/repos/sebastianbergmann/environment/zipball/6324c907ce7a52478eeeaede764f48733ef5ae44",
 +                "reference": "6324c907ce7a52478eeeaede764f48733ef5ae44",
-+                "shasum": ""
-+            },
-+            "require": {
+                 "shasum": ""
+             },
+             "require": {
+-                "php": ">=5.4.0"
 +                "php": ">=5.3.3"
 +            },
 +            "require-dev": {
 +                "phpunit/phpunit": "~4.4"
-+            },
-+            "type": "library",
-+            "extra": {
-+                "branch-alias": {
+             },
+             "type": "library",
+             "extra": {
+                 "branch-alias": {
+-                    "dev-master": "2.0-dev"
 +                    "dev-master": "1.3.x-dev"
-+                }
-+            },
-+            "autoload": {
+                 }
+             },
+             "autoload": {
+-                "psr-4": {
+-                    "React\\Promise\\": "src/"
 +                "classmap": [
 +                    "src/"
 +                ]
@@ -719,7 +753,9 @@ index 09a880e..8407181 100644
 +                {
 +                    "name": "Jeff Welch",
 +                    "email": "whatthejeff@gmail.com"
-+                },
+                 },
+-                "files": [
+-                    "src/functions_include.php"
 +                {
 +                    "name": "Volker Dusch",
 +                    "email": "github@wallbash.com"
@@ -777,18 +813,23 @@ index 09a880e..8407181 100644
 +            "autoload": {
 +                "classmap": [
 +                    "src/"
-+                ]
-+            },
-+            "notification-url": "https://packagist.org/downloads/",
-+            "license": [
+                 ]
+             },
+             "notification-url": "https://packagist.org/downloads/",
+             "license": [
+-                "MIT"
 +                "BSD-3-Clause"
-+            ],
-+            "authors": [
-+                {
+             ],
+             "authors": [
+                 {
+-                    "name": "Jan Sorgalla",
+-                    "email": "jsorgalla@gmail.com"
 +                    "name": "Sebastian Bergmann",
 +                    "email": "sebastian@phpunit.de"
-+                }
-+            ],
+                 }
+             ],
+-            "description": "A lightweight implementation of CommonJS Promises/A for PHP",
+-            "time": "2015-07-03 13:48:55"
 +            "description": "Snapshotting of global state",
 +            "homepage": "http://www.github.com/sebastianbergmann/global-state",
 +            "keywords": [

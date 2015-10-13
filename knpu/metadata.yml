@@ -27,17 +27,25 @@ summary: |
 
 illustration: behatv3.png
 
+tuts_hero:
+    start_step: start
+    finish_step: tags-adding-fixtures-code
+
 chapters:
     install:
         is_free:    true
-        is_finished: false
-        video_key:
+        video_key:  141809968
     bdd-features:
-        video_key:
-        is_finished: false
+        video_key: 141808753
+        is_free:   true
+        challenges:
+            - Challenges\BddFeatures\RegistrationFeatureCoding
+            - Challenges\BddFeatures\BestBusinessValueMC
     scenarios:
-        video_key:
-        is_finished: false
+        video_key: 141828388
+        challenges:
+            - Challenges\Scenarios\RegistrationScenarioCoding
+            - Challenges\Scenarios\BadScenarioMC
     using-behat:
         video_key:
         is_finished: false

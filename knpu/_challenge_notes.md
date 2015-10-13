@@ -44,3 +44,55 @@ solve. Both "communicate" and "exchange information and resources"
 are pretty good business values, but I like the second, because it
 contains a few more details about what the scientists actually
 want to do.
+
+## Chapter 3: Scenarios
+
+### Question 1
+
+After writing the feature for registration, the whole team
+(even Bob the intern!) is excited about BDD! Let's write the
+first scenario for our feature where we register successfully.
+After some conversation, you basically want it to work like this:
+
+1) You start on the homepage
+2) You click a link called "Register"
+3) You fill out an "Email" field and a "Password" field
+4) You press a "Register" button
+5) You see some text on the page, like "Hi Dr. Paleontology Person! Welcome!"
+
+Add a scenario that represents this, and compare your answer
+to ours. The most important thing is that you're using natural
+language.
+
+**Answer**
+
+Scenario: Successfully register
+  Given I am on "/"
+  When I click "Register"
+  And I fill in "Email" with "dr_dino@example.com"
+  And I fill in "Password" with "r00000ar"
+  And I press "Register"
+  Then I should see "Hi Dr. Paleontology Person! Welcome!"
+
+### Question 2
+
+Check out the following scenario. What's wrong here?
+
+Scenario: Sending a message
+  Given there is a dr_dino@example.com" user in the database
+  And I am logged in as "dr_dino@example.com"
+  And I am on "/"
+  When I click "Send Message"
+  And I fill in the message box with "Hello everyone!"
+  And I press "Send"
+  Then a message from "dr_dino@example.com" should be sent 
+
+A) Actually, this scenario is perfect!
+B) In `Given`, you can only do things that the user can do. So,
+   you can't magically "add a user to the database"
+C) In `Given`, you can't take user action. Saying "I am logged in as"
+   implies that the user will go to the login page and login. This
+   is user action and so should be under `When`.
+D) In `Then`, the user cannot see that a "message should be sent".
+   The user would see some sort of a message, like "Your message has been sent"
+   and we should look for this.
