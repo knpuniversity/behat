@@ -1,7 +1,9 @@
 title:  BDD, Behat (version 2.5), Mink and other Wonderful Things
 length: 1:14:43
 summary: |
-    A newer version of this tutorial for Behat 3 is available! See https://knpuniversity.com/screencast/behat.
+    If you own this tutorial and want to upgrade to the latest [Behat 3](https://knpuniversity.com/screencast/behat)
+    version, send us an email/contact message and we'll be happy to give you a coupon code to order the 3.0 version
+    absolutely free :). Yay upgrading!
 
     Ready to revolutionize how you develop? In this tutorial, you'll internalize Behavior-Driven Development and how thinking
     about *behavior* will increase the quality and efficiency of your code. You'll become an expert in Behat - the BDD PHP
@@ -12,7 +14,6 @@ summary: |
     
     Behat works great with any PHP project, but if you're using Symfony2, we'll give you some special tips to get you rolling.
 illustration: behat.png
-videoDownloadExtension: mov
 
 chapters:
     intro:
