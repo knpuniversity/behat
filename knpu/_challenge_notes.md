@@ -96,3 +96,72 @@ C) In `Given`, you can't take user action. Saying "I am logged in as"
 D) In `Then`, the user cannot see that a "message should be sent".
    The user would see some sort of a message, like "Your message has been sent"
    and we should look for this.
+
+## Chapter 4 - behat
+
+### Question 1
+
+    Linus just told us about an edge case with the ls
+    command: it does *not* show files starting with a `.`
+    by default. To test for this, we've added two new
+    scenarios that make sure that a `.dino` file only
+    shows up with the the `-a` option.
+
+    Execute behat from the command line, copy in the
+    new step definition, and then fill in the contents
+    so that our scenario passes.
+
+***Starting Files***
+TODO - but will look like what we build for the ls stuff
+in the project - i.e. a FeatureContext with the basic stuff,
+a ls.feature file (with only the top 4 feature lines, etc)
+
+### Question 2
+
+The intern Bob is writing some scenarios that describe
+the behavior of the account area of our paleontology app.
+Do you see any problems with the second scenario?
+
+```gherkin
+  Scenario: Register
+    Given I am on "/"
+    When I fill in "Email" with "dr_dino@example.com"
+    And I fill in "password" with "roar"
+    And I press "Register"
+    Then I should see "You're registered!"
+
+  Scenario: View my account area
+    Given I am on "/login"
+    When I fill in "Email" with "dr_dino@example.com"
+    And I fill in "password" with "roar"
+    And I press "Login"
+    And I click "My Account"
+    Then I should see "My Account Information"
+```
+
+A) The second scenario shouldn't start on `/login`, it
+should start on `/` and then you should click a "Login" link
+
+B) Scenario 2 uses the `dr_dino@example.com` user
+from scenario 1, but each scenario should act completely independent
+of each other.
+
+C) The second scenario shouldn't need to repeat the email
+address and password, since it is already in the first scenario.
+
+Correct: (B)
+
+Explanation: Each scenario should act completely independent of other
+scenarios. Right now, in order for scenario 2 to pass, you *must* run
+scenario 1 first. This makes your scenarios very fragile and difficult
+to debug. Instead, the second scenario should make sure that the
+`dr_dino@example.com` user is in the database via a Given statement.
+We'll talk more about how to do this soon.
+
+## Chapter 5 - hooks-background
+
+- THESE ARE STILL A Ryan todo :)
+
+- Before and AfterScenario (used for ls)
+- phpunit shortcut functions (used for assertContains)
+- Background (used for creating the John file)
