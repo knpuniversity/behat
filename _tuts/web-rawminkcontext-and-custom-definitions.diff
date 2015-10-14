@@ -1,5 +1,5 @@
 diff --git a/features/bootstrap/FeatureContext.php b/features/bootstrap/FeatureContext.php
-index a376c64..17b790b 100644
+index ce6fe6e..8c3627b 100644
 --- a/features/bootstrap/FeatureContext.php
 +++ b/features/bootstrap/FeatureContext.php
 @@ -4,13 +4,14 @@ use Behat\Behat\Context\Context;

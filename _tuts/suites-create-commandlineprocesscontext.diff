@@ -12,7 +12,7 @@ index 625f379..ccef6ba 100644
          Behat\MinkExtension:
 diff --git a/features/bootstrap/CommandLineProcessContext.php b/features/bootstrap/CommandLineProcessContext.php
 new file mode 100644
-index 0000000..245a521
+index 0000000..dc42d3f
 --- /dev/null
 +++ b/features/bootstrap/CommandLineProcessContext.php
 @@ -0,0 +1,71 @@
@@ -80,16 +80,15 @@ index 0000000..245a521
 +    }
 +
 +    /**
-+     * @Given I have a dir named :dirName
++     * @Given I have a dir named :dir
 +     */
-+    public function iHaveADirNamed($dirName)
++    public function iHaveADirNamed($dir)
 +    {
-+        mkdir($dirName);
++        mkdir($dir);
 +    }
 +}
-\ No newline at end of file
 diff --git a/features/bootstrap/FeatureContext.php b/features/bootstrap/FeatureContext.php
-index 0353a7c..0a4a932 100644
+index 19bd1ae..0a4a932 100644
 --- a/features/bootstrap/FeatureContext.php
 +++ b/features/bootstrap/FeatureContext.php
 @@ -13,8 +13,6 @@ require_once __DIR__.'/../../vendor/phpunit/phpunit/src/Framework/Assert/Functio
@@ -155,11 +154,11 @@ index 0353a7c..0a4a932 100644
 -    }
 -
 -    /**
--     * @Given I have a dir named :dirName
+-     * @Given I have a dir named :dir
 -     */
--    public function iHaveADirNamed($dirName)
+-    public function iHaveADirNamed($dir)
 -    {
--        mkdir($dirName);
+-        mkdir($dir);
 -    }
 -
 -    /**

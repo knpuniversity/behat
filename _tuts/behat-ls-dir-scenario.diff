@@ -1,5 +1,5 @@
 diff --git a/features/bootstrap/FeatureContext.php b/features/bootstrap/FeatureContext.php
-index dc07a73..ab5995e 100644
+index dc07a73..c01b236 100644
 --- a/features/bootstrap/FeatureContext.php
 +++ b/features/bootstrap/FeatureContext.php
 @@ -75,4 +75,12 @@ class FeatureContext extends MinkContext implements Context, SnippetAcceptingCon
@@ -8,11 +8,11 @@ index dc07a73..ab5995e 100644
      }
 +
 +    /**
-+     * @Given I have a dir named :dirName
++     * @Given I have a dir named :dir
 +     */
-+    public function iHaveADirNamed($dirName)
++    public function iHaveADirNamed($dir)
 +    {
-+        mkdir($dirName);
++        mkdir($dir);
 +    }
  }
 diff --git a/features/ls.feature b/features/ls.feature

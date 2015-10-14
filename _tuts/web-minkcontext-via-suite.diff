@@ -13,7 +13,7 @@ index 8a61cbf..625f379 100644
          Behat\MinkExtension:
              base_url: http://localhost:8000
 diff --git a/features/bootstrap/FeatureContext.php b/features/bootstrap/FeatureContext.php
-index ab5995e..9671fbc 100644
+index c01b236..339a513 100644
 --- a/features/bootstrap/FeatureContext.php
 +++ b/features/bootstrap/FeatureContext.php
 @@ -4,14 +4,13 @@ use Behat\Behat\Context\Context;

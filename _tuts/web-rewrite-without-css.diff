@@ -1,10 +1,10 @@
 diff --git a/features/bootstrap/FeatureContext.php b/features/bootstrap/FeatureContext.php
-index 9671fbc..a376c64 100644
+index 339a513..ce6fe6e 100644
 --- a/features/bootstrap/FeatureContext.php
 +++ b/features/bootstrap/FeatureContext.php
 @@ -82,4 +82,20 @@ class FeatureContext implements Context, SnippetAcceptingContext
      {
-         mkdir($dirName);
+         mkdir($dir);
      }
 +
 +    /**
