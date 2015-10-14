@@ -112,9 +112,51 @@ D) In `Then`, the user cannot see that a "message should be sent".
     so that our scenario passes.
 
 ***Starting Files***
-TODO - but will look like what we build for the ls stuff
-in the project - i.e. a FeatureContext with the basic stuff,
-a ls.feature file (with only the top 4 feature lines, etc)
+
+```ls.feature
+Feature: ls
+  In order to see the directory structure
+  As a UNIX user
+  I need to be able to list the current directory's contents
+```
+
+```features/bootstrap/FeatureContext.php
+<?php
+
+use Behat\Behat\Context\Context;
+use Behat\Behat\Context\SnippetAcceptingContext;
+
+class FeatureContext implements Context, SnippetAcceptingContext
+{
+    private $output;
+
+    /**
+     * @Given I have a file named :filename
+     */
+    public function iHaveAFileNamed($filename)
+    {
+        touch($filename);
+    }
+
+    /**
+     * @When I run :command
+     */
+    public function iRun($command)
+    {
+        $this->output = shell_exec($command);
+    }
+
+    /**
+     * @Then I should see :string in the output
+     */
+    public function iShouldSeeInTheOutput($string)
+    {
+        if (strpos($this->output, $string) === false) {
+            throw new \Exception(sprintf('Did not see "%s" in output "%s"', $string, $this->output));
+        }
+    }
+}
+```
 
 ### Question 2
 
@@ -160,8 +202,99 @@ We'll talk more about how to do this soon.
 
 ## Chapter 5 - hooks-background
 
-- THESE ARE STILL A Ryan todo :)
 
-- Before and AfterScenario (used for ls)
-- phpunit shortcut functions (used for assertContains)
-- Background (used for creating the John file)
+### Question 1
+
+As a challenge, create a new function called `afterStepHook()` that
+is called after *every* individual step in a scenario. Inside of
+this, just execute `var_dump('After Step!');`
+
+**Hint** See http://docs.behat.org/en/v3.0/guides/3.hooks.html
+for the annotation needed to do things after every step.
+
+***starting files
+
+```ls.feature
+Feature: ls
+  In order to see the directory structure
+  As a UNIX user
+  I need to be able to list the current directory's contents
+
+  Scenario: List 2 files in a directory
+    Given I have a file named "john"
+    And I have a file named "hammond"
+    When I run "ls"
+    Then I should see "john" in the output
+    And I should see "hammond" in the output
+```
+
+```features/bootstrap/FeatureContext.php
+<?php
+
+use Behat\Behat\Context\Context;
+use Behat\Behat\Context\SnippetAcceptingContext;
+
+class FeatureContext implements Context, SnippetAcceptingContext
+{
+    private $output;
+
+    /**
+     * @Given I have a file named :filename
+     */
+    public function iHaveAFileNamed($filename)
+    {
+        touch($filename);
+    }
+
+    /**
+     * @When I run :command
+     */
+    public function iRun($command)
+    {
+        $this->output = shell_exec($command);
+    }
+
+    /**
+     * @Then I should see :string in the output
+     */
+    public function iShouldSeeInTheOutput($string)
+    {
+        if (strpos($this->output, $string) === false) {
+            throw new \Exception(sprintf('Did not see "%s" in output "%s"', $string, $this->output));
+        }
+    }
+}
+```
+
+### Question 2
+
+Whenever you have a hook function, you're actually passed
+an `$event` argument object that contains information about
+what's happening inside Behat at this moment. The exact object
+depends on which hook you're using (see [Behat Hooks](http://docs.behat.org/en/v3.0/guides/3.hooks.html#hooks)].
+In `afterStepHook()`, add an `$event` argument and use it
+to figure out if the step that was just executed passed or
+failed. Replace `var_dump('After Step')` with `var_dump($isPassed)`
+where `$isPassed` is equal to whether or not the previous
+step passed/failed.
+
+***Starting Files
+
+* ls.feature - same as previous challenge
+* FeatureContext - same as correct answer of previous challenge
+
+## Chapter 6 - mink
+
+TODO
+- important objects 1-3
+- visiting urls, printing status code, page->getText()
+
+## Chapter 6b - finding elements
+
+TODO
+- $page->find('css'...)
+- drill down 2 times
+- introduce findAll()?
+- the named selector
+- taking action on an element - like click()
+- using the Selenium2Driver
