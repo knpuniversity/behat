@@ -71,8 +71,14 @@ Let's use it to print out this first bit of text on the page with
 
 [[[ code('d8c63a47f9') ]]]
 
-Run that again in the terminal. Now we see the thrilling text of: "Park Pedia - Jurassic Park,
-Dinosaurs, Stephen Spielberg...". There's some weird `a:lang` code stuff on the end.
+Run that again in the terminal.
+
+```bash
+php mink.php
+```
+
+Now we see the thrilling text of: "Park Pedia - Jurassic Park, Dinosaurs,
+Stephen Spielberg...". There's some weird `a:lang` code stuff on the end.
 Open up the source on the page.
 
 The `getText()` method returns anything *other* than the HTML tags themselves. The

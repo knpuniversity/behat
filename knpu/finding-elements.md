@@ -34,7 +34,12 @@ element by using its `subnav-2` class. So I'll say
 
 [[[ code('3abd6179b2') ]]]
 
-Now, `var_dump()` this element's HTML to make sure we've got the right one. Run `mink.php`.
+Now, `var_dump()` this element's HTML to make sure we've got the right one. Run `mink.php`:
+
+```bash
+php mink.php
+```
+
 Great - it prints out all the stuff inside of that element, including the `WikiActivity`
 link that we're after.
 
@@ -67,6 +72,10 @@ finding an element by its visible text. To see if this is working let's
 [[[ code('ab0ff916c7') ]]]
 
 That should come back as the URL to the activity section. Try it out.
+
+```bash
+php mink.php
+```
 
 It works! The `named` selector is *hugely* important because it lets us find elements by
 their natural text, instead of technical CSS classes. In this case, we're using the text
