@@ -20,7 +20,7 @@ class CheckStepTestResultCoding implements CodingChallengeInterface
 Whenever you have a hook function, you're actually passed an `\$event`
 argument object that contains information about what's happening inside Behat
 at this moment. The exact object depends on which hook you're using
-(see [Behat Hooks](http://docs.behat.org/en/v3.0/guides/3.hooks.html#hooks)].
+(see [Behat Hooks](http://docs.behat.org/en/v3.0/guides/3.hooks.html#hooks)).
 
 In `afterStepHook()`, add an `\$event` argument and use it to figure out
 if the step that was just executed passed or failed. Replace `var_dump('After Step!')`
