@@ -50,7 +50,7 @@ chapters:
         video_key:
         is_finished: false
         challenges:
-            - Challenges\UsingBehat\LsFeatureCoding
+#            - Challenges\UsingBehat\LsFeatureCoding
             - Challenges\UsingBehat\IndependentScenariosMC
     behat-hooks-background:
         video_key:
