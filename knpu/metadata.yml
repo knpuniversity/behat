@@ -52,6 +52,9 @@ chapters:
     behat-hooks-background:
         video_key:
         is_finished: false
+        challenges:
+            - Challenges\BehatHooksBackground\afterStepHookCoding
+            - Challenges\BehatHooksBackground\CheckStepTestResultCoding
     using-mink:
         video_key:
         is_finished: false
