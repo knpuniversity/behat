@@ -66,12 +66,12 @@ EOF
     public function getExplanation()
     {
         return <<<EOF
-Explanation: Each scenario should act completely independent of other
-scenarios. Right now, in order for scenario 2 to pass, you *must* run
-scenario 1 first. This makes your scenarios very fragile and difficult
-to debug. Instead, the second scenario should make sure that the
-`dr_dino@example.com` user is in the database via a `Given` statement.
-We'll talk more about how to do this soon.
+Each scenario should act completely independent of other scenarios.
+Right now, in order for scenario 2 to pass, you *must* run scenario 1
+first. This makes your scenarios very fragile and difficult to debug.
+Instead, the second scenario should make sure that the `dr_dino@example.com`
+user is in the database via a `Given` statement. We'll talk more about
+how to do this soon.
 EOF;
     }
 }
