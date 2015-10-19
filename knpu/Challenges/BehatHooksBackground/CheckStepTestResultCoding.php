@@ -133,10 +133,10 @@ EOF
     {
         $featureContextClass = new \ReflectionClass('FeatureContext');
         if (!$featureContextClass->hasMethod('afterStepHook')) {
-            throw new GradingException('Method `afterStepHook()` doesn\'t found in the `FeatureContext` class. Did you create it?');
+            throw new GradingException('The `afterStepHook()` method wasn\'t found in the `FeatureContext` class.');
         }
         if (!$featureContextClass->getMethod('afterStepHook')->isPublic()) {
-            throw new GradingException('Method `afterStepHook()` should be public.');
+            throw new GradingException('The `afterStepHook()` method should be public.');
         }
         $afterStepHookMethod = $featureContextClass->getMethod('afterStepHook');
         $docComment = $afterStepHookMethod->getDocComment();
@@ -145,10 +145,10 @@ EOF
         }
         $afterStepHookParameters = $afterStepHookMethod->getParameters();
         if (1 !== $afterStepHookMethod->getNumberOfRequiredParameters()) {
-            throw new GradingException('Method `afterStepHook()` should get one required parameter.');
+            throw new GradingException('Make sure you give the `afterStepHook()` method exactly one argument.');
         }
         if (0 !== strcmp('event', $afterStepHookParameters[0]->getName())) {
-            throw new GradingException('First argument in the `afterStepHook()` method should be named `$event`.');
+            throw new GradingException('Though you can really call it anything, let\'s call the argument to `afterStepHook()` `$event` for clarity.');
         }
     }
 

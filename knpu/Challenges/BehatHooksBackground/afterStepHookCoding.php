@@ -123,10 +123,10 @@ EOF
     {
         $featureContextClass = new \ReflectionClass('FeatureContext');
         if (!$featureContextClass->hasMethod('afterStepHook')) {
-            throw new GradingException('Method `afterStepHook()` doesn\'t found in the `FeatureContext` class. Did you create it?');
+            throw new GradingException('The `afterStepHook()` method wasn\'t found in the `FeatureContext` class.');
         }
         if (!$featureContextClass->getMethod('afterStepHook')->isPublic()) {
-            throw new GradingException('Method `afterStepHook()` should be public.');
+            throw new GradingException('The `afterStepHook()` method should be public.');
         }
         $docComment = $featureContextClass->getMethod('afterStepHook')->getDocComment();
         if (false === strpos($docComment, '@AfterStep')) {
