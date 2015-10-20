@@ -47,14 +47,12 @@ chapters:
             - Challenges\Scenarios\RegistrationScenarioCoding
             - Challenges\Scenarios\BadScenarioMC
     using-behat:
-        video_key:
-        is_finished: false
+        video_key: 141829491
         challenges:
 #            - Challenges\UsingBehat\LsFeatureCoding
             - Challenges\UsingBehat\IndependentScenariosMC
     behat-hooks-background:
-        video_key:
-        is_finished: false
+        video_key: 142297771
         challenges:
             - Challenges\BehatHooksBackground\afterStepHookCoding
             # - Challenges\BehatHooksBackground\CheckStepTestResultCoding
