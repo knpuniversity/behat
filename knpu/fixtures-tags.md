@@ -9,7 +9,7 @@ again:
 
 Huh, this one is failing now: it says that the text "Samsung Galaxy" was not found
 anywhere on the page. Now that you're an expert, I hope you can spot the problem:
-we're not adding this products at the beginning of the scenario. This worked originally
+we're not adding this product at the beginning of the scenario. This worked originally
 because the fixtures that come with the project have a "Samsung Galaxy" product.
 But now that other tests have cleared the database, we're in trouble.
 
@@ -35,7 +35,7 @@ But in `FeatureContext` you can add an `@BeforeScenario` method that's *only* ex
 when a scenario has a certain tag. Make a new `public function loadFixtures()`. Inside,
 just to see if it's working, put `var_dump('GO!');` Above, put the normal `@BeforeScenario`.
 Here's the trick: after this, add `@fixtures`. Now, this will only run for scenarios
-tagged with `@fixtures`. To prove that, re-run our search.feature test:
+tagged with `@fixtures`. To prove that, re-run our search.feature:
 
 ```bash
 ./vendor/bin/behat features/web/search.feature
@@ -47,13 +47,13 @@ There's our 'GO!'. Now run the authentication.feature:
 ./vendor/bin/behat features/web/authentication.feature
 ```
 
-The passes with no var_dump. Perfect!
+This passes with no var_dump. Perfect!
 
 ## Loading the Fixtures
 
 One way to execute the fixture is by running the doctrine:fixtures:load command.
 I use a different method that gives me more control. Add `$loader = new ContainerAwareLoader`
-and passing it the container. Now, point to the exact fixtures objects that you want
+and pass it the container. Now, point to the exact fixtures objects that you want
 to load. There are two methods available: `loadFromDirectory()` or `loadFromFile()`.
 Move up a few directories and load from `src/AppBundle/DataFixtures`. That should
 do it!
@@ -64,7 +64,7 @@ We're already doing that, so I'm not going to worry about it here. Finally type
 `$executor->execute($loader->getFixtures())` and pass true as the second argument.
 This says to not delete the data, but to append it instead. 
 
-Ok, run search.featur:
+Ok, run search.feature:
 
 ```bash
 ./vendor/bin/behat features/web/search.feature
@@ -78,8 +78,11 @@ Move these `@BeforeScenarios` up top and keep them in the order that you want.
 
 Back to the terminal and run this sucker again!
 
+```bash
+./vendor/bin/behat features/web/search.feature
+```
 
-Pop the champagne people, it passes! It's clears the data and *then* loads the fixtures.
+Pop the champagne people, it passes! It clears the data and *then* loads the fixtures.
 And life is super awesome! 
 
 ## Running Tagged Scenarios
@@ -91,8 +94,8 @@ One of the options is tags:
 
 > Only execute the features or scenarios with these tags
 
-Well that's sweet. So we could say: `--tags=fixtures` and it will only execute tests
-with fixtures. Or, we can get real crazy and say that we want to run all scenarios
+Well that's sweet. So we could say: `--tags=fixtures` and it will only execute scenarios
+tagged with fixtures. Or, we can get real crazy and say that we want to run all scenarios
 *except* the ones tagged with `@fixtures` by using the handy tilde character.
 
 ## behat -vvv
