@@ -27,9 +27,9 @@ Since *we* don't have any of these pesky look-up guys, we can empty everything b
 every scenario. To do this, we'll of course, use hooks.
 
 Create a new `public function clearData`. Clearing data now is pretty easy, since
-we have access to the entity manager via `self::container->get('Doctrine')->getManager();`.
+we have access to the entity manager via `self::container->get('doctrine')->getManager();`.
 Now we can issue DELETE queries on the two entities that we care about so far:
-product and user. I'll use `$em->createQuery('DELETE FROM AppBundle:Products')->execute();`.
+product and user. I'll use `$em->createQuery('DELETE FROM AppBundle:Product')->execute();`.
 Copy and paste that line and change "Product" to "User". Oh and make sure that says
 "Product" and not "Products". Activate all of this with the `@BeforeScenario` annotation. 
  
@@ -69,7 +69,7 @@ It takes care of all of the booting of the kernel stuff for us, and it even rebo
 the kernel between each scenario so they don't run into each other. That's important
 because remember, each scenario should be completely independent of the others.
  
-Search for the old `self::$container` code. Change it to `$this->getContainer()`
+Search for the old `self::$container` code. Change it to `$this->getContainer()`.
 You see that PhpStorm all of a sudden autocompletes the methods on the services
 we fetch because it recognizes this as the container and so knows that this returns
 the entity manager. 

@@ -5,7 +5,7 @@ again:
 
 ```bash
 ./vendor/bin/behat features/web/search.feature
-```bash
+```
 
 Huh, this one is failing now: it says that the text "Samsung Galaxy" was not found
 anywhere on the page. Now that you're an expert, I hope you can spot the problem:

@@ -24,7 +24,7 @@ this scenario:
 
 The new language matches both steps and we're passing. While we're here, add
 a proper `Background` and move the login step there. Remove the duplicated line from
-each of scenario.
+each scenario.
 
 ## Using Gherkin TableNodes
 
@@ -42,7 +42,7 @@ the published flag. But we can use a new trick, add:
     Given the following products exist:
 
 End the line with a colon and below, build a table just like we did earlier with
-[scenario outlines](scenario-outline).Give it two headers: "name" and "is published".
+[scenario outlines](scenario-outline). Give it two headers: "name" and "is published".
 I'm making these headers up: you'll see how I use them in a second. Call the first
 product Foo1 and make it published. Call the second Foo2 and make it *not* published.
 Ok, keep going on the scenario,
@@ -60,7 +60,7 @@ Copy the new function into `FeatureContext`.
 
 ## The TableNode Object
 
-Ah, but this looks different: it saw that the step ended with a colon and passed
+Ah, but this looks different: it saw that the step had a table below it and passed
 us a `TableNode` object that represents the data in the table after it. Let's iterate
 over the object and dump each row out to see what happens. Science! Rerun the test.
 
@@ -86,4 +86,4 @@ than putting a 1 or 0. In `FeatureContext`, we translate all of that to code.
 
 Fetch the entity manager and flush the changes at the bottom. Great!
 
-Cool this passes! But don't get too excited: we don't have any Then statements yet.
+Cool this passes! But don't get too excited: we don't have a Then statement yet.

@@ -73,7 +73,7 @@ then fails. Copy the new definition into `FeatureContext`. Yes!
 ### Waiting the Wrong Way
 
 Now, how do we wait for things? Well, there is a right way and a wrong way. Wrong
-way first! Add `$this->getSession()->wait(5000);`. to wait for 5 seconds. That should
+way first! Add `$this->getSession()->wait(5000);` to wait for 5 seconds. That should
 be overkill since the controller sleeps for just 1 second. Try this out anyways to
 see if it passes:
 
@@ -92,7 +92,7 @@ look at the right way to do this.
 
 The second argument to `wait()` is a JavaScript expression that will run on your page
 every 100 milliseconds. As soon as it equates to true, Mink will stop waiting and
-move into the next step. I'm using Bootstrap's modal, and when it opens, an element
+move onto the next step. I'm using Bootstrap's modal, and when it opens, an element
 with the class `modal` becomes visible. In your browser's console, try running
 `$('.modal:visible').length`. Because the modal is open, that returns one. Now close
 it: it returns zero. Pass this as the second argument to `wait()`.

@@ -14,7 +14,7 @@ Execute Behat to get that definition printed out for us:
 ./vendor/bin/behat features/product_admin.feature:21
 ```
 
-When you're feeling *really* lazy, you can add a `--append-snippets` flat and Behat
+When you're feeling *really* lazy, you can add a `--append-snippets` flag and Behat
 will put the definitions inside of the `FeatureContext` class for you:
 
 ```bash
@@ -34,7 +34,7 @@ if `$rowText` had some bad characters in it, the selector would fail. But this i
 my test so I'll be lazy until I can't. Add
 `assertNotNull($row, 'Could not find a row with text '.$rowText)`. Finally, assert
 that the row's HTML has a `fa-check` class inside of it with
-`assertContains('fa-check', $row->Html(),'Did not find the check in the row');`.
+`assertContains('fa-check', $row->getHtml(),'Did not find the check in the row');`.
 
 Moment of truth:
 

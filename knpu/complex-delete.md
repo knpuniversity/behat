@@ -58,12 +58,12 @@ also in the new definition. Consider the row found!
 
 ## Finding Links and Buttons in a Row
 
-To find the link, we don't want to use css selector: `$linkText` is the *name* of
-the text: what a user would see on the site. Instead, use `$row->findLink()` and
-pass it `$linkText`. I'll repeat this one more time for fun. you can find *three*
-things by their text: links, buttons and fields. Use the `findLink()`, `findButton()`
-and `findField()` on the page *or* individual elements to drill down to find things.
-Add `assertNotNull($link, 'Could not find link', .$linkText);` in case something 
+To find the link, we don't want to use css: `$linkText` is the *name* of the text:
+what a user would see on the site. Instead, use `$row->findLink()` and pass it
+`$linkText`. I'll repeat this one more time for fun. you can find *three* things by
+their text: links, buttons and fields. Use `findLink()`, `findButton()` and `findField()`
+on the page *or* individual elements to drill down to find things. Add
+`assertNotNull($link, 'Could not find link '.$linkText);` in case something 
 goes wrong. Finally click that link!
 
 We haven't done any coding yet, but the scenario is done. Run it!
@@ -96,7 +96,7 @@ Let's code for this! Remember, do as little work as possible.
 
 ## Coding the Delete
 
-Add a new `deleteAction` andpoint a route of `/admin/products/delete/{id}`. Name
+Add a new `deleteAction` and a route of `/admin/products/delete/{id}`. Name
 it `product_delete`. We could get fancy and add an `@Method` annotation that say
 that this will only match `POST` or `DELETE` requests. Let's keep it simple for now.
 
@@ -143,7 +143,7 @@ when generating the URL. Keep the debugging stuff in and try again:
 ./vendor/bin/behat features/product_admin.feature:42
 ```
 
-And stops again, but no error this time: the delete button looks fine. Press enter
+It stops again, but no error this time: the delete button looks fine. Press enter
 to keep this moving. 
 
 But it still fails! The test could not find a "Delete" link to click in the "Foo1"

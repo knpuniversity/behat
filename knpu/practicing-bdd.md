@@ -70,7 +70,7 @@ make a new `public function newAction` and set its URL to `/admin/products/new`.
 Name the route `product_new` so we can link to it. Inside the method, render a template
 called `product/new.html.twig` Easy enough!
 
-In the `products/` directory create that template: `new.html.twig`. Extend the base
+In the `product/` directory create that template: `new.html.twig`. Extend the base
 layout - `layout.html.twig` - and add add a `body` block. Add a `form` tag and make
 it submit right back to this same URL with `method="POST"`.
 
@@ -109,7 +109,7 @@ Add Symfony's `Request` object as an argument with a type hint. Inside of `newAc
 add a simple `if ($request->isMethod('POST'))`. To be super lazy, what if we cheated
 by *not* saving the product and *only* showing that flash message? The site already
 has some flash messaging functionality, so add the message that the step is looking
-for: `$this->addFlash('Success', 'Product created FTW!')`. Finish by redirecting
+for: `$this->addFlash('success', 'Product created FTW!')`. Finish by redirecting
 the user to the product page. Run Behat:
 
 ```bash

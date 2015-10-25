@@ -71,7 +71,7 @@ wonder why? We need to debug! Right before the error, add:
 
 > And print last response
 
-Tun that one again:
+Run that one again:
 
 ```bash
 ./vendor/bin/behat features/product_admin.feature:6
@@ -82,7 +82,7 @@ login page. We forgot to login, so we're getting kicked back here.
 
 ## Logging in... in one Step!
 
-We've already did all that login stuff in `authentication.feature`, and I'm tempted
+We already did all that login stuff in `authentication.feature`, and I'm tempted
 to copy and paste all of those lines to the top of this scenario. But, it would be
 pretty lame to need to put *all* of this at the top of pretty much every scenario.
 You know what would be cooler? To just say:
@@ -107,9 +107,9 @@ But hold on: before we fill in the rest, don't we need to make sure that this us
 exists in the database? Absolutely, and fortunately, we already have a function that
 creates a user: `thereIsAnAdminUserWithPassword`. Call that from our function and
 pass it the usual `admin` / `admin`. Finish by filling in the password field and
-the button. For that, there's another shortcut: instad of `findButton()` then `press()`,
-use `pressButton('Login')`. This reproduces the steps from the login scenario, so
-that should be it! Run it!
+pressing the button. For that, there's another shortcut: instead of `findButton()`
+then `press()`, use `pressButton('Login')`. This reproduces the steps from the login
+scenario, so that should be it! Run it!
 
 ```bash
 ./vendor/bin/behat features/product_admin.feature:6

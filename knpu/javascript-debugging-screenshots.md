@@ -3,7 +3,7 @@
 What about debugging in JavaScript? Change your scenario so it fails: change the
 "Name" field to look for a non-existent "Product Name". Here's the problem: you can
 try to watch the browser, but it happens so quickly that it's hard to see what went
-wrong. In the terminal, the error tells us us that there isn't a field called "Product Name".
+wrong. In the terminal, the error tells us that there isn't a field called "Product Name",
 but with nothing else to help. Was there an error on the page? Are we on the wrong
 page? Is the field calling something else? Why won't someone tell us what's going on!?
 
@@ -30,7 +30,7 @@ The "I" part of this language is optional. Head back to the terminal to try this
 
 This time, the modal pops open, and the browser freezes. The terminal just says:
 "Press [RETURN] to continue..." That's right: it's *waiting* for us to look at the
-page and debug the issue. Once we know what the problem is, hit enter let it finish.
+page and debug the issue. Once we know what the problem is, hit enter to let it finish.
 This is my *favorite* way to debug!
 
 ## Taking Screenshots
