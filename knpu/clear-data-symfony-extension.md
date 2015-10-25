@@ -1,57 +1,106 @@
-# The SymfonyExtension and Clearing Data Between Scenarios
+# The SymfonyExtension & Clearing Data Between Scenarios
 
-Let's change this back to "admin" "admin", rerun it and see what happens. Boom! This time
-it explodes! "Integrity constraint violation Unique constraint failed user.username". We
-already have a user called "admin" in the database and I made that a unique field, which
-is a good thing, but now because of this `Given` we're trying to create another one.
+Change the user and pass back to match the original user in the database: "admin"
+and "admin". *Now* rerun the scenario:
 
-An important thing to note about Behat is that you should start every scenario with a blank
-database. Well, that's not 100% true, what I want to say is that you should start every scenario
-with a predictable database. Some projects have enormous databases with lots of look up tables
-that need to be filled in, which is fine, but you need to make sure that every scenario starts with
-that same clean mostly empty set of data.
+```bash
+./vendor/bin/behat features/web/authentication.feature
+```
 
- We don't have any look up tables so I want to start every scenario with a completely empty database.
- To do that we can use the before scenario hook and clear out our tables. Make a new `public function clearData`.
- And clearing data now is pretty easy since we have access to the entity manager via 
- `self::container->get('Doctrine')->getManager();`. And now we can issue two queries on the two entities that
- we care about so far which are product and user. I'll use `$em->createQuery('DELETE FROM AppBundle:Products')->execute();`.
- Copy and paste that line and change "Product" to "User". Oh and make sure that says "Product" and
- not "Products". Activate all of this with the `@BeforeScenario` annotation. 
+Boom! This time it explodes!
+
+> Integrity constraint violation Unique constraint failed user.username
+
+We already have a user called "admin" in the database... and since I made that a
+unique column, creating *another* user in `Given` is putting a stop to our party.
+
+## Clearing the Database Before each Scenario
+
+Important point: you should start every scenario with a blank database. Well, that's
+not 100% true. What I want to say is: you should start every scenario with a predictable
+database. Some projects have look-up tables - like a "product status" table with rows
+for in stock, out of stock, back ordered, etc. I really hate these, but anyways,
+sometimes there are tables that *need* to be filled in for anything to work. You'll
+want to empty the database before each scenario... except for any lookup tables.
+
+Since *we* don't have any of these pesky look-up guys, we can empty everything before
+every scenario. To do this, we'll of course, use hooks.
+
+Create a new `public function clearData`. Clearing data now is pretty easy, since
+we have access to the entity manager via `self::container->get('Doctrine')->getManager();`.
+Now we can issue DELETE queries on the two entities that we care about so far:
+product and user. I'll use `$em->createQuery('DELETE FROM AppBundle:Products')->execute();`.
+Copy and paste that line and change "Product" to "User". Oh and make sure that says
+"Product" and not "Products". Activate all of this with the `@BeforeScenario` annotation. 
  
- Try it all again, perfect! We can run this over and over because it's clearing out the data
- beforehand. We're clearing data and bootstrapping Symfony, and good news! There's an easier
- way to do both of these things. I always like taking the long way first.
+Try it all again:
+
+```bash
+./vendor/bin/behat features/web/authentication.feature
+```
+
+Perfect! We can run this over and over because it's clearing out the data first.
+
+## The Symfony2Extension
+
+And, surprise! There's an easier way to bootstrap Symfony and clear out the database.
+I always like taking the long way first so we can see how things work.
  
- To see the simpler methods, first install a new library called `behat/symfony2-extension` with `--dev`
- so it goes into my require dev. When you hear `extension` in Behat that means a plugin. We're already
- using the `MinkExtension`. 
+First, install a new library called `behat/symfony2-extension` with `--dev` so it
+goes into my require dev:
+
+```bash
+composer require behat/symfony2-extension --dev
+```
+
+An `extension` in Behat is a plugin. We're already using the `MinkExtension`. 
  
- Activate the `Behat\Symfony2Extension:` And as luck would have it, it doesn't need any configuration.
- Looks like we still need to wait for it to finish installing in the terminal. There we go! 
+Activate the new plugin in `behat.yml`: `Behat\Symfony2Extension:`. And as luck would
+have it, it doesn't need any configuration. It looks like we still need to wait for
+it to finish installing in the terminal... there we go!  
+
+The most important thing the Symfony2 Extension gives you is, access to Symfony's
+container...but wait, we already have that? Well, this just makes it easier.
+
+Remove the `private static $container;` property and the `bootstrapSymfony` function.
+Instead of these, we'll use a PHP 5.4 trait called `KernelDictionary`.
+This gives us two new functions, `getKernel()`, but more importantly `getContainer()`.
+It takes care of all of the booting of the kernel stuff for us, and it even reboots
+the kernel between each scenario so they don't run into each other. That's important
+because remember, each scenario should be completely independent of the others.
  
- The biggest thing the Symfony2 Extension gives you is, access to Symfony's container...but we already have that?
- Well, it does it in a slightly easier way. We can get rid of this `private static $container;` line 
- and the `bootstrapSymfony` function. Instead of these we'll use a PHP5.4 trait called `KernelDictionary`.
- This gives us two new functions, `getKernel` but more importantly `getContainer`. It takes care of all of
- the booting of the kernel for us and it even reboots the kernel between scenarios so they don't run into 
- each other. That's important becaue your scenarios should be completely independent of one another.
+Search for the old `self::$container` code. Change it to `$this->getContainer()`
+You see that PhpStorm all of a sudden autocompletes the methods on the services
+we fetch because it recognizes this as the container and so knows that this returns
+the entity manager. 
  
- Let's search for the old `self::$container` code and change this to `$this->getContainer()` and the same
- thing down here. You see that PhpStorm all of a sudden recongnizes these functions here because it
- recognizes this as the container, so it knows that this returns the entity manager. 
+Let's try things again!
+
+```bash
+./vendor/bin/behat features/web/authentication.feature
+```
+
+Still works! But now with less effort. If you have multiple context classes, you
+can use the `KernelDictionary` on all of them to get access to the container.
  
- Let's try things again! Awesome, everything still works and we have less code. If you have multiple context
- classes you can just use the KernelDictionary on all of them to get access to the container. 
+## Clearing the Database Easily
  
- Last thing, what about clearing that data? Right now we're running two manual queries, you can imagine
- that if we had a lot of tables this would become a huge problem and you'd have to start worrying about
- getting them in the right order because of foreign key constraints. Fortunately Docrine gives us a better
- way, a `purger`. Create a new variable called `$purger` and set it to a `new ORMPurger`. You need to
- pass the entity manager, of course. After that type `$purger->purge();`, and there you go!
+Ok, so what about clearing the database? It'll be a huge pain to add more and more
+manual queries. Fortunately Doctrine gives us a better way: a `Purger`. Create a new
+variable called `$purger` and set it to a `new ORMPurger()`. Pass it the entity manager.
+After that, type `$purger->purge();`, and that's it.
  
- That's going to go through all of your entities and clear out all of your data. If it's working our tests
- should pass. And they do! 
- 
- Cool! Same functionality and a lot less code, thank you Doctrine and Symfony2 extension!
+This will go through each entity and clear out all of your data. If it's working,
+then our tests should pass:
+
+```bash
+./vendor/bin/behat features/web/authentication.feature
+```
+
+And they do!  Same functionality and a lot less code. For bigger databases with lots
+of lookup tables, it may be too much to clear every table and re-add all the data
+you need. In those cases, trying experimenting with creating a SQL file that populates
+the database and executing that before each scenario. Or, populate an Sqlite file
+with whatever you want to start with, then copy this and use it as your database
+before each test. That's a super-fast way to roll back to your known data set.
  
