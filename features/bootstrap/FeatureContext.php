@@ -287,6 +287,10 @@ class FeatureContext extends RawMinkContext implements Context, SnippetAccepting
             return;
         }
 
+        if (!getenv('BEHAT_SCREENSHOTS')) {
+            return;
+        }
+
         $filename = microtime(true).'.png';
         $path = $this->getContainer()
             ->getParameter('kernel.root_dir').'/../behat_screenshots';
