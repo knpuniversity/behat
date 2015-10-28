@@ -65,7 +65,10 @@ using inside of `search.feature`:
 
 So *that's* why that scenario already worked.
 
-Let's take a look at where these come from. I'll use `shift+shift` and search for `MinkContext`.
+Let's take a look at where these come from. I'll use `shift+shift` and search for `MinkContext`:
+
+[[[ code('dada600c08') ]]]
+
 This looks just like our `FeatureContext`, but has a bunch of goodies already filled in.
 
 So, why did I use this exact language inside of my scenario originally? Because, I'm lazy,
