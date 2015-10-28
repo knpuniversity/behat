@@ -63,7 +63,7 @@ Filling these in shouldn't be hard: we're pretty good with Mink. But,
 how can we access the Mink Session? There's a couple ways to get it,
 but the easiest is to make `FeatureContext` extend `RawMinkContext`:
 
-[[[ code('fc27639d7d') ]]]
+[[[ code('c6c1a53597') ]]]
 
 This gives us access to a bunch of functions: the most important being
 `getSession()` and another called `visitPath()` that we'll use later:
