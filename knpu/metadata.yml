@@ -57,11 +57,9 @@ chapters:
             - Challenges\BehatHooksBackground\afterStepHookCoding
             # - Challenges\BehatHooksBackground\CheckStepTestResultCoding
     using-mink:
-        video_key:
-        is_finished: false
+        video_key: 142399553
     finding-elements:
-        video_key:
-        is_finished: false
+        video_key: 142412310
     behat-loves-mink:
         video_key:
         is_finished: false
