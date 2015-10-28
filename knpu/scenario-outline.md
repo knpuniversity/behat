@@ -18,7 +18,11 @@ that into our `Then` line:
 
 [[[ code('721e4a5509') ]]]
 
-Run this.
+Run this:
+
+```bash
+./vendor/bin/behat
+```
 
 We didn't use any new language, so everything runs *and* passes!
 
