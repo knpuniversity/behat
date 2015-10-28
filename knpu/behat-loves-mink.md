@@ -34,9 +34,13 @@ list here for our enjoyment.
 When we add more step definitions, this list grows. And if we use something that
 *isn't* here yet, Behat very politely prints out the function for us in the terminal.
 
-In `behat.yml` we added this `MinkExtension` configuration. This library ties
-Behat and Mink together and gives us two cool things. First, it lets us access
-the Mink Session object inside of `FeatureContext`. We'll see that soon.
+In `behat.yml` we added this `MinkExtension` configuration:
+
+[[[ code('d2a6927dea') ]]]
+
+This library ties Behat and Mink together and gives us two cool things. First, it
+lets us access the Mink Session object inside of `FeatureContext`. We'll see that
+soon.
 
 For the second thing, add a new config called `suites:` and a key under that
 called `default:` with a `contexts:` key. We'll talk about `suites` later. Under
