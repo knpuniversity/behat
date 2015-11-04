@@ -1,8 +1,8 @@
 diff --git a/features/bootstrap/FeatureContext.php b/features/bootstrap/FeatureContext.php
-index cd7e3ff..01994fa 100644
+index a5f5e41..ad6ea82 100644
 --- a/features/bootstrap/FeatureContext.php
 +++ b/features/bootstrap/FeatureContext.php
-@@ -137,6 +137,7 @@ class FeatureContext extends RawMinkContext implements Context, SnippetAccepting
+@@ -133,6 +133,7 @@ class FeatureContext extends RawMinkContext implements Context, SnippetAccepting
      {
          $row = $this->findRowByText($rowText);
  

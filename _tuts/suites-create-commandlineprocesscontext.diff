@@ -88,7 +88,7 @@ index 0000000..dc42d3f
 +    }
 +}
 diff --git a/features/bootstrap/FeatureContext.php b/features/bootstrap/FeatureContext.php
-index 19bd1ae..0a4a932 100644
+index 614d850..8cec350 100644
 --- a/features/bootstrap/FeatureContext.php
 +++ b/features/bootstrap/FeatureContext.php
 @@ -13,8 +13,6 @@ require_once __DIR__.'/../../vendor/phpunit/phpunit/src/Framework/Assert/Functio

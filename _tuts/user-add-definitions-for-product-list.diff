@@ -1,5 +1,5 @@
 diff --git a/features/bootstrap/FeatureContext.php b/features/bootstrap/FeatureContext.php
-index fcf81c9..14711c6 100644
+index 184135e..4837e8c 100644
 --- a/features/bootstrap/FeatureContext.php
 +++ b/features/bootstrap/FeatureContext.php
 @@ -1,5 +1,6 @@
@@ -9,7 +9,7 @@ index fcf81c9..14711c6 100644
  use Behat\Behat\Context\Context;
  use Behat\Behat\Context\SnippetAcceptingContext;
  use Behat\Gherkin\Node\PyStringNode;
-@@ -78,10 +79,54 @@ class FeatureContext extends RawMinkContext implements Context, SnippetAccepting
+@@ -74,10 +75,54 @@ class FeatureContext extends RawMinkContext implements Context, SnippetAccepting
      }
  
      /**

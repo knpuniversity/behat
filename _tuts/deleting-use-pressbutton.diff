@@ -1,8 +1,8 @@
 diff --git a/features/bootstrap/FeatureContext.php b/features/bootstrap/FeatureContext.php
-index c234b3c..fd5073c 100644
+index d46f7a9..a81707f 100644
 --- a/features/bootstrap/FeatureContext.php
 +++ b/features/bootstrap/FeatureContext.php
-@@ -135,11 +135,7 @@ class FeatureContext extends RawMinkContext implements Context, SnippetAccepting
+@@ -131,11 +131,7 @@ class FeatureContext extends RawMinkContext implements Context, SnippetAccepting
       */
      public function iClickInTheRow($linkText, $rowText)
      {

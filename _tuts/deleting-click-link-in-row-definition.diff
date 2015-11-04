@@ -1,8 +1,8 @@
 diff --git a/features/bootstrap/FeatureContext.php b/features/bootstrap/FeatureContext.php
-index d071a9d..38494a3 100644
+index 8c40d34..2c3002c 100644
 --- a/features/bootstrap/FeatureContext.php
 +++ b/features/bootstrap/FeatureContext.php
-@@ -125,18 +125,21 @@ class FeatureContext extends RawMinkContext implements Context, SnippetAccepting
+@@ -121,18 +121,21 @@ class FeatureContext extends RawMinkContext implements Context, SnippetAccepting
       */
      public function theProductRowShouldShowAsPublished($rowText)
      {
@@ -29,7 +29,7 @@ index d071a9d..38494a3 100644
      }
  
      /**
-@@ -239,4 +242,16 @@ class FeatureContext extends RawMinkContext implements Context, SnippetAccepting
+@@ -235,4 +238,16 @@ class FeatureContext extends RawMinkContext implements Context, SnippetAccepting
  
          $this->getEntityManager()->flush();
      }

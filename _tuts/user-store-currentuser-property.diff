@@ -1,5 +1,5 @@
 diff --git a/features/bootstrap/FeatureContext.php b/features/bootstrap/FeatureContext.php
-index c225261..f862633 100644
+index 5aaaba1..b64867c 100644
 --- a/features/bootstrap/FeatureContext.php
 +++ b/features/bootstrap/FeatureContext.php
 @@ -18,6 +18,8 @@ class FeatureContext extends RawMinkContext implements Context, SnippetAccepting
@@ -20,7 +20,7 @@ index c225261..f862633 100644
      }
  
      /**
-@@ -92,7 +96,7 @@ class FeatureContext extends RawMinkContext implements Context, SnippetAccepting
+@@ -88,7 +92,7 @@ class FeatureContext extends RawMinkContext implements Context, SnippetAccepting
       */
      public function iAuthorProducts($count)
      {
@@ -29,7 +29,7 @@ index c225261..f862633 100644
      }
  
      /**
-@@ -119,7 +123,7 @@ class FeatureContext extends RawMinkContext implements Context, SnippetAccepting
+@@ -115,7 +119,7 @@ class FeatureContext extends RawMinkContext implements Context, SnippetAccepting
       */
      public function iAmLoggedInAsAnAdmin()
      {

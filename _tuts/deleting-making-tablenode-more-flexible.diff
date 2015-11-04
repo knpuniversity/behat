@@ -1,8 +1,8 @@
 diff --git a/features/bootstrap/FeatureContext.php b/features/bootstrap/FeatureContext.php
-index 38494a3..cd7e3ff 100644
+index 2c3002c..a5f5e41 100644
 --- a/features/bootstrap/FeatureContext.php
 +++ b/features/bootstrap/FeatureContext.php
-@@ -110,7 +110,7 @@ class FeatureContext extends RawMinkContext implements Context, SnippetAccepting
+@@ -106,7 +106,7 @@ class FeatureContext extends RawMinkContext implements Context, SnippetAccepting
              $product->setPrice(rand(10, 1000));
              $product->setDescription('lorem');
  

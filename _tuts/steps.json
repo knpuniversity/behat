@@ -166,6 +166,11 @@
             "description": null
         },
         {
+            "id": "web-use-assertsession",
+            "name": "Web: Use assertSession",
+            "description": null
+        },
+        {
             "id": "suites-create-commandlineprocesscontext",
             "name": "Suites: Create CommandLineProcessContext",
             "description": null
@@ -376,5 +381,5 @@
             "description": null
         }
     ],
-    "sha": "cded8226909cd104533cc3a7d5335152bb7405be"
+    "sha": "e05ef71ad4b5803cdad702d1da9c7a8c67483366"
 }

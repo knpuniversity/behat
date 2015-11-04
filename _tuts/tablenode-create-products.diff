@@ -1,8 +1,8 @@
 diff --git a/features/bootstrap/FeatureContext.php b/features/bootstrap/FeatureContext.php
-index e3c5c3d..49c3b19 100644
+index 6b36bd6..f0453cc 100644
 --- a/features/bootstrap/FeatureContext.php
 +++ b/features/bootstrap/FeatureContext.php
-@@ -105,8 +105,19 @@ class FeatureContext extends RawMinkContext implements Context, SnippetAccepting
+@@ -101,8 +101,19 @@ class FeatureContext extends RawMinkContext implements Context, SnippetAccepting
      public function theFollowingProductsExist(TableNode $table)
      {
          foreach ($table as $row) {

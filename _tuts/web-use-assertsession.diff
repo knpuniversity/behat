@@ -1,0 +1,30 @@
+diff --git a/features/bootstrap/FeatureContext.php b/features/bootstrap/FeatureContext.php
+index 19bd1ae..614d850 100644
+--- a/features/bootstrap/FeatureContext.php
++++ b/features/bootstrap/FeatureContext.php
+@@ -89,10 +89,8 @@ class FeatureContext extends RawMinkContext implements Context, SnippetAccepting
+      */
+     public function iFillInTheSearchBoxWith($term)
+     {
+-        $searchBox = $this->getPage()
+-            ->find('css', 'input[name="searchTerm"]');
+-
+-        assertNotNull($searchBox, 'Could not find the search box!');
++        $searchBox = $this->assertSession()
++            ->elementExists('css', 'input[name="searchTerm"]');
+ 
+         $searchBox->setValue($term);
+     }
+@@ -102,10 +100,8 @@ class FeatureContext extends RawMinkContext implements Context, SnippetAccepting
+      */
+     public function iPressTheSearchButton()
+     {
+-        $button = $this->getPage()
+-            ->find('css', '#search_submit');
+-
+-        assertNotNull($button, 'Could not find the search button!');
++        $button = $this->assertSession()
++            ->elementExists('css', '#search_submit');
+ 
+         $button->press();
+     }

@@ -1,5 +1,5 @@
 diff --git a/features/bootstrap/FeatureContext.php b/features/bootstrap/FeatureContext.php
-index d909c63..c225261 100644
+index 555e142..5aaaba1 100644
 --- a/features/bootstrap/FeatureContext.php
 +++ b/features/bootstrap/FeatureContext.php
 @@ -1,6 +1,7 @@
@@ -10,7 +10,7 @@ index d909c63..c225261 100644
  use Behat\Behat\Context\Context;
  use Behat\Behat\Context\SnippetAcceptingContext;
  use Behat\Gherkin\Node\PyStringNode;
-@@ -83,16 +84,15 @@ class FeatureContext extends RawMinkContext implements Context, SnippetAccepting
+@@ -79,16 +80,15 @@ class FeatureContext extends RawMinkContext implements Context, SnippetAccepting
       */
      public function thereAreProducts($count)
      {
@@ -35,7 +35,7 @@ index d909c63..c225261 100644
      }
  
      /**
-@@ -142,4 +142,22 @@ class FeatureContext extends RawMinkContext implements Context, SnippetAccepting
+@@ -138,4 +138,22 @@ class FeatureContext extends RawMinkContext implements Context, SnippetAccepting
      {
          return $this->getContainer()->get('doctrine.orm.entity_manager');
      }
