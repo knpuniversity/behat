@@ -124,3 +124,14 @@ Now we can shorten both definition functions a bit with `$this->getPage()`:
 Test the final scenarios out. Perfect! Now we have access to Mink inside of
 `FeatureContext` *and* we know that including CSS inside of scenarios is
 not the best way to make friends.
+
+## The assertSession
+
+One more quick shortcut. Thanks to the `RawMinkContext` base class, we also have
+access to a cool object called `WebAssert` through the `assertSession()` method.
+Replace `getPage()` with `assertSession()` and `find()` with `elementExists()`. Now,
+remove the `assertNotNull()` call:
+
+The `elementExists` *finds* the element *and* asserts that it exists all at once.
+Nice! Make the same changes for pressing the button. The `WebAssert` class has a
+bunch of other handy methods on it - check them out:

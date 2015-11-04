@@ -80,6 +80,18 @@ this *is* ugly - I have another debugging tip later. There are two important thi
 we're still on the login page for some reason. And second, if you scan down, you'll see
 the error message: "invalid credentials".
 
+***tip
+You can also *see* the failed page by using `Then show last response`:
+
+
+
+You'll just need to configure the `show_cmd` in `behat.yml`. On OSX, I use `show %s`,
+but using `firefox %s` is common on other systems:
+
+
+
+***
+
 Let's remove our debug line and update this to the correct password which is
 "admin". And now let's rerun it! It's alive!
 
