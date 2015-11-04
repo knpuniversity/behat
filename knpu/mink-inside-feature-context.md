@@ -140,4 +140,4 @@ Nice! Make the same changes for pressing the button:
 [[[ code('325d5d01d1') ]]]
 
 The [WebAssert](https://github.com/minkphp/Mink/blob/master/src/WebAssert.php) class
-has a bunch of other handy methods on it - check them out:
+has a bunch of other handy methods on it - check them out.
