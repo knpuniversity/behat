@@ -61,37 +61,37 @@ chapters:
     finding-elements:
         video_key: 142412310
     behat-loves-mink:
-        video_key:
+#        video_key: 143767732
         is_finished: false
     scenario-outline:
-        video_key:
+#        video_key: 143768787
         is_finished: false
     mink-inside-feature-context:
-        video_key:
+#        video_key: 143887590
         is_finished: false
     suites:
-        video_key:
+#        video_key: 143890121
         is_finished: false
     login-scenario:
-        video_key:
+#        video_key: 144511790
         is_finished: false
     control-database:
-        video_key:
+#        video_key: 144513120
         is_finished: false
     clear-data-symfony-extension:
-        video_key:
+#        video_key: 144516203
         is_finished: false
     practicing-finding-debugging:
-        video_key: ~
+#        video_key: 144518957
         is_finished: false
     get-authenticated-user:
-        video_key:
+#        video_key: 144520919
         is_finished: false
     practicing-bdd:
-        video_key:
+#        video_key: 144635274
         is_finished: false
     javascript-waiting:
-        video_key:
+#        video_key: 144547199
         is_finished: false
     javascript-debugging-screenshots:
         video_key:
