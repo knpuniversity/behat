@@ -1,0 +1,20 @@
+diff --git a/behat.yml b/behat.yml
+index 48194d1..487a0f9 100644
+--- a/behat.yml
++++ b/behat.yml
+@@ -15,3 +15,4 @@ default:
+             base_url: http://localhost:8000
+             goutte: ~
+             selenium2: ~
++            show_cmd: 'open %s'
+diff --git a/features/web/authentication.feature b/features/web/authentication.feature
+index 5cdfd3d..a32cd72 100644
+--- a/features/web/authentication.feature
++++ b/features/web/authentication.feature
+@@ -9,5 +9,5 @@ Feature: Authentication
+     And I fill in "Username" with "admin"
+     And I fill in "Password" with "adminpass"
+     And I press "Login"
+-    Then print last response
++    Then show last response
+     Then I should see "Logout"

@@ -1,11 +1,11 @@
 diff --git a/behat.yml b/behat.yml
-index 48194d1..ddd5462 100644
+index 487a0f9..d3346ec 100644
 --- a/behat.yml
 +++ b/behat.yml
-@@ -15,3 +15,4 @@ default:
-             base_url: http://localhost:8000
+@@ -16,3 +16,4 @@ default:
              goutte: ~
              selenium2: ~
+             show_cmd: 'open %s'
 +        Behat\Symfony2Extension: ~
 diff --git a/composer.json b/composer.json
 index bc32ec0..cd374dd 100644

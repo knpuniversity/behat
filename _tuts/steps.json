@@ -186,6 +186,11 @@
             "description": null
         },
         {
+            "id": "login-show-last-response",
+            "name": "Login: show last response",
+            "description": null
+        },
+        {
             "id": "login-fixing-bad-password",
             "name": "Login: Fixing bad password",
             "description": null
@@ -371,5 +376,5 @@
             "description": null
         }
     ],
-    "sha": "40a2f34d647156d436163cffc5fabdadac0f3b13"
+    "sha": "cded8226909cd104533cc3a7d5335152bb7405be"
 }
