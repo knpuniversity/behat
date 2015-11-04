@@ -83,11 +83,12 @@ the error message: "invalid credentials".
 ***tip
 You can also *see* the failed page by using `Then show last response`:
 
-
+[[[ code('2cae1ecf50') ]]]
 
 You'll just need to configure the `show_cmd` in `behat.yml`. On OSX, I use `show %s`,
 but using `firefox %s` is common on other systems:
 
+[[[ code('5f7179f0b0') ]]]
 
 You can even set the `show_auto` setting to `true` to automatically open a browser
 on failures.
