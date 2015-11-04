@@ -89,7 +89,8 @@ You'll just need to configure the `show_cmd` in `behat.yml`. On OSX, I use `show
 but using `firefox %s` is common on other systems:
 
 
-
+You can even set the `show_auto` setting to `true` to automatically open a browser
+on failures.
 ***
 
 Let's remove our debug line and update this to the correct password which is
