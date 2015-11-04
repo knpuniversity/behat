@@ -61,14 +61,11 @@ chapters:
     finding-elements:
         video_key: 142412310
     behat-loves-mink:
-#        video_key: 143767732
-        is_finished: false
+        video_key: 143767732
     scenario-outline:
-#        video_key: 143768787
-        is_finished: false
+        video_key: 143768787
     mink-inside-feature-context:
-#        video_key: 143887590
-        is_finished: false
+        video_key: 143887590
     suites:
 #        video_key: 143890121
         is_finished: false
