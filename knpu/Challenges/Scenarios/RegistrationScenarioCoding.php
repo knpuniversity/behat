@@ -4,13 +4,14 @@ namespace Challenges\Scenarios;
 
 use Behat\Gherkin\Node\ScenarioNode;
 use Behat\Gherkin\Node\StepNode;
-use KnpU\ActivityRunner\Activity\CodingChallenge\CodingContext;
-use KnpU\ActivityRunner\Activity\CodingChallenge\CorrectAnswer;
-use KnpU\ActivityRunner\Activity\CodingChallengeInterface;
-use KnpU\ActivityRunner\Activity\CodingChallenge\CodingExecutionResult;
-use KnpU\ActivityRunner\Activity\CodingChallenge\FileBuilder;
-use KnpU\ActivityRunner\Activity\Exception\GradingException;
-use KnpU\ActivityRunner\Grading\GherkinGradingTool;
+use KnpU\Gladiator\CodingChallenge\CodingContext;
+use KnpU\Gladiator\CodingChallenge\CorrectAnswer;
+use KnpU\Gladiator\CodingChallengeInterface;
+use KnpU\Gladiator\CodingChallenge\CodingExecutionResult;
+use KnpU\Gladiator\CodingChallenge\ChallengeBuilder;
+use KnpU\Gladiator\CodingChallenge\Exception\GradingException;
+use KnpU\Gladiator\Grading\GherkinGradingTool;
+use KnpU\Gladiator\Worker\WorkerLoaderInterface;
 
 class RegistrationScenarioCoding implements CodingChallengeInterface
 {
@@ -37,9 +38,9 @@ language.
 EOF;
     }
 
-    public function getFileBuilder()
+    public function getChallengeBuilder()
     {
-        $fileBuilder = new FileBuilder();
+        $fileBuilder = new ChallengeBuilder();
         $fileBuilder
             ->addFileContents('registration.feature', <<<EOF
 Feature: Registration
@@ -54,9 +55,9 @@ EOF
         return $fileBuilder;
     }
 
-    public function getExecutionMode()
+    public function getWorkerConfig(WorkerLoaderInterface $loader)
     {
-        return self::EXECUTION_MODE_GHERKIN;
+        return $loader->load(__DIR__.'/../gherkin_worker.yml');
     }
 
     public function setupContext(CodingContext $context)
