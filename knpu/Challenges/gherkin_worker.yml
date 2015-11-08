@@ -1,4 +1,4 @@
-type: php
+type: gherkin
 #services: []
 #extensions: []
 composer: ~
