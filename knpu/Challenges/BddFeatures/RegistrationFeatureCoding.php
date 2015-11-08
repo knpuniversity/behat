@@ -85,7 +85,7 @@ EOF
 
         $this->assertLineStartsWith(
             $lines,
-            'I need to be able to',
+            'I need to',
             'a short description of what the user will do with the feature',
             3,
             true
