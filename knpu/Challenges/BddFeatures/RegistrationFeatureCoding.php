@@ -85,7 +85,7 @@ EOF
 
         $this->assertLineStartsWith(
             $lines,
-            'I need to',
+            'I need to be able to',
             'a short description of what the user will do with the feature',
             3,
             true
@@ -126,7 +126,7 @@ EOF
 Feature: Registration
   In order to send and receive messages from scientists I know
   As a scientist
-  I can register for a new account
+  I need to be able to register for a new account
 EOF
             )
         ;
