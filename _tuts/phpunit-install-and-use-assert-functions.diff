@@ -1,5 +1,5 @@
 diff --git a/composer.json b/composer.json
-index 5822260..bc32ec0 100644
+index 4ce5db2..2adeacb 100644
 --- a/composer.json
 +++ b/composer.json
 @@ -23,6 +23,7 @@
@@ -12,10 +12,10 @@ index 5822260..bc32ec0 100644
      }
  }
 diff --git a/composer.lock b/composer.lock
-index e29aa9e..45b4b39 100644
+index 9339e14..7630124 100644
 --- a/composer.lock
 +++ b/composer.lock
-@@ -3088,48 +3088,896 @@
+@@ -2817,48 +2817,896 @@
              "time": "2015-06-15 20:19:33"
          },
          {
