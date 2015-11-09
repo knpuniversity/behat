@@ -67,10 +67,10 @@ chapters:
     mink-inside-feature-context:
         video_key: 143887590
     suites:
-#        video_key: 143890121
+        video_key: 143890121
         is_finished: false
     login-scenario:
-#        video_key: 144511790
+        video_key: 144511790
         is_finished: false
     control-database:
 #        video_key: 144513120
