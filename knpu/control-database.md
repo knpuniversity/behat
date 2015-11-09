@@ -81,7 +81,7 @@ Behat will call this method one time, even if we're testing 10 features and 100 
 
 ## Saving a New User
 
-Inside of the`ThereIsAnAdminUserWithPassword()` step definition, let's go to work!
+Inside of the`thereIsAnAdminUserWithPassword()` step definition, let's go to work!
 I already have a `User` entity setup in the project, so we can say `$user = new User()`.
 Then set the username and the "plainPassword":
 
