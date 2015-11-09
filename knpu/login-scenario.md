@@ -85,7 +85,7 @@ this *is* ugly - I have another debugging tip later. There are two important thi
 we're still on the login page for some reason. And second, if you scan down, you'll see
 the error message: "invalid credentials".
 
-***tip
+***TIP
 You can also *see* the failed page by using `Then show last response`:
 
 [[[ code('2cae1ecf50') ]]]
