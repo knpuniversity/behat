@@ -71,11 +71,9 @@ chapters:
     login-scenario:
         video_key: 144511790
     control-database:
-#        video_key: 144513120
-        is_finished: false
+        video_key: 144513120
     clear-data-symfony-extension:
-#        video_key: 144516203
-        is_finished: false
+        video_key: 144516203
     practicing-finding-debugging:
 #        video_key: 144518957
         is_finished: false
