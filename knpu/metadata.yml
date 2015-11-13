@@ -75,8 +75,7 @@ chapters:
     clear-data-symfony-extension:
         video_key: 144516203
     practicing-finding-debugging:
-#        video_key: 144518957
-        is_finished: false
+        video_key: 144518957
     get-authenticated-user:
         video_key: 144520919
     practicing-bdd:
