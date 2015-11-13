@@ -78,14 +78,11 @@ chapters:
 #        video_key: 144518957
         is_finished: false
     get-authenticated-user:
-#        video_key: 144520919
-        is_finished: false
+        video_key: 144520919
     practicing-bdd:
-#        video_key: 144635274
-        is_finished: false
+        video_key: 144635274
     javascript-waiting:
-#        video_key: 144547199
-        is_finished: false
+        video_key: 144547199
     javascript-debugging-screenshots:
         video_key:
         is_finished: false
