@@ -34,9 +34,9 @@ tuts_hero:
 chapters:
     install:
         is_free:    true
-        video_key:  141809968
+        video_key:  141808753
     bdd-features:
-        video_key: 141808753
+        video_key: 141809968
         is_free:   true
         challenges:
             - Challenges\BddFeatures\RegistrationFeatureCoding
