@@ -27,7 +27,7 @@ because we're clearing the database between each scenario to keep things indepen
 Run just this new scenario by using its line number:
 
 ```bash
-$ ./vendor/bin/behat features/web/product_admin.feature:13
+./vendor/bin/behat features/web/product_admin.feature:13
 ```
 
 Great - copy the `iAuthorProducts()` function code and paste it into our handy `FeatureContext`
