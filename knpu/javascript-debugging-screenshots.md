@@ -17,9 +17,10 @@ a field called "Product Name", but with nothing else to help. Was there an error
 the page? Are we on the wrong page? Is the field calling something else? Why won't
 someone tell us what's going on!?
 
-Let me show you the master debugging tool. Google for "behatch contexts". This is
-an open source library that has a bunch of useful contexts - classes like `FeatureContext`
-and `MinkContext` with free definitions. For example, this has a `BrowserContext`
+Let me show you the master debugging tool. Google for [behatch contexts](https://github.com/Behatch/contexts).
+This is an open source library that has a bunch of useful contexts - classes like
+`FeatureContext` and `MinkContext` with free definitions. For example, this has a
+[BrowserContext](https://github.com/Behatch/contexts/blob/master/src/Context/BrowserContext.php)
 you could bring into your project to gain a bunch of useful definitions.
 
 ## Pausing Selenium
