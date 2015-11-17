@@ -83,14 +83,11 @@ chapters:
     javascript-waiting:
         video_key: 144547199
     javascript-debugging-screenshots:
-        video_key:
-        is_finished: false
+        video_key: 145892765
     tables:
-        video_key:
-        is_finished: false
+        video_key: 145898504
     html-tables:
-        video_key:
-        is_finished: false
+        video_key: 145899152
     complex-delete:
         video_key:
         is_finished: false
