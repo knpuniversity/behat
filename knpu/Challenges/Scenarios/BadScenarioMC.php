@@ -17,7 +17,7 @@ Check out the following scenario. What's wrong here?
 
 ```gherkin
 Scenario: Sending a message
-  Given there is a dr_dino@example.com" user in the database
+  Given there is a "dr_dino@example.com" user in the database
   And I am logged in as "dr_dino@example.com"
   And I am on "/"
   When I click "Send Message"
