@@ -1,26 +1,40 @@
 # Debugging and Taking Screenshots with JavaScript
 
 What about debugging in JavaScript? Change your scenario so it fails: change the
-"Name" field to look for a non-existent "Product Name". Here's the problem: you can
-try to watch the browser, but it happens so quickly that it's hard to see what went
-wrong. In the terminal, the error tells us that there isn't a field called "Product Name",
-but with nothing else to help. Was there an error on the page? Are we on the wrong
-page? Is the field calling something else? Why won't someone tell us what's going on!?
+"Name" field to look for a non-existent "Product Name":
+
+[[[ code('0f867dd297') ]]]
+
+Run it:
+
+```bash
+./vendor/bin/behat features/product_admin.feature:20
+```
+
+Here's the problem: you can try to watch the browser, but it happens so quickly that
+it's hard to see what went wrong. In the terminal, the error tells us that there isn't
+a field called "Product Name", but with nothing else to help. Was there an error on
+the page? Are we on the wrong page? Is the field calling something else? Why won't
+someone tell us what's going on!?
 
 Let me show you the master debugging tool. Google for "behatch contexts". This is
-an opensource library that has a bunch of useful contexts - classes like `FeatureContext`
+an open source library that has a bunch of useful contexts - classes like `FeatureContext`
 and `MinkContext` with free definitions. For example, this has a `BrowserContext`
 you could bring into your project to gain a bunch of useful definitions.
 
 ## Pausing Selenium
 
 I don't use this library directly, but I do steal from it. The `DebugContext` class
-has one of my favorite definitions: `iPutABreakPoint`. Copy that and drop it into
-our `FeatureContext` file. Or you could even create your own `DebugContext` if you
-wanted to organize things a bit. Shorten this to "I break". To use this, add this
-language directly *above* the "Product Name" step that's failing:
+has one of my favorite definitions: `iPutABreakPoint()`. Copy that and drop it into
+our `FeatureContext` file:
 
-     And break
+[[[ code('e28851a97e') ]]]
+
+Or you could even create your own `DebugContext` if you wanted to organize things a bit.
+Shorten this to "I break". To use this, add this language directly *above* the "Product Name"
+step that's failing:
+
+[[[ code('0eabe02db2') ]]]
 
 The "I" part of this language is optional. Head back to the terminal to try this:
 
@@ -35,12 +49,16 @@ This is my *favorite* way to debug!
 
 ## Taking Screenshots
 
-But there are more cool things, like `iSaveAScreenshotIn`. Copy that definition and
+But there are more cool things, like `iSaveAScreenshotIn()`. Copy that definition and
 paste it into `FeatureContext`. Change the language to "I save a screenshot to" and
-remove this `screenshotDir` thing since we don't have that. To save screenshots to
-the root of your project, replace it with `__DIR__'/../../'`. In the scenario add,
+remove `$this->screenshotDir` thing since we don't have that. To save screenshots to
+the root of your project, replace it with `__DIR__'/../../'`:
 
-     And I save a screenshot to "shot.png"
+[[[ code('42735cf5d8') ]]]
+
+In the scenario add:
+
+[[[ code('50edb2a054') ]]]
 
 Run it!
 
@@ -61,4 +79,6 @@ automatically save a screenshot on every failure. Check out our blog post about 
 [Behat on CircleCI with Failure Screenshots](/blog/circle-ci-behat-screenshots).
 
 Anyways, remove this line and change "Product Name" back to "Name" so that the scenario
-passes again.
+passes again:
+
+[[[ code('d702441737') ]]]
