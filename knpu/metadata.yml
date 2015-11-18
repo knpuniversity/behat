@@ -89,9 +89,6 @@ chapters:
     html-tables:
         video_key: 145899152
     complex-delete:
-        video_key:
-        is_finished: false
+        video_key: 145878458
     fixtures-tags:
-        video_key:
-        is_finished: false
-
+        video_key: 145661027
