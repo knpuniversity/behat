@@ -1,13 +1,18 @@
 # Finding Elements by CSS and Name
 
+***TIP
+This elemens *was* an `h1` tag (when we recorded the video) - now the site has an
+`h2` tag. The code below was updated.
+***
+
 Back on the weird Wiki page, run an inspect element on the navigation. There's a hidden
-`h1`  tag inside of the `WikiHeader` and `WikiNav` elements. Let's try to find
+`h2`  tag inside of the `WikiHeader` and `WikiNav` elements. Let's try to find
 this and print out its text.
 
 ## Finding Elements by CSS
 
 To do that use the `find()` function: pass it `css` as the first argument and then
-use your css selector: `.WikiHeader .WikiNav h1`:
+use your css selector: `.WikiHeader .WikiNav h2`:
 
 [[[ code('03ce9b6131') ]]]
 
