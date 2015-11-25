@@ -1,8 +1,8 @@
 diff --git a/mink.php b/mink.php
-index 19616e7..f28209a 100644
+index 1fe1d2d..4770c9a 100644
 --- a/mink.php
 +++ b/mink.php
-@@ -28,5 +28,7 @@ $header = $page->find('css', '.WikiHeader .WikiNav h1');
+@@ -28,5 +28,7 @@ $header = $page->find('css', '.WikiHeader .WikiNav h2');
  echo "The wiki nav text is: ".$header->getText()."\n";
  
  $subNav = $page->find('css', '.subnav-2');

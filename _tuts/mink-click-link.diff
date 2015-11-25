@@ -1,5 +1,5 @@
 diff --git a/mink.php b/mink.php
-index 0d85599..289bf08 100644
+index 721ef26..c83a1b5 100644
 --- a/mink.php
 +++ b/mink.php
 @@ -33,3 +33,6 @@ $linkEl = $subNav->find('css', 'li a');

@@ -1,5 +1,5 @@
 diff --git a/features/bootstrap/FeatureContext.php b/features/bootstrap/FeatureContext.php
-index 4e9d5b3..4dd8366 100644
+index 4e9d5b3..e0c8ddf 100644
 --- a/features/bootstrap/FeatureContext.php
 +++ b/features/bootstrap/FeatureContext.php
 @@ -13,6 +13,8 @@ require_once __DIR__.'/../../vendor/phpunit/phpunit/src/Framework/Assert/Functio
@@ -32,7 +32,7 @@ index 4e9d5b3..4dd8366 100644
 +     * @Given there is an admin user :username with password :password
       */
 -    public function thereIsAUserWithPassword($arg1, $arg2)
-+    public function thereIsAnAdminUserWithPassword($username, $password)
++    public function thereIsAUserWithPassword($username, $password)
      {
 -        throw new PendingException();
 +        $user = new \AppBundle\Entity\User();

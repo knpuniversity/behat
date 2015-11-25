@@ -22,11 +22,11 @@ index 2adeacb..dc35730 100644
      "autoload": {
          "psr-0": {
 diff --git a/composer.lock b/composer.lock
-index 7630124..0a05ac3 100644
+index 8efe104..3e93323 100644
 --- a/composer.lock
 +++ b/composer.lock
 @@ -8,6 +8,245 @@
-     "content-hash": "a68127719fff1084d6898f6466a7e86e",
+     "content-hash": "cdf74f22433e55c69f8cac40fce5ed07",
      "packages": [
          {
 +            "name": "behat/behat",
@@ -271,7 +271,7 @@ index 7630124..0a05ac3 100644
              "name": "doctrine/annotations",
              "version": "v1.2.7",
              "source": {
-@@ -2093,145 +2332,6 @@
+@@ -1245,145 +1484,6 @@
      ],
      "packages-dev": [
          {
@@ -417,7 +417,7 @@ index 7630124..0a05ac3 100644
              "name": "behat/mink",
              "version": "v1.6.1",
              "source": {
-@@ -2511,46 +2611,6 @@
+@@ -1663,46 +1763,6 @@
              "time": "2014-09-29 13:12:12"
          },
          {
@@ -465,7 +465,7 @@ index 7630124..0a05ac3 100644
              "version": "v2.0.4",
              "source": {
 diff --git a/features/bootstrap/FeatureContext.php b/features/bootstrap/FeatureContext.php
-index 5468a0d..e197abc 100644
+index 11418c9..ec12eb6 100644
 --- a/features/bootstrap/FeatureContext.php
 +++ b/features/bootstrap/FeatureContext.php
 @@ -13,7 +13,7 @@ require_once __DIR__.'/../../vendor/phpunit/phpunit/src/Framework/Assert/Functio

@@ -1,5 +1,5 @@
 diff --git a/mink.php b/mink.php
-index 6f928d1..8fddd42 100644
+index 6f928d1..f106346 100644
 --- a/mink.php
 +++ b/mink.php
 @@ -21,3 +21,9 @@ echo "Current URL: ". $session->getCurrentUrl() . "\n";
@@ -8,7 +8,7 @@ index 6f928d1..8fddd42 100644
  echo "First 75 chars: ".substr($page->getText() , 0, 75) . "\n";
 +
 +// Important object #4 NodeElement
-+$header = $page->find('css', '.WikiHeader .WikiNav h1');
++$header = $page->find('css', '.WikiHeader .WikiNav h2');
 +
 +echo "The wiki nav text is: ".$header->getText()."\n";
 +

@@ -1,5 +1,5 @@
 diff --git a/features/bootstrap/FeatureContext.php b/features/bootstrap/FeatureContext.php
-index 552c040..fc52f68 100644
+index ad6ea82..d46f7a9 100644
 --- a/features/bootstrap/FeatureContext.php
 +++ b/features/bootstrap/FeatureContext.php
 @@ -127,16 +127,15 @@ class FeatureContext extends RawMinkContext implements Context, SnippetAccepting

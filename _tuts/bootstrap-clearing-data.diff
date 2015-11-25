@@ -1,5 +1,5 @@
 diff --git a/features/bootstrap/FeatureContext.php b/features/bootstrap/FeatureContext.php
-index 4dd8366..5468a0d 100644
+index e0c8ddf..11418c9 100644
 --- a/features/bootstrap/FeatureContext.php
 +++ b/features/bootstrap/FeatureContext.php
 @@ -40,6 +40,16 @@ class FeatureContext extends RawMinkContext implements Context, SnippetAccepting
@@ -18,7 +18,7 @@ index 4dd8366..5468a0d 100644
 +    /**
       * @Given there is an admin user :username with password :password
       */
-     public function thereIsAnAdminUserWithPassword($username, $password)
+     public function thereIsAUserWithPassword($username, $password)
 diff --git a/features/web/authentication.feature b/features/web/authentication.feature
 index 4c76748..f5634d5 100644
 --- a/features/web/authentication.feature
