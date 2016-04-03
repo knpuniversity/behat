@@ -39,22 +39,22 @@ chapters:
         video_key: 141809968
         is_free:   true
         challenges:
-            - Challenges\BddFeatures\RegistrationFeatureCoding
-            - Challenges\BddFeatures\BestBusinessValueMC
+            - bddfeatures_registrationfeaturecoding
+            - bddfeatures_bestbusinessvaluemc
     scenarios:
         video_key: 141828388
         challenges:
-            - Challenges\Scenarios\RegistrationScenarioCoding
-            - Challenges\Scenarios\BadScenarioMC
+            - scenarios_registrationscenariocoding
+            - scenarios_badscenariomc
     using-behat:
         video_key: 141829491
         challenges:
 #            - Challenges\UsingBehat\LsFeatureCoding
-            - Challenges\UsingBehat\IndependentScenariosMC
+            - usingbehat_independentscenariosmc
     behat-hooks-background:
         video_key: 142297771
         challenges:
-            - Challenges\BehatHooksBackground\afterStepHookCoding
+            - behathooksbackground_afterstephookcoding
             # - Challenges\BehatHooksBackground\CheckStepTestResultCoding
     using-mink:
         video_key: 142399553
