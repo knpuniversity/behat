@@ -46,7 +46,7 @@ For the second thing, add a new config called `suites:` and a key under that
 called `default:` with a `contexts:` key. We'll talk about `suites` later. Under
 `contexts`, pass `FeatureContext` *and*  `Behat\MinkExtension\Context\MinkContext`:
 
-[[[ code('a7bbe58032') ]]]
+[[[ code('04fcda90bc') ]]]
 
 Now, Behat will look inside `FeatureContext` *and* `MinkContext` for those definition
 annotations.
