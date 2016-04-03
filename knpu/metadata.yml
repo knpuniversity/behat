@@ -31,6 +31,8 @@ tuts_hero:
     start_step: start
     finish_step: tags-adding-fixtures-code
 
+challenge_repo: knpuniversity/behat-challenges
+
 chapters:
     install:
         is_free:    true
