@@ -8,10 +8,10 @@ index 69d44b4..8a61cbf 100644
              goutte: ~
 +            selenium2: ~
 diff --git a/composer.json b/composer.json
-index 4e84b87..4ce5db2 100644
+index 6b13efa..f99ff6e 100644
 --- a/composer.json
 +++ b/composer.json
-@@ -22,6 +22,7 @@
+@@ -21,6 +21,7 @@
      },
      "require-dev": {
          "behat/mink-extension": "^2.0",
@@ -21,10 +21,10 @@ index 4e84b87..4ce5db2 100644
      }
  }
 diff --git a/composer.lock b/composer.lock
-index bf266a0..9339e14 100644
+index 250b89a..7a578f6 100644
 --- a/composer.lock
 +++ b/composer.lock
-@@ -2453,6 +2453,64 @@
+@@ -2427,6 +2427,64 @@
              "time": "2014-10-09 09:21:12"
          },
          {
@@ -89,7 +89,7 @@ index bf266a0..9339e14 100644
              "name": "behat/transliterator",
              "version": "v1.0.1",
              "source": {
-@@ -2701,6 +2759,64 @@
+@@ -2675,6 +2733,64 @@
              "time": "2014-10-12 19:18:40"
          },
          {

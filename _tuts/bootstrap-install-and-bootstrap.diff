@@ -10,10 +10,10 @@ index 0000000..69d44b4
 +            base_url: http://localhost:8000
 +            goutte: ~
 diff --git a/composer.json b/composer.json
-index f8aebae..4e84b87 100644
+index c80a938..6b13efa 100644
 --- a/composer.json
 +++ b/composer.json
-@@ -19,5 +19,9 @@
+@@ -18,5 +18,9 @@
          "psr-0": {
              "": "src/"
          }
@@ -24,10 +24,10 @@ index f8aebae..4e84b87 100644
      }
  }
 diff --git a/composer.lock b/composer.lock
-index 39b9d82..bf266a0 100644
+index 853591e..250b89a 100644
 --- a/composer.lock
 +++ b/composer.lock
-@@ -2091,7 +2091,660 @@
+@@ -2065,7 +2065,660 @@
              "time": "2015-09-15 06:50:16"
          }
      ],
@@ -688,7 +688,7 @@ index 39b9d82..bf266a0 100644
 +    ],
      "aliases": [],
      "minimum-stability": "stable",
-     "stability-flags": {
+     "stability-flags": [],
 diff --git a/features/bootstrap/FeatureContext.php b/features/bootstrap/FeatureContext.php
 new file mode 100644
 index 0000000..2ec02da
