@@ -12,8 +12,7 @@
         "sensio/framework-extra-bundle": "^3.0",
         "doctrine/doctrine-bundle": "^1.5",
         "doctrine/orm": "^2.5",
-        "doctrine/doctrine-fixtures-bundle": "^2.2",
-        "knpuniversity/gladiator": "dev-master"
+        "doctrine/doctrine-fixtures-bundle": "^2.2"
     },
     "autoload": {
         "psr-0": {
