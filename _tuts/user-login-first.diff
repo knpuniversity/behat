@@ -1,5 +1,5 @@
 diff --git a/features/bootstrap/FeatureContext.php b/features/bootstrap/FeatureContext.php
-index a217a23..d004426 100644
+index a217a23..a051a8e 100644
 --- a/features/bootstrap/FeatureContext.php
 +++ b/features/bootstrap/FeatureContext.php
 @@ -111,6 +111,19 @@ class FeatureContext extends RawMinkContext implements Context, SnippetAccepting
@@ -10,7 +10,7 @@ index a217a23..d004426 100644
 +     */
 +    public function iAmLoggedInAsAnAdmin()
 +    {
-+        $this->thereIsAUserWithPassword('admin', 'admin');
++        $this->thereIsAnAdminUserWithPassword('admin', 'admin');
 +
 +        $this->visitPath('/login');
 +        $this->getPage()->fillField('Username', 'admin');
