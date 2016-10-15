@@ -1,5 +1,5 @@
 diff --git a/features/bootstrap/FeatureContext.php b/features/bootstrap/FeatureContext.php
-index 8cec350..4e9d5b3 100644
+index 8cec350..595e497 100644
 --- a/features/bootstrap/FeatureContext.php
 +++ b/features/bootstrap/FeatureContext.php
 @@ -25,6 +25,14 @@ class FeatureContext extends RawMinkContext implements Context, SnippetAccepting
@@ -8,7 +8,7 @@ index 8cec350..4e9d5b3 100644
      /**
 +     * @Given there is an admin user :arg1 with password :arg2
 +     */
-+    public function thereIsAUserWithPassword($arg1, $arg2)
++    public function thereIsAnAdminUserWithPassword($arg1, $arg2)
 +    {
 +        throw new PendingException();
 +    }
