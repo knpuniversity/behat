@@ -137,6 +137,9 @@ For me that's
 java -jar ~/Downloads/selenium-server-standalone-2.45.0.jar
 ```
 
+> Firefox 47.0.0 is not supported at all since Selenium 3.0.0 - update Firefox to the latest version
+> in order to use the latest Selenium server.
+
 This will load and run as a daemon, so it should just hang there. 
 
 Our library is done downloading and we just need to activate it in our `behat.yml` with the line:
