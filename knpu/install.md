@@ -137,9 +137,11 @@ For me that's
 java -jar ~/Downloads/selenium-server-standalone-2.45.0.jar
 ```
 
-> Firefox `47.0.0` and lower is not supported at all since Selenium `3.0.0` - update Firefox
-> to the latest version and install the new [geckodriver][geckodriver] for it in order to use
-> the latest Selenium server.
+***TIP
+Firefox `47.0.0` and lower is not supported at all since Selenium `3.0.0` - update Firefox
+to the latest version and install the new [geckodriver][geckodriver] for it in order to use
+the latest Selenium server.
+***
 
 This will load and run as a daemon, so it should just hang there. 
 
@@ -158,14 +160,18 @@ Above the scenario that you want to run in Selenium add `@javascript`:
 And that's it. Go back to the terminal and let's rerun this test. It actually opens the browser,
 it's quick but you can see it clicking around to complete the scenario. Cool!
 
-> FireFox is buggy with the new Selenium 3 server that's why it's preferable to use Google Chrome.
-> You can explicitly specify the browser in the `behat.yml` config file:
-> 
-      # behat.yml
-      default:
-        extensions:
-          Behat\MinkExtension:
-            browser_name: chrome
+***TIP
+FireFox is buggy with the new Selenium 3 server that's why it's preferable to use Google Chrome.
+You can explicitly specify the browser in the `behat.yml` config file:
+
+```yaml
+# behat.yml
+default:
+  extensions:
+    Behat\MinkExtension:
+      browser_name: chrome
+```
+***
 
 We write human readable instructions and they turn into functional tests, and this just barely
 scratches the surface of how this will change your development. Let's keep going and figure out
