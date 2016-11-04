@@ -137,11 +137,9 @@ For me that's
 java -jar ~/Downloads/selenium-server-standalone-2.45.0.jar
 ```
 
-> Firefox `47.0.0` and fewer is not supported at all since Selenium `3.0.0` - update Firefox
-> to the latest version in order to use the latest Selenium server. Also you need to install
-> the new [geckodriver][geckodriver], but keep in mind that it's based on the evolving W3C
-> WebDriver spec, and uses the wire protocol in that spec, which is liable to change without
-> notice.
+> Firefox `47.0.0` and lower is not supported at all since Selenium `3.0.0` - update Firefox
+> to the latest version and install the new [geckodriver][geckodriver] for it in order to use
+> the latest Selenium server.
 
 This will load and run as a daemon, so it should just hang there. 
 
