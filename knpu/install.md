@@ -160,6 +160,16 @@ Above the scenario that you want to run in Selenium add `@javascript`:
 And that's it. Go back to the terminal and let's rerun this test. It actually opens the browser,
 it's quick but you can see it clicking around to complete the scenario. Cool!
 
+> FireFox is buggy with the new Selenium 3 server that's why it's preferable to use Google Chrome.
+> You can explicitly specify the browser in the `behat.yml` config file:
+  ```yml
+  # behat.yml
+  default:
+    extensions:
+      Behat\MinkExtension:
+        browser_name: chrome
+  ```
+
 We write human readable instructions and they turn into functional tests, and this just barely
 scratches the surface of how this will change your development. Let's keep going and figure out
 what's really going on here.
