@@ -38,10 +38,10 @@ refresh, go backwards, go forwards and that's about it. Let's use it to visit
 a very awesome and absurdly-designed site "jurassicpark.wikia.com".
 
 ***TIP
-This website was redesigned, what means that its HTML/CSS was slightly changed
-after we recorded this screencast. That's why we slightly tweaked our code to
-match the changes, so you can see a difference in CSS selectors and link names
-we use in the video.
+After vocal protests from the dinosaurs, jurassicpark.wikia.com was redesigned!
+that means its HTML/CSS was updated after we recorded this screencast. Don't worry:
+we've updated the code in the code blocks on this page to work for the new design.
+Use them instead of the CSS selectors used in the video.
 ***
 
 After that we'll just print out a few things about the page like the status code,
