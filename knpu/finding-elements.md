@@ -134,9 +134,8 @@ to use Selenium instead, we only need to change the driver to `$driver = new Sel
 [[[ code('68da7fe70e') ]]]
 
 ***TIP
-By default, Selenium2 driver is Firefox, latest versions of which may work incorrectly with
-Selenium server. if you have some troubles with Firefox and `Selenium2Driver` - try to change
-the browser to Google Chrome:
+By default, the Selenium2 driver uses Firefox. But recent versions may not work correctly with
+Selenium server. If you have any issues, try using Google Chrome instead:
 
 ```
 // ...
