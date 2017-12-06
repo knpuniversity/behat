@@ -2,10 +2,11 @@ diff --git a/features/bootstrap/FeatureContext.php b/features/bootstrap/FeatureC
 index 3c45f06..befe8c3 100644
 --- a/features/bootstrap/FeatureContext.php
 +++ b/features/bootstrap/FeatureContext.php
-@@ -152,6 +152,17 @@ class FeatureContext extends RawMinkContext implements Context, SnippetAccepting
+@@ -151,6 +151,17 @@ class FeatureContext extends RawMinkContext implements Context, SnippetAccepting
+         return;
      }
  
-     /**
++    /**
 +     * Saving a screenshot
 +     *
 +     * @When I save a screenshot to :filename
@@ -16,10 +17,9 @@ index 3c45f06..befe8c3 100644
 +        $this->saveScreenshot($filename, __DIR__.'/../..');
 +    }
 +
-+    /**
+     /**
       * @return \Behat\Mink\Element\DocumentElement
       */
-     private function getPage()
 diff --git a/features/web/product_admin.feature b/features/web/product_admin.feature
 index d778f9e..313cd3c 100644
 --- a/features/web/product_admin.feature

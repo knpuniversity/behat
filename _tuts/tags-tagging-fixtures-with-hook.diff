@@ -2,10 +2,11 @@ diff --git a/features/bootstrap/FeatureContext.php b/features/bootstrap/FeatureC
 index f4feba0..ed413b5 100644
 --- a/features/bootstrap/FeatureContext.php
 +++ b/features/bootstrap/FeatureContext.php
-@@ -41,6 +41,14 @@ class FeatureContext extends RawMinkContext implements Context, SnippetAccepting
+@@ -40,6 +40,14 @@ class FeatureContext extends RawMinkContext implements Context, SnippetAccepting
+         $purger->purge();
      }
  
-     /**
++    /**
 +     * @BeforeScenario @fixtures
 +     */
 +    public function loadFixtures()
@@ -13,10 +14,9 @@ index f4feba0..ed413b5 100644
 +        var_dump('GO!');
 +    }
 +
-+    /**
+     /**
       * @Given there is an admin user :username with password :password
       */
-     public function thereIsAnAdminUserWithPassword($username, $password)
 diff --git a/features/web/search.feature b/features/web/search.feature
 index a1373d0..469a811 100644
 --- a/features/web/search.feature

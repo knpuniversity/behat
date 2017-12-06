@@ -2,10 +2,11 @@ diff --git a/features/bootstrap/FeatureContext.php b/features/bootstrap/FeatureC
 index 4dd8366..5468a0d 100644
 --- a/features/bootstrap/FeatureContext.php
 +++ b/features/bootstrap/FeatureContext.php
-@@ -40,6 +40,16 @@ class FeatureContext extends RawMinkContext implements Context, SnippetAccepting
+@@ -39,6 +39,16 @@ class FeatureContext extends RawMinkContext implements Context, SnippetAccepting
+         self::$container = $kernel->getContainer();
      }
  
-     /**
++    /**
 +     * @BeforeScenario
 +     */
 +    public function clearData()
@@ -15,10 +16,9 @@ index 4dd8366..5468a0d 100644
 +        $em->createQuery('DELETE FROM AppBundle:User')->execute();
 +    }
 +
-+    /**
+     /**
       * @Given there is an admin user :username with password :password
       */
-     public function thereIsAnAdminUserWithPassword($username, $password)
 diff --git a/features/web/authentication.feature b/features/web/authentication.feature
 index 4c76748..f5634d5 100644
 --- a/features/web/authentication.feature

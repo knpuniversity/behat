@@ -133,6 +133,16 @@ to use Selenium instead, we only need to change the driver to `$driver = new Sel
 
 [[[ code('68da7fe70e') ]]]
 
+***TIP
+By default, the Selenium2 driver uses Firefox. But recent versions may not work correctly with
+Selenium server. If you have any issues, try using Google Chrome instead:
+
+```
+// ...
+$driver = new Selenium2Driver('chrome');
+```
+***
+
 That's it! Oh and make sure you have `$session->start()` at the top:
 
 [[[ code('e0a247a7a3') ]]]

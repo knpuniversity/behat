@@ -2,10 +2,11 @@ diff --git a/features/bootstrap/FeatureContext.php b/features/bootstrap/FeatureC
 index 49928b5..48cc267 100644
 --- a/features/bootstrap/FeatureContext.php
 +++ b/features/bootstrap/FeatureContext.php
-@@ -96,6 +96,16 @@ class FeatureContext extends RawMinkContext implements Context, SnippetAccepting
+@@ -95,6 +95,16 @@ class FeatureContext extends RawMinkContext implements Context, SnippetAccepting
+         $this->createProducts($count, $this->currentUser);
      }
  
-     /**
++    /**
 +     * @Given the following products exist:
 +     */
 +    public function theFollowingProductsExist(TableNode $table)
@@ -15,10 +16,9 @@ index 49928b5..48cc267 100644
 +        }
 +    }
 +
-+    /**
+     /**
       * @When I click :linkName
       */
-     public function iClick($linkName)
 diff --git a/features/web/product_admin.feature b/features/web/product_admin.feature
 index d2aa379..e65c330 100644
 --- a/features/web/product_admin.feature

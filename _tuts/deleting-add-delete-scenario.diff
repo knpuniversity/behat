@@ -11,10 +11,11 @@ index d6f0485..0d8fea8 100644
       */
      public function theFollowingProductsExist(TableNode $table)
      {
-@@ -128,6 +128,14 @@ class FeatureContext extends RawMinkContext implements Context, SnippetAccepting
+@@ -127,6 +127,14 @@ class FeatureContext extends RawMinkContext implements Context, SnippetAccepting
+         assertContains('fa-check', $row->getHtml(), 'Could not find the fa-check element in the row!');
      }
  
-     /**
++    /**
 +     * @When I click :arg1 in the :arg2 row
 +     */
 +    public function iClickInTheRow($arg1, $arg2)
@@ -22,10 +23,9 @@ index d6f0485..0d8fea8 100644
 +        throw new PendingException();
 +    }
 +
-+    /**
+     /**
       * @When I click :linkName
       */
-     public function iClick($linkName)
 diff --git a/features/web/product_admin.feature b/features/web/product_admin.feature
 index 651dfe3..5b41e8c 100644
 --- a/features/web/product_admin.feature

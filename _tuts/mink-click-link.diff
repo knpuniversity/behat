@@ -1,9 +1,9 @@
 diff --git a/mink.php b/mink.php
-index 721ef26..c83a1b5 100644
+index 4e8c291..d396efc 100644
 --- a/mink.php
 +++ b/mink.php
 @@ -33,3 +33,6 @@ $linkEl = $subNav->find('css', 'li a');
- $linkEl = $page->findLink('Wiki Activity');
+ $linkEl = $page->findLink('Books');
  
  echo "The link href is: ". $linkEl->getAttribute('href') . "\n";
 +

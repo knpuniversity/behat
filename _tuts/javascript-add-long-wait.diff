@@ -2,10 +2,11 @@ diff --git a/features/bootstrap/FeatureContext.php b/features/bootstrap/FeatureC
 index 4efba86..3071421 100644
 --- a/features/bootstrap/FeatureContext.php
 +++ b/features/bootstrap/FeatureContext.php
-@@ -128,6 +128,14 @@ class FeatureContext extends RawMinkContext implements Context, SnippetAccepting
+@@ -127,6 +127,14 @@ class FeatureContext extends RawMinkContext implements Context, SnippetAccepting
+         $this->getPage()->pressButton('Login');
      }
  
-     /**
++    /**
 +     * @When I wait for the modal to load
 +     */
 +    public function iWaitForTheModalToLoad()
@@ -13,10 +14,9 @@ index 4efba86..3071421 100644
 +        $this->getSession()->wait(5000);
 +    }
 +
-+    /**
+     /**
       * @return \Behat\Mink\Element\DocumentElement
       */
-     private function getPage()
 diff --git a/features/web/product_admin.feature b/features/web/product_admin.feature
 index 7d8998f..eba901a 100644
 --- a/features/web/product_admin.feature

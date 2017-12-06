@@ -35,8 +35,17 @@ an argument:
 Think of the session like a browser tab: anything you can do in a tab, you can do
 in a session. And actually, that isn't very much. You can visit URLs,
 refresh, go backwards, go forwards and that's about it. Let's use it to visit
-a very awesome and absurdly-designed site "jurassicpark.wikia.com". After that we'll
-just print out a few things about the page like the status code, and the current URL:
+a very awesome and absurdly-designed site "jurassicpark.wikia.com".
+
+***TIP
+After vocal protests from the dinosaurs, jurassicpark.wikia.com was redesigned!
+That means its HTML/CSS was updated after we recorded this screencast. Don't worry:
+we've updated the code in the code blocks on this page to work for the new design.
+Use them instead of the CSS selectors used in the video.
+***
+
+After that we'll just print out a few things about the page like the status code,
+and the current URL:
 
 [[[ code('e558213f96') ]]]
 

@@ -2,10 +2,11 @@ diff --git a/features/bootstrap/FeatureContext.php b/features/bootstrap/FeatureC
 index a217a23..a051a8e 100644
 --- a/features/bootstrap/FeatureContext.php
 +++ b/features/bootstrap/FeatureContext.php
-@@ -111,6 +111,19 @@ class FeatureContext extends RawMinkContext implements Context, SnippetAccepting
+@@ -110,6 +110,19 @@ class FeatureContext extends RawMinkContext implements Context, SnippetAccepting
+         assertCount(intval($count), $table->findAll('css', 'tbody tr'));
      }
  
-     /**
++    /**
 +     * @Given I am logged in as an admin
 +     */
 +    public function iAmLoggedInAsAnAdmin()
@@ -18,10 +19,9 @@ index a217a23..a051a8e 100644
 +        $this->getPage()->pressButton('Login');
 +    }
 +
-+    /**
+     /**
       * @return \Behat\Mink\Element\DocumentElement
       */
-     private function getPage()
 diff --git a/features/web/product_admin.feature b/features/web/product_admin.feature
 index 6192938..ebcb6f1 100644
 --- a/features/web/product_admin.feature

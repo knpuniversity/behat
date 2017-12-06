@@ -25,10 +25,11 @@ diff --git a/composer.lock b/composer.lock
 index ed7044a..da561f3 100644
 --- a/composer.lock
 +++ b/composer.lock
-@@ -8,6 +8,245 @@
+@@ -7,6 +7,245 @@
+     "hash": "921946df2055953bf82b17cec095472d",
      "content-hash": "cdf74f22433e55c69f8cac40fce5ed07",
      "packages": [
-         {
++        {
 +            "name": "behat/behat",
 +            "version": "v3.0.15",
 +            "source": {
@@ -267,14 +268,14 @@ index ed7044a..da561f3 100644
 +            ],
 +            "time": "2014-05-15 22:08:22"
 +        },
-+        {
+         {
              "name": "doctrine/annotations",
              "version": "v1.2.7",
-             "source": {
-@@ -1219,145 +1458,6 @@
+@@ -1218,145 +1457,6 @@
+         }
      ],
      "packages-dev": [
-         {
+-        {
 -            "name": "behat/behat",
 -            "version": "v3.0.15",
 -            "source": {
@@ -413,14 +414,14 @@ index ed7044a..da561f3 100644
 -            ],
 -            "time": "2014-06-06 01:24:32"
 -        },
--        {
+         {
              "name": "behat/mink",
              "version": "v1.6.1",
-             "source": {
-@@ -1637,46 +1737,6 @@
+@@ -1636,46 +1736,6 @@
+             ],
              "time": "2014-09-29 13:12:12"
          },
-         {
+-        {
 -            "name": "behat/transliterator",
 -            "version": "v1.0.1",
 -            "source": {
@@ -460,10 +461,9 @@ index ed7044a..da561f3 100644
 -            ],
 -            "time": "2014-05-15 22:08:22"
 -        },
--        {
+         {
              "name": "fabpot/goutte",
              "version": "v2.0.4",
-             "source": {
 diff --git a/features/bootstrap/FeatureContext.php b/features/bootstrap/FeatureContext.php
 index 5468a0d..e197abc 100644
 --- a/features/bootstrap/FeatureContext.php
@@ -477,10 +477,11 @@ index 5468a0d..e197abc 100644
  
      /**
       * Initializes context.
-@@ -27,24 +27,11 @@ class FeatureContext extends RawMinkContext implements Context, SnippetAccepting
+@@ -26,25 +26,12 @@ class FeatureContext extends RawMinkContext implements Context, SnippetAccepting
+     {
      }
  
-     /**
+-    /**
 -     * @BeforeSuite
 -     */
 -    public static function bootstrapSymfony()
@@ -493,7 +494,7 @@ index 5468a0d..e197abc 100644
 -        self::$container = $kernel->getContainer();
 -    }
 -
--    /**
+     /**
       * @BeforeScenario
       */
      public function clearData()

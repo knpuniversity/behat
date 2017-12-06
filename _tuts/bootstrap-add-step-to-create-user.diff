@@ -2,10 +2,11 @@ diff --git a/features/bootstrap/FeatureContext.php b/features/bootstrap/FeatureC
 index 8cec350..595e497 100644
 --- a/features/bootstrap/FeatureContext.php
 +++ b/features/bootstrap/FeatureContext.php
-@@ -25,6 +25,14 @@ class FeatureContext extends RawMinkContext implements Context, SnippetAccepting
+@@ -24,6 +24,14 @@ class FeatureContext extends RawMinkContext implements Context, SnippetAccepting
+     {
      }
  
-     /**
++    /**
 +     * @Given there is an admin user :arg1 with password :arg2
 +     */
 +    public function thereIsAnAdminUserWithPassword($arg1, $arg2)
@@ -13,10 +14,9 @@ index 8cec350..595e497 100644
 +        throw new PendingException();
 +    }
 +
-+    /**
+     /**
       * @When I fill in the search box with :term
       */
-     public function iFillInTheSearchBoxWith($term)
 diff --git a/features/web/authentication.feature b/features/web/authentication.feature
 index 7d2d854..f5634d5 100644
 --- a/features/web/authentication.feature
