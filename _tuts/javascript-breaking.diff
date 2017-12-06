@@ -2,10 +2,11 @@ diff --git a/features/bootstrap/FeatureContext.php b/features/bootstrap/FeatureC
 index 399058f..3c45f06 100644
 --- a/features/bootstrap/FeatureContext.php
 +++ b/features/bootstrap/FeatureContext.php
-@@ -139,6 +139,19 @@ class FeatureContext extends RawMinkContext implements Context, SnippetAccepting
+@@ -138,6 +138,19 @@ class FeatureContext extends RawMinkContext implements Context, SnippetAccepting
+         );
      }
  
-     /**
++    /**
 +     * Pauses the scenario until the user presses a key. Useful when debugging a scenario.
 +     *
 +     * @Then (I )break
@@ -18,10 +19,9 @@ index 399058f..3c45f06 100644
 +        return;
 +    }
 +
-+    /**
+     /**
       * @return \Behat\Mink\Element\DocumentElement
       */
-     private function getPage()
 diff --git a/features/web/product_admin.feature b/features/web/product_admin.feature
 index aef5ee7..d778f9e 100644
 --- a/features/web/product_admin.feature

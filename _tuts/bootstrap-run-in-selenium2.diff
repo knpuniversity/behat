@@ -24,10 +24,11 @@ diff --git a/composer.lock b/composer.lock
 index 250b89a..7a578f6 100644
 --- a/composer.lock
 +++ b/composer.lock
-@@ -2427,6 +2427,64 @@
+@@ -2426,6 +2426,64 @@
+             ],
              "time": "2014-10-09 09:21:12"
          },
-         {
++        {
 +            "name": "behat/mink-selenium2-driver",
 +            "version": "v1.2.0",
 +            "source": {
@@ -85,14 +86,14 @@ index 250b89a..7a578f6 100644
 +            ],
 +            "time": "2014-09-29 13:12:12"
 +        },
-+        {
+         {
              "name": "behat/transliterator",
              "version": "v1.0.1",
-             "source": {
-@@ -2675,6 +2733,64 @@
+@@ -2674,6 +2732,64 @@
+             ],
              "time": "2014-10-12 19:18:40"
          },
-         {
++        {
 +            "name": "instaclick/php-webdriver",
 +            "version": "1.4.3",
 +            "source": {
@@ -150,10 +151,9 @@ index 250b89a..7a578f6 100644
 +            ],
 +            "time": "2015-06-15 20:19:33"
 +        },
-+        {
+         {
              "name": "react/promise",
              "version": "v2.2.1",
-             "source": {
 diff --git a/features/search.feature b/features/search.feature
 index 85fc3ff..41e00b2 100644
 --- a/features/search.feature

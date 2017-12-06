@@ -100,10 +100,11 @@ index 614d850..8cec350 100644
      /**
       * Initializes context.
       *
-@@ -27,64 +25,6 @@ class FeatureContext extends RawMinkContext implements Context, SnippetAccepting
+@@ -26,64 +24,6 @@ class FeatureContext extends RawMinkContext implements Context, SnippetAccepting
+     {
      }
  
-     /**
+-    /**
 -     * @Given I have a file named :filename
 -     */
 -    public function iHaveAFileNamed($filename)
@@ -161,7 +162,6 @@ index 614d850..8cec350 100644
 -        mkdir($dir);
 -    }
 -
--    /**
+     /**
       * @When I fill in the search box with :term
       */
-     public function iFillInTheSearchBoxWith($term)

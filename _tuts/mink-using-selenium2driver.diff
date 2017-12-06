@@ -1,5 +1,5 @@
 diff --git a/mink.php b/mink.php
-index c83a1b5..2238b6c 100644
+index d396efc..ae47d29 100644
 --- a/mink.php
 +++ b/mink.php
 @@ -3,10 +3,12 @@
@@ -12,7 +12,7 @@ index c83a1b5..2238b6c 100644
  // Important object #1
 -$driver = new GoutteDriver();
 +//$driver = new GoutteDriver();
-+$driver = new Selenium2Driver();
++$driver = new Selenium2Driver('chrome');
  
  // Important object #2
  $session = new Session($driver);

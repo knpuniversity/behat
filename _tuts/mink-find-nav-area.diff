@@ -1,11 +1,11 @@
 diff --git a/mink.php b/mink.php
-index f106346..1fe1d2d 100644
+index 73ca36b..c1c617a 100644
 --- a/mink.php
 +++ b/mink.php
-@@ -27,3 +27,6 @@ $header = $page->find('css', '.WikiHeader .WikiNav h2');
+@@ -27,3 +27,6 @@ $header = $page->find('css', '.wds-community-header__sitename a');
  
- echo "The wiki nav text is: ".$header->getText()."\n";
+ echo "The wiki site name is: ".$header->getText()."\n";
  
-+$subNav = $page->find('css', '.subnav-2');
++$subNav = $page->find('css', '.wds-tabs');
 +var_dump($subNav->getHtml());
 +

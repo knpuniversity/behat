@@ -17,189 +17,23 @@ index ccef6ba..48194d1 100644
      extensions:
          Behat\MinkExtension:
              base_url: http://localhost:8000
-diff --git a/features/authentication.feature b/features/authentication.feature
-deleted file mode 100644
-index 5c834bc..0000000
---- a/features/authentication.feature
-+++ /dev/null
-@@ -1,4 +0,0 @@
--Feature: Authentication
--  In order to gain access to the site management area
--  As an admin
--  I need to be able to login and logout
-diff --git a/features/commands/ls.feature b/features/commands/ls.feature
-new file mode 100644
-index 0000000..f6fa9cc
---- /dev/null
-+++ b/features/commands/ls.feature
-@@ -0,0 +1,19 @@
-+Feature: ls
-+  In order to see the directory structure
-+  As a UNIX user
-+  I need to be able to list the current directory's contents
-+
-+  Background:
-+    Given I have a file named "john"
-+
-+  Scenario: List 2 files in a directory
-+    Given I have a file named "hammond"
-+    When I run "ls"
-+    Then I should see "john" in the output
-+    And I should see "hammond" in the output
-+
-+  Scenario: List 1 file and 1 directory
-+    Given I have a dir named "ingen"
-+    When I run "ls"
-+    Then I should see "john" in the output
-+    And I should see "ingen" in the output
-diff --git a/features/fence_api.feature b/features/fence_api.feature
-deleted file mode 100644
-index 47905a6..0000000
---- a/features/fence_api.feature
-+++ /dev/null
-@@ -1,4 +0,0 @@
--Feature: Remote control fence API
--  In order to control fence security from anywhere
--  As an API user
--  I need to be able to POST JSON instructions that turn fences on/off
-diff --git a/features/ls.feature b/features/ls.feature
-deleted file mode 100644
-index f6fa9cc..0000000
---- a/features/ls.feature
-+++ /dev/null
-@@ -1,19 +0,0 @@
--Feature: ls
--  In order to see the directory structure
--  As a UNIX user
--  I need to be able to list the current directory's contents
--
--  Background:
--    Given I have a file named "john"
--
--  Scenario: List 2 files in a directory
--    Given I have a file named "hammond"
--    When I run "ls"
--    Then I should see "john" in the output
--    And I should see "hammond" in the output
--
--  Scenario: List 1 file and 1 directory
--    Given I have a dir named "ingen"
--    When I run "ls"
--    Then I should see "john" in the output
--    And I should see "ingen" in the output
-diff --git a/features/product_admin.feature b/features/product_admin.feature
-deleted file mode 100644
-index 1ce4516..0000000
---- a/features/product_admin.feature
-+++ /dev/null
-@@ -1,19 +0,0 @@
--Feature: Product admin panel
--  In order to maintain the products shown on the site
--  As an admin
--  I need to be able to add/edit/delete products
--
--  Scenario: List available products
--    Given there are 5 products
--    And I am on "/admin"
--    When I click "Products"
--    Then I should see 5 products
--
--  Scenario: Add a new product
--    Given I am on "/admin/products"
--    When I click "New Product"
--    And I fill in "Name" with "Veloci-chew toy"
--    And I fill in "Price" with "20"
--    And I fill in "Description" with "Have your velociraptor chew on this instead!"
--    And I press "Save"
--    Then I should see "Product created FTW!"
-diff --git a/features/search.feature b/features/search.feature
-deleted file mode 100644
-index a1373d0..0000000
---- a/features/search.feature
-+++ /dev/null
-@@ -1,17 +0,0 @@
--Feature: Search
--  In order to find products dinosaurs love
--  As a website user
--  I need to be able to search for products
--
--  Background:
--    Given I am on "/"
--
--  Scenario Outline: Search for a product
--    When I fill in the search box with "<term>"
--    And I press the search button
--    Then I should see "<result>"
--
--    Examples:
--      | term    | result              |
--      | Samsung | Samsung Galaxy S II |
--      | XBox    | No products found   |
-diff --git a/features/web/authentication.feature b/features/web/authentication.feature
-new file mode 100644
-index 0000000..5c834bc
---- /dev/null
-+++ b/features/web/authentication.feature
-@@ -0,0 +1,4 @@
-+Feature: Authentication
-+  In order to gain access to the site management area
-+  As an admin
-+  I need to be able to login and logout
-diff --git a/features/web/fence_api.feature b/features/web/fence_api.feature
-new file mode 100644
-index 0000000..47905a6
---- /dev/null
-+++ b/features/web/fence_api.feature
-@@ -0,0 +1,4 @@
-+Feature: Remote control fence API
-+  In order to control fence security from anywhere
-+  As an API user
-+  I need to be able to POST JSON instructions that turn fences on/off
-diff --git a/features/web/product_admin.feature b/features/web/product_admin.feature
-new file mode 100644
-index 0000000..1ce4516
---- /dev/null
-+++ b/features/web/product_admin.feature
-@@ -0,0 +1,19 @@
-+Feature: Product admin panel
-+  In order to maintain the products shown on the site
-+  As an admin
-+  I need to be able to add/edit/delete products
-+
-+  Scenario: List available products
-+    Given there are 5 products
-+    And I am on "/admin"
-+    When I click "Products"
-+    Then I should see 5 products
-+
-+  Scenario: Add a new product
-+    Given I am on "/admin/products"
-+    When I click "New Product"
-+    And I fill in "Name" with "Veloci-chew toy"
-+    And I fill in "Price" with "20"
-+    And I fill in "Description" with "Have your velociraptor chew on this instead!"
-+    And I press "Save"
-+    Then I should see "Product created FTW!"
-diff --git a/features/web/search.feature b/features/web/search.feature
-new file mode 100644
-index 0000000..a1373d0
---- /dev/null
-+++ b/features/web/search.feature
-@@ -0,0 +1,17 @@
-+Feature: Search
-+  In order to find products dinosaurs love
-+  As a website user
-+  I need to be able to search for products
-+
-+  Background:
-+    Given I am on "/"
-+
-+  Scenario Outline: Search for a product
-+    When I fill in the search box with "<term>"
-+    And I press the search button
-+    Then I should see "<result>"
-+
-+    Examples:
-+      | term    | result              |
-+      | Samsung | Samsung Galaxy S II |
-+      | XBox    | No products found   |
+diff --git a/features/ls.feature b/features/commands/ls.feature
+similarity index 100%
+rename from features/ls.feature
+rename to features/commands/ls.feature
+diff --git a/features/authentication.feature b/features/web/authentication.feature
+similarity index 100%
+rename from features/authentication.feature
+rename to features/web/authentication.feature
+diff --git a/features/fence_api.feature b/features/web/fence_api.feature
+similarity index 100%
+rename from features/fence_api.feature
+rename to features/web/fence_api.feature
+diff --git a/features/product_admin.feature b/features/web/product_admin.feature
+similarity index 100%
+rename from features/product_admin.feature
+rename to features/web/product_admin.feature
+diff --git a/features/search.feature b/features/web/search.feature
+similarity index 100%
+rename from features/search.feature
+rename to features/web/search.feature

@@ -9,10 +9,11 @@ index 3f76945..a217a23 100644
  use Behat\Behat\Context\Context;
  use Behat\Behat\Context\SnippetAcceptingContext;
  use Behat\Gherkin\Node\PyStringNode;
-@@ -74,10 +75,54 @@ class FeatureContext extends RawMinkContext implements Context, SnippetAccepting
+@@ -73,6 +74,42 @@ class FeatureContext extends RawMinkContext implements Context, SnippetAccepting
+         $button->press();
      }
  
-     /**
++    /**
 +     * @Given there are :count products
 +     */
 +    public function thereAreProducts($count)
@@ -48,10 +49,10 @@ index 3f76945..a217a23 100644
 +        assertCount(intval($count), $table->findAll('css', 'tbody tr'));
 +    }
 +
-+    /**
+     /**
       * @return \Behat\Mink\Element\DocumentElement
       */
-     private function getPage()
+@@ -80,4 +117,12 @@ class FeatureContext extends RawMinkContext implements Context, SnippetAccepting
      {
          return $this->getSession()->getPage();
      }
