@@ -1,7 +1,7 @@
 # Finding Elements by CSS and Name
 
 ***TIP
-This elemens *was* an `h1` tag (when we recorded the video) - now the site has an
+This element *was* an `h1` tag (when we recorded the video) - now the site has an
 `h2` tag. The code below was updated.
 ***
 
