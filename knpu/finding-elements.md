@@ -1,8 +1,8 @@
 # Finding Elements by CSS and Name
 
 ***TIP
-This element *was* an `h1` tag (when we recorded the video) - now the site has an
-`h2` tag. The code below was updated.
+This element *was* an `h1` tag (when we recorded the video) - now the site name is in
+`a` tag which is inside `.wds-community-header__sitename` block. The code below was updated.
 ***
 
 Back on the weird Wiki page, run an inspect element on the navigation. There's a hidden
