@@ -24,7 +24,7 @@ When we run Behat, it needs to know *all* of the step definition language that's
 available. You can see that list by passing a `-dl` to the Behat command:
 
 ```bash
-php vendor/bin/behat -dl
+vendor/bin/behat -dl
 ```
 
 This shows the four `ls` definitions we built. So, Behat opens the `FeatureContext` class,
@@ -54,7 +54,7 @@ annotations.
 Let's see what that gives us: run behat with the `-dl` option again:
 
 ```bash
-php vendor/bin/behat -dl
+vendor/bin/behat -dl
 ```
 
 Boom! Now we see a *huge* list! These include definitions for all common web actions, like
