@@ -48,4 +48,4 @@ You can login with:
 user: admin
 pass: admin
 
-Have fun!
+Have fun! 
