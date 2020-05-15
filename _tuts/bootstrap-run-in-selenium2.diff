@@ -8,25 +8,35 @@ index 69d44b4..8a61cbf 100644
              goutte: ~
 +            selenium2: ~
 diff --git a/composer.json b/composer.json
-index 6b13efa..f99ff6e 100644
+index 526bd8e..9782cbe 100644
 --- a/composer.json
 +++ b/composer.json
-@@ -21,6 +21,7 @@
+@@ -21,7 +21,8 @@
      },
      "require-dev": {
          "behat/mink-extension": "^2.0",
 -        "behat/mink-goutte-driver": "^1.1"
 +        "behat/mink-goutte-driver": "^1.1",
 +        "behat/mink-selenium2-driver": "^1.2"
-     }
- }
+     },
+     "config": {
+         "platform": {
 diff --git a/composer.lock b/composer.lock
-index 250b89a..7a578f6 100644
+index a6b4be9..245897d 100644
 --- a/composer.lock
 +++ b/composer.lock
-@@ -2426,6 +2426,64 @@
+@@ -4,7 +4,7 @@
+         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+         "This file is @generated automatically"
+     ],
+-    "content-hash": "7f84a9de1e336c03a06dafcfbc917e9c",
++    "content-hash": "7dc0fd909bac81a0747942fc0d1ee6db",
+     "packages": [
+         {
+             "name": "doctrine/annotations",
+@@ -1577,6 +1577,64 @@
              ],
-             "time": "2014-10-09 09:21:12"
+             "time": "2014-10-09T09:21:12+00:00"
          },
 +        {
 +            "name": "behat/mink-selenium2-driver",
@@ -84,14 +94,14 @@ index 250b89a..7a578f6 100644
 +                "testing",
 +                "webdriver"
 +            ],
-+            "time": "2014-09-29 13:12:12"
++            "time": "2014-09-29T13:12:12+00:00"
 +        },
          {
              "name": "behat/transliterator",
              "version": "v1.0.1",
-@@ -2674,6 +2732,64 @@
-             ],
-             "time": "2014-10-12 19:18:40"
+@@ -1827,6 +1885,64 @@
+             "abandoned": true,
+             "time": "2014-10-12T19:18:40+00:00"
          },
 +        {
 +            "name": "instaclick/php-webdriver",
@@ -149,11 +159,11 @@ index 250b89a..7a578f6 100644
 +                "webdriver",
 +                "webtest"
 +            ],
-+            "time": "2015-06-15 20:19:33"
++            "time": "2015-06-15T20:19:33+00:00"
 +        },
          {
-             "name": "react/promise",
-             "version": "v2.2.1",
+             "name": "phpdocumentor/reflection-docblock",
+             "version": "2.0.4",
 diff --git a/features/search.feature b/features/search.feature
 index 85fc3ff..41e00b2 100644
 --- a/features/search.feature

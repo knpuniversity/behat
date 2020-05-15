@@ -8,7 +8,7 @@ index 487a0f9..d3346ec 100644
              show_cmd: 'open %s'
 +        Behat\Symfony2Extension: ~
 diff --git a/composer.json b/composer.json
-index 05cd30a..9b17165 100644
+index 53e5db8..aa3f805 100644
 --- a/composer.json
 +++ b/composer.json
 @@ -12,7 +12,8 @@
@@ -22,12 +22,15 @@ index 05cd30a..9b17165 100644
      "autoload": {
          "psr-0": {
 diff --git a/composer.lock b/composer.lock
-index ed7044a..da561f3 100644
+index 850d4a8..fc05075 100644
 --- a/composer.lock
 +++ b/composer.lock
-@@ -7,6 +7,245 @@
-     "hash": "921946df2055953bf82b17cec095472d",
-     "content-hash": "cdf74f22433e55c69f8cac40fce5ed07",
+@@ -4,8 +4,247 @@
+         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+         "This file is @generated automatically"
+     ],
+-    "content-hash": "a2e72b8f5329188ad27d1f9641c2985b",
++    "content-hash": "3f1d7714ea51e26984ee9c6a3b42b3c6",
      "packages": [
 +        {
 +            "name": "behat/behat",
@@ -108,7 +111,7 @@ index ed7044a..da561f3 100644
 +                "symfony",
 +                "testing"
 +            ],
-+            "time": "2015-02-22 14:10:33"
++            "time": "2015-02-22T14:10:33+00:00"
 +        },
 +        {
 +            "name": "behat/gherkin",
@@ -166,7 +169,7 @@ index ed7044a..da561f3 100644
 +                "gherkin",
 +                "parser"
 +            ],
-+            "time": "2014-06-06 01:24:32"
++            "time": "2014-06-06T01:24:32+00:00"
 +        },
 +        {
 +            "name": "behat/symfony2-extension",
@@ -226,7 +229,7 @@ index ed7044a..da561f3 100644
 +                "framework",
 +                "symfony"
 +            ],
-+            "time": "2014-09-04 22:10:45"
++            "time": "2014-09-04T22:10:45+00:00"
 +        },
 +        {
 +            "name": "behat/transliterator",
@@ -266,12 +269,12 @@ index ed7044a..da561f3 100644
 +                "slug",
 +                "transliterator"
 +            ],
-+            "time": "2014-05-15 22:08:22"
++            "time": "2014-05-15T22:08:22+00:00"
 +        },
          {
              "name": "doctrine/annotations",
              "version": "v1.2.7",
-@@ -1218,145 +1457,6 @@
+@@ -1217,145 +1456,6 @@
          }
      ],
      "packages-dev": [
@@ -354,7 +357,7 @@ index ed7044a..da561f3 100644
 -                "symfony",
 -                "testing"
 -            ],
--            "time": "2015-02-22 14:10:33"
+-            "time": "2015-02-22T14:10:33+00:00"
 -        },
 -        {
 -            "name": "behat/gherkin",
@@ -412,14 +415,14 @@ index ed7044a..da561f3 100644
 -                "gherkin",
 -                "parser"
 -            ],
--            "time": "2014-06-06 01:24:32"
+-            "time": "2014-06-06T01:24:32+00:00"
 -        },
          {
              "name": "behat/mink",
              "version": "v1.6.1",
-@@ -1636,46 +1736,6 @@
+@@ -1635,46 +1735,6 @@
              ],
-             "time": "2014-09-29 13:12:12"
+             "time": "2014-09-29T13:12:12+00:00"
          },
 -        {
 -            "name": "behat/transliterator",
@@ -459,7 +462,7 @@ index ed7044a..da561f3 100644
 -                "slug",
 -                "transliterator"
 -            ],
--            "time": "2014-05-15 22:08:22"
+-            "time": "2014-05-15T22:08:22+00:00"
 -        },
          {
              "name": "fabpot/goutte",

@@ -10,28 +10,321 @@ index 0000000..69d44b4
 +            base_url: http://localhost:8000
 +            goutte: ~
 diff --git a/composer.json b/composer.json
-index c80a938..6b13efa 100644
+index b5239be..526bd8e 100644
 --- a/composer.json
 +++ b/composer.json
-@@ -18,5 +18,9 @@
-         "psr-0": {
+@@ -19,6 +19,10 @@
              "": "src/"
          }
-+    },
+     },
 +    "require-dev": {
 +        "behat/mink-extension": "^2.0",
 +        "behat/mink-goutte-driver": "^1.1"
-     }
- }
++    },
+     "config": {
+         "platform": {
+             "php": "5.4.0"
 diff --git a/composer.lock b/composer.lock
-index 853591e..250b89a 100644
+index 3ed9e15..a6b4be9 100644
 --- a/composer.lock
 +++ b/composer.lock
-@@ -2065,7 +2065,660 @@
-             "time": "2015-09-15 06:50:16"
-         }
+@@ -4,7 +4,7 @@
+         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+         "This file is @generated automatically"
      ],
--    "packages-dev": [],
+-    "content-hash": "0fb90bc9662d39444cf177f316992ac0",
++    "content-hash": "7f84a9de1e336c03a06dafcfbc917e9c",
+     "packages": [
+         {
+             "name": "doctrine/annotations",
+@@ -932,6 +932,901 @@
+             ],
+             "time": "2014-01-12T16:20:24+00:00"
+         },
++        {
++            "name": "psr/log",
++            "version": "1.0.0",
++            "source": {
++                "type": "git",
++                "url": "https://github.com/php-fig/log.git",
++                "reference": "fe0936ee26643249e916849d48e3a51d5f5e278b"
++            },
++            "dist": {
++                "type": "zip",
++                "url": "https://api.github.com/repos/php-fig/log/zipball/fe0936ee26643249e916849d48e3a51d5f5e278b",
++                "reference": "fe0936ee26643249e916849d48e3a51d5f5e278b",
++                "shasum": ""
++            },
++            "type": "library",
++            "autoload": {
++                "psr-0": {
++                    "Psr\\Log\\": ""
++                }
++            },
++            "notification-url": "https://packagist.org/downloads/",
++            "license": [
++                "MIT"
++            ],
++            "authors": [
++                {
++                    "name": "PHP-FIG",
++                    "homepage": "http://www.php-fig.org/"
++                }
++            ],
++            "description": "Common interface for logging libraries",
++            "keywords": [
++                "log",
++                "psr",
++                "psr-3"
++            ],
++            "time": "2012-12-21T11:40:51+00:00"
++        },
++        {
++            "name": "sensio/framework-extra-bundle",
++            "version": "v3.0.16",
++            "source": {
++                "type": "git",
++                "url": "https://github.com/sensiolabs/SensioFrameworkExtraBundle.git",
++                "reference": "507a15f56fa7699f6cc8c2c7de4080b19ce22546"
++            },
++            "dist": {
++                "type": "zip",
++                "url": "https://api.github.com/repos/sensiolabs/SensioFrameworkExtraBundle/zipball/507a15f56fa7699f6cc8c2c7de4080b19ce22546",
++                "reference": "507a15f56fa7699f6cc8c2c7de4080b19ce22546",
++                "shasum": ""
++            },
++            "require": {
++                "doctrine/common": "~2.2",
++                "symfony/dependency-injection": "~2.3|~3.0",
++                "symfony/framework-bundle": "~2.3|~3.0"
++            },
++            "require-dev": {
++                "symfony/browser-kit": "~2.3|~3.0",
++                "symfony/dom-crawler": "~2.3|~3.0",
++                "symfony/expression-language": "~2.4|~3.0",
++                "symfony/finder": "~2.3|~3.0",
++                "symfony/phpunit-bridge": "~2.7|~3.0",
++                "symfony/security-bundle": "~2.4|~3.0",
++                "symfony/twig-bundle": "~2.3|~3.0",
++                "twig/twig": "~1.11|~2.0"
++            },
++            "suggest": {
++                "symfony/expression-language": "",
++                "symfony/psr-http-message-bridge": "To use the PSR-7 converters",
++                "symfony/security-bundle": ""
++            },
++            "type": "symfony-bundle",
++            "extra": {
++                "branch-alias": {
++                    "dev-master": "3.0.x-dev"
++                }
++            },
++            "autoload": {
++                "psr-4": {
++                    "Sensio\\Bundle\\FrameworkExtraBundle\\": ""
++                }
++            },
++            "notification-url": "https://packagist.org/downloads/",
++            "license": [
++                "MIT"
++            ],
++            "authors": [
++                {
++                    "name": "Fabien Potencier",
++                    "email": "fabien@symfony.com"
++                }
++            ],
++            "description": "This bundle provides a way to configure your controllers with annotations",
++            "keywords": [
++                "annotations",
++                "controllers"
++            ],
++            "time": "2016-03-25T17:08:27+00:00"
++        },
++        {
++            "name": "symfony/symfony",
++            "version": "v2.7.4",
++            "source": {
++                "type": "git",
++                "url": "https://github.com/symfony/symfony.git",
++                "reference": "1fdf23fe28876844b887b0e1935c9adda43ee645"
++            },
++            "dist": {
++                "type": "zip",
++                "url": "https://api.github.com/repos/symfony/symfony/zipball/1fdf23fe28876844b887b0e1935c9adda43ee645",
++                "reference": "1fdf23fe28876844b887b0e1935c9adda43ee645",
++                "shasum": ""
++            },
++            "require": {
++                "doctrine/common": "~2.3",
++                "php": ">=5.3.9",
++                "psr/log": "~1.0",
++                "twig/twig": "~1.20|~2.0"
++            },
++            "replace": {
++                "symfony/asset": "self.version",
++                "symfony/browser-kit": "self.version",
++                "symfony/class-loader": "self.version",
++                "symfony/config": "self.version",
++                "symfony/console": "self.version",
++                "symfony/css-selector": "self.version",
++                "symfony/debug": "self.version",
++                "symfony/debug-bundle": "self.version",
++                "symfony/dependency-injection": "self.version",
++                "symfony/doctrine-bridge": "self.version",
++                "symfony/dom-crawler": "self.version",
++                "symfony/event-dispatcher": "self.version",
++                "symfony/expression-language": "self.version",
++                "symfony/filesystem": "self.version",
++                "symfony/finder": "self.version",
++                "symfony/form": "self.version",
++                "symfony/framework-bundle": "self.version",
++                "symfony/http-foundation": "self.version",
++                "symfony/http-kernel": "self.version",
++                "symfony/intl": "self.version",
++                "symfony/locale": "self.version",
++                "symfony/monolog-bridge": "self.version",
++                "symfony/options-resolver": "self.version",
++                "symfony/process": "self.version",
++                "symfony/property-access": "self.version",
++                "symfony/proxy-manager-bridge": "self.version",
++                "symfony/routing": "self.version",
++                "symfony/security": "self.version",
++                "symfony/security-acl": "self.version",
++                "symfony/security-bundle": "self.version",
++                "symfony/security-core": "self.version",
++                "symfony/security-csrf": "self.version",
++                "symfony/security-http": "self.version",
++                "symfony/serializer": "self.version",
++                "symfony/stopwatch": "self.version",
++                "symfony/swiftmailer-bridge": "self.version",
++                "symfony/templating": "self.version",
++                "symfony/translation": "self.version",
++                "symfony/twig-bridge": "self.version",
++                "symfony/twig-bundle": "self.version",
++                "symfony/validator": "self.version",
++                "symfony/var-dumper": "self.version",
++                "symfony/web-profiler-bundle": "self.version",
++                "symfony/yaml": "self.version"
++            },
++            "require-dev": {
++                "doctrine/data-fixtures": "1.0.*",
++                "doctrine/dbal": "~2.2",
++                "doctrine/doctrine-bundle": "~1.2",
++                "doctrine/orm": "~2.2,>=2.2.3",
++                "egulias/email-validator": "~1.2",
++                "ircmaxell/password-compat": "~1.0",
++                "monolog/monolog": "~1.11",
++                "ocramius/proxy-manager": "~0.4|~1.0",
++                "symfony/phpunit-bridge": "self.version"
++            },
++            "type": "library",
++            "extra": {
++                "branch-alias": {
++                    "dev-master": "2.7-dev"
++                }
++            },
++            "autoload": {
++                "psr-4": {
++                    "Symfony\\Bridge\\Doctrine\\": "src/Symfony/Bridge/Doctrine/",
++                    "Symfony\\Bridge\\Monolog\\": "src/Symfony/Bridge/Monolog/",
++                    "Symfony\\Bridge\\ProxyManager\\": "src/Symfony/Bridge/ProxyManager/",
++                    "Symfony\\Bridge\\Swiftmailer\\": "src/Symfony/Bridge/Swiftmailer/",
++                    "Symfony\\Bridge\\Twig\\": "src/Symfony/Bridge/Twig/",
++                    "Symfony\\Bundle\\": "src/Symfony/Bundle/",
++                    "Symfony\\Component\\": "src/Symfony/Component/"
++                },
++                "classmap": [
++                    "src/Symfony/Component/HttpFoundation/Resources/stubs",
++                    "src/Symfony/Component/Intl/Resources/stubs"
++                ],
++                "files": [
++                    "src/Symfony/Component/Intl/Resources/stubs/functions.php"
++                ]
++            },
++            "notification-url": "https://packagist.org/downloads/",
++            "license": [
++                "MIT"
++            ],
++            "authors": [
++                {
++                    "name": "Fabien Potencier",
++                    "email": "fabien@symfony.com"
++                },
++                {
++                    "name": "Symfony Community",
++                    "homepage": "https://symfony.com/contributors"
++                }
++            ],
++            "description": "The Symfony PHP framework",
++            "homepage": "https://symfony.com",
++            "keywords": [
++                "framework"
++            ],
++            "time": "2015-09-08T14:26:39+00:00"
++        },
++        {
++            "name": "twig/twig",
++            "version": "v1.22.1",
++            "source": {
++                "type": "git",
++                "url": "https://github.com/twigphp/Twig.git",
++                "reference": "b7fc2469fa009897871fb95b68237286fc54a5ad"
++            },
++            "dist": {
++                "type": "zip",
++                "url": "https://api.github.com/repos/twigphp/Twig/zipball/b7fc2469fa009897871fb95b68237286fc54a5ad",
++                "reference": "b7fc2469fa009897871fb95b68237286fc54a5ad",
++                "shasum": ""
++            },
++            "require": {
++                "php": ">=5.2.7"
++            },
++            "require-dev": {
++                "symfony/debug": "~2.7",
++                "symfony/phpunit-bridge": "~2.7"
++            },
++            "type": "library",
++            "extra": {
++                "branch-alias": {
++                    "dev-master": "1.22-dev"
++                }
++            },
++            "autoload": {
++                "psr-0": {
++                    "Twig_": "lib/"
++                }
++            },
++            "notification-url": "https://packagist.org/downloads/",
++            "license": [
++                "BSD-3-Clause"
++            ],
++            "authors": [
++                {
++                    "name": "Fabien Potencier",
++                    "email": "fabien@symfony.com",
++                    "homepage": "http://fabien.potencier.org",
++                    "role": "Lead Developer"
++                },
++                {
++                    "name": "Armin Ronacher",
++                    "email": "armin.ronacher@active-4.com",
++                    "role": "Project Founder"
++                },
++                {
++                    "name": "Twig Team",
++                    "homepage": "http://twig.sensiolabs.org/contributors",
++                    "role": "Contributors"
++                }
++            ],
++            "description": "Twig, the flexible, fast, and secure template language for PHP",
++            "homepage": "http://twig.sensiolabs.org",
++            "keywords": [
++                "templating"
++            ],
++            "time": "2015-09-15T06:50:16+00:00"
++        }
++    ],
 +    "packages-dev": [
 +        {
 +            "name": "behat/behat",
@@ -112,7 +405,7 @@ index 853591e..250b89a 100644
 +                "symfony",
 +                "testing"
 +            ],
-+            "time": "2015-02-22 14:10:33"
++            "time": "2015-02-22T14:10:33+00:00"
 +        },
 +        {
 +            "name": "behat/gherkin",
@@ -170,7 +463,7 @@ index 853591e..250b89a 100644
 +                "gherkin",
 +                "parser"
 +            ],
-+            "time": "2014-06-06 01:24:32"
++            "time": "2014-06-06T01:24:32+00:00"
 +        },
 +        {
 +            "name": "behat/mink",
@@ -225,7 +518,7 @@ index 853591e..250b89a 100644
 +                "testing",
 +                "web"
 +            ],
-+            "time": "2015-02-04 17:02:06"
++            "time": "2015-02-04T17:02:06+00:00"
 +        },
 +        {
 +            "name": "behat/mink-browserkit-driver",
@@ -280,7 +573,7 @@ index 853591e..250b89a 100644
 +                "browser",
 +                "testing"
 +            ],
-+            "time": "2014-09-26 11:35:19"
++            "time": "2014-09-26T11:35:19+00:00"
 +        },
 +        {
 +            "name": "behat/mink-extension",
@@ -339,7 +632,7 @@ index 853591e..250b89a 100644
 +                "test",
 +                "web"
 +            ],
-+            "time": "2014-09-23 10:59:27"
++            "time": "2014-09-23T10:59:27+00:00"
 +        },
 +        {
 +            "name": "behat/mink-goutte-driver",
@@ -391,7 +684,7 @@ index 853591e..250b89a 100644
 +                "headless",
 +                "testing"
 +            ],
-+            "time": "2014-10-09 09:21:12"
++            "time": "2014-10-09T09:21:12+00:00"
 +        },
 +        {
 +            "name": "behat/transliterator",
@@ -431,7 +724,7 @@ index 853591e..250b89a 100644
 +                "slug",
 +                "transliterator"
 +            ],
-+            "time": "2014-05-15 22:08:22"
++            "time": "2014-05-15T22:08:22+00:00"
 +        },
 +        {
 +            "name": "fabpot/goutte",
@@ -480,7 +773,7 @@ index 853591e..250b89a 100644
 +            "keywords": [
 +                "scraper"
 +            ],
-+            "time": "2015-05-05 21:14:57"
++            "time": "2015-05-05T21:14:57+00:00"
 +        },
 +        {
 +            "name": "guzzlehttp/guzzle",
@@ -538,7 +831,7 @@ index 853591e..250b89a 100644
 +                "rest",
 +                "web service"
 +            ],
-+            "time": "2015-05-20 03:47:55"
++            "time": "2015-05-20T03:47:55+00:00"
 +        },
 +        {
 +            "name": "guzzlehttp/ringphp",
@@ -589,7 +882,8 @@ index 853591e..250b89a 100644
 +                }
 +            ],
 +            "description": "Provides a simple API and specification that abstracts away the details of HTTP into a single PHP function.",
-+            "time": "2015-05-20 03:37:09"
++            "abandoned": true,
++            "time": "2015-05-20T03:37:09+00:00"
 +        },
 +        {
 +            "name": "guzzlehttp/streams",
@@ -639,31 +933,47 @@ index 853591e..250b89a 100644
 +                "Guzzle",
 +                "stream"
 +            ],
-+            "time": "2014-10-12 19:18:40"
++            "abandoned": true,
++            "time": "2014-10-12T19:18:40+00:00"
 +        },
-+        {
+         {
+             "name": "phpdocumentor/reflection-docblock",
+             "version": "2.0.4",
+@@ -1411,42 +2306,48 @@
+             "time": "2015-10-02T06:51:40+00:00"
+         },
+         {
+-            "name": "psr/log",
+-            "version": "1.0.0",
 +            "name": "react/promise",
 +            "version": "v2.2.1",
-+            "source": {
-+                "type": "git",
+             "source": {
+                 "type": "git",
+-                "url": "https://github.com/php-fig/log.git",
+-                "reference": "fe0936ee26643249e916849d48e3a51d5f5e278b"
 +                "url": "https://github.com/reactphp/promise.git",
 +                "reference": "3b6fca09c7d56321057fa8867c8dbe1abf648627"
-+            },
-+            "dist": {
-+                "type": "zip",
+             },
+             "dist": {
+                 "type": "zip",
+-                "url": "https://api.github.com/repos/php-fig/log/zipball/fe0936ee26643249e916849d48e3a51d5f5e278b",
+-                "reference": "fe0936ee26643249e916849d48e3a51d5f5e278b",
 +                "url": "https://api.github.com/repos/reactphp/promise/zipball/3b6fca09c7d56321057fa8867c8dbe1abf648627",
 +                "reference": "3b6fca09c7d56321057fa8867c8dbe1abf648627",
-+                "shasum": ""
-+            },
+                 "shasum": ""
+             },
 +            "require": {
 +                "php": ">=5.4.0"
 +            },
-+            "type": "library",
+             "type": "library",
+-            "autoload": {
+-                "psr-0": {
+-                    "Psr\\Log\\": ""
 +            "extra": {
 +                "branch-alias": {
 +                    "dev-master": "2.0-dev"
-+                }
-+            },
+                 }
+             },
 +            "autoload": {
 +                "psr-4": {
 +                    "React\\Promise\\": "src/"
@@ -672,20 +982,282 @@ index 853591e..250b89a 100644
 +                    "src/functions_include.php"
 +                ]
 +            },
-+            "notification-url": "https://packagist.org/downloads/",
-+            "license": [
-+                "MIT"
-+            ],
-+            "authors": [
-+                {
+             "notification-url": "https://packagist.org/downloads/",
+             "license": [
+                 "MIT"
+             ],
+             "authors": [
+                 {
+-                    "name": "PHP-FIG",
+-                    "homepage": "http://www.php-fig.org/"
 +                    "name": "Jan Sorgalla",
 +                    "email": "jsorgalla@gmail.com"
-+                }
-+            ],
+                 }
+             ],
+-            "description": "Common interface for logging libraries",
+-            "keywords": [
+-                "log",
+-                "psr",
+-                "psr-3"
+-            ],
+-            "time": "2012-12-21T11:40:51+00:00"
 +            "description": "A lightweight implementation of CommonJS Promises/A for PHP",
-+            "time": "2015-07-03 13:48:55"
-+        }
-+    ],
++            "time": "2015-07-03T13:48:55+00:00"
+         },
+         {
+             "name": "sebastian/comparator",
+@@ -1818,254 +2719,8 @@
+             "description": "Library that helps with managing the version number of Git-hosted PHP projects",
+             "homepage": "https://github.com/sebastianbergmann/version",
+             "time": "2015-06-21T13:59:46+00:00"
+-        },
+-        {
+-            "name": "sensio/framework-extra-bundle",
+-            "version": "v3.0.16",
+-            "source": {
+-                "type": "git",
+-                "url": "https://github.com/sensiolabs/SensioFrameworkExtraBundle.git",
+-                "reference": "507a15f56fa7699f6cc8c2c7de4080b19ce22546"
+-            },
+-            "dist": {
+-                "type": "zip",
+-                "url": "https://api.github.com/repos/sensiolabs/SensioFrameworkExtraBundle/zipball/507a15f56fa7699f6cc8c2c7de4080b19ce22546",
+-                "reference": "507a15f56fa7699f6cc8c2c7de4080b19ce22546",
+-                "shasum": ""
+-            },
+-            "require": {
+-                "doctrine/common": "~2.2",
+-                "symfony/dependency-injection": "~2.3|~3.0",
+-                "symfony/framework-bundle": "~2.3|~3.0"
+-            },
+-            "require-dev": {
+-                "symfony/browser-kit": "~2.3|~3.0",
+-                "symfony/dom-crawler": "~2.3|~3.0",
+-                "symfony/expression-language": "~2.4|~3.0",
+-                "symfony/finder": "~2.3|~3.0",
+-                "symfony/phpunit-bridge": "~2.7|~3.0",
+-                "symfony/security-bundle": "~2.4|~3.0",
+-                "symfony/twig-bundle": "~2.3|~3.0",
+-                "twig/twig": "~1.11|~2.0"
+-            },
+-            "suggest": {
+-                "symfony/expression-language": "",
+-                "symfony/psr-http-message-bridge": "To use the PSR-7 converters",
+-                "symfony/security-bundle": ""
+-            },
+-            "type": "symfony-bundle",
+-            "extra": {
+-                "branch-alias": {
+-                    "dev-master": "3.0.x-dev"
+-                }
+-            },
+-            "autoload": {
+-                "psr-4": {
+-                    "Sensio\\Bundle\\FrameworkExtraBundle\\": ""
+-                }
+-            },
+-            "notification-url": "https://packagist.org/downloads/",
+-            "license": [
+-                "MIT"
+-            ],
+-            "authors": [
+-                {
+-                    "name": "Fabien Potencier",
+-                    "email": "fabien@symfony.com"
+-                }
+-            ],
+-            "description": "This bundle provides a way to configure your controllers with annotations",
+-            "keywords": [
+-                "annotations",
+-                "controllers"
+-            ],
+-            "time": "2016-03-25T17:08:27+00:00"
+-        },
+-        {
+-            "name": "symfony/symfony",
+-            "version": "v2.7.4",
+-            "source": {
+-                "type": "git",
+-                "url": "https://github.com/symfony/symfony.git",
+-                "reference": "1fdf23fe28876844b887b0e1935c9adda43ee645"
+-            },
+-            "dist": {
+-                "type": "zip",
+-                "url": "https://api.github.com/repos/symfony/symfony/zipball/1fdf23fe28876844b887b0e1935c9adda43ee645",
+-                "reference": "1fdf23fe28876844b887b0e1935c9adda43ee645",
+-                "shasum": ""
+-            },
+-            "require": {
+-                "doctrine/common": "~2.3",
+-                "php": ">=5.3.9",
+-                "psr/log": "~1.0",
+-                "twig/twig": "~1.20|~2.0"
+-            },
+-            "replace": {
+-                "symfony/asset": "self.version",
+-                "symfony/browser-kit": "self.version",
+-                "symfony/class-loader": "self.version",
+-                "symfony/config": "self.version",
+-                "symfony/console": "self.version",
+-                "symfony/css-selector": "self.version",
+-                "symfony/debug": "self.version",
+-                "symfony/debug-bundle": "self.version",
+-                "symfony/dependency-injection": "self.version",
+-                "symfony/doctrine-bridge": "self.version",
+-                "symfony/dom-crawler": "self.version",
+-                "symfony/event-dispatcher": "self.version",
+-                "symfony/expression-language": "self.version",
+-                "symfony/filesystem": "self.version",
+-                "symfony/finder": "self.version",
+-                "symfony/form": "self.version",
+-                "symfony/framework-bundle": "self.version",
+-                "symfony/http-foundation": "self.version",
+-                "symfony/http-kernel": "self.version",
+-                "symfony/intl": "self.version",
+-                "symfony/locale": "self.version",
+-                "symfony/monolog-bridge": "self.version",
+-                "symfony/options-resolver": "self.version",
+-                "symfony/process": "self.version",
+-                "symfony/property-access": "self.version",
+-                "symfony/proxy-manager-bridge": "self.version",
+-                "symfony/routing": "self.version",
+-                "symfony/security": "self.version",
+-                "symfony/security-acl": "self.version",
+-                "symfony/security-bundle": "self.version",
+-                "symfony/security-core": "self.version",
+-                "symfony/security-csrf": "self.version",
+-                "symfony/security-http": "self.version",
+-                "symfony/serializer": "self.version",
+-                "symfony/stopwatch": "self.version",
+-                "symfony/swiftmailer-bridge": "self.version",
+-                "symfony/templating": "self.version",
+-                "symfony/translation": "self.version",
+-                "symfony/twig-bridge": "self.version",
+-                "symfony/twig-bundle": "self.version",
+-                "symfony/validator": "self.version",
+-                "symfony/var-dumper": "self.version",
+-                "symfony/web-profiler-bundle": "self.version",
+-                "symfony/yaml": "self.version"
+-            },
+-            "require-dev": {
+-                "doctrine/data-fixtures": "1.0.*",
+-                "doctrine/dbal": "~2.2",
+-                "doctrine/doctrine-bundle": "~1.2",
+-                "doctrine/orm": "~2.2,>=2.2.3",
+-                "egulias/email-validator": "~1.2",
+-                "ircmaxell/password-compat": "~1.0",
+-                "monolog/monolog": "~1.11",
+-                "ocramius/proxy-manager": "~0.4|~1.0",
+-                "symfony/phpunit-bridge": "self.version"
+-            },
+-            "type": "library",
+-            "extra": {
+-                "branch-alias": {
+-                    "dev-master": "2.7-dev"
+-                }
+-            },
+-            "autoload": {
+-                "psr-4": {
+-                    "Symfony\\Bridge\\Doctrine\\": "src/Symfony/Bridge/Doctrine/",
+-                    "Symfony\\Bridge\\Monolog\\": "src/Symfony/Bridge/Monolog/",
+-                    "Symfony\\Bridge\\ProxyManager\\": "src/Symfony/Bridge/ProxyManager/",
+-                    "Symfony\\Bridge\\Swiftmailer\\": "src/Symfony/Bridge/Swiftmailer/",
+-                    "Symfony\\Bridge\\Twig\\": "src/Symfony/Bridge/Twig/",
+-                    "Symfony\\Bundle\\": "src/Symfony/Bundle/",
+-                    "Symfony\\Component\\": "src/Symfony/Component/"
+-                },
+-                "classmap": [
+-                    "src/Symfony/Component/HttpFoundation/Resources/stubs",
+-                    "src/Symfony/Component/Intl/Resources/stubs"
+-                ],
+-                "files": [
+-                    "src/Symfony/Component/Intl/Resources/stubs/functions.php"
+-                ]
+-            },
+-            "notification-url": "https://packagist.org/downloads/",
+-            "license": [
+-                "MIT"
+-            ],
+-            "authors": [
+-                {
+-                    "name": "Fabien Potencier",
+-                    "email": "fabien@symfony.com"
+-                },
+-                {
+-                    "name": "Symfony Community",
+-                    "homepage": "https://symfony.com/contributors"
+-                }
+-            ],
+-            "description": "The Symfony PHP framework",
+-            "homepage": "https://symfony.com",
+-            "keywords": [
+-                "framework"
+-            ],
+-            "time": "2015-09-08T14:26:39+00:00"
+-        },
+-        {
+-            "name": "twig/twig",
+-            "version": "v1.22.1",
+-            "source": {
+-                "type": "git",
+-                "url": "https://github.com/twigphp/Twig.git",
+-                "reference": "b7fc2469fa009897871fb95b68237286fc54a5ad"
+-            },
+-            "dist": {
+-                "type": "zip",
+-                "url": "https://api.github.com/repos/twigphp/Twig/zipball/b7fc2469fa009897871fb95b68237286fc54a5ad",
+-                "reference": "b7fc2469fa009897871fb95b68237286fc54a5ad",
+-                "shasum": ""
+-            },
+-            "require": {
+-                "php": ">=5.2.7"
+-            },
+-            "require-dev": {
+-                "symfony/debug": "~2.7",
+-                "symfony/phpunit-bridge": "~2.7"
+-            },
+-            "type": "library",
+-            "extra": {
+-                "branch-alias": {
+-                    "dev-master": "1.22-dev"
+-                }
+-            },
+-            "autoload": {
+-                "psr-0": {
+-                    "Twig_": "lib/"
+-                }
+-            },
+-            "notification-url": "https://packagist.org/downloads/",
+-            "license": [
+-                "BSD-3-Clause"
+-            ],
+-            "authors": [
+-                {
+-                    "name": "Fabien Potencier",
+-                    "email": "fabien@symfony.com",
+-                    "homepage": "http://fabien.potencier.org",
+-                    "role": "Lead Developer"
+-                },
+-                {
+-                    "name": "Armin Ronacher",
+-                    "email": "armin.ronacher@active-4.com",
+-                    "role": "Project Founder"
+-                },
+-                {
+-                    "name": "Twig Team",
+-                    "homepage": "http://twig.sensiolabs.org/contributors",
+-                    "role": "Contributors"
+-                }
+-            ],
+-            "description": "Twig, the flexible, fast, and secure template language for PHP",
+-            "homepage": "http://twig.sensiolabs.org",
+-            "keywords": [
+-                "templating"
+-            ],
+-            "time": "2015-09-15T06:50:16+00:00"
+         }
+     ],
+-    "packages-dev": [],
      "aliases": [],
      "minimum-stability": "stable",
      "stability-flags": [],
