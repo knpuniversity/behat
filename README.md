@@ -5,6 +5,8 @@ for the [Behat PHP course on KnpUniversity](https://knpuniversity.com/screencast
 
 ## Setup the Project
 
+**NOTE**: This tutorial does not work in PHP 7.3 and above.
+
 Ok, cool - this will be easy!
 
 1. Make sure you have [Composer installed](https://getcomposer.org/).
