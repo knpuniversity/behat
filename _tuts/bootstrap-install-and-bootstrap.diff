@@ -10,10 +10,10 @@ index 0000000..69d44b4
 +            base_url: http://localhost:8000
 +            goutte: ~
 diff --git a/composer.json b/composer.json
-index b5239be..526bd8e 100644
+index cc0c6de..43c8d5a 100644
 --- a/composer.json
 +++ b/composer.json
-@@ -19,6 +19,10 @@
+@@ -20,6 +20,10 @@
              "": "src/"
          }
      },
@@ -25,15 +25,15 @@ index b5239be..526bd8e 100644
          "platform": {
              "php": "5.4.0"
 diff --git a/composer.lock b/composer.lock
-index 3ed9e15..a6b4be9 100644
+index 9ecb603..8368f0d 100644
 --- a/composer.lock
 +++ b/composer.lock
 @@ -4,7 +4,7 @@
          "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
          "This file is @generated automatically"
      ],
--    "content-hash": "0fb90bc9662d39444cf177f316992ac0",
-+    "content-hash": "7f84a9de1e336c03a06dafcfbc917e9c",
+-    "content-hash": "6c9d85432afd95b9b81d2bd20d97f641",
++    "content-hash": "f43c0f8244f81c3213bde8342e92d65e",
      "packages": [
          {
              "name": "doctrine/annotations",

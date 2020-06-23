@@ -8,10 +8,10 @@ index 487a0f9..d3346ec 100644
              show_cmd: 'open %s'
 +        Behat\Symfony2Extension: ~
 diff --git a/composer.json b/composer.json
-index 53e5db8..aa3f805 100644
+index 3b377a5..e58fed9 100644
 --- a/composer.json
 +++ b/composer.json
-@@ -12,7 +12,8 @@
+@@ -13,7 +13,8 @@
          "sensio/framework-extra-bundle": "^3.0",
          "doctrine/doctrine-bundle": "^1.5",
          "doctrine/orm": "^2.5",
@@ -22,15 +22,15 @@ index 53e5db8..aa3f805 100644
      "autoload": {
          "psr-0": {
 diff --git a/composer.lock b/composer.lock
-index 850d4a8..fc05075 100644
+index 5053486..fcd862e 100644
 --- a/composer.lock
 +++ b/composer.lock
 @@ -4,8 +4,247 @@
          "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
          "This file is @generated automatically"
      ],
--    "content-hash": "a2e72b8f5329188ad27d1f9641c2985b",
-+    "content-hash": "3f1d7714ea51e26984ee9c6a3b42b3c6",
+-    "content-hash": "be70986917f92b8f8eb6b35dc904f02d",
++    "content-hash": "5e445a55a729ece6ed84560c273ac74b",
      "packages": [
 +        {
 +            "name": "behat/behat",

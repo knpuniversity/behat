@@ -8,10 +8,10 @@ index 69d44b4..8a61cbf 100644
              goutte: ~
 +            selenium2: ~
 diff --git a/composer.json b/composer.json
-index 526bd8e..9782cbe 100644
+index 43c8d5a..34972d8 100644
 --- a/composer.json
 +++ b/composer.json
-@@ -21,7 +21,8 @@
+@@ -22,7 +22,8 @@
      },
      "require-dev": {
          "behat/mink-extension": "^2.0",
@@ -22,15 +22,15 @@ index 526bd8e..9782cbe 100644
      "config": {
          "platform": {
 diff --git a/composer.lock b/composer.lock
-index a6b4be9..245897d 100644
+index 8368f0d..4ddf3c9 100644
 --- a/composer.lock
 +++ b/composer.lock
 @@ -4,7 +4,7 @@
          "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
          "This file is @generated automatically"
      ],
--    "content-hash": "7f84a9de1e336c03a06dafcfbc917e9c",
-+    "content-hash": "7dc0fd909bac81a0747942fc0d1ee6db",
+-    "content-hash": "f43c0f8244f81c3213bde8342e92d65e",
++    "content-hash": "ccf2c836d6aaa497d20a38471cfc49fe",
      "packages": [
          {
              "name": "doctrine/annotations",
