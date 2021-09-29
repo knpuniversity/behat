@@ -94,6 +94,11 @@ a hold of. To get access to them we just need to add a require statement in our
 
 [[[ code('16793205d0') ]]]
 
+***TIP
+That's cool, but unnecessary with Symfony 5. Read more about Behat + phpunit configuration
+[here](https://symfonycasts.com/blog/behat-symfony#configure-it)
+***
+
 Requiring this file gives you access to all of PHPUnit's assert functions as flat functions.
 Down in the `iShouldSeeInTheOutput()` method, use `assertContains()`, give it the needle
 which is `$string` and the haystack which is `$this->output`. Finally, add our helpful message

@@ -42,6 +42,10 @@ Hold onto your butts, let's going to get this thing running!
 
 ## Install and Configuration
 
+***TIP
+Installing Behat on Symfony 5 or newer? Read this article: [Setting up Behat on Symfony 5](https://symfonycasts.com/blog/behat-symfony)
+***
+
 Over in the terminal run `composer require` and instead of using `behat/behat` we'll grab:
 `behat/mink-extension` and `behat/mink-goutte-driver`:
 
@@ -124,6 +128,12 @@ The downside to this is that if you have JavaScript on your page that this scena
 isn't going to work since this isn't actually opening up a real browser. So, how can we run
 this in a real browser? There are actually a bunch of different ways. The easiest is by
 using Selenium. 
+
+***TIP
+With Symfony 5 it became easier! You can find required instructions about Selenium configuration
+[here](https://symfonycasts.com/blog/behat-symfony#real-browser-power) or try [Panther](https://symfonycasts.com/blog/behat-panther).
+working with Panther is great and a bit easier than Selenium.
+***
 
 Grab another library with `composer require behat/mink-selenium2-driver`. You'll also need to download
 the selenium server which is really easy, it's just a jar file. Click this link here under downloads 
