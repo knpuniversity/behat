@@ -67,7 +67,7 @@ And, surprise! There's an easier way to bootstrap Symfony and clear out the data
 I always like taking the long way first so we can see how things work.
  
 ***TIP
-Working with Symfony 5? Check out this [article](https://symfonycasts.com/blog/behat-symfony#install-behat-with-everything-you-need)
+Working with Symfony 5? Check out this [blog post](https://symfonycasts.com/blog/behat-symfony#install-behat-with-everything-you-need)
 to get all you need
 ***
 
