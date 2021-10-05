@@ -43,7 +43,8 @@ Hold onto your butts, let's going to get this thing running!
 ## Install and Configuration
 
 ***TIP
-Installing Behat on Symfony 5 or newer? Read this article: [Setting up Behat on Symfony 5](https://symfonycasts.com/blog/behat-symfony)
+Installing Behat on Symfony 5 or newer? Read this [blog post](https://symfonycasts.com/blog/behat-symfony) 
+to know about how to install and configure it properly.
 ***
 
 Over in the terminal run `composer require` and instead of using `behat/behat` we'll grab:
@@ -130,9 +131,10 @@ this in a real browser? There are actually a bunch of different ways. The easies
 using Selenium. 
 
 ***TIP
-With Symfony 5 it became easier! You can find required instructions about Selenium configuration
-[here](https://symfonycasts.com/blog/behat-symfony#real-browser-power) or try [Panther](https://symfonycasts.com/blog/behat-panther).
-working with Panther is great and a bit easier than Selenium.
+With Symfony 5 it became easier! You can find the required instructions 
+about Selenium configuration [here](https://symfonycasts.com/blog/behat-symfony#real-browser-power). 
+Or you can try a new library called [Panther](https://symfonycasts.com/blog/behat-panther) 
+that is a bit easier than Selenium, but we're going to cover Selenium further in this course.
 ***
 
 Grab another library with `composer require behat/mink-selenium2-driver`. You'll also need to download
