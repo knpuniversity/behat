@@ -66,6 +66,11 @@ Perfect! We can run this over and over because it's clearing out the data first.
 And, surprise! There's an easier way to bootstrap Symfony and clear out the database.
 I always like taking the long way first so we can see how things work.
  
+***TIP
+Working with Symfony 5? Check out this [blog post](https://symfonycasts.com/blog/behat-symfony#install-behat-with-everything-you-need)
+to get all you need
+***
+
 First, install a new library called `behat/symfony2-extension` with `--dev` so it
 goes into my require `dev` section:
 
