@@ -125,7 +125,7 @@ that it extends the same base class as ``DocumentElement``, which means that
 it has almost all the same methods and more. For example, once you've found
 a ``NodeElement``, you can find more elements deeper inside of it::
 
-    $spanEle = $anchorElement.find('css', 'span.emph');
+    $spanEle = $anchorElement->find('css', 'span.emph');
 
 With all this new knowledge, let's find the sub-link beneath "On the Wiki"
 and print its text::
