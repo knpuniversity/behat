@@ -131,7 +131,7 @@ this in a real browser? There are actually a bunch of different ways. The easies
 using Selenium. 
 
 ***TIP
-With Symfony 5 it became easier! You can find the required instructions 
+Since Symfony 5 it became easier! You can find the required instructions 
 about Selenium configuration [here](https://symfonycasts.com/blog/behat-symfony#real-browser-power). 
 Or you can try a new library called [Panther](https://symfonycasts.com/blog/behat-panther) 
 that is a bit easier than Selenium, but we're going to cover Selenium further in this course.
