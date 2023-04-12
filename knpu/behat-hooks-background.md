@@ -95,8 +95,8 @@ a hold of. To get access to them we just need to add a require statement in our
 [[[ code('16793205d0') ]]]
 
 ***TIP
-This is a redundant step if you use Symfony 5. Read more about how to configure 
-Behat & PHPUnit properly with Symfony 5 [here](https://symfonycasts.com/blog/behat-symfony#configure-it)
+This is a redundant step if you use Symfony 5 or higher. Read more about how to configure 
+Behat & PHPUnit properly with Symfony 5+ [here](https://symfonycasts.com/blog/behat-symfony#configure-it)
 ***
 
 Requiring this file gives you access to all of PHPUnit's assert functions as flat functions.
