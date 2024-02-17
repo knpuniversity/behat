@@ -14,6 +14,11 @@ dev, you reply:
 > I would be happy to help you Linus, and I'll use Gherkin to describe the feature 
   and the scenarios for the `ls` command. I'm really into Behavior Driven Development.
 
+***SEEALSO
+In truth, `ls` command was written by Richard M. Stallman and David MacKenzie and is part
+of GNU coreutils. Linus Torvalds is the man who made a historical release of Linux kernel
+on September 17, 1991 and his name is the most recognizable in Linux word.
+***
 
 ## Writing Scenario #1
 
